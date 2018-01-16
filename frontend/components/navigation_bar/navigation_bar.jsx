@@ -102,7 +102,7 @@ class NavigationBar extends React.Component {
                 {
                   this.props.location.pathname !== "/" ?
                   <a href={`index.html#`} onClick={() => window.location.reload()}>
-                    HACKER NEWS
+                    MANIC
                   </a>
                   :
                   ""
@@ -111,7 +111,7 @@ class NavigationBar extends React.Component {
             </div>
             <div className="navigation-bar-top-section">
               <h3>
-                {this.props.location.pathname !== "/" ? this.convertTitle(this.props.location.pathname) : "HACKER NEWS"}
+                {this.props.location.pathname !== "/" ? this.convertTitle(this.props.location.pathname) : "MANIC"}
               </h3>
             </div>
             <div className="navigation-bar-top-section">
