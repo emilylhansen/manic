@@ -25796,6 +25796,7 @@ var NavigationBar = function (_React$Component) {
     _this.teal = "#96CCCE";
     _this.blue = "#0086A1";
     _this.orange = "#FFC00A";
+    _this.brown = "#6A0000";
     _this.red = "#F52143";
     return _this;
   }
@@ -25811,7 +25812,7 @@ var NavigationBar = function (_React$Component) {
       var nav = document.getElementById("navigation-bar-top");
       var section = void 0;
       switch (this.props.location.pathname) {
-        case "/top-stories":
+        case "/business":
           section = document.getElementById("navigation-bar-bottom-section-one");
           section.style.backgroundColor = '' + this.green;
           section.getElementsByTagName('a')[0].style.color = "white";
@@ -25820,7 +25821,7 @@ var NavigationBar = function (_React$Component) {
           nav.getElementsByTagName('a')[0].style.color = "white";
           nav.getElementsByTagName('h3')[1].style.color = "white";
           break;
-        case "/two":
+        case "/culture":
           section = document.getElementById("navigation-bar-bottom-section-two");
           section.style.backgroundColor = '' + this.purple;
           section.getElementsByTagName('a')[0].style.color = "white";
@@ -25829,7 +25830,7 @@ var NavigationBar = function (_React$Component) {
           nav.getElementsByTagName('a')[0].style.color = "white";
           nav.getElementsByTagName('h3')[1].style.color = "white";
           break;
-        case "/three":
+        case "/design":
           section = document.getElementById("navigation-bar-bottom-section-three");
           section.style.backgroundColor = '' + this.teal;
           section.getElementsByTagName('a')[0].style.color = "white";
@@ -25838,7 +25839,7 @@ var NavigationBar = function (_React$Component) {
           nav.getElementsByTagName('a')[0].style.color = "white";
           nav.getElementsByTagName('h3')[1].style.color = "white";
           break;
-        case "/four":
+        case "/gear":
           section = document.getElementById("navigation-bar-bottom-section-four");
           section.style.backgroundColor = '' + this.blue;
           section.getElementsByTagName('a')[0].style.color = "white";
@@ -25847,7 +25848,7 @@ var NavigationBar = function (_React$Component) {
           nav.getElementsByTagName('a')[0].style.color = "white";
           nav.getElementsByTagName('h3')[1].style.color = "white";
           break;
-        case "/five":
+        case "/science":
           section = document.getElementById("navigation-bar-bottom-section-five");
           section.style.backgroundColor = '' + this.orange;
           section.getElementsByTagName('a')[0].style.color = "white";
@@ -25856,8 +25857,17 @@ var NavigationBar = function (_React$Component) {
           nav.getElementsByTagName('a')[0].style.color = "white";
           nav.getElementsByTagName('h3')[1].style.color = "white";
           break;
-        case "/six":
+        case "/security":
           section = document.getElementById("navigation-bar-bottom-section-six");
+          section.style.backgroundColor = '' + this.brown;
+          section.getElementsByTagName('a')[0].style.color = "white";
+          section.style.borderTop = "none";
+          nav.style.backgroundColor = '' + this.brown;
+          nav.getElementsByTagName('a')[0].style.color = "white";
+          nav.getElementsByTagName('h3')[1].style.color = "white";
+          break;
+        case "/transportation":
+          section = document.getElementById("navigation-bar-bottom-section-seven");
           section.style.backgroundColor = '' + this.red;
           section.getElementsByTagName('a')[0].style.color = "white";
           section.style.borderTop = "none";
@@ -25866,11 +25876,11 @@ var NavigationBar = function (_React$Component) {
           nav.getElementsByTagName('h3')[1].style.color = "white";
           break;
         default:
-          section = document.getElementById("navigation-bar-bottom-section-six");
-          section.style.backgroundColor = "white";
-          section.getElementsByTagName('a')[0].style.color = "#6C6C6C";
-          section.style.borderTop = "1px solid #CCCCCC";
-          nav.style.backgroundColor = "white";
+          // section = document.getElementById("navigation-bar-bottom-section-seven");
+          // section.style.backgroundColor = "white";
+          // section.getElementsByTagName('a')[0].style.color = "#6C6C6C";
+          // section.style.borderTop = "1px solid #CCCCCC";
+          // nav.style.backgroundColor = "white";
           break;
       }
     }
@@ -25929,10 +25939,10 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/top-stories', onClick: function onClick() {
+                { href: 'index.html#/business', onClick: function onClick() {
                     return window.location.reload();
                   } },
-                'TOP STORIES'
+                'BUSINESS'
               )
             )
           ),
@@ -25944,10 +25954,10 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/two', onClick: function onClick() {
+                { href: 'index.html#/culture', onClick: function onClick() {
                     return window.location.reload();
                   } },
-                'TWO'
+                'CULTURE'
               )
             )
           ),
@@ -25959,10 +25969,10 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/three', onClick: function onClick() {
+                { href: 'index.html#/design', onClick: function onClick() {
                     return window.location.reload();
                   } },
-                'THREE'
+                'DESIGN'
               )
             )
           ),
@@ -25974,10 +25984,10 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/four', onClick: function onClick() {
+                { href: 'index.html#/gear', onClick: function onClick() {
                     return window.location.reload();
                   } },
-                'FOUR'
+                'GEAR'
               )
             )
           ),
@@ -25989,10 +25999,10 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/five', onClick: function onClick() {
+                { href: 'index.html#/science', onClick: function onClick() {
                     return window.location.reload();
                   } },
-                'FIVE'
+                'SCIENCE'
               )
             )
           ),
@@ -26004,10 +26014,25 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/six', onClick: function onClick() {
+                { href: 'index.html#/security', onClick: function onClick() {
                     return window.location.reload();
                   } },
-                'SIX'
+                'SECURITY'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-seven' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'index.html#/transportation', onClick: function onClick() {
+                    return window.location.reload();
+                  } },
+                'TRANSPORTATION'
               )
             )
           )

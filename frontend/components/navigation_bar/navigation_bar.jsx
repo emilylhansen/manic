@@ -13,6 +13,7 @@ class NavigationBar extends React.Component {
       this.teal = "#96CCCE";
       this.blue = "#0086A1";
       this.orange = "#FFC00A";
+      this.brown = "#6A0000";
       this.red = "#F52143";
   }
 
@@ -24,7 +25,7 @@ class NavigationBar extends React.Component {
     let nav = document.getElementById("navigation-bar-top");
     let section;
     switch (this.props.location.pathname) {
-      case "/top-stories":
+      case "/business":
         section = document.getElementById("navigation-bar-bottom-section-one");
         section.style.backgroundColor = `${this.green}`;
         section.getElementsByTagName('a')[0].style.color = "white";
@@ -33,7 +34,7 @@ class NavigationBar extends React.Component {
         nav.getElementsByTagName('a')[0].style.color = "white";
         nav.getElementsByTagName('h3')[1].style.color = "white";
         break;
-      case "/two":
+      case "/culture":
         section = document.getElementById("navigation-bar-bottom-section-two");
         section.style.backgroundColor = `${this.purple}`;
         section.getElementsByTagName('a')[0].style.color = "white";
@@ -42,7 +43,7 @@ class NavigationBar extends React.Component {
         nav.getElementsByTagName('a')[0].style.color = "white";
         nav.getElementsByTagName('h3')[1].style.color = "white";
         break;
-      case "/three":
+      case "/design":
         section = document.getElementById("navigation-bar-bottom-section-three");
         section.style.backgroundColor = `${this.teal}`;
         section.getElementsByTagName('a')[0].style.color = "white";
@@ -51,7 +52,7 @@ class NavigationBar extends React.Component {
         nav.getElementsByTagName('a')[0].style.color = "white";
         nav.getElementsByTagName('h3')[1].style.color = "white";
         break;
-      case "/four":
+      case "/gear":
         section = document.getElementById("navigation-bar-bottom-section-four");
         section.style.backgroundColor = `${this.blue}`;
         section.getElementsByTagName('a')[0].style.color = "white";
@@ -60,7 +61,7 @@ class NavigationBar extends React.Component {
         nav.getElementsByTagName('a')[0].style.color = "white";
         nav.getElementsByTagName('h3')[1].style.color = "white";
         break;
-      case "/five":
+      case "/science":
         section = document.getElementById("navigation-bar-bottom-section-five");
         section.style.backgroundColor = `${this.orange}`;
         section.getElementsByTagName('a')[0].style.color = "white";
@@ -69,8 +70,17 @@ class NavigationBar extends React.Component {
         nav.getElementsByTagName('a')[0].style.color = "white";
         nav.getElementsByTagName('h3')[1].style.color = "white";
         break;
-      case "/six":
+      case "/security":
         section = document.getElementById("navigation-bar-bottom-section-six");
+        section.style.backgroundColor = `${this.brown}`;
+        section.getElementsByTagName('a')[0].style.color = "white";
+        section.style.borderTop = "none";
+        nav.style.backgroundColor = `${this.brown}`;
+        nav.getElementsByTagName('a')[0].style.color = "white";
+        nav.getElementsByTagName('h3')[1].style.color = "white";
+        break;
+      case "/transportation":
+        section = document.getElementById("navigation-bar-bottom-section-seven");
         section.style.backgroundColor = `${this.red}`;
         section.getElementsByTagName('a')[0].style.color = "white";
         section.style.borderTop = "none";
@@ -79,11 +89,11 @@ class NavigationBar extends React.Component {
         nav.getElementsByTagName('h3')[1].style.color = "white";
         break;
       default:
-        section = document.getElementById("navigation-bar-bottom-section-six");
-        section.style.backgroundColor = "white";
-        section.getElementsByTagName('a')[0].style.color = "#6C6C6C";
-        section.style.borderTop = "1px solid #CCCCCC";
-        nav.style.backgroundColor = "white";
+        // section = document.getElementById("navigation-bar-bottom-section-seven");
+        // section.style.backgroundColor = "white";
+        // section.getElementsByTagName('a')[0].style.color = "#6C6C6C";
+        // section.style.borderTop = "1px solid #CCCCCC";
+        // nav.style.backgroundColor = "white";
         break;
     }
   }
@@ -122,22 +132,25 @@ class NavigationBar extends React.Component {
 
           <div className="navigation-bar-bottom">
             <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-one">
-              <h2><a href={`index.html#/top-stories`} onClick={() => window.location.reload()}>TOP STORIES</a></h2>
+              <h2><a href={`index.html#/business`} onClick={() => window.location.reload()}>BUSINESS</a></h2>
             </div>
             <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-two">
-              <h2><a href={`index.html#/two`} onClick={() => window.location.reload()}>TWO</a></h2>
+              <h2><a href={`index.html#/culture`} onClick={() => window.location.reload()}>CULTURE</a></h2>
             </div>
             <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-three">
-              <h2><a href={`index.html#/three`} onClick={() => window.location.reload()}>THREE</a></h2>
+              <h2><a href={`index.html#/design`} onClick={() => window.location.reload()}>DESIGN</a></h2>
             </div>
             <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-four">
-              <h2><a href={`index.html#/four`} onClick={() => window.location.reload()}>FOUR</a></h2>
+              <h2><a href={`index.html#/gear`} onClick={() => window.location.reload()}>GEAR</a></h2>
             </div>
             <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-five">
-              <h2><a href={`index.html#/five`} onClick={() => window.location.reload()}>FIVE</a></h2>
+              <h2><a href={`index.html#/science`} onClick={() => window.location.reload()}>SCIENCE</a></h2>
             </div>
             <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-six">
-              <h2><a href={`index.html#/six`} onClick={() => window.location.reload()}>SIX</a></h2>
+              <h2><a href={`index.html#/security`} onClick={() => window.location.reload()}>SECURITY</a></h2>
+            </div>
+            <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-seven">
+              <h2><a href={`index.html#/transportation`} onClick={() => window.location.reload()}>TRANSPORTATION</a></h2>
             </div>
           </div>
 

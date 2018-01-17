@@ -1,0 +1,101 @@
+/* navigation bar */
+.navigation-bar {
+  box-shadow: 0 4px 2px -2px #D9D9D9;
+  background-color: white;
+}
+
+#navigation-bar-top {
+  height: 50px;
+  display: flex;
+}
+
+.navigation-bar-top-section:first-child h3{
+  margin: 0px;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.navigation-bar-top-section:first-child>h3:hover{
+  color: black;
+}
+
+.navigation-bar-top-section:nth-child(2) h3{
+  font-size: 25px;
+  margin: 0px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.navigation-bar-top-section {
+  width: calc(100%/3);
+}
+
+.navigation-bar-bottom {
+  height: 25px;
+  border-bottom: 1px solid #CCCCCC;
+  display: flex;
+}
+
+.navigation-bar-bottom-section {
+  width: calc(100% / 6);
+  border-top: 1px solid #CCCCCC;
+}
+
+.navigation-bar-bottom-section:hover{
+  cursor: pointer;
+}
+
+.navigation-bar-bottom-section:not(:last-child) {
+  border-right: 1px solid #CCCCCC;
+}
+
+.navigation-bar-bottom-section h2{
+  text-align: center;
+  margin: 3px 0px;
+}
+
+.navigation-bar-bottom-section h2 a {
+  text-decoration: none;
+  color: #6C6C6C;
+}
+
+#navigation-bar-bottom-section-one:hover,
+#navigation-bar-bottom-section-one:hover a {
+  background-color: #00A85F;
+  color: white;
+}
+#navigation-bar-bottom-section-two:hover,
+#navigation-bar-bottom-section-two:hover a {
+  background-color: #461F4B;
+  color: white;
+}
+#navigation-bar-bottom-section-three:hover,
+#navigation-bar-bottom-section-three:hover a {
+  background-color: #96CCCE;
+  color: white;
+}
+#navigation-bar-bottom-section-four:hover,
+#navigation-bar-bottom-section-four:hover a {
+  background-color: #0086A1;
+  color: white;
+}
+#navigation-bar-bottom-section-five:hover,
+#navigation-bar-bottom-section-five:hover a {
+  background-color: #FFC00A;
+  color: white;
+}
+#navigation-bar-bottom-section-six:hover,
+#navigation-bar-bottom-section-six:hover a {
+  background-color: #6A0000;
+  color: white;
+}
+#navigation-bar-bottom-section-seven:hover,
+#navigation-bar-bottom-section-seven:hover a {
+  background-color: #F52143;
+  color: white;
+}
+
+.select-section {
+  border-top: none;
+}
