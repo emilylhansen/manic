@@ -26103,6 +26103,14 @@ var _article_unit_four = __webpack_require__(122);
 
 var _article_unit_four2 = _interopRequireDefault(_article_unit_four);
 
+var _article_unit_five = __webpack_require__(123);
+
+var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
+
+var _article_unit_six = __webpack_require__(124);
+
+var _article_unit_six2 = _interopRequireDefault(_article_unit_six);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26174,6 +26182,8 @@ var ArticleIndex = function (_React$Component) {
       var articleTwo = "hi";
       var articleThree = "hi";
       var articleFour = "hi";
+      var articleFive = "hi";
+      var articleSix = "hi";
 
       if (Object.keys(this.state.bestStories).length > 9) {
         articleOne = _react2.default.createElement(_article_unit_one2.default, {
@@ -26191,6 +26201,14 @@ var ArticleIndex = function (_React$Component) {
         articleFour = _react2.default.createElement(_article_unit_four2.default, {
           story: Object.values(this.state.bestStories)[3]
         });
+
+        articleFive = _react2.default.createElement(_article_unit_five2.default, {
+          story: Object.values(this.state.bestStories)[4]
+        });
+
+        articleFive = _react2.default.createElement(_article_unit_six2.default, {
+          story: Object.values(this.state.bestStories)[5]
+        });
       }
 
       return _react2.default.createElement(
@@ -26202,7 +26220,9 @@ var ArticleIndex = function (_React$Component) {
           articleOne,
           articleTwo,
           articleThree,
-          articleFour
+          articleFour,
+          articleFive,
+          articleSix
         )
       );
     }
@@ -26264,7 +26284,7 @@ var ArticleUnitOne = function (_React$Component) {
             { className: 'article-unit-one-bottom-context' },
             _react2.default.createElement(
               'div',
-              { className: 'article-unit-one-bottom-context-image' },
+              { className: 'article-unit-one-bottom-context-image article-unit-image' },
               _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
             ),
             _react2.default.createElement(
@@ -26281,20 +26301,20 @@ var ArticleUnitOne = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-one-bottom-context-text-title' },
+                { className: 'article-unit-one-bottom-context-text-title article-unit-title' },
                 _react2.default.createElement(
                   'h1',
                   null,
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title
+                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
                   )
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-one-bottom-context-text-author' },
+                { className: 'article-unit-one-bottom-context-text-author article-unit-author' },
                 _react2.default.createElement(
                   'h2',
                   null,
@@ -26366,7 +26386,7 @@ var ArticleUnitTwo = function (_React$Component) {
             { className: 'article-unit-two-bottom-context' },
             _react2.default.createElement(
               'div',
-              { className: 'article-unit-two-bottom-context-image ' },
+              { className: 'article-unit-two-bottom-context-image article-unit-image' },
               _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
             ),
             _react2.default.createElement(
@@ -26383,20 +26403,20 @@ var ArticleUnitTwo = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-two-bottom-context-text-title' },
+                { className: 'article-unit-two-bottom-context-text-title article-unit-title' },
                 _react2.default.createElement(
                   'h1',
                   null,
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title
+                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
                   )
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-two-bottom-context-text-author' },
+                { className: 'article-unit-two-bottom-context-text-author article-unit-author' },
                 _react2.default.createElement(
                   'h2',
                   null,
@@ -26468,7 +26488,7 @@ var ArticleUnitThree = function (_React$Component) {
             { className: 'article-unit-three-bottom-context' },
             _react2.default.createElement(
               'div',
-              { className: 'article-unit-three-bottom-context-image ' },
+              { className: 'article-unit-three-bottom-context-image article-unit-image' },
               _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
             ),
             _react2.default.createElement(
@@ -26485,20 +26505,20 @@ var ArticleUnitThree = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-three-bottom-context-text-title' },
+                { className: 'article-unit-three-bottom-context-text-title article-unit-title' },
                 _react2.default.createElement(
-                  'h1',
+                  'h6',
                   null,
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title
+                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
                   )
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-three-bottom-context-text-author' },
+                { className: 'article-unit-three-bottom-context-text-author article-unit-author' },
                 _react2.default.createElement(
                   'h2',
                   null,
@@ -26582,20 +26602,20 @@ var ArticleUnitFour = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-four-bottom-context-text-title' },
+                { className: 'article-unit-four-bottom-context-text-title article-unit-title' },
                 _react2.default.createElement(
-                  'h1',
+                  'h6',
                   null,
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title
+                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
                   )
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-four-bottom-context-text-author' },
+                { className: 'article-unit-four-bottom-context-text-author article-unit-author' },
                 _react2.default.createElement(
                   'h2',
                   null,
@@ -26605,7 +26625,7 @@ var ArticleUnitFour = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'article-unit-four-bottom-context-image ' },
+              { className: 'article-unit-four-bottom-context-image article-unit-image' },
               _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
             )
           )
@@ -26618,6 +26638,210 @@ var ArticleUnitFour = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitFour);
+
+// comment
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleUnitFive = function (_React$Component) {
+  _inherits(ArticleUnitFive, _React$Component);
+
+  function ArticleUnitFive(props) {
+    _classCallCheck(this, ArticleUnitFive);
+
+    return _possibleConstructorReturn(this, (ArticleUnitFive.__proto__ || Object.getPrototypeOf(ArticleUnitFive)).call(this, props));
+  }
+
+  _createClass(ArticleUnitFive, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'article-unit-five article-unit' },
+        _react2.default.createElement('div', { className: 'article-unit-five-top article-unit-top' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-five-bottom article-unit-bottom' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-five-bottom-context' },
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-five-bottom-context-image article-unit-image' },
+              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-five-bottom-context-text' },
+              _react2.default.createElement(
+                'div',
+                { className: 'article-unit-five-bottom-context-text-type' },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  this.props.story.type
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-unit-five-bottom-context-text-title article-unit-title' },
+                _react2.default.createElement(
+                  'h1',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: this.props.story.url },
+                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-unit-five-bottom-context-text-author article-unit-author' },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  this.props.story.by
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleUnitFive;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitFive);
+
+// comment
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleUnitSix = function (_React$Component) {
+  _inherits(ArticleUnitSix, _React$Component);
+
+  function ArticleUnitSix(props) {
+    _classCallCheck(this, ArticleUnitSix);
+
+    return _possibleConstructorReturn(this, (ArticleUnitSix.__proto__ || Object.getPrototypeOf(ArticleUnitSix)).call(this, props));
+  }
+
+  _createClass(ArticleUnitSix, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'article-unit-six article-unit' },
+        _react2.default.createElement('div', { className: 'article-unit-six-top article-unit-top' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-six-bottom article-unit-bottom' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-six-bottom-context' },
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-six-bottom-context-image article-unit-image' },
+              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-six-bottom-context-text' },
+              _react2.default.createElement(
+                'div',
+                { className: 'article-unit-six-bottom-context-text-type' },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  this.props.story.type
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-unit-six-bottom-context-text-title article-unit-title' },
+                _react2.default.createElement(
+                  'h6',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: this.props.story.url },
+                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-unit-six-bottom-context-text-author article-unit-author' },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  this.props.story.by
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleUnitSix;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSix);
 
 // comment
 
