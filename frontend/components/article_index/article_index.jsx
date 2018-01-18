@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import * as MainUtil from '../../util/main_util';
 import ArticleUnitOne from '../article_units/article_unit_one.jsx';
 import ArticleUnitTwo from '../article_units/article_unit_two.jsx';
+import ArticleUnitThree from '../article_units/article_unit_three.jsx';
+import ArticleUnitFour from '../article_units/article_unit_four.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(){
@@ -39,7 +41,7 @@ class ArticleIndex extends React.Component{
     });
 
     MainUtil.fetchBestStories().then(stories => {
-      stories.slice(0, 3).map(storyId => {
+      stories.slice(0, 10).map(storyId => {
         MainUtil.fetchStory(storyId).then(story => {
           bestStories[story.id] = story;
           this.setState({bestStories: bestStories});
@@ -55,14 +57,24 @@ class ArticleIndex extends React.Component{
   render(){
     let articleOne = "hi";
     let articleTwo = "hi";
+    let articleThree = "hi";
+    let articleFour = "hi";
 
-    if(Object.keys(this.state.bestStories).length > 2){
+    if(Object.keys(this.state.bestStories).length > 9){
       articleOne = <ArticleUnitOne
         story={Object.values(this.state.bestStories)[0]}
         />;
 
       articleTwo = <ArticleUnitTwo
         story={Object.values(this.state.bestStories)[1]}
+        />;
+
+      articleThree = <ArticleUnitThree
+        story={Object.values(this.state.bestStories)[2]}
+        />;
+
+      articleFour = <ArticleUnitFour
+        story={Object.values(this.state.bestStories)[3]}
         />;
     }
 
@@ -71,6 +83,8 @@ class ArticleIndex extends React.Component{
         <div className="article-index">
           {articleOne}
           {articleTwo}
+          {articleThree}
+          {articleFour}
         </div>
       </div>
     );

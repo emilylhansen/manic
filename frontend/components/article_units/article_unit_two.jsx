@@ -7,7 +7,6 @@ class ArticleUnitTwo extends React.Component {
   }
 
   render(){
-    debugger
     return (
       <div className="article-unit-two article-unit">
         <div className="article-unit-two-top article-unit-top"></div>

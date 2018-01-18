@@ -30,7 +30,9 @@
 }
 
 .article-unit-one-bottom-context-image img,
-.article-unit-two-bottom-context-image img{
+.article-unit-two-bottom-context-image img,
+.article-unit-three-bottom-context-image img,
+.article-unit-four-bottom-context-image img{
   position: absolute;
   margin: auto;
   top: -9999px;
@@ -40,23 +42,29 @@
 }
 
 .article-unit-one-bottom-context-text-type h2,
-.article-unit-two-bottom-context-text-type h2{
+.article-unit-two-bottom-context-text-type h2 {
   margin-bottom: 0px;
   text-transform: uppercase;
 }
 
 .article-unit-one-bottom-context-text-title h1,
-.article-unit-two-bottom-context-text-title h1 {
+.article-unit-two-bottom-context-text-title h1,
+.article-unit-three-bottom-context-text-title h1,
+.article-unit-four-bottom-context-text-title h1 {
   margin: 0px;
 }
 
 .article-unit-one-bottom-context-text-title h1 a:hover,
-.article-unit-two-bottom-context-text-title h1 a:hover {
+.article-unit-two-bottom-context-text-title h1 a:hover,
+.article-unit-three-bottom-context-text-title h1 a:hover,
+.article-unit-four-bottom-context-text-title h1 a:hover {
   color: #686868;
 }
 
 .article-unit-one-bottom-context-text-author h2,
-.article-unit-two-bottom-context-text-author h2{
+.article-unit-two-bottom-context-text-author h2,
+.article-unit-three-bottom-context-text-author h2,
+.article-unit-four-bottom-context-text-author h2{
   margin: 0px;
   text-transform: uppercase;
 }
@@ -72,4 +80,39 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+
+/* article unit three */
+.article-unit-three,
+.article-unit-four {
+  height: 160;
+  width: 300;
+}
+
+.article-unit-three-bottom-context,
+.article-unit-four-bottom-context {
+  display: flex;
+}
+
+.article-unit-three-bottom-context-image {
+  height: 80%;
+  width: 160%;
+  position: relative;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.article-unit-three-bottom-context-text-type h2,
+.article-unit-four-bottom-context-text-type h2 {
+  margin: 0px;
+  text-transform: uppercase;
+}
+
+/* article unit four */
+.article-unit-four-bottom-context-image {
+  height: 80%;
+  width: 160%;
+  position: relative;
+  overflow: hidden;
+  margin-left: 15px;
 }
