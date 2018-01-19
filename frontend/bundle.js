@@ -26255,17 +26255,85 @@ var ArticleIndex = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'article-index' },
-          articleOne,
-          articleTwo,
-          articleThree,
-          articleFour,
-          articleFive,
-          articleSix,
-          articleSeven,
-          articleEight,
-          articleNine,
-          articleTen,
-          articleEleven
+          _react2.default.createElement(
+            'div',
+            { className: 'article-index-1 horizontal ' },
+            _react2.default.createElement(
+              'div',
+              { className: 'article-index-1-1 margin-right' },
+              _react2.default.createElement(
+                'div',
+                { className: 'article-index-1-1-1 horizontal' },
+                articleOne,
+                articleTwo
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-index-1-1-2 horizontal' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'article-index-1-1-2-1' },
+                  articleThree,
+                  articleFour
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'article-index-1-1-2-2' },
+                  articleFive
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-index-1-1-2' },
+                articleSix
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'article-index-1-2' },
+              articleNine,
+              articleEleven
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-index-2' },
+            articleEight
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-index-3 horizontal' },
+            _react2.default.createElement(
+              'div',
+              { className: 'article-index-3-1' },
+              articleTen
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'article-index-3-2' },
+              _react2.default.createElement(
+                'div',
+                { className: 'article-index-3-2-1 horizontal' },
+                articleTwo,
+                articleOne
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-index-3-2-2 horizontal' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'article-index-3-2-2-1' },
+                  articleFive
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'article-index-3-2-2-2' },
+                  articleThree,
+                  articleFour
+                )
+              )
+            )
+          )
         )
       );
     }
@@ -26528,7 +26596,7 @@ var ArticleUnitThree = function (_React$Component) {
           { className: 'article-unit-three-bottom article-unit-bottom' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-three-bottom-context verticle' },
+            { className: 'article-unit-three-bottom-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-three-bottom-context-image article-unit-image' },
@@ -26630,7 +26698,7 @@ var ArticleUnitFour = function (_React$Component) {
           { className: 'article-unit-four-bottom article-unit-bottom' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-four-bottom-context verticle' },
+            { className: 'article-unit-four-bottom-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-four-bottom-context-text' },
@@ -26834,7 +26902,7 @@ var ArticleUnitSix = function (_React$Component) {
           { className: 'article-unit-six-bottom article-unit-bottom' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-six-bottom-context verticle' },
+            { className: 'article-unit-six-bottom-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-six-bottom-context-image article-unit-image' },
@@ -26936,7 +27004,7 @@ var ArticleUnitSeven = function (_React$Component) {
           { className: 'article-unit-seven-bottom article-unit-bottom' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-seven-bottom-context verticle' },
+            { className: 'article-unit-seven-bottom-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-seven-bottom-context-text' },
@@ -27038,7 +27106,7 @@ var ArticleUnitEight = function (_React$Component) {
           { className: 'article-unit-eight-bottom article-unit-bottom' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-eight-bottom-context verticle' },
+            { className: 'article-unit-eight-bottom-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-eight-bottom-context-image article-unit-image' },
@@ -27174,7 +27242,7 @@ var ArticleUnitNine = function (_React$Component) {
           { className: 'article-unit-nine-more article-unit-more' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-nine-more-context article-unit-more-context verticle' },
+            { className: 'article-unit-nine-more-context article-unit-more-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-nine-more-button article-unit-more-button' },
@@ -27246,7 +27314,7 @@ var ArticleUnitListItem = function (_React$Component) {
           { className: 'article-unit-list-item-bottom article-unit-list-item-bottom' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-list-item-bottom-context verticle' },
+            { className: 'article-unit-list-item-bottom-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-list-item-bottom-context-image article-unit-image article-unit-list-item-image' },
@@ -27388,7 +27456,7 @@ var ArticleUnitTen = function (_React$Component) {
           { className: 'article-unit-ten-more article-unit-more' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-ten-more-context article-unit-more-context verticle' },
+            { className: 'article-unit-ten-more-context article-unit-more-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-ten-more-button article-unit-more-button' },
@@ -27498,7 +27566,7 @@ var ArticleUnitEleven = function (_React$Component) {
           { className: 'article-unit-eleven-more article-unit-more' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-eleven-more-context article-unit-more-context verticle' },
+            { className: 'article-unit-eleven-more-context article-unit-more-context horizontal' },
             _react2.default.createElement(
               'div',
               { className: 'article-unit-eleven-more-button article-unit-more-button' },

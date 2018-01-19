@@ -11,7 +11,7 @@ class ArticleUnitEight extends React.Component {
       <div className="article-unit-eight article-unit">
         <div className="article-unit-eight-top article-unit-top"></div>
         <div className="article-unit-eight-bottom article-unit-bottom">
-          <div className="article-unit-eight-bottom-context verticle">
+          <div className="article-unit-eight-bottom-context horizontal">
             <div className="article-unit-eight-bottom-context-image article-unit-image">
               <img src="frontend/images/world.jpg"></img>
             </div>

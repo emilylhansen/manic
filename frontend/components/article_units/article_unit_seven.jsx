@@ -11,7 +11,7 @@ class ArticleUnitSeven extends React.Component {
       <div className="article-unit-seven article-unit">
         <div className="article-unit-seven-top article-unit-top"></div>
         <div className="article-unit-seven-bottom article-unit-bottom">
-          <div className="article-unit-seven-bottom-context verticle">
+          <div className="article-unit-seven-bottom-context horizontal">
             <div className="article-unit-seven-bottom-context-text">
               <div className="article-unit-seven-bottom-context-text-type">
                 <h2>{this.props.story.type}</h2>

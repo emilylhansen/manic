@@ -124,17 +124,57 @@ class ArticleIndex extends React.Component{
     return (
       <div className="article-index-background">
         <div className="article-index">
-          {articleOne}
-          {articleTwo}
-          {articleThree}
-          {articleFour}
-          {articleFive}
-          {articleSix}
-          {articleSeven}
-          {articleEight}
-          {articleNine}
-          {articleTen}
-          {articleEleven}
+
+          <div className="article-index-1 horizontal ">
+            <div className="article-index-1-1 margin-right">
+              <div className="article-index-1-1-1 horizontal">
+                {articleOne}
+                {articleTwo}
+              </div>
+              <div className="article-index-1-1-2 horizontal">
+                <div className="article-index-1-1-2-1">
+                  {articleThree}
+                  {articleFour}
+                </div>
+                <div className="article-index-1-1-2-2">
+                  {articleFive}
+                </div>
+              </div>
+              <div className="article-index-1-1-2">
+                {articleSix}
+              </div>
+            </div>
+            <div className="article-index-1-2">
+              {articleNine}
+              {articleEleven}
+            </div>
+          </div>
+
+          <div className="article-index-2">
+            {articleEight}
+          </div>
+
+          <div className="article-index-3 horizontal">
+            <div className="article-index-3-1">
+              {articleTen}
+            </div>
+            <div className="article-index-3-2">
+              <div className="article-index-3-2-1 horizontal">
+                {articleTwo}
+                {articleOne}
+              </div>
+              <div className="article-index-3-2-2 horizontal">
+                <div className="article-index-3-2-2-1">
+                  {articleFive}
+                </div>
+                <div className="article-index-3-2-2-2">
+                  {articleThree}
+                  {articleFour}
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     );

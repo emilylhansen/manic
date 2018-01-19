@@ -37,7 +37,7 @@ class ArticleUnitTen extends React.Component {
           </ul>
         </div>
         <div className="article-unit-ten-more article-unit-more">
-          <div className="article-unit-ten-more-context article-unit-more-context verticle">
+          <div className="article-unit-ten-more-context article-unit-more-context horizontal">
             <div className="article-unit-ten-more-button article-unit-more-button">
               <i className="fa fa-long-arrow-right" aria-hidden="true"></i></div>
             <h2>{`more ${this.props.header}`}</h2>

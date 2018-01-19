@@ -10,7 +10,7 @@ class ArticleUnitListItem extends React.Component {
     return (
       <li className="article-unit-list-item article-unit-list-item">
         <div className="article-unit-list-item-bottom article-unit-list-item-bottom">
-          <div className="article-unit-list-item-bottom-context verticle">
+          <div className="article-unit-list-item-bottom-context horizontal">
             <div className="article-unit-list-item-bottom-context-image article-unit-image article-unit-list-item-image">
               <img src="frontend/images/world.jpg"></img>
             </div>

@@ -11,7 +11,7 @@ class ArticleUnitSix extends React.Component {
       <div className="article-unit-six article-unit">
         <div className="article-unit-six-top article-unit-top"></div>
         <div className="article-unit-six-bottom article-unit-bottom">
-          <div className="article-unit-six-bottom-context verticle">
+          <div className="article-unit-six-bottom-context horizontal">
             <div className="article-unit-six-bottom-context-image article-unit-image">
               <img src="frontend/images/world.jpg"></img>
             </div>
