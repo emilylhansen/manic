@@ -3,8 +3,9 @@
 }
 
 .article-index {
-  border: 1px solid black;
-  width: 932px;
+  /* border: 1px solid black; */
+  width: 940px;
+  /* width: 932px; */
   margin: 0 auto;
   margin-top: 50px;
   /* justify-content: space-between; */

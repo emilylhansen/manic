@@ -26257,65 +26257,113 @@ var ArticleIndex = function (_React$Component) {
           { className: 'article-index' },
           _react2.default.createElement(
             'div',
-            { className: 'article-index-1 horizontal ' },
+            { className: 'article-index-1 horizontal margin-bottom' },
             _react2.default.createElement(
               'div',
               { className: 'article-index-1-1 margin-right' },
               _react2.default.createElement(
                 'div',
-                { className: 'article-index-1-1-1 horizontal' },
-                articleOne,
-                articleTwo
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-index-1-1-2 horizontal' },
+                { className: 'article-index-1-1-1 horizontal margin-bottom' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'article-index-1-1-2-1' },
-                  articleThree,
-                  articleFour
+                  { className: 'margin-right' },
+                  articleOne
                 ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'article-index-1-1-2-2' },
-                  articleFive
+                  null,
+                  articleTwo
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-index-1-1-2' },
-                articleSix
+                { className: 'article-index-1-1-2 horizontal margin-bottom' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'article-index-1-1-2-1 margin-right' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'margin-bottom' },
+                    articleThree
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    articleFour
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'article-index-1-1-2-2' },
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    articleFive
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'article-index-1-1-3' },
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  articleSix
+                )
               )
             ),
             _react2.default.createElement(
               'div',
               { className: 'article-index-1-2' },
-              articleNine,
-              articleEleven
+              _react2.default.createElement(
+                'div',
+                { className: 'margin-bottom' },
+                articleNine
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                articleEleven
+              )
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'article-index-2' },
-            articleEight
+            { className: 'article-index-2 margin-bottom' },
+            _react2.default.createElement(
+              'div',
+              null,
+              articleEight
+            )
           ),
           _react2.default.createElement(
             'div',
             { className: 'article-index-3 horizontal' },
             _react2.default.createElement(
               'div',
-              { className: 'article-index-3-1' },
-              articleTen
+              { className: 'article-index-3-1 margin-right' },
+              _react2.default.createElement(
+                'div',
+                null,
+                articleTen
+              )
             ),
             _react2.default.createElement(
               'div',
               { className: 'article-index-3-2' },
               _react2.default.createElement(
                 'div',
-                { className: 'article-index-3-2-1 horizontal' },
-                articleTwo,
-                articleOne
+                { className: 'article-index-3-2-1 horizontal margin-bottom' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'margin-right' },
+                  articleTwo
+                ),
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  articleOne
+                )
               ),
               _react2.default.createElement(
                 'div',
@@ -26323,13 +26371,25 @@ var ArticleIndex = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'article-index-3-2-2-1' },
-                  articleFive
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'margin-right' },
+                    articleFive
+                  )
                 ),
                 _react2.default.createElement(
                   'div',
                   { className: 'article-index-3-2-2-2' },
-                  articleThree,
-                  articleFour
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'margin-bottom' },
+                    articleThree
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    articleFour
+                  )
                 )
               )
             )
