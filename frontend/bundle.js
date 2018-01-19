@@ -26123,6 +26123,10 @@ var _article_unit_nine = __webpack_require__(127);
 
 var _article_unit_nine2 = _interopRequireDefault(_article_unit_nine);
 
+var _article_unit_ten = __webpack_require__(130);
+
+var _article_unit_ten2 = _interopRequireDefault(_article_unit_ten);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26199,6 +26203,7 @@ var ArticleIndex = function (_React$Component) {
       var articleSeven = "seven";
       var articleEight = "eight";
       var articleNine = "nine";
+      var articleTen = "ten";
 
       if (Object.keys(this.state.bestStories).length > 9) {
         articleOne = _react2.default.createElement(_article_unit_one2.default, {
@@ -26229,6 +26234,10 @@ var ArticleIndex = function (_React$Component) {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
           header: 'Culture'
         });
+        articleTen = _react2.default.createElement(_article_unit_ten2.default, {
+          stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
+          header: 'Gear'
+        });
       }
 
       return _react2.default.createElement(
@@ -26245,7 +26254,8 @@ var ArticleIndex = function (_React$Component) {
           articleSix,
           articleSeven,
           articleEight,
-          articleNine
+          articleNine,
+          articleTen
         )
       );
     }
@@ -27091,9 +27101,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _article_unit_nine_item = __webpack_require__(128);
+var _article_unit_list_item = __webpack_require__(129);
 
-var _article_unit_nine_item2 = _interopRequireDefault(_article_unit_nine_item);
+var _article_unit_list_item2 = _interopRequireDefault(_article_unit_list_item);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27138,13 +27148,13 @@ var ArticleUnitNine = function (_React$Component) {
           _react2.default.createElement(
             'ul',
             null,
-            _react2.default.createElement(_article_unit_nine_item2.default, {
+            _react2.default.createElement(_article_unit_list_item2.default, {
               story: this.props.stories[0]
             }),
-            _react2.default.createElement(_article_unit_nine_item2.default, {
+            _react2.default.createElement(_article_unit_list_item2.default, {
               story: this.props.stories[1]
             }),
-            _react2.default.createElement(_article_unit_nine_item2.default, {
+            _react2.default.createElement(_article_unit_list_item2.default, {
               story: this.props.stories[2]
             })
           )
@@ -27179,7 +27189,8 @@ exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitNine);
 // comment
 
 /***/ }),
-/* 128 */
+/* 128 */,
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27205,38 +27216,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ArticleUnitNineItem = function (_React$Component) {
-  _inherits(ArticleUnitNineItem, _React$Component);
+var ArticleUnitListItem = function (_React$Component) {
+  _inherits(ArticleUnitListItem, _React$Component);
 
-  function ArticleUnitNineItem(props) {
-    _classCallCheck(this, ArticleUnitNineItem);
+  function ArticleUnitListItem(props) {
+    _classCallCheck(this, ArticleUnitListItem);
 
-    return _possibleConstructorReturn(this, (ArticleUnitNineItem.__proto__ || Object.getPrototypeOf(ArticleUnitNineItem)).call(this, props));
+    return _possibleConstructorReturn(this, (ArticleUnitListItem.__proto__ || Object.getPrototypeOf(ArticleUnitListItem)).call(this, props));
   }
 
-  _createClass(ArticleUnitNineItem, [{
+  _createClass(ArticleUnitListItem, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'li',
-        { className: 'article-unit-nine-item article-unit-list-item' },
+        { className: 'article-unit-list-item article-unit-list-item' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-nine-item-bottom article-unit-list-item-bottom' },
+          { className: 'article-unit-list-item-bottom article-unit-list-item-bottom' },
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-nine-item-bottom-context verticle' },
+            { className: 'article-unit-list-item-bottom-context verticle' },
             _react2.default.createElement(
               'div',
-              { className: 'article-unit-nine-item-bottom-context-image article-unit-image' },
+              { className: 'article-unit-list-item-bottom-context-image article-unit-image article-unit-list-item-image' },
               _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'article-unit-nine-item-bottom-context-text' },
+              { className: 'article-unit-list-item-bottom-context-text article-unit-list-item-bottom-context-text' },
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-nine-item-bottom-context-text-type' },
+                { className: 'article-unit-list-item-bottom-context-text-type' },
                 _react2.default.createElement(
                   'h2',
                   null,
@@ -27245,7 +27256,7 @@ var ArticleUnitNineItem = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-nine-item-bottom-context-text-title article-unit-title' },
+                { className: 'article-unit-list-item-bottom-context-text-title article-unit-title' },
                 _react2.default.createElement(
                   'h1',
                   null,
@@ -27258,7 +27269,7 @@ var ArticleUnitNineItem = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-nine-item-bottom-context-text-author article-unit-author' },
+                { className: 'article-unit-list-item-bottom-context-text-author article-unit-author' },
                 _react2.default.createElement(
                   'h2',
                   null,
@@ -27272,10 +27283,122 @@ var ArticleUnitNineItem = function (_React$Component) {
     }
   }]);
 
-  return ArticleUnitNineItem;
+  return ArticleUnitListItem;
 }(_react2.default.Component);
 
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitNineItem);
+exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitListItem);
+
+// comment
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+var _article_unit_list_item = __webpack_require__(129);
+
+var _article_unit_list_item2 = _interopRequireDefault(_article_unit_list_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleUnitTen = function (_React$Component) {
+  _inherits(ArticleUnitTen, _React$Component);
+
+  function ArticleUnitTen(props) {
+    _classCallCheck(this, ArticleUnitTen);
+
+    return _possibleConstructorReturn(this, (ArticleUnitTen.__proto__ || Object.getPrototypeOf(ArticleUnitTen)).call(this, props));
+  }
+
+  _createClass(ArticleUnitTen, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'article-unit-ten article-unit' },
+        _react2.default.createElement('div', { className: 'article-unit-ten-top article-unit-list-top' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-ten-middle article-unit-middle' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-ten-middle-header article-unit-middle-header' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              this.props.header
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-ten-bottom article-unit-list-bottom' },
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(_article_unit_list_item2.default, {
+              story: this.props.stories[0]
+            }),
+            _react2.default.createElement(_article_unit_list_item2.default, {
+              story: this.props.stories[1]
+            }),
+            _react2.default.createElement(_article_unit_list_item2.default, {
+              story: this.props.stories[2]
+            }),
+            _react2.default.createElement(_article_unit_list_item2.default, {
+              story: this.props.stories[3]
+            }),
+            _react2.default.createElement(_article_unit_list_item2.default, {
+              story: this.props.stories[4]
+            })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-ten-more article-unit-more' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-ten-more-context article-unit-more-context verticle' },
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-ten-more-button article-unit-more-button' },
+              _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
+            ),
+            _react2.default.createElement(
+              'h2',
+              null,
+              'more ' + this.props.header
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleUnitTen;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitTen);
 
 // comment
 

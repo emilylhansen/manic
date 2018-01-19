@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import ArticleUnitNineItem from './article_unit_nine_item.jsx';
+import ArticleUnitListItem from './article_unit_list_item.jsx';
 
 class ArticleUnitNine extends React.Component {
   constructor(props){
@@ -19,13 +19,13 @@ class ArticleUnitNine extends React.Component {
         </div>
         <div className="article-unit-nine-bottom article-unit-list-bottom">
           <ul>
-            <ArticleUnitNineItem
+            <ArticleUnitListItem
               story={this.props.stories[0]}
               />
-            <ArticleUnitNineItem
+            <ArticleUnitListItem
               story={this.props.stories[1]}
               />
-            <ArticleUnitNineItem
+            <ArticleUnitListItem
               story={this.props.stories[2]}
               />
           </ul>
