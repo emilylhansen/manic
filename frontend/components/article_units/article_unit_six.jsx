@@ -20,10 +20,10 @@ class ArticleUnitSix extends React.Component {
                 <h2>{this.props.story.type}</h2>
               </div>
               <div className="article-unit-six-bottom-context-text-title article-unit-title">
-                <h6><a href={this.props.story.url}>
+                <h4><a href={this.props.story.url}>
                   {this.props.story.title.length > 25 ?
                     `${this.props.story.title.split("").slice(0, 25).join("")}...` :
-                  this.props.story.title}</a></h6>
+                  this.props.story.title}</a></h4>
               </div>
               <div className="article-unit-six-bottom-context-text-author article-unit-author">
                 <h2>{this.props.story.by}</h2>
