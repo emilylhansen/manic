@@ -5,7 +5,7 @@
 }
 
 #navigation-bar-top {
-  height: 50px;
+  height: 60px;
   display: flex;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .navigation-bar-bottom {
-  height: 25px;
+  height: 30px;
   border-bottom: 1px solid #CCCCCC;
   display: flex;
 }
@@ -52,7 +52,7 @@
 
 .navigation-bar-bottom-section h2{
   text-align: center;
-  margin: 5px 0px;
+  margin: 8px 0px;
 }
 
 .navigation-bar-bottom-section h2 a {
