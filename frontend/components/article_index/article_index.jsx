@@ -9,6 +9,7 @@ import ArticleUnitFour from '../article_units/article_unit_four.jsx';
 import ArticleUnitFive from '../article_units/article_unit_five.jsx';
 import ArticleUnitSix from '../article_units/article_unit_six.jsx';
 import ArticleUnitSeven from '../article_units/article_unit_seven.jsx';
+import ArticleUnitEight from '../article_units/article_unit_eight.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(){
@@ -65,34 +66,32 @@ class ArticleIndex extends React.Component{
     let articleFive = "five";
     let articleSix = "six";
     let articleSeven = "seven";
+    let articleEight = "eight";
 
     if(Object.keys(this.state.bestStories).length > 9){
       articleOne = <ArticleUnitOne
         story={Object.values(this.state.bestStories)[0]}
         />;
-
       articleTwo = <ArticleUnitTwo
         story={Object.values(this.state.bestStories)[1]}
         />;
-
       articleThree = <ArticleUnitThree
         story={Object.values(this.state.bestStories)[2]}
         />;
-
       articleFour = <ArticleUnitFour
         story={Object.values(this.state.bestStories)[3]}
         />;
-
       articleFive = <ArticleUnitFive
         story={Object.values(this.state.bestStories)[4]}
         />;
-
       articleSix = <ArticleUnitSix
         story={Object.values(this.state.bestStories)[5]}
         />;
-
       articleSeven = <ArticleUnitSeven
         story={Object.values(this.state.bestStories)[6]}
+        />;
+      articleEight = <ArticleUnitEight
+        story={Object.values(this.state.bestStories)[7]}
         />;
     }
 
@@ -106,6 +105,7 @@ class ArticleIndex extends React.Component{
           {articleFive}
           {articleSix}
           {articleSeven}
+          {articleEight}
         </div>
       </div>
     );
