@@ -11,7 +11,7 @@ class ArticleUnitFour extends React.Component {
       <div className="article-unit-four article-unit">
         <div className="article-unit-four-top article-unit-top"></div>
         <div className="article-unit-four-bottom article-unit-bottom">
-          <div className="article-unit-four-bottom-context">
+          <div className="article-unit-four-bottom-context verticle">
             <div className="article-unit-four-bottom-context-text">
               <div className="article-unit-four-bottom-context-text-type">
                 <h2>{this.props.story.type}</h2>

@@ -10,9 +10,74 @@
   background-color: black;
 }
 
+.article-unit-list-top {
+  height: 10px;
+  background-color: black;
+}
+
+.article-unit-middle {
+  height: 66px;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.article-unit-middle-header {
+  margin: 0px 15px;
+}
+
+.article-unit-middle-header h3 {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
 .article-unit-bottom {
-  /* border: 1px solid black; */
   margin: 15px;
+}
+
+.article-unit-list-bottom {
+  margin: 0px 15px;
+}
+
+.article-unit-more {
+  height: 60px;
+  border-top: 1px solid #D9D9D9;
+}
+
+.article-unit-more-context {
+  margin: 10px 15px;
+}
+
+.article-unit-more:hover {
+  cursor: pointer;
+}
+
+.article-unit-more:hover .article-unit-more-button {
+  background-color: black;
+}
+
+.article-unit-more:hover .article-unit-more-context h2 {
+  color: black;
+}
+
+.article-unit-more-button {
+  border-radius: 50px;
+  width: 13%;
+  background-color: #666666;
+  margin-right: 8px;
+  text-align: center;
+}
+
+.fa-long-arrow-right {
+  color: white;
+  position:relative;
+  top: calc(50% - 8px);
+}
+
+.article-unit-list-item:not(:last-child) {
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.article-unit-list-item-bottom {
+  margin: 15px 0px;
 }
 
 /* article unit one */
@@ -82,11 +147,7 @@
   width: 300;
 }
 
-.article-unit-three-bottom-context,
-.article-unit-four-bottom-context,
-.article-unit-six-bottom-context,
-.article-unit-seven-bottom-context,
-.article-unit-eight-bottom-context {
+.verticle {
   display: flex;
 }
 
@@ -107,7 +168,8 @@
 .article-unit-four-bottom-context-text-type h2,
 .article-unit-six-bottom-context-text-type h2,
 .article-unit-seven-bottom-context-text-type h2,
-.article-unit-eight-bottom-context-text-type h2 {
+.article-unit-eight-bottom-context-text-type h2,
+.article-unit-nine-item-bottom-context-text-type h2 {
   margin: 0px;
   text-transform: uppercase;
 }
@@ -186,4 +248,22 @@
 
 .article-unit-eight-bottom-context-text {
   width: 35%;
+}
+
+/* article unit nine */
+.article-unit-nine {
+  height: 468px;
+  width: 302px;
+}
+
+.article-unit-nine-item-bottom-context-image {
+  height: 16%;
+  width: 30%;
+  position: relative;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.article-unit-nine-item-bottom-context-text {
+  width: 70%;
 }
