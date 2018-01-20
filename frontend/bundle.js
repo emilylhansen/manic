@@ -26131,6 +26131,10 @@ var _article_unit_eleven = __webpack_require__(131);
 
 var _article_unit_eleven2 = _interopRequireDefault(_article_unit_eleven);
 
+var _article_unit_subscribe = __webpack_require__(133);
+
+var _article_unit_subscribe2 = _interopRequireDefault(_article_unit_subscribe);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26209,6 +26213,7 @@ var ArticleIndex = function (_React$Component) {
       var articleNine = "nine";
       var articleTen = "ten";
       var articleEleven = "eleven";
+      var articleSubscribe = "subscribe";
 
       if (Object.keys(this.state.bestStories).length > 9) {
         articleOne = _react2.default.createElement(_article_unit_one2.default, {
@@ -26247,6 +26252,7 @@ var ArticleIndex = function (_React$Component) {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
           header: 'Science'
         });
+        articleSubscribe = _react2.default.createElement(_article_unit_subscribe2.default, null);
       }
 
       return _react2.default.createElement(
@@ -26338,7 +26344,7 @@ var ArticleIndex = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'article-index-3 horizontal' },
+            { className: 'article-index-3 horizontal margin-bottom' },
             _react2.default.createElement(
               'div',
               { className: 'article-index-3-1 margin-right' },
@@ -26392,6 +26398,15 @@ var ArticleIndex = function (_React$Component) {
                   )
                 )
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-index-3 horizontal' },
+            _react2.default.createElement(
+              'div',
+              null,
+              articleSubscribe
             )
           )
         )
@@ -27739,6 +27754,189 @@ var ArticleUnitListItemTwo = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitListItemTwo);
+
+// comment
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+var _article_unit_subscribe_item = __webpack_require__(134);
+
+var _article_unit_subscribe_item2 = _interopRequireDefault(_article_unit_subscribe_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleUnitSubscribe = function (_React$Component) {
+  _inherits(ArticleUnitSubscribe, _React$Component);
+
+  function ArticleUnitSubscribe(props) {
+    _classCallCheck(this, ArticleUnitSubscribe);
+
+    return _possibleConstructorReturn(this, (ArticleUnitSubscribe.__proto__ || Object.getPrototypeOf(ArticleUnitSubscribe)).call(this, props));
+  }
+
+  _createClass(ArticleUnitSubscribe, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'article-unit-subscribe article-unit' },
+        _react2.default.createElement('div', { className: 'article-unit-subscribe-top article-unit-list-top' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-subscribe-bottom horizontal' },
+          _react2.default.createElement(
+            'ul',
+            { className: 'horizontal' },
+            _react2.default.createElement(_article_unit_subscribe_item2.default, {
+              header: 'Get The Magazine',
+              text: 'Special Holiday Gift Offer \u2013 Buy one, get one FREE.',
+              action: 'subscribe'
+            }),
+            _react2.default.createElement(_article_unit_subscribe_item2.default, {
+              header: 'Get Our Newsletter',
+              text: 'WIRED\u2019s biggest stories delivered to your inbox.',
+              action: 'submit'
+            }),
+            _react2.default.createElement(_article_unit_subscribe_item2.default, {
+              header: 'Get We\'re On Pinterest',
+              text: 'See what\'s inspiring us.',
+              action: 'follow'
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleUnitSubscribe;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSubscribe);
+
+// comment
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleUnitSubscribeItem = function (_React$Component) {
+  _inherits(ArticleUnitSubscribeItem, _React$Component);
+
+  function ArticleUnitSubscribeItem(props) {
+    _classCallCheck(this, ArticleUnitSubscribeItem);
+
+    return _possibleConstructorReturn(this, (ArticleUnitSubscribeItem.__proto__ || Object.getPrototypeOf(ArticleUnitSubscribeItem)).call(this, props));
+  }
+
+  _createClass(ArticleUnitSubscribeItem, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'li',
+        { className: 'article-unit-subscribe-item' },
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-subscribe-item-content article-unit-bottom' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-subscribe-item-top' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              this.props.header
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-subscribe-item-bottom horizontal' },
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-subscribe-item-bottom-text' },
+              _react2.default.createElement(
+                'h1',
+                null,
+                this.props.text
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-subscribe-item-bottom-image article-unit-image' },
+              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-subscribe-item-more article-unit-more' },
+            _react2.default.createElement(
+              'div',
+              { className: 'article-unit-subscribe-item-more-context article-unit-more-context horizontal' },
+              _react2.default.createElement(
+                'div',
+                { className: 'article-unit-subscribe-item-more-button article-unit-more-button' },
+                _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                this.props.action
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleUnitSubscribeItem;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSubscribeItem);
 
 // comment
 

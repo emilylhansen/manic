@@ -13,6 +13,7 @@ import ArticleUnitEight from '../article_units/article_unit_eight.jsx';
 import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTen from '../article_units/article_unit_ten.jsx';
 import ArticleUnitEleven from '../article_units/article_unit_eleven.jsx';
+import ArticleUnitSubscribe from '../article_units/article_unit_subscribe.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(){
@@ -73,6 +74,7 @@ class ArticleIndex extends React.Component{
     let articleNine = "nine";
     let articleTen = "ten";
     let articleEleven = "eleven";
+    let articleSubscribe = "subscribe";
 
     if(Object.keys(this.state.bestStories).length > 9){
       articleOne = <ArticleUnitOne
@@ -119,6 +121,7 @@ class ArticleIndex extends React.Component{
           Object.values(this.state.bestStories)[7]]}
         header="Science"
         />;
+      articleSubscribe = <ArticleUnitSubscribe/>;
     }
 
     return (
@@ -172,7 +175,7 @@ class ArticleIndex extends React.Component{
             </div>
           </div>
 
-          <div className="article-index-3 horizontal">
+          <div className="article-index-3 horizontal margin-bottom">
             <div className="article-index-3-1 margin-right">
               <div>
                 {articleTen}
@@ -202,6 +205,12 @@ class ArticleIndex extends React.Component{
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="article-index-3 horizontal">
+            <div>
+              {articleSubscribe}
             </div>
           </div>
 
