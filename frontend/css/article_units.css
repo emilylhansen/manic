@@ -87,10 +87,30 @@
   top: calc(50% - 10px);
 }
 
+.article-unit-eleven-middle-header-icon {
+  width: 25px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.fa-bullseye {
+  position:relative;
+  top: calc(50% - 8px);
+  font-size: 25px;
+  color: #98003B;
+}
+
 .article-unit-list-item-title h1 {
   font-family: "Times New Roman", Times, serif;
   font-size: 14px;
   font-weight: lighter;
+}
+
+.article-unit-six-bottom-context-text-title h4 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: lighter;
+  font-size: 24px;
 }
 
 .article-unit-list-item:not(:last-child),

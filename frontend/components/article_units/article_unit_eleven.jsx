@@ -14,7 +14,9 @@ class ArticleUnitEleven extends React.Component {
       <div className="article-unit-eleven article-unit">
         <div className="article-unit-eleven-top article-unit-list-top"></div>
         <div className="article-unit-eleven-middle article-unit-middle">
-          <div className="article-unit-eleven-middle-header article-unit-middle-header">
+          <div className="article-unit-eleven-middle-header article-unit-middle-header horizontal">
+            <div className="article-unit-eleven-middle-header-icon">
+              <i className="fa fa-bullseye" aria-hidden="true"></i></div>
             <h3>{this.props.header}</h3>
           </div>
         </div>

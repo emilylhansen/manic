@@ -14,6 +14,7 @@ import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTen from '../article_units/article_unit_ten.jsx';
 import ArticleUnitEleven from '../article_units/article_unit_eleven.jsx';
 import ArticleUnitSubscribe from '../article_units/article_unit_subscribe.jsx';
+import Footer from '../footer/footer.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(){
@@ -215,6 +216,7 @@ class ArticleIndex extends React.Component{
           </div>
 
         </div>
+        <Footer/>
       </div>
     );
   }

@@ -1,14 +1,12 @@
 .article-index-background {
-  margin-top: 90px;
+  background-color: #F6F6F6;
 }
 
 .article-index {
-  /* border: 1px solid black; */
   width: 940px;
-  /* width: 932px; */
   margin: 0 auto;
-  margin-top: 150px;
-  /* justify-content: space-between; */
+  padding-top: 150px;
+  padding-bottom: 15px;
 }
 
 .margin-top {
