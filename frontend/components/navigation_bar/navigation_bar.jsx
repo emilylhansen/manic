@@ -115,7 +115,7 @@ class NavigationBar extends React.Component {
                     MANIC
                   </a>
                   :
-                  ""
+                  <i class="fa fa-bars" aria-hidden="true"></i>
                 }
               </h3>
             </div>

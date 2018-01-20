@@ -27144,7 +27144,7 @@ var ArticleUnitSubscribe = function (_React$Component) {
               action: 'submit'
             }),
             _react2.default.createElement(_article_unit_subscribe_item2.default, {
-              header: 'Get We\'re On Pinterest',
+              header: 'We\'re On Pinterest',
               text: 'See what\'s inspiring us.',
               action: 'follow'
             })
@@ -27423,7 +27423,7 @@ var NavigationBar = function (_React$Component) {
                     return window.location.reload();
                   } },
                 'MANIC'
-              ) : ""
+              ) : _react2.default.createElement('i', { 'class': 'fa fa-bars', 'aria-hidden': 'true' })
             )
           ),
           _react2.default.createElement(

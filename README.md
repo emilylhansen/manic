@@ -1,4 +1,4 @@
 ## Manic
 View [live](http://www.emilylhansen.club/manic/#/)
-### Summary 
-React.js template inspired by [Wired](https://www.wired.com/) utilizing the Hacker News API.
+### Summary
+Manic is a single page application inspired by [Wired](https://www.wired.com/). It uses React.js and the Hacker News API.

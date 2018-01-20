@@ -14,9 +14,19 @@
   display: flex;
 }
 
+.fa-bars {
+  font-size: 20px;
+  color: #666666;
+}
+
+.fa-bars:hover {
+  color: black;
+  cursor: pointer;
+}
+
 .navigation-bar-top-section:first-child h3{
   margin: 0px;
-  padding-top: 18px;
+  padding-top: 20px;
   text-align: center;
   font-size: 14px;
 }
@@ -28,7 +38,7 @@
 .navigation-bar-top-section:nth-child(2) h3{
   font-size: 35px;
   margin: 0px;
-  padding-top: 5px;
+  padding-top: 10px;
   text-align: center;
 }
 

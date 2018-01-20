@@ -25,7 +25,7 @@ class ArticleUnitSubscribe extends React.Component {
               action="submit"
               />
             <ArticleUnitSubscribeItem
-              header="Get We're On Pinterest"
+              header="We're On Pinterest"
               text="See what's inspiring us."
               action="follow"
               />
