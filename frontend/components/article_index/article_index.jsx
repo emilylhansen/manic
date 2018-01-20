@@ -125,100 +125,110 @@ class ArticleIndex extends React.Component{
       articleSubscribe = <ArticleUnitSubscribe/>;
     }
 
-    return (
-      <div className="article-index-background">
-        <div className="article-index">
-
-          <div className="article-index-1 horizontal margin-bottom">
-            <div className="article-index-1-1 margin-right">
-              <div className="article-index-1-1-1 horizontal margin-bottom">
-                <div className="margin-right">
-                  {articleOne}
-                </div>
-                <div>
-                  {articleTwo}
-                </div>
-              </div>
-              <div className="article-index-1-1-2 horizontal margin-bottom">
-                <div className="article-index-1-1-2-1 margin-right">
-                  <div className="margin-bottom">
-                    {articleThree}
-                  </div>
-                  <div>
-                    {articleFour}
-                  </div>
-                </div>
-                <div className="article-index-1-1-2-2">
-                  <div>
-                    {articleFive}
-                  </div>
-                </div>
-              </div>
-              <div className="article-index-1-1-3">
-                <div>
-                  {articleSix}
-                </div>
-              </div>
-            </div>
-            <div className="article-index-1-2">
-              <div className="margin-bottom">
-                {articleNine}
-              </div>
-              <div>
-                {articleEleven}
-              </div>
-            </div>
+    if (articleSubscribe === undefined) {
+      return (
+        <div className="loading">
+          <div className="loading-logo">
+            <h3>M</h3>
           </div>
-
-          <div className="article-index-2 margin-bottom">
-            <div>
-              {articleEight}
-            </div>
-          </div>
-
-          <div className="article-index-3 horizontal margin-bottom">
-            <div className="article-index-3-1 margin-right">
-              <div>
-                {articleTen}
-              </div>
-            </div>
-            <div className="article-index-3-2">
-              <div className="article-index-3-2-1 horizontal margin-bottom">
-                <div className="margin-right">
-                  {articleTwo}
-                </div>
-                <div>
-                  {articleOne}
-                </div>
-              </div>
-              <div className="article-index-3-2-2 horizontal">
-                <div className="article-index-3-2-2-1">
-                  <div className="margin-right">
-                    {articleFive}
-                  </div>
-                </div>
-                <div className="article-index-3-2-2-2">
-                  <div className="margin-bottom">
-                    {articleThree}
-                  </div>
-                  <div>
-                    {articleFour}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="article-index-3 horizontal">
-            <div>
-              {articleSubscribe}
-            </div>
-          </div>
-
         </div>
-        <Footer/>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="article-index-background">
+          <div className="article-index">
+
+            <div className="article-index-1 horizontal margin-bottom">
+              <div className="article-index-1-1 margin-right">
+                <div className="article-index-1-1-1 horizontal margin-bottom">
+                  <div className="margin-right">
+                    {articleOne}
+                  </div>
+                  <div>
+                    {articleTwo}
+                  </div>
+                </div>
+                <div className="article-index-1-1-2 horizontal margin-bottom">
+                  <div className="article-index-1-1-2-1 margin-right">
+                    <div className="margin-bottom">
+                      {articleThree}
+                    </div>
+                    <div>
+                      {articleFour}
+                    </div>
+                  </div>
+                  <div className="article-index-1-1-2-2">
+                    <div>
+                      {articleFive}
+                    </div>
+                  </div>
+                </div>
+                <div className="article-index-1-1-3">
+                  <div>
+                    {articleSix}
+                  </div>
+                </div>
+              </div>
+              <div className="article-index-1-2">
+                <div className="margin-bottom">
+                  {articleNine}
+                </div>
+                <div>
+                  {articleEleven}
+                </div>
+              </div>
+            </div>
+
+            <div className="article-index-2 margin-bottom">
+              <div>
+                {articleEight}
+              </div>
+            </div>
+
+            <div className="article-index-3 horizontal margin-bottom">
+              <div className="article-index-3-1 margin-right">
+                <div>
+                  {articleTen}
+                </div>
+              </div>
+              <div className="article-index-3-2">
+                <div className="article-index-3-2-1 horizontal margin-bottom">
+                  <div className="margin-right">
+                    {articleTwo}
+                  </div>
+                  <div>
+                    {articleOne}
+                  </div>
+                </div>
+                <div className="article-index-3-2-2 horizontal">
+                  <div className="article-index-3-2-2-1">
+                    <div className="margin-right">
+                      {articleFive}
+                    </div>
+                  </div>
+                  <div className="article-index-3-2-2-2">
+                    <div className="margin-bottom">
+                      {articleThree}
+                    </div>
+                    <div>
+                      {articleFour}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="article-index-3 horizontal">
+              <div>
+                {articleSubscribe}
+              </div>
+            </div>
+
+          </div>
+          <Footer/>
+        </div>
+      );
+    }
   }
 }
 
