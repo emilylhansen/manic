@@ -1517,14 +1517,14 @@ var ArticleUnitListItem = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'article-unit-list-item-bottom-context-text-title article-unit-title' },
+                { className: 'article-unit-list-item-bottom-context-text-title article-unit-title article-unit-list-item-title' },
                 _react2.default.createElement(
                   'h1',
                   null,
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -25886,7 +25886,7 @@ var ArticleUnitOne = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -25988,7 +25988,7 @@ var ArticleUnitTwo = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26090,7 +26090,7 @@ var ArticleUnitThree = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26187,7 +26187,7 @@ var ArticleUnitFour = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26294,7 +26294,7 @@ var ArticleUnitFive = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26396,7 +26396,7 @@ var ArticleUnitSix = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26493,7 +26493,7 @@ var ArticleUnitSeven = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26600,7 +26600,7 @@ var ArticleUnitEight = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -27015,12 +27015,12 @@ var ArticleUnitListItemTwo = function (_React$Component) {
                 'div',
                 { className: 'article-unit-list-item-two-bottom-context-text-title article-unit-title' },
                 _react2.default.createElement(
-                  'h1',
+                  'h6',
                   null,
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 25 ? this.props.story.title.split("").slice(0, 25).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 30 ? this.props.story.title.split("").slice(0, 30).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -27187,7 +27187,7 @@ var ArticleUnitSubscribeItem = function (_React$Component) {
             { className: 'article-unit-subscribe-item-bottom horizontal' },
             _react2.default.createElement(
               'div',
-              { className: 'article-unit-subscribe-item-bottom-text' },
+              { className: 'article-unit-subscribe-item-bottom-text article-unit-list-item-title' },
               _react2.default.createElement(
                 'h1',
                 null,

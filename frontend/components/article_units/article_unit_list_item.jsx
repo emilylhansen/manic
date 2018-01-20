@@ -18,10 +18,10 @@ class ArticleUnitListItem extends React.Component {
               <div className="article-unit-list-item-bottom-context-text-type">
                 <h2>{this.props.story.type}</h2>
               </div>
-              <div className="article-unit-list-item-bottom-context-text-title article-unit-title">
+              <div className="article-unit-list-item-bottom-context-text-title article-unit-title article-unit-list-item-title">
                 <h1><a href={this.props.story.url}>
-                  {this.props.story.title.length > 25 ?
-                    `${this.props.story.title.split("").slice(0, 25).join("")}...` :
+                  {this.props.story.title.length > 50 ?
+                    `${this.props.story.title.split("").slice(0, 50).join("")}...` :
                   this.props.story.title}</a></h1>
               </div>
               <div className="article-unit-list-item-bottom-context-text-author article-unit-author">

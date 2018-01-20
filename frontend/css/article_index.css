@@ -1,5 +1,5 @@
 .article-index-background {
-
+  margin-top: 90px;
 }
 
 .article-index {
@@ -7,7 +7,7 @@
   width: 940px;
   /* width: 932px; */
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 150px;
   /* justify-content: space-between; */
 }
 

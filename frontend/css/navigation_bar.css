@@ -2,6 +2,11 @@
 .navigation-bar {
   box-shadow: 0 4px 2px -2px #D9D9D9;
   background-color: white;
+  position: fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index: 1;
 }
 
 #navigation-bar-top {
@@ -21,9 +26,9 @@
 }
 
 .navigation-bar-top-section:nth-child(2) h3{
-  font-size: 25px;
+  font-size: 35px;
   margin: 0px;
-  padding-top: 10px;
+  padding-top: 5px;
   text-align: center;
 }
 

@@ -14,7 +14,7 @@ class ArticleUnitSubscribeItem extends React.Component {
             <h3>{this.props.header}</h3>
           </div>
           <div className="article-unit-subscribe-item-bottom horizontal">
-            <div className="article-unit-subscribe-item-bottom-text">
+            <div className="article-unit-subscribe-item-bottom-text article-unit-list-item-title">
               <h1>{this.props.text}</h1>
             </div>
             <div className="article-unit-subscribe-item-bottom-image article-unit-image">
