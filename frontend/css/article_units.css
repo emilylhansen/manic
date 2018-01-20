@@ -184,10 +184,19 @@
   color: #686868;
 }
 
+.article-unit-author {
+  display: inline-block;
+}
+
 .article-unit-author h2 {
   margin: 0px;
-  /* margin-top: 3px; */
   text-transform: uppercase;
+}
+
+.article-unit-author h2:hover {
+  background-color: #A9E9FA;
+  color: black;
+  cursor: pointer;
 }
 
 /* article unit two */

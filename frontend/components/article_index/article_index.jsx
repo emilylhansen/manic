@@ -64,18 +64,18 @@ class ArticleIndex extends React.Component{
 
 
   render(){
-    let articleOne = "one";
-    let articleTwo = "two";
-    let articleThree = "three";
-    let articleFour = "four";
-    let articleFive = "five";
-    let articleSix = "six";
-    let articleSeven = "seven";
-    let articleEight = "eight";
-    let articleNine = "nine";
-    let articleTen = "ten";
-    let articleEleven = "eleven";
-    let articleSubscribe = "subscribe";
+    let articleOne;
+    let articleTwo;
+    let articleThree;
+    let articleFour;
+    let articleFive;
+    let articleSix;
+    let articleSeven;
+    let articleEight;
+    let articleNine;
+    let articleTen;
+    let articleEleven;
+    let articleSubscribe;
 
     if(Object.keys(this.state.bestStories).length > 9){
       articleOne = <ArticleUnitOne

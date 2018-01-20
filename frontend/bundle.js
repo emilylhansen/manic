@@ -24241,6 +24241,13 @@ var App = function App() {
     'div',
     { className: 'app' },
     _react2.default.createElement(_navigation_bar2.default, null),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/business', component: _article_index2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/culture', component: _article_index2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/design', component: _article_index2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/gear', component: _article_index2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/science', component: _article_index2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/security', component: _article_index2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/transportation', component: _article_index2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _article_index2.default })
   );
 };
@@ -25598,18 +25605,18 @@ var ArticleIndex = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var articleOne = "one";
-      var articleTwo = "two";
-      var articleThree = "three";
-      var articleFour = "four";
-      var articleFive = "five";
-      var articleSix = "six";
-      var articleSeven = "seven";
-      var articleEight = "eight";
-      var articleNine = "nine";
-      var articleTen = "ten";
-      var articleEleven = "eleven";
-      var articleSubscribe = "subscribe";
+      var articleOne = void 0;
+      var articleTwo = void 0;
+      var articleThree = void 0;
+      var articleFour = void 0;
+      var articleFive = void 0;
+      var articleSix = void 0;
+      var articleSeven = void 0;
+      var articleEight = void 0;
+      var articleNine = void 0;
+      var articleTen = void 0;
+      var articleEleven = void 0;
+      var articleSubscribe = void 0;
 
       if (Object.keys(this.state.bestStories).length > 9) {
         articleOne = _react2.default.createElement(_article_unit_one2.default, {
