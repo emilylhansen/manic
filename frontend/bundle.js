@@ -27451,6 +27451,10 @@ var _navigation_bar_subscribe_items = __webpack_require__(135);
 
 var _navigation_bar_subscribe_items2 = _interopRequireDefault(_navigation_bar_subscribe_items);
 
+var _navigation_bar_menu = __webpack_require__(136);
+
+var _navigation_bar_menu2 = _interopRequireDefault(_navigation_bar_menu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -27472,12 +27476,13 @@ var NavigationBar = function (_React$Component) {
     _this.toggleNav = _this.toggleNav.bind(_this);
     _this.convertTitle = _this.convertTitle.bind(_this);
     _this.handleMouseHover = _this.handleMouseHover.bind(_this);
-    _this.handleSearchClick = _this.handleSearchClick.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
     _this.handleInput = _this.handleInput.bind(_this);
     _this.state = {
       isHovering: false,
       searchIsClicked: false,
-      search: ""
+      search: "",
+      menuIsClicked: false
     };
     _this.green = "#00A85F";
     _this.purple = "#461F4B";
@@ -27583,9 +27588,13 @@ var NavigationBar = function (_React$Component) {
       this.setState({ isHovering: !this.state.isHovering });
     }
   }, {
-    key: 'handleSearchClick',
-    value: function handleSearchClick() {
-      this.setState({ searchIsClicked: !this.state.searchIsClicked });
+    key: 'handleClick',
+    value: function handleClick(field) {
+      if (field === "searchIsClicked") {
+        this.setState(_defineProperty({}, field, !this.state.searchIsClicked));
+      } else if (field === "menuIsClicked") {
+        this.setState(_defineProperty({}, field, !this.state.menuIsClicked));
+      }
     }
   }, {
     key: 'handleInput',
@@ -27599,6 +27608,8 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       return _react2.default.createElement(
         'div',
         { className: 'navigation-bar' },
@@ -27607,17 +27618,24 @@ var NavigationBar = function (_React$Component) {
           { id: 'navigation-bar-top' },
           _react2.default.createElement(
             'div',
-            { className: 'navigation-bar-top-section' },
+            { className: 'navigation-bar-top-section horizontal' },
+            _react2.default.createElement(
+              'h2',
+              { onClick: function onClick() {
+                  return _this3.handleClick("menuIsClicked");
+                } },
+              this.state.menuIsClicked ? _react2.default.createElement('i', { className: 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
+            ),
             _react2.default.createElement(
               'h3',
               null,
-              this.props.location.pathname !== "/" ? _react2.default.createElement(
+              this.props.location.pathname !== "/" && _react2.default.createElement(
                 'a',
                 { href: 'index.html#', onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'MANIC'
-              ) : _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
+              )
             )
           ),
           _react2.default.createElement(
@@ -27639,12 +27657,14 @@ var NavigationBar = function (_React$Component) {
             ),
             _react2.default.createElement(
               'h2',
-              { onClick: this.handleSearchClick },
-              this.state.searchIsClicked ? _react2.default.createElement('i', { 'class': 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
+              { onClick: function onClick() {
+                  return _this3.handleClick("searchIsClicked");
+                } },
+              this.state.searchIsClicked ? _react2.default.createElement('i', { className: 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
             )
           )
         ),
-        !this.state.isHovering && !this.state.searchIsClicked && _react2.default.createElement(
+        !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && _react2.default.createElement(
           'div',
           { className: 'navigation-bar-bottom' },
           _react2.default.createElement(
@@ -27777,7 +27797,8 @@ var NavigationBar = function (_React$Component) {
               onChange: this.handleInput('search'),
               placeholder: 'Search' })
           )
-        )
+        ),
+        this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_menu2.default, null)
       );
     }
   }]);
@@ -27865,6 +27886,315 @@ var NavigationSubscribeItems = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _reactRouterDom.withRouter)(NavigationSubscribeItems);
+
+// comment
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NavigationBarMenu = function (_React$Component) {
+  _inherits(NavigationBarMenu, _React$Component);
+
+  function NavigationBarMenu(props) {
+    _classCallCheck(this, NavigationBarMenu);
+
+    return _possibleConstructorReturn(this, (NavigationBarMenu.__proto__ || Object.getPrototypeOf(NavigationBarMenu)).call(this, props));
+  }
+
+  _createClass(NavigationBarMenu, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'navigation-bar-menu' },
+        _react2.default.createElement(
+          'div',
+          { className: 'navigation-bar-menu-top horizontal' },
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-section', id: 'navigation-bar-menu-section-one' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-bar-menu-section-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'navigation-bar-menu-section-image' },
+                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'index.html#/business',
+                    onClick: function onClick() {
+                      return window.location.reload();
+                    } },
+                  'BUSINESS'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-section', id: 'navigation-bar-menu-section-two' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-bar-menu-section-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'navigation-bar-menu-section-image' },
+                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'index.html#/culture',
+                    onClick: function onClick() {
+                      return window.location.reload();
+                    } },
+                  'CULTURE'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-section', id: 'navigation-bar-menu-section-three' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-bar-menu-section-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'navigation-bar-menu-section-image' },
+                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'index.html#/design',
+                    onClick: function onClick() {
+                      return window.location.reload();
+                    } },
+                  'DESIGN'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-section', id: 'navigation-bar-menu-section-four' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-bar-menu-section-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'navigation-bar-menu-section-image' },
+                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'index.html#/gear',
+                    onClick: function onClick() {
+                      return window.location.reload();
+                    } },
+                  'GEAR'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-section', id: 'navigation-bar-menu-section-five' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-bar-menu-section-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'navigation-bar-menu-section-image' },
+                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'index.html#/science',
+                    onClick: function onClick() {
+                      return window.location.reload();
+                    } },
+                  'SCIENCE'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-section', id: 'navigation-bar-menu-section-six' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-bar-menu-section-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'navigation-bar-menu-section-image' },
+                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'index.html#/security',
+                    onClick: function onClick() {
+                      return window.location.reload();
+                    } },
+                  'SECURITY'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-section', id: 'navigation-bar-menu-section-seven' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-bar-menu-section-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'navigation-bar-menu-section-image' },
+                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              ),
+              _react2.default.createElement(
+                'h2',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'index.html#/transportation',
+                    onClick: function onClick() {
+                      return window.location.reload();
+                    } },
+                  'TRANSPORTATION'
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'navigation-bar-menu-bottom' },
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-menu-bottom-list' },
+            _react2.default.createElement(
+              'ul',
+              { className: 'horizontal' },
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'photo'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'video'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'backchannel'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'magazine'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'manic insider'
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return NavigationBarMenu;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(NavigationBarMenu);
 
 // comment
 

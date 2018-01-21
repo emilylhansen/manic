@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import ArticleUnitSubscribeItems from './navigation_bar_subscribe_items.jsx';
+import NavigationBarMenu from './navigation_bar_menu.jsx';
 
 class NavigationBar extends React.Component {
   constructor(props){
@@ -9,12 +10,13 @@ class NavigationBar extends React.Component {
       this.toggleNav = this.toggleNav.bind(this);
       this.convertTitle = this.convertTitle.bind(this);
       this.handleMouseHover = this.handleMouseHover.bind(this);
-      this.handleSearchClick = this.handleSearchClick.bind(this);
+      this.handleClick = this.handleClick.bind(this);
       this.handleInput = this.handleInput.bind(this);
       this.state = {
         isHovering: false,
         searchIsClicked: false,
-        search: ""
+        search: "",
+        menuIsClicked: false
       };
       this.green = "#00A85F";
       this.purple ="#461F4B";
@@ -114,8 +116,12 @@ class NavigationBar extends React.Component {
     this.setState({isHovering: !this.state.isHovering});
   }
 
-  handleSearchClick() {
-    this.setState({searchIsClicked: !this.state.searchIsClicked});
+  handleClick(field) {
+    if (field === "searchIsClicked") {
+      this.setState({[field]: !this.state.searchIsClicked});
+    } else if (field === "menuIsClicked") {
+      this.setState({[field]: !this.state.menuIsClicked});
+    }
   }
 
   handleInput(field) {
@@ -129,15 +135,19 @@ class NavigationBar extends React.Component {
         <div className="navigation-bar">
 
           <div id="navigation-bar-top">
-            <div className="navigation-bar-top-section">
+            <div className="navigation-bar-top-section horizontal">
+              <h2 onClick={() => this.handleClick("menuIsClicked")}>
+                { this.state.menuIsClicked ?
+                  <i className="fa fa-times" aria-hidden="true"></i>
+                  :
+                  <i className="fa fa-bars" aria-hidden="true"></i>
+                }
+              </h2>
               <h3>
-                {
-                  this.props.location.pathname !== "/" ?
+                { (this.props.location.pathname !== "/") &&
                   <a href={`index.html#`} onClick={() => window.location.reload()}>
                     MANIC
                   </a>
-                  :
-                  <i className="fa fa-bars" aria-hidden="true"></i>
                 }
               </h3>
             </div>
@@ -150,9 +160,9 @@ class NavigationBar extends React.Component {
               <h2 onMouseEnter={this.handleMouseHover}>
                 SUBSCRIBE
               </h2>
-              <h2 onClick={this.handleSearchClick}>
+              <h2 onClick={() => this.handleClick("searchIsClicked")}>
                 { this.state.searchIsClicked ?
-                  <i class="fa fa-times" aria-hidden="true"></i>
+                  <i className="fa fa-times" aria-hidden="true"></i>
                   :
                   <i className="fa fa-search" aria-hidden="true"></i>
                 }
@@ -160,7 +170,7 @@ class NavigationBar extends React.Component {
             </div>
           </div>
 
-          { (!this.state.isHovering && !this.state.searchIsClicked) &&
+          { (!this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked) &&
             <div className="navigation-bar-bottom">
               <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-one">
                 <h2><a href={`index.html#/business`}
@@ -207,6 +217,9 @@ class NavigationBar extends React.Component {
                   placeholder="Search"/>
               </div>
             </div>
+          }
+          { this.state.menuIsClicked &&
+            <NavigationBarMenu/>
           }
         </div>
     );
