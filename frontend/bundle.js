@@ -24230,7 +24230,7 @@ var _article_index = __webpack_require__(115);
 
 var _article_index2 = _interopRequireDefault(_article_index);
 
-var _navigation_bar = __webpack_require__(130);
+var _navigation_bar = __webpack_require__(131);
 
 var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
@@ -25534,7 +25534,7 @@ var _article_unit_subscribe = __webpack_require__(128);
 
 var _article_unit_subscribe2 = _interopRequireDefault(_article_unit_subscribe);
 
-var _footer = __webpack_require__(134);
+var _footer = __webpack_require__(130);
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -27282,9 +27282,178 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _story_index = __webpack_require__(131);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Footer = function (_React$Component) {
+  _inherits(Footer, _React$Component);
+
+  function Footer(props) {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).call(this, props));
+  }
+
+  _createClass(Footer, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'footer' },
+        _react2.default.createElement(
+          'div',
+          { className: 'footer-content' },
+          _react2.default.createElement(
+            'div',
+            { className: 'footer-content-logo' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              'MANIC'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'footer-content-media horizontal' },
+            _react2.default.createElement(
+              'div',
+              { className: 'footer-content-media-item' },
+              _react2.default.createElement('i', { className: 'fa fa-facebook', 'aria-hidden': 'true' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'footer-content-media-item' },
+              _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'footer-content-media-item' },
+              _react2.default.createElement('i', { className: 'fa fa-pinterest-p', 'aria-hidden': 'true' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'footer-content-media-item' },
+              _react2.default.createElement('i', { className: 'fa fa-youtube-play', 'aria-hidden': 'true' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'footer-content-media-item' },
+              _react2.default.createElement('i', { className: 'fa fa-instagram', 'aria-hidden': 'true' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'footer-content-links ' },
+            _react2.default.createElement(
+              'ul',
+              { className: 'horizontal' },
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'login'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'subscribe'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'advertise'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'site map'
+                  )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'footer-content-policy' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'CNMN Collection',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Footer;
+}(_react2.default.Component);
+
+exports.default = Footer;
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+var _story_index = __webpack_require__(132);
 
 var _story_index2 = _interopRequireDefault(_story_index);
+
+var _article_unit_subscribe_item = __webpack_require__(129);
+
+var _article_unit_subscribe_item2 = _interopRequireDefault(_article_unit_subscribe_item);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27304,6 +27473,10 @@ var NavigationBar = function (_React$Component) {
 
     _this.toggleNav = _this.toggleNav.bind(_this);
     _this.convertTitle = _this.convertTitle.bind(_this);
+    _this.handleMouseHover = _this.handleMouseHover.bind(_this);
+    _this.state = {
+      isHovering: false
+    };
     _this.green = "#00A85F";
     _this.purple = "#461F4B";
     _this.teal = "#96CCCE";
@@ -27403,6 +27576,11 @@ var NavigationBar = function (_React$Component) {
       return title.split(/\/|-/).join(" ").toUpperCase();
     }
   }, {
+    key: 'handleMouseHover',
+    value: function handleMouseHover() {
+      this.setState({ isHovering: !this.state.isHovering });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -27423,7 +27601,7 @@ var NavigationBar = function (_React$Component) {
                     return window.location.reload();
                   } },
                 'MANIC'
-              ) : _react2.default.createElement('i', { 'class': 'fa fa-bars', 'aria-hidden': 'true' })
+              ) : _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
             )
           ),
           _react2.default.createElement(
@@ -27437,11 +27615,47 @@ var NavigationBar = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'navigation-bar-top-section' },
-            _react2.default.createElement('h3', null)
+            { className: 'navigation-bar-top-section horizontal' },
+            _react2.default.createElement(
+              'h2',
+              { onMouseEnter: this.handleMouseHover },
+              'SUBSCRIBE'
+            ),
+            _react2.default.createElement(
+              'h2',
+              null,
+              _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
+            )
           )
         ),
-        _react2.default.createElement(
+        this.state.isHovering ? _react2.default.createElement(
+          'div',
+          { className: 'navigation-bar-subscribe',
+            onMouseLeave: this.handleMouseHover },
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-subscribe-items' },
+            _react2.default.createElement(
+              'ul',
+              { className: 'horizontal' },
+              _react2.default.createElement(_article_unit_subscribe_item2.default, {
+                header: 'Get The Magazine',
+                text: 'Special Holiday Gift Offer \u2013 Buy one, get one FREE.',
+                action: 'subscribe'
+              }),
+              _react2.default.createElement(_article_unit_subscribe_item2.default, {
+                header: 'Get Our Newsletter',
+                text: 'WIRED\u2019s biggest stories delivered to your inbox.',
+                action: 'submit'
+              }),
+              _react2.default.createElement(_article_unit_subscribe_item2.default, {
+                header: 'We\'re On Pinterest',
+                text: 'See what\'s inspiring us.',
+                action: 'follow'
+              })
+            )
+          )
+        ) : _react2.default.createElement(
           'div',
           { className: 'navigation-bar-bottom' },
           _react2.default.createElement(
@@ -27562,7 +27776,7 @@ exports.default = (0, _reactRouterDom.withRouter)(NavigationBar);
 // comment
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27584,7 +27798,7 @@ var _main_util = __webpack_require__(47);
 
 var MainUtil = _interopRequireWildcard(_main_util);
 
-var _story_index_item = __webpack_require__(132);
+var _story_index_item = __webpack_require__(133);
 
 var _story_index_item2 = _interopRequireDefault(_story_index_item);
 
@@ -27710,7 +27924,7 @@ var StoryIndex = function (_React$Component) {
 exports.default = StoryIndex;
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27728,7 +27942,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _story_index_contributer_index_item = __webpack_require__(133);
+var _story_index_contributer_index_item = __webpack_require__(134);
 
 var _story_index_contributer_index_item2 = _interopRequireDefault(_story_index_contributer_index_item);
 
@@ -27882,7 +28096,7 @@ exports.default = (0, _reactRouterDom.withRouter)(StoryIndexItem);
 // comment
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27971,171 +28185,6 @@ var StoryIndexContributerIndexItem = function (_React$Component) {
 exports.default = (0, _reactRouterDom.withRouter)(StoryIndexContributerIndexItem);
 
 // comment
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Footer = function (_React$Component) {
-  _inherits(Footer, _React$Component);
-
-  function Footer(props) {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).call(this, props));
-  }
-
-  _createClass(Footer, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'footer' },
-        _react2.default.createElement(
-          'div',
-          { className: 'footer-content' },
-          _react2.default.createElement(
-            'div',
-            { className: 'footer-content-logo' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              'MANIC'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'footer-content-media horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-facebook', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-pinterest-p', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-youtube-play', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-instagram', 'aria-hidden': 'true' })
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'footer-content-links ' },
-            _react2.default.createElement(
-              'ul',
-              { className: 'horizontal' },
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'login'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'subscribe'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'advertise'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'site map'
-                  )
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'footer-content-policy' },
-            _react2.default.createElement(
-              'p',
-              null,
-              'CNMN Collection',
-              _react2.default.createElement('br', null),
-              _react2.default.createElement('br', null),
-              'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.'
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Footer;
-}(_react2.default.Component);
-
-exports.default = Footer;
 
 /***/ })
 /******/ ]);

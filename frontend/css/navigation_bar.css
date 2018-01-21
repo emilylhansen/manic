@@ -27,12 +27,16 @@
 .navigation-bar-top-section:first-child h3{
   margin: 0px;
   padding-top: 20px;
-  text-align: center;
+  padding-left: 25px;
+  text-align: left;
   font-size: 14px;
 }
 
-.navigation-bar-top-section:first-child>h3:hover{
+.navigation-bar-top-section:first-child>h3:hover,
+.navigation-bar-top-section:last-child h2:first-child:hover,
+.navigation-bar-top-section:last-child h2:last-child:hover{
   color: black;
+  cursor: pointer;
 }
 
 .navigation-bar-top-section:nth-child(2) h3{
@@ -40,6 +44,25 @@
   margin: 0px;
   padding-top: 10px;
   text-align: center;
+}
+
+.navigation-bar-top-section:last-child h2{
+  margin: 0px;
+  padding-top: 20px;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.navigation-bar-top-section:last-child h2:first-child{
+  padding-right: 10px;
+  font-size: 11px;
+  padding-top: 25px;
+}
+
+.navigation-bar-top-section:last-child h2:last-child{
+  margin-left: 0px;
+  padding-right: 25px;
+  font-size: 20px;
 }
 
 .navigation-bar-top-section {
@@ -113,4 +136,17 @@
 
 .select-section {
   border-top: none;
+}
+
+.navigation-bar-subscribe {
+  border-top: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.navigation-bar-subscribe-items {
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  box-shadow: 10px 0 10px -10px #CCCCCC, -10px 0 10px -10px #CCCCCC;
+  width: 940px;
+  margin: 0 auto;
 }
