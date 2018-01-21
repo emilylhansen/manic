@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import ArticleUnitSubscribeItems from './navigation_bar_subscribe_items.jsx';
 import NavigationBarMenu from './navigation_bar_menu.jsx';
+import NavigationBarTop from './navigation_bar_top.jsx';
+import NavigationBarBottom from './navigation_bar_bottom.jsx';
+import NavigationBarSearch from './navigation_bar_search.jsx';
+import NavigationBarSubscribe from './navigation_bar_subscribe.jsx';
 
 class NavigationBar extends React.Component {
   constructor(props){
@@ -134,91 +137,35 @@ class NavigationBar extends React.Component {
     return (
         <div className="navigation-bar">
 
-          <div id="navigation-bar-top">
-            <div className="navigation-bar-top-section horizontal">
-              <h2 onClick={() => this.handleClick("menuIsClicked")}>
-                { this.state.menuIsClicked ?
-                  <i className="fa fa-times" aria-hidden="true"></i>
-                  :
-                  <i className="fa fa-bars" aria-hidden="true"></i>
-                }
-              </h2>
-              <h3>
-                { (this.props.location.pathname !== "/") &&
-                  <a href={`index.html#`} onClick={() => window.location.reload()}>
-                    MANIC
-                  </a>
-                }
-              </h3>
-            </div>
-            <div className="navigation-bar-top-section">
-              <h3>
-                {this.props.location.pathname !== "/" ? this.convertTitle(this.props.location.pathname) : "MANIC"}
-              </h3>
-            </div>
-            <div className="navigation-bar-top-section horizontal">
-              <h2 onMouseEnter={this.handleMouseHover}>
-                SUBSCRIBE
-              </h2>
-              <h2 onClick={() => this.handleClick("searchIsClicked")}>
-                { this.state.searchIsClicked ?
-                  <i className="fa fa-times" aria-hidden="true"></i>
-                  :
-                  <i className="fa fa-search" aria-hidden="true"></i>
-                }
-              </h2>
-            </div>
-          </div>
+          <NavigationBarTop
+            handleClick={this.handleClick}
+            menuIsClicked={this.state.menuIsClicked}
+            pathname={this.props.location.pathname}
+            convertTitle={this.convertTitle}
+            handleMouseHover={this.handleMouseHover}
+            searchIsClicked={this.state.searchIsClicked}
+            />
 
-          { (!this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked) &&
-            <div className="navigation-bar-bottom">
-              <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-one">
-                <h2><a href={`index.html#/business`}
-                  onClick={() => window.location.reload()}>BUSINESS</a></h2>
-              </div>
-              <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-two">
-                <h2><a href={`index.html#/culture`}
-                  onClick={() => window.location.reload()}>CULTURE</a></h2>
-              </div>
-              <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-three">
-                <h2><a href={`index.html#/design`}
-                  onClick={() => window.location.reload()}>DESIGN</a></h2>
-              </div>
-              <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-four">
-                <h2><a href={`index.html#/gear`}
-                  onClick={() => window.location.reload()}>GEAR</a></h2>
-              </div>
-              <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-five">
-                <h2><a href={`index.html#/science`}
-                  onClick={() => window.location.reload()}>SCIENCE</a></h2>
-              </div>
-              <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-six">
-                <h2><a href={`index.html#/security`}
-                  onClick={() => window.location.reload()}>SECURITY</a></h2>
-              </div>
-              <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-seven">
-                <h2><a href={`index.html#/transportation`}
-                  onClick={() => window.location.reload()}>TRANSPORTATION</a></h2>
-              </div>
-            </div>
+          { (!this.state.isHovering &&
+            !this.state.searchIsClicked &&
+            !this.state.menuIsClicked) &&
+            <NavigationBarBottom/>
           }
-          { this.state.isHovering &&
-            <div className="navigation-bar-subscribe"
-              onMouseLeave={this.handleMouseHover}>
-              <ArticleUnitSubscribeItems/>
-            </div>
+          {
+            this.state.isHovering &&
+            <NavigationBarSubscribe
+              handleMouseHover={this.handleMouseHover}
+              />
           }
-          { this.state.searchIsClicked &&
-            <div className="navigation-bar-search-window">
-              <div className="navigation-bar-search-window-form">
-                <input type="text" name="search"
-                  value={this.state.search}
-                  onChange={this.handleInput('search')}
-                  placeholder="Search"/>
-              </div>
-            </div>
+          {
+            this.state.searchIsClicked &&
+            <NavigationBarSearch
+              search={this.state.search}
+              handleInput={this.handleInput}
+              />
           }
-          { this.state.menuIsClicked &&
+          {
+            this.state.menuIsClicked &&
             <NavigationBarMenu/>
           }
         </div>
