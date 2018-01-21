@@ -36,7 +36,7 @@
   margin: 0px;
   padding-top: 10px;
   letter-spacing: -2px;
-
+  text-transform: uppercase;
 }
 
 .article-unit-bottom {
@@ -363,7 +363,6 @@
   width: 150px;
   position: relative;
   overflow: hidden;
-  /* margin-bottom: 15px; */
 }
 
 .article-unit-subscribe-item-bottom-text {
