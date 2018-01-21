@@ -150,3 +150,27 @@
   width: 940px;
   margin: 0 auto;
 }
+
+.navigation-bar-search-window {
+  height: 100vh;
+  width: 100vw;
+  border-top: 1px solid #CCCCCC;
+}
+
+.navigation-bar-search-window-form {
+  position:absolute;
+  top: 50%;
+  left: 23.5%;
+  margin: 0 auto;
+  position: fixed;
+}
+
+.navigation-bar-search-window-form input {
+  font-size: 70px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}

@@ -27447,15 +27447,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _story_index = __webpack_require__(132);
+var _navigation_bar_subscribe_items = __webpack_require__(135);
 
-var _story_index2 = _interopRequireDefault(_story_index);
-
-var _article_unit_subscribe_item = __webpack_require__(129);
-
-var _article_unit_subscribe_item2 = _interopRequireDefault(_article_unit_subscribe_item);
+var _navigation_bar_subscribe_items2 = _interopRequireDefault(_navigation_bar_subscribe_items);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -27474,8 +27472,12 @@ var NavigationBar = function (_React$Component) {
     _this.toggleNav = _this.toggleNav.bind(_this);
     _this.convertTitle = _this.convertTitle.bind(_this);
     _this.handleMouseHover = _this.handleMouseHover.bind(_this);
+    _this.handleSearchClick = _this.handleSearchClick.bind(_this);
+    _this.handleInput = _this.handleInput.bind(_this);
     _this.state = {
-      isHovering: false
+      isHovering: false,
+      searchIsClicked: false,
+      search: ""
     };
     _this.green = "#00A85F";
     _this.purple = "#461F4B";
@@ -27581,6 +27583,20 @@ var NavigationBar = function (_React$Component) {
       this.setState({ isHovering: !this.state.isHovering });
     }
   }, {
+    key: 'handleSearchClick',
+    value: function handleSearchClick() {
+      this.setState({ searchIsClicked: !this.state.searchIsClicked });
+    }
+  }, {
+    key: 'handleInput',
+    value: function handleInput(field) {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -27623,39 +27639,12 @@ var NavigationBar = function (_React$Component) {
             ),
             _react2.default.createElement(
               'h2',
-              null,
-              _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
+              { onClick: this.handleSearchClick },
+              this.state.searchIsClicked ? _react2.default.createElement('i', { 'class': 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
             )
           )
         ),
-        this.state.isHovering ? _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-subscribe',
-            onMouseLeave: this.handleMouseHover },
-          _react2.default.createElement(
-            'div',
-            { className: 'navigation-bar-subscribe-items' },
-            _react2.default.createElement(
-              'ul',
-              { className: 'horizontal' },
-              _react2.default.createElement(_article_unit_subscribe_item2.default, {
-                header: 'Get The Magazine',
-                text: 'Special Holiday Gift Offer \u2013 Buy one, get one FREE.',
-                action: 'subscribe'
-              }),
-              _react2.default.createElement(_article_unit_subscribe_item2.default, {
-                header: 'Get Our Newsletter',
-                text: 'WIRED\u2019s biggest stories delivered to your inbox.',
-                action: 'submit'
-              }),
-              _react2.default.createElement(_article_unit_subscribe_item2.default, {
-                header: 'We\'re On Pinterest',
-                text: 'See what\'s inspiring us.',
-                action: 'follow'
-              })
-            )
-          )
-        ) : _react2.default.createElement(
+        !this.state.isHovering && !this.state.searchIsClicked && _react2.default.createElement(
           'div',
           { className: 'navigation-bar-bottom' },
           _react2.default.createElement(
@@ -27666,7 +27655,8 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/business', onClick: function onClick() {
+                { href: 'index.html#/business',
+                  onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'BUSINESS'
@@ -27681,7 +27671,8 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/culture', onClick: function onClick() {
+                { href: 'index.html#/culture',
+                  onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'CULTURE'
@@ -27696,7 +27687,8 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/design', onClick: function onClick() {
+                { href: 'index.html#/design',
+                  onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'DESIGN'
@@ -27711,7 +27703,8 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/gear', onClick: function onClick() {
+                { href: 'index.html#/gear',
+                  onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'GEAR'
@@ -27726,7 +27719,8 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/science', onClick: function onClick() {
+                { href: 'index.html#/science',
+                  onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'SCIENCE'
@@ -27741,7 +27735,8 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/security', onClick: function onClick() {
+                { href: 'index.html#/security',
+                  onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'SECURITY'
@@ -27756,12 +27751,31 @@ var NavigationBar = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'index.html#/transportation', onClick: function onClick() {
+                { href: 'index.html#/transportation',
+                  onClick: function onClick() {
                     return window.location.reload();
                   } },
                 'TRANSPORTATION'
               )
             )
+          )
+        ),
+        this.state.isHovering && _react2.default.createElement(
+          'div',
+          { className: 'navigation-bar-subscribe',
+            onMouseLeave: this.handleMouseHover },
+          _react2.default.createElement(_navigation_bar_subscribe_items2.default, null)
+        ),
+        this.state.searchIsClicked && _react2.default.createElement(
+          'div',
+          { className: 'navigation-bar-search-window' },
+          _react2.default.createElement(
+            'div',
+            { className: 'navigation-bar-search-window-form' },
+            _react2.default.createElement('input', { type: 'text', name: 'search',
+              value: this.state.search,
+              onChange: this.handleInput('search'),
+              placeholder: 'Search' })
           )
         )
       );
@@ -27776,7 +27790,10 @@ exports.default = (0, _reactRouterDom.withRouter)(NavigationBar);
 // comment
 
 /***/ }),
-/* 132 */
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27794,15 +27811,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _main_util = __webpack_require__(47);
+var _article_unit_subscribe_item = __webpack_require__(129);
 
-var MainUtil = _interopRequireWildcard(_main_util);
-
-var _story_index_item = __webpack_require__(133);
-
-var _story_index_item2 = _interopRequireDefault(_story_index_item);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+var _article_unit_subscribe_item2 = _interopRequireDefault(_article_unit_subscribe_item);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27812,377 +27823,48 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var StoryIndex = function (_React$Component) {
-  _inherits(StoryIndex, _React$Component);
+var NavigationSubscribeItems = function (_React$Component) {
+  _inherits(NavigationSubscribeItems, _React$Component);
 
-  function StoryIndex() {
-    _classCallCheck(this, StoryIndex);
+  function NavigationSubscribeItems(props) {
+    _classCallCheck(this, NavigationSubscribeItems);
 
-    var _this = _possibleConstructorReturn(this, (StoryIndex.__proto__ || Object.getPrototypeOf(StoryIndex)).call(this));
-
-    _this.state = {
-      totalComments: {},
-      topCommenters: {},
-      stories: {}
-    };
-    _this.topCommenters = _this.topCommenters.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (NavigationSubscribeItems.__proto__ || Object.getPrototypeOf(NavigationSubscribeItems)).call(this, props));
   }
 
-  _createClass(StoryIndex, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      var totalComments = {};
-      var topCommenters = {};
-      var stories = {};
-
-      MainUtil.fetchTopStories().then(function (topStories) {
-        topStories.slice(0, 30).map(function (storyId) {
-          MainUtil.fetchStory(storyId).then(function (story) {
-            stories[story.id] = story;
-            if (story.kids !== undefined) {
-              story.kids.map(function (commentId) {
-                MainUtil.fetchComment(commentId).then(function (comment) {
-                  var commenter = comment.by;
-                  totalComments[commenter] = ++totalComments[commenter] || 1;
-                  if (topCommenters[storyId] === undefined) {
-                    topCommenters[storyId] = {};
-                    topCommenters[storyId][commenter] = 1;
-                  } else {
-                    topCommenters[storyId][commenter] = ++topCommenters[storyId][commenter] || 1;
-                  }
-                  _this2.setState({ totalComments: totalComments, topCommenters: topCommenters, stories: stories });
-                });
-              });
-            }
-          });
-        });
-      });
-    }
-  }, {
-    key: 'topCommenters',
-    value: function topCommenters(storyId) {
-      var _this3 = this;
-
-      var topCommenters = {};
-      var story = this.state.topCommenters[storyId];
-      var keys = Object.keys(story);
-      keys.sort(function (a, b) {
-        return story[a] - story[b];
-      });
-
-      keys.slice(0, 10).forEach(function (k) {
-        topCommenters[k] = _this3.state.totalComments[k];
-      });
-
-      return topCommenters;
-    }
-  }, {
+  _createClass(NavigationSubscribeItems, [{
     key: 'render',
     value: function render() {
-      var _this4 = this;
-
-      var items = Object.values(this.state.stories).map(function (story, i) {
-        return _react2.default.createElement(_story_index_item2.default, {
-          key: i,
-          rank: i + 1,
-          story: story,
-          commenters: _this4.state.topCommenters[story.id] !== undefined ? _this4.topCommenters(story.id) : {}
-        });
-      });
-
       return _react2.default.createElement(
         'div',
-        { className: 'story-background' },
+        { className: 'navigation-bar-subscribe-items' },
         _react2.default.createElement(
-          'div',
-          { className: 'story-background-wrapper' },
-          _react2.default.createElement(
-            'div',
-            { className: 'story-index' },
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-header' },
-              _react2.default.createElement('div', { className: 'story-index-header-top' })
-            ),
-            _react2.default.createElement(
-              'ul',
-              { className: 'story-index-list' },
-              items
-            )
-          )
+          'ul',
+          { className: 'horizontal' },
+          _react2.default.createElement(_article_unit_subscribe_item2.default, {
+            header: 'Get The Magazine',
+            text: 'Special Holiday Gift Offer \u2013 Buy one, get one FREE.',
+            action: 'subscribe'
+          }),
+          _react2.default.createElement(_article_unit_subscribe_item2.default, {
+            header: 'Get Our Newsletter',
+            text: 'WIRED\u2019s biggest stories delivered to your inbox.',
+            action: 'submit'
+          }),
+          _react2.default.createElement(_article_unit_subscribe_item2.default, {
+            header: 'We\'re On Pinterest',
+            text: 'See what\'s inspiring us.',
+            action: 'follow'
+          })
         )
       );
     }
   }]);
 
-  return StoryIndex;
+  return NavigationSubscribeItems;
 }(_react2.default.Component);
 
-exports.default = StoryIndex;
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(1);
-
-var _story_index_contributer_index_item = __webpack_require__(134);
-
-var _story_index_contributer_index_item2 = _interopRequireDefault(_story_index_contributer_index_item);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var StoryIndexItem = function (_React$Component) {
-  _inherits(StoryIndexItem, _React$Component);
-
-  function StoryIndexItem(props) {
-    _classCallCheck(this, StoryIndexItem);
-
-    var _this = _possibleConstructorReturn(this, (StoryIndexItem.__proto__ || Object.getPrototypeOf(StoryIndexItem)).call(this, props));
-
-    _this.unixToDate = _this.unixToDate.bind(_this);
-    _this.toggleContributers = _this.toggleContributers.bind(_this);
-    return _this;
-  }
-
-  _createClass(StoryIndexItem, [{
-    key: 'unixToDate',
-    value: function unixToDate(num) {
-      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      var date = new Date(num * 1000);
-      var year = date.getFullYear();
-      var month = months[date.getMonth()];
-      var day = date.getDate();
-      return month + '. ' + day + ', ' + year;
-    }
-  }, {
-    key: 'toggleContributers',
-    value: function toggleContributers(story, contributers) {
-      var arrow = document.getElementById(story);
-      document.getElementById(contributers).classList.toggle("show");
-      if (arrow.classList.contains("fa-caret-down")) {
-        arrow.classList.remove("fa-caret-down");
-        arrow.classList.add("fa-caret-up");
-      } else {
-        arrow.classList.remove("fa-caret-up");
-        arrow.classList.add("fa-caret-down");
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var commenters = Object.keys(this.props.commenters).map(function (commenter, i) {
-        var commenterHash = {};
-        commenterHash['' + commenter] = _this2.props.commenters[commenter];
-        return _react2.default.createElement(_story_index_contributer_index_item2.default, {
-          key: i,
-          rank: i + 1,
-          commenter: commenterHash
-        });
-      });
-
-      return _react2.default.createElement(
-        'li',
-        { className: 'story-index-item' },
-        _react2.default.createElement(
-          'div',
-          { className: 'story-index-item-wrapper' },
-          _react2.default.createElement(
-            'div',
-            { className: 'story-index-item-wrapper-left' },
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-item-rank' },
-              _react2.default.createElement(
-                'h3',
-                null,
-                this.props.rank
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-item-date' },
-              _react2.default.createElement(
-                'h2',
-                null,
-                this.unixToDate(this.props.story.time)
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-item-contributers' },
-              _react2.default.createElement(
-                'h6',
-                null,
-                'Top Contributers \xA0',
-                _react2.default.createElement('i', { id: 'story-index-item-contributers-' + this.props.rank,
-                  className: 'fa fa-caret-up', 'aria-hidden': 'true',
-                  onClick: function onClick(e) {
-                    return _this2.toggleContributers('story-index-item-contributers-' + _this2.props.rank, 'story-index-item-contributers-wrapper-' + _this2.props.rank);
-                  } })
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'story-index-item-wrapper-right' },
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-item-title' },
-              _react2.default.createElement(
-                'h1',
-                null,
-                _react2.default.createElement(
-                  'a',
-                  { href: this.props.story.url },
-                  this.props.story.title
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-item-author' },
-              _react2.default.createElement(
-                'h2',
-                null,
-                'By ',
-                this.props.story.by
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'story-index-item-contributers-wrapper show', id: 'story-index-item-contributers-wrapper-' + this.props.rank },
-          _react2.default.createElement(
-            'ul',
-            { className: 'story-index-item-contributers-wrapper-list' },
-            commenters
-          )
-        )
-      );
-    }
-  }]);
-
-  return StoryIndexItem;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(StoryIndexItem);
-
-// comment
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var StoryIndexContributerIndexItem = function (_React$Component) {
-  _inherits(StoryIndexContributerIndexItem, _React$Component);
-
-  function StoryIndexContributerIndexItem(props) {
-    _classCallCheck(this, StoryIndexContributerIndexItem);
-
-    return _possibleConstructorReturn(this, (StoryIndexContributerIndexItem.__proto__ || Object.getPrototypeOf(StoryIndexContributerIndexItem)).call(this, props));
-  }
-
-  _createClass(StoryIndexContributerIndexItem, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'li',
-        { className: 'story-index-item-contributers-list-item' },
-        _react2.default.createElement(
-          'div',
-          { className: 'story-index-item-contributers-list-item-wrapper' },
-          _react2.default.createElement(
-            'div',
-            { className: 'story-index-item-contributers-list-item-wrapper-left' },
-            _react2.default.createElement(
-              'h5',
-              null,
-              this.props.rank
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'story-index-item-contributers-list-item-wrapper-right' },
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-item-contributers-list-item-wrapper-right-commenter' },
-              _react2.default.createElement(
-                'h6',
-                null,
-                Object.keys(this.props.commenter)[0]
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'story-index-item-contributers-list-item-wrapper-right-comments' },
-              _react2.default.createElement(
-                'h4',
-                null,
-                Object.values(this.props.commenter)[0],
-                ' ',
-                Object.values(this.props.commenter)[0] > 1 ? "posts" : "post",
-                ' in Top Stories'
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return StoryIndexContributerIndexItem;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(StoryIndexContributerIndexItem);
+exports.default = (0, _reactRouterDom.withRouter)(NavigationSubscribeItems);
 
 // comment
 
