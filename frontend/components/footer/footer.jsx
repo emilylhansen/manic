@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ArticleUnitMore from '../article_units/article_unit_more.jsx';
+
 class Footer extends React.Component{
   constructor(props){
     super(props);
@@ -9,6 +11,12 @@ class Footer extends React.Component{
   render(){
     return (
       <div className="footer">
+        {
+          (this.props.pathname !== '/') &&
+          <ArticleUnitMore
+            header="results"
+            />
+        }
         <div className="footer-content">
           <div className="footer-content-logo">
             <h3>MANIC</h3>

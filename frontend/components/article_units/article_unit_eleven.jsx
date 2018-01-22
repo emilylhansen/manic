@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 import ArticleUnitListItem from './article_unit_list_item.jsx';
 import ArticleUnitListItemTwo from './article_unit_list_item_two.jsx';
+import ArticleUnitMore from './article_unit_more.jsx';
 
 class ArticleUnitEleven extends React.Component {
   constructor(props){
@@ -33,13 +34,9 @@ class ArticleUnitEleven extends React.Component {
               />
           </ul>
         </div>
-        <div className="article-unit-eleven-more article-unit-more">
-          <div className="article-unit-eleven-more-context article-unit-more-context horizontal">
-            <div className="article-unit-eleven-more-button article-unit-more-button">
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i></div>
-            <h2>{`more ${this.props.header}`}</h2>
-          </div>
-        </div>
+        <ArticleUnitMore
+          header={this.props.header}
+          />
       </div>
     );
   }

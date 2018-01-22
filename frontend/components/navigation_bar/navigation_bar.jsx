@@ -31,13 +31,6 @@ class NavigationBar extends React.Component {
         brown: "#6A0000",
         red: "#F52143"
       };
-      // this.green = "#00A85F";
-      // this.purple ="#461F4B";
-      // this.teal = "#96CCCE";
-      // this.blue = "#0086A1";
-      // this.orange = "#FFC00A";
-      // this.brown = "#6A0000";
-      // this.red = "#F52143";
   }
 
   componentDidMount(){

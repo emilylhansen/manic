@@ -25828,7 +25828,9 @@ var ArticleIndex = function (_React$Component) {
               )
             )
           ),
-          _react2.default.createElement(_footer2.default, null)
+          _react2.default.createElement(_footer2.default, {
+            pathname: this.props.location.pathname
+          })
         );
       }
     }
@@ -26678,6 +26680,10 @@ var _article_unit_list_item = __webpack_require__(23);
 
 var _article_unit_list_item2 = _interopRequireDefault(_article_unit_list_item);
 
+var _article_unit_more = __webpack_require__(141);
+
+var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26732,24 +26738,9 @@ var ArticleUnitNine = function (_React$Component) {
             })
           )
         ),
-        _react2.default.createElement(
-          'div',
-          { className: 'article-unit-nine-more article-unit-more' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-nine-more-context article-unit-more-context horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-nine-more-button article-unit-more-button' },
-              _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'h2',
-              null,
-              'more ' + this.props.header
-            )
-          )
-        )
+        _react2.default.createElement(_article_unit_more2.default, {
+          header: this.props.header
+        })
       );
     }
   }]);
@@ -26783,6 +26774,10 @@ var _reactRouterDom = __webpack_require__(1);
 var _article_unit_list_item = __webpack_require__(23);
 
 var _article_unit_list_item2 = _interopRequireDefault(_article_unit_list_item);
+
+var _article_unit_more = __webpack_require__(141);
+
+var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26844,24 +26839,9 @@ var ArticleUnitTen = function (_React$Component) {
             })
           )
         ),
-        _react2.default.createElement(
-          'div',
-          { className: 'article-unit-ten-more article-unit-more' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-ten-more-context article-unit-more-context horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-ten-more-button article-unit-more-button' },
-              _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'h2',
-              null,
-              'more ' + this.props.header
-            )
-          )
-        )
+        _react2.default.createElement(_article_unit_more2.default, {
+          header: this.props.header
+        })
       );
     }
   }]);
@@ -26899,6 +26879,10 @@ var _article_unit_list_item2 = _interopRequireDefault(_article_unit_list_item);
 var _article_unit_list_item_two = __webpack_require__(127);
 
 var _article_unit_list_item_two2 = _interopRequireDefault(_article_unit_list_item_two);
+
+var _article_unit_more = __webpack_require__(141);
+
+var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26959,24 +26943,9 @@ var ArticleUnitEleven = function (_React$Component) {
             })
           )
         ),
-        _react2.default.createElement(
-          'div',
-          { className: 'article-unit-eleven-more article-unit-more' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-eleven-more-context article-unit-more-context horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-eleven-more-button article-unit-more-button' },
-              _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'h2',
-              null,
-              'more ' + this.props.header
-            )
-          )
-        )
+        _react2.default.createElement(_article_unit_more2.default, {
+          header: this.props.header
+        })
       );
     }
   }]);
@@ -27180,6 +27149,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
+var _article_unit_more = __webpack_require__(141);
+
+var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27235,21 +27208,10 @@ var ArticleUnitSubscribeItem = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-subscribe-item-more article-unit-more' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-subscribe-item-more-context article-unit-more-context horizontal' },
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-subscribe-item-more-button article-unit-more-button' },
-                _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
-              ),
-              _react2.default.createElement(
-                'h2',
-                null,
-                this.props.action
-              )
-            )
+            { className: 'article-unit-subscribe-item-more' },
+            _react2.default.createElement(_article_unit_more2.default, {
+              header: this.props.header
+            })
           )
         )
       );
@@ -27282,6 +27244,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
+var _article_unit_more = __webpack_require__(141);
+
+var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27305,6 +27271,9 @@ var Footer = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'footer' },
+        this.props.pathname !== '/' && _react2.default.createElement(_article_unit_more2.default, {
+          header: 'results'
+        }),
         _react2.default.createElement(
           'div',
           { className: 'footer-content' },
@@ -27506,13 +27475,6 @@ var NavigationBar = function (_React$Component) {
       brown: "#6A0000",
       red: "#F52143"
     };
-    // this.green = "#00A85F";
-    // this.purple ="#461F4B";
-    // this.teal = "#96CCCE";
-    // this.blue = "#0086A1";
-    // this.orange = "#FFC00A";
-    // this.brown = "#6A0000";
-    // this.red = "#F52143";
     return _this;
   }
 
@@ -28391,6 +28353,71 @@ var NavigationBarTop = function (_React$Component) {
 exports.default = (0, _reactRouterDom.withRouter)(NavigationBarTop);
 
 // comment
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleUnitMore = function (_React$Component) {
+  _inherits(ArticleUnitMore, _React$Component);
+
+  function ArticleUnitMore(props) {
+    _classCallCheck(this, ArticleUnitMore);
+
+    return _possibleConstructorReturn(this, (ArticleUnitMore.__proto__ || Object.getPrototypeOf(ArticleUnitMore)).call(this, props));
+  }
+
+  _createClass(ArticleUnitMore, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'article-unit-more' },
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-more-context horizontal' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-more-button' },
+            _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
+          ),
+          _react2.default.createElement(
+            'h2',
+            null,
+            'more ' + this.props.header
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleUnitMore;
+}(_react2.default.Component);
+
+exports.default = ArticleUnitMore;
 
 /***/ })
 /******/ ]);

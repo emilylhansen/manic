@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import ArticleUnitMore from './article_unit_more.jsx';
 
 class ArticleUnitSubscribeItem extends React.Component {
   constructor(props){
@@ -21,12 +22,10 @@ class ArticleUnitSubscribeItem extends React.Component {
               <img src="frontend/images/world.jpg"></img>
             </div>
           </div>
-          <div className="article-unit-subscribe-item-more article-unit-more">
-            <div className="article-unit-subscribe-item-more-context article-unit-more-context horizontal">
-              <div className="article-unit-subscribe-item-more-button article-unit-more-button">
-                <i className="fa fa-long-arrow-right" aria-hidden="true"></i></div>
-              <h2>{this.props.action}</h2>
-            </div>
+          <div className="article-unit-subscribe-item-more">
+            <ArticleUnitMore
+              header={this.props.header}
+              />
           </div>
         </div>
       </li>

@@ -94,3 +94,15 @@
   line-height: 25px;
   margin: 0px;
 }
+
+.footer .article-unit-more {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.footer .article-unit-more-context {
+  padding-top: 13px;
+}
+
+.footer .article-unit-more-button {
+  margin-left: 45%;
+}

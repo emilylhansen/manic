@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import ArticleUnitListItem from './article_unit_list_item.jsx';
+import ArticleUnitMore from './article_unit_more.jsx';
 
 class ArticleUnitNine extends React.Component {
   constructor(props){
@@ -30,13 +31,9 @@ class ArticleUnitNine extends React.Component {
               />
           </ul>
         </div>
-        <div className="article-unit-nine-more article-unit-more">
-          <div className="article-unit-nine-more-context article-unit-more-context horizontal">
-            <div className="article-unit-nine-more-button article-unit-more-button">
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i></div>
-            <h2>{`more ${this.props.header}`}</h2>
-          </div>
-        </div>
+        <ArticleUnitMore
+          header={this.props.header}
+          />
       </div>
     );
   }
