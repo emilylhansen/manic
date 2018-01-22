@@ -4,11 +4,49 @@ import { Link } from 'react-router-dom';
 import * as MainUtil from '../../util/main_util';
 import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
-import Footer from '../footer/footer.jsx';
+import Loading from '../loading/loading.jsx';
 
-class ArticleIndex extends React.Component{
-  constructor(props){
-    super(props);
+class Category extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      topStories: {},
+      newStories: {},
+      bestStories: {}
+    };
+  }
+
+  componentDidMount(){
+    let topStories = {};
+    let newStories = {};
+    let bestStories = {};
+
+    MainUtil.fetchTopStories().then(stories => {
+      stories.slice(0, 3).map(storyId => {
+        MainUtil.fetchStory(storyId).then(story => {
+          topStories[story.id] = story;
+          this.setState({topStories: topStories});
+        });
+      });
+    });
+
+    MainUtil.fetchNewStories().then(stories => {
+      stories.slice(0, 5).map(storyId => {
+        MainUtil.fetchStory(storyId).then(story => {
+          newStories[story.id] = story;
+          this.setState({newStories: newStories});
+        });
+      });
+    });
+
+    MainUtil.fetchBestStories().then(stories => {
+      stories.slice(0, 10).map(storyId => {
+        MainUtil.fetchStory(storyId).then(story => {
+          bestStories[story.id] = story;
+          this.setState({bestStories: bestStories});
+        });
+      });
+    });
   }
 
   render(){
@@ -17,38 +55,40 @@ class ArticleIndex extends React.Component{
 
     if(Object.keys(this.state.bestStories).length > 9){
       articleOne = <ArticleUnitTwelve
-        story={Object.values(this.state.bestStories)[0]}
+        stories={[Object.values(this.state.bestStories)[1],
+              Object.values(this.state.bestStories)[1],
+              Object.values(this.state.bestStories)[1],
+              Object.values(this.state.bestStories)[1],
+              Object.values(this.state.bestStories)[1]]}
         />;
       articleTwo = <ArticleUnitNine
-        story={Object.values(this.state.bestStories)[1],
+        stories={[Object.values(this.state.bestStories)[1],
               Object.values(this.state.bestStories)[1],
               Object.values(this.state.bestStories)[1],
               Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1]}
+              Object.values(this.state.bestStories)[1]]}
         />;
     }
 
     if (articleTwo === undefined) {
       return (
-        <div className="loading">
-          <div className="loading-logo">
-            <h3>M</h3>
-          </div>
-        </div>
+        <Loading/>
       );
     } else {
       return (
         <div className="category-background">
-          <div className="category-index">
-
+          <div className="category-index horizontal">
+            <div className="margin-right">
+              {articleOne}
+            </div>
+            <div>
+              {articleTwo}
+            </div>
           </div>
-          <Footer
-            pathname={this.props.location.pathname}
-            />
         </div>
       );
     }
   }
 }
 
-export default ArticleIndex;
+export default Category;

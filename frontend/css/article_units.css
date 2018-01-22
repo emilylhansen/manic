@@ -119,7 +119,8 @@
 }
 
 .article-unit-list-item-bottom,
-.article-unit-list-item-two-bottom {
+.article-unit-list-item-two-bottom,
+.article-unit-list-item-three-bottom {
   margin: 15px 0px;
 }
 
@@ -146,6 +147,14 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 15px;
+}
+
+.article-unit-list-item-three-image {
+  height: 100px;
+  width: 180px;
+  position: relative;
+  overflow: hidden;
+  margin-right: 15px;
 }
 
 .article-unit-list-item-bottom-context-text {

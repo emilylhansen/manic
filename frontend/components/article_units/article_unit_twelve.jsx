@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import ArticleUnitListItemThree from './article_unit_list_item_three.jsx';
 import ArticleUnitMore from './article_unit_more.jsx';
 
-class ArticleUnittwelve extends React.Component {
+class ArticleUnitTwelve extends React.Component {
   constructor(props){
       super(props);
   }
@@ -13,7 +13,7 @@ class ArticleUnittwelve extends React.Component {
     let items = this.props.stories.map((el, i) => (
       <ArticleUnitListItemThree
         key={i}
-        story={this.props.stories[el]}
+        story={el}
         />
     ));
     return (
@@ -29,9 +29,6 @@ class ArticleUnittwelve extends React.Component {
             {items}
           </ul>
         </div>
-        <ArticleUnitMore
-          header={this.props.header}
-          />
       </div>
     );
   }

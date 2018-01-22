@@ -15,6 +15,7 @@ import ArticleUnitTen from '../article_units/article_unit_ten.jsx';
 import ArticleUnitEleven from '../article_units/article_unit_eleven.jsx';
 import ArticleUnitSubscribe from '../article_units/article_unit_subscribe.jsx';
 import Footer from '../footer/footer.jsx';
+import Loading from '../loading/loading.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(){
@@ -57,11 +58,7 @@ class ArticleIndex extends React.Component{
         });
       });
     });
-
-    // this.setState({topStories: topStories, newStories: newStories, bestStories: bestStories});
   }
-
-
 
   render(){
     let articleOne;
@@ -127,11 +124,7 @@ class ArticleIndex extends React.Component{
 
     if (articleSubscribe === undefined) {
       return (
-        <div className="loading">
-          <div className="loading-logo">
-            <h3>M</h3>
-          </div>
-        </div>
+        <Loading/>
       );
     } else {
       return (
@@ -226,7 +219,7 @@ class ArticleIndex extends React.Component{
 
           </div>
           <Footer
-            pathname={this.props.match.params.categoryName}
+            pathname={this.props.location.pathname}
             />
         </div>
       );
