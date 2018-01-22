@@ -12,10 +12,11 @@ class Footer extends React.Component{
     return (
       <div className="footer">
         {
-          (this.props.pathname !== '/') &&
+          (this.props.pathname !== '/' &&
+          !this.props.pathname.includes("page")) &&
           <ArticleUnitMore
             header="results"
-            link={`/#/${this.props.pathname}/page`}
+            link={`#${this.props.pathname}/page`}
 
             />
         }

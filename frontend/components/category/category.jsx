@@ -5,10 +5,12 @@ import * as MainUtil from '../../util/main_util';
 import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
 import Loading from '../loading/loading.jsx';
+import Footer from '../footer/footer.jsx';
 
 class Category extends React.Component{
   constructor(){
     super();
+    this.convertTitle = this.convertTitle.bind(this);
     this.state = {
       topStories: {},
       newStories: {},
@@ -49,24 +51,29 @@ class Category extends React.Component{
     });
   }
 
+  convertTitle(){
+    return this.props.location.pathname.split(/\/|-/)[2].toUpperCase();
+  }
+
   render(){
     let articleOne;
     let articleTwo;
-
     if(Object.keys(this.state.bestStories).length > 9){
       articleOne = <ArticleUnitTwelve
         stories={[Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1]]}
+                  Object.values(this.state.bestStories)[1],
+                  Object.values(this.state.bestStories)[1],
+                  Object.values(this.state.bestStories)[1],
+                  Object.values(this.state.bestStories)[1]]}
+        header={this.convertTitle()}
         />;
       articleTwo = <ArticleUnitNine
         stories={[Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1],
-              Object.values(this.state.bestStories)[1]]}
+                  Object.values(this.state.bestStories)[1],
+                  Object.values(this.state.bestStories)[1],
+                  Object.values(this.state.bestStories)[1],
+                  Object.values(this.state.bestStories)[1]]}
+        header="popular"
         />;
     }
 
@@ -85,6 +92,9 @@ class Category extends React.Component{
               {articleTwo}
             </div>
           </div>
+          <Footer
+            pathname={this.props.location.pathname}
+            />
         </div>
       );
     }

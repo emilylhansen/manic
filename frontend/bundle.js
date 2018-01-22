@@ -27335,9 +27335,9 @@ var Footer = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'footer' },
-        this.props.pathname !== '/' && _react2.default.createElement(_article_unit_more2.default, {
+        this.props.pathname !== '/' && !this.props.pathname.includes("page") && _react2.default.createElement(_article_unit_more2.default, {
           header: 'results',
-          link: '/#/' + this.props.pathname + '/page'
+          link: '#' + this.props.pathname + '/page'
 
         }),
         _react2.default.createElement(
@@ -28521,6 +28521,10 @@ var _loading = __webpack_require__(138);
 
 var _loading2 = _interopRequireDefault(_loading);
 
+var _footer = __webpack_require__(131);
+
+var _footer2 = _interopRequireDefault(_footer);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -28539,6 +28543,7 @@ var Category = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this));
 
+    _this.convertTitle = _this.convertTitle.bind(_this);
     _this.state = {
       topStories: {},
       newStories: {},
@@ -28584,17 +28589,23 @@ var Category = function (_React$Component) {
       });
     }
   }, {
+    key: 'convertTitle',
+    value: function convertTitle() {
+      return this.props.location.pathname.split(/\/|-/)[2].toUpperCase();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var articleOne = void 0;
       var articleTwo = void 0;
-
       if (Object.keys(this.state.bestStories).length > 9) {
         articleOne = _react2.default.createElement(_article_unit_twelve2.default, {
-          stories: [Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1]]
+          stories: [Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1]],
+          header: this.convertTitle()
         });
         articleTwo = _react2.default.createElement(_article_unit_nine2.default, {
-          stories: [Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1]]
+          stories: [Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1]],
+          header: 'popular'
         });
       }
 
@@ -28617,7 +28628,10 @@ var Category = function (_React$Component) {
               null,
               articleTwo
             )
-          )
+          ),
+          _react2.default.createElement(_footer2.default, {
+            pathname: this.props.location.pathname
+          })
         );
       }
     }
