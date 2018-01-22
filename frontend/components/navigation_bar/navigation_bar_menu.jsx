@@ -4,6 +4,53 @@ import { Link, withRouter } from 'react-router-dom';
 class NavigationBarMenu extends React.Component {
   constructor(props){
       super(props);
+      this.changeNav = this.changeNav.bind(this);
+      this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  componentDidMount() {
+    this.toggleNav();
+  }
+
+  changeNav(section, color){
+    section.style.backgroundColor = color;
+    section.getElementsByTagName('a')[0].style.color = "white";
+    section.style.borderTop = "none";
+  }
+
+  toggleNav(){
+    switch (this.props.pathname) {
+      case "/business":
+        this.changeNav(document.getElementById("navigation-bar-menu-section-one"),
+        this.props.colors.green);
+        break;
+      case "/culture":
+        this.changeNav(document.getElementById("navigation-bar-menu-section-two"),
+        this.props.colors.purple);
+        break;
+      case "/design":
+        this.changeNav(document.getElementById("navigation-bar-menu-section-three"),
+        this.props.colors.teal);
+        break;
+      case "/gear":
+        this.changeNav(document.getElementById("navigation-bar-menu-section-four"),
+        this.props.colors.blue);
+        break;
+      case "/science":
+        this.changeNav(document.getElementById("navigation-bar-menu-section-five"),
+        this.props.colors.orange);
+        break;
+      case "/security":
+        this.changeNav(document.getElementById("navigation-bar-menu-section-six"),
+        this.props.colors.brown);
+        break;
+      case "/transportation":
+        this.changeNav(document.getElementById("navigation-bar-menu-section-seven"),
+        this.props.colors.red);
+        break;
+      default:
+        break;
+    }
   }
 
   render(){

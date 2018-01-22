@@ -22,13 +22,22 @@ class NavigationBar extends React.Component {
         search: "",
         menuIsClicked: false
       };
-      this.green = "#00A85F";
-      this.purple ="#461F4B";
-      this.teal = "#96CCCE";
-      this.blue = "#0086A1";
-      this.orange = "#FFC00A";
-      this.brown = "#6A0000";
-      this.red = "#F52143";
+      this.colors = {
+        green: "#00A85F",
+        purple: "#461F4B",
+        teal: "#96CCCE",
+        blue: "#0086A1",
+        orange: "#FFC00A",
+        brown: "#6A0000",
+        red: "#F52143"
+      };
+      // this.green = "#00A85F";
+      // this.purple ="#461F4B";
+      // this.teal = "#96CCCE";
+      // this.blue = "#0086A1";
+      // this.orange = "#FFC00A";
+      // this.brown = "#6A0000";
+      // this.red = "#F52143";
   }
 
   componentDidMount(){
@@ -36,40 +45,47 @@ class NavigationBar extends React.Component {
   }
 
   changeNav(section, color){
-    let nav = document.getElementById("navigation-bar-top");
+    let navTop = document.getElementById("navigation-bar-top");
     section.style.backgroundColor = color;
     section.getElementsByTagName('a')[0].style.color = "white";
     section.style.borderTop = "none";
-    nav.style.backgroundColor = color;
-    nav.getElementsByTagName('a')[0].style.color = "white";
-    nav.getElementsByTagName('h3')[1].style.color = "white";
-    nav.getElementsByTagName('h2')[1].style.color = "white";
-    nav.getElementsByTagName('i')[0].style.color = "white";
-    nav.getElementsByTagName('i')[1].style.color = "white";
+    navTop.style.backgroundColor = color;
+    navTop.getElementsByTagName('a')[0].style.color = "white";
+    navTop.getElementsByTagName('h3')[1].style.color = "white";
+    navTop.getElementsByTagName('h2')[1].style.color = "white";
+    navTop.getElementsByTagName('i')[0].style.color = "white";
+    navTop.getElementsByTagName('i')[1].style.color = "white";
   }
 
   toggleNav(){
     switch (this.props.location.pathname) {
       case "/business":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.green);
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"),
+        this.colors.green);
         break;
       case "/culture":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.purple);
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-two"),
+        this.colors.purple);
         break;
       case "/design":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.teal);
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-three"),
+        this.colors.teal);
         break;
       case "/gear":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.blue);
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-four"),
+        this.colors.blue);
         break;
       case "/science":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.orange);
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-five"),
+        this.colors.orange);
         break;
       case "/security":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.brown);
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-six"),
+        this.colors.brown);
         break;
       case "/transportation":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.red);
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"),
+        this.colors.red);
         break;
       default:
         break;
@@ -131,7 +147,10 @@ class NavigationBar extends React.Component {
           }
           {
             this.state.menuIsClicked &&
-            <NavigationBarMenu/>
+            <NavigationBarMenu
+              colors={this.colors}
+              pathname={this.props.location.pathname}
+              />
           }
         </div>
     );

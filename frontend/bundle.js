@@ -27497,13 +27497,22 @@ var NavigationBar = function (_React$Component) {
       search: "",
       menuIsClicked: false
     };
-    _this.green = "#00A85F";
-    _this.purple = "#461F4B";
-    _this.teal = "#96CCCE";
-    _this.blue = "#0086A1";
-    _this.orange = "#FFC00A";
-    _this.brown = "#6A0000";
-    _this.red = "#F52143";
+    _this.colors = {
+      green: "#00A85F",
+      purple: "#461F4B",
+      teal: "#96CCCE",
+      blue: "#0086A1",
+      orange: "#FFC00A",
+      brown: "#6A0000",
+      red: "#F52143"
+    };
+    // this.green = "#00A85F";
+    // this.purple ="#461F4B";
+    // this.teal = "#96CCCE";
+    // this.blue = "#0086A1";
+    // this.orange = "#FFC00A";
+    // this.brown = "#6A0000";
+    // this.red = "#F52143";
     return _this;
   }
 
@@ -27515,41 +27524,41 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'changeNav',
     value: function changeNav(section, color) {
-      var nav = document.getElementById("navigation-bar-top");
+      var navTop = document.getElementById("navigation-bar-top");
       section.style.backgroundColor = color;
       section.getElementsByTagName('a')[0].style.color = "white";
       section.style.borderTop = "none";
-      nav.style.backgroundColor = color;
-      nav.getElementsByTagName('a')[0].style.color = "white";
-      nav.getElementsByTagName('h3')[1].style.color = "white";
-      nav.getElementsByTagName('h2')[1].style.color = "white";
-      nav.getElementsByTagName('i')[0].style.color = "white";
-      nav.getElementsByTagName('i')[1].style.color = "white";
+      navTop.style.backgroundColor = color;
+      navTop.getElementsByTagName('a')[0].style.color = "white";
+      navTop.getElementsByTagName('h3')[1].style.color = "white";
+      navTop.getElementsByTagName('h2')[1].style.color = "white";
+      navTop.getElementsByTagName('i')[0].style.color = "white";
+      navTop.getElementsByTagName('i')[1].style.color = "white";
     }
   }, {
     key: 'toggleNav',
     value: function toggleNav() {
       switch (this.props.location.pathname) {
         case "/business":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.green);
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.colors.green);
           break;
         case "/culture":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.purple);
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-two"), this.colors.purple);
           break;
         case "/design":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.teal);
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
           break;
         case "/gear":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.blue);
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-four"), this.colors.blue);
           break;
         case "/science":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.orange);
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-five"), this.colors.orange);
           break;
         case "/security":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.brown);
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-six"), this.colors.brown);
           break;
         case "/transportation":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.red);
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"), this.colors.red);
           break;
         default:
           break;
@@ -27605,7 +27614,10 @@ var NavigationBar = function (_React$Component) {
           search: this.state.search,
           handleInput: this.handleInput
         }),
-        this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_menu2.default, null)
+        this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_menu2.default, {
+          colors: this.colors,
+          pathname: this.props.location.pathname
+        })
       );
     }
   }]);
@@ -27654,10 +27666,55 @@ var NavigationBarMenu = function (_React$Component) {
   function NavigationBarMenu(props) {
     _classCallCheck(this, NavigationBarMenu);
 
-    return _possibleConstructorReturn(this, (NavigationBarMenu.__proto__ || Object.getPrototypeOf(NavigationBarMenu)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (NavigationBarMenu.__proto__ || Object.getPrototypeOf(NavigationBarMenu)).call(this, props));
+
+    _this.changeNav = _this.changeNav.bind(_this);
+    _this.toggleNav = _this.toggleNav.bind(_this);
+    return _this;
   }
 
   _createClass(NavigationBarMenu, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.toggleNav();
+    }
+  }, {
+    key: 'changeNav',
+    value: function changeNav(section, color) {
+      section.style.backgroundColor = color;
+      section.getElementsByTagName('a')[0].style.color = "white";
+      section.style.borderTop = "none";
+    }
+  }, {
+    key: 'toggleNav',
+    value: function toggleNav() {
+      switch (this.props.pathname) {
+        case "/business":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-one"), this.props.colors.green);
+          break;
+        case "/culture":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-two"), this.props.colors.purple);
+          break;
+        case "/design":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-three"), this.props.colors.teal);
+          break;
+        case "/gear":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-four"), this.props.colors.blue);
+          break;
+        case "/science":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-five"), this.props.colors.orange);
+          break;
+        case "/security":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-six"), this.props.colors.brown);
+          break;
+        case "/transportation":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-seven"), this.props.colors.red);
+          break;
+        default:
+          break;
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
