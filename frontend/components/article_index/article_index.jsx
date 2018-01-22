@@ -226,7 +226,7 @@ class ArticleIndex extends React.Component{
 
           </div>
           <Footer
-            pathname={this.props.location.pathname}
+            pathname={this.props.match.params.categoryName}
             />
         </div>
       );

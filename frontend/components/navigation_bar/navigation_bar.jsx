@@ -51,32 +51,37 @@ class NavigationBar extends React.Component {
   }
 
   toggleNav(){
-    switch (this.props.location.pathname) {
-      case "/business":
+    let category;
+    if(this.props.location.pathname !== "/") {
+      category = (this.props.location.pathname).split(/\/|-/)[2];
+    }
+
+    switch (category) {
+      case "business":
         this.changeNav(document.getElementById("navigation-bar-bottom-section-one"),
         this.colors.green);
         break;
-      case "/culture":
+      case "culture":
         this.changeNav(document.getElementById("navigation-bar-bottom-section-two"),
         this.colors.purple);
         break;
-      case "/design":
+      case "design":
         this.changeNav(document.getElementById("navigation-bar-bottom-section-three"),
         this.colors.teal);
         break;
-      case "/gear":
+      case "gear":
         this.changeNav(document.getElementById("navigation-bar-bottom-section-four"),
         this.colors.blue);
         break;
-      case "/science":
+      case "science":
         this.changeNav(document.getElementById("navigation-bar-bottom-section-five"),
         this.colors.orange);
         break;
-      case "/security":
+      case "security":
         this.changeNav(document.getElementById("navigation-bar-bottom-section-six"),
         this.colors.brown);
         break;
-      case "/transportation":
+      case "transportation":
         this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"),
         this.colors.red);
         break;
@@ -86,7 +91,7 @@ class NavigationBar extends React.Component {
   }
 
   convertTitle(title){
-    return title.split(/\/|-/).join(" ").toUpperCase();
+    return title.split(/\/|-/)[2].toUpperCase();
   }
 
   handleMouseHover() {

@@ -324,7 +324,7 @@
 
 /* article unit nine */
 .article-unit-nine {
-  height: 450px;
+  /* height: 450px; */
   width: 302px;
 }
 
@@ -336,8 +336,14 @@
 
 /* article unit eleven */
 .article-unit-eleven {
-  height: 578px;
+  /* height: 578px; */
   width: 302px;
+}
+
+/* article unit twelve */
+.article-unit-twelve {
+  /* height: 578px; */
+  width: 618px;
 }
 
 /* article unit subscribe */
