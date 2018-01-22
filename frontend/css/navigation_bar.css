@@ -14,12 +14,14 @@
   display: flex;
 }
 
-.fa-bars {
+.fa-bars,
+.fa-times {
   font-size: 20px;
   color: #666666;
 }
 
-.fa-bars:hover {
+.fa-bars:hover,
+.fa-times:hover {
   color: black;
   cursor: pointer;
 }
@@ -43,7 +45,7 @@
   padding-top: 20px;
 }
 
-.navigation-bar-top-section:first-child>h3:hover,
+.navigation-bar-top-section:first-child h3:hover a,
 .navigation-bar-top-section:last-child h2:first-child:hover,
 .navigation-bar-top-section:last-child h2:last-child:hover{
   color: black;

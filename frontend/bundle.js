@@ -27486,6 +27486,7 @@ var NavigationBar = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (NavigationBar.__proto__ || Object.getPrototypeOf(NavigationBar)).call(this, props));
 
     _this.toggleNav = _this.toggleNav.bind(_this);
+    _this.changeNav = _this.changeNav.bind(_this);
     _this.convertTitle = _this.convertTitle.bind(_this);
     _this.handleMouseHover = _this.handleMouseHover.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
@@ -27512,80 +27513,45 @@ var NavigationBar = function (_React$Component) {
       this.toggleNav();
     }
   }, {
+    key: 'changeNav',
+    value: function changeNav(section, color) {
+      var nav = document.getElementById("navigation-bar-top");
+      section.style.backgroundColor = color;
+      section.getElementsByTagName('a')[0].style.color = "white";
+      section.style.borderTop = "none";
+      nav.style.backgroundColor = color;
+      nav.getElementsByTagName('a')[0].style.color = "white";
+      nav.getElementsByTagName('h3')[1].style.color = "white";
+      nav.getElementsByTagName('h2')[1].style.color = "white";
+      nav.getElementsByTagName('i')[0].style.color = "white";
+      nav.getElementsByTagName('i')[1].style.color = "white";
+    }
+  }, {
     key: 'toggleNav',
     value: function toggleNav() {
-      var nav = document.getElementById("navigation-bar-top");
-      var section = void 0;
       switch (this.props.location.pathname) {
         case "/business":
-          section = document.getElementById("navigation-bar-bottom-section-one");
-          section.style.backgroundColor = '' + this.green;
-          section.getElementsByTagName('a')[0].style.color = "white";
-          section.style.borderTop = "none";
-          nav.style.backgroundColor = '' + this.green;
-          nav.getElementsByTagName('a')[0].style.color = "white";
-          nav.getElementsByTagName('h3')[1].style.color = "white";
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.green);
           break;
         case "/culture":
-          section = document.getElementById("navigation-bar-bottom-section-two");
-          section.style.backgroundColor = '' + this.purple;
-          section.getElementsByTagName('a')[0].style.color = "white";
-          section.style.borderTop = "none";
-          nav.style.backgroundColor = '' + this.purple;
-          nav.getElementsByTagName('a')[0].style.color = "white";
-          nav.getElementsByTagName('h3')[1].style.color = "white";
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.purple);
           break;
         case "/design":
-          section = document.getElementById("navigation-bar-bottom-section-three");
-          section.style.backgroundColor = '' + this.teal;
-          section.getElementsByTagName('a')[0].style.color = "white";
-          section.style.borderTop = "none";
-          nav.style.backgroundColor = '' + this.teal;
-          nav.getElementsByTagName('a')[0].style.color = "white";
-          nav.getElementsByTagName('h3')[1].style.color = "white";
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.teal);
           break;
         case "/gear":
-          section = document.getElementById("navigation-bar-bottom-section-four");
-          section.style.backgroundColor = '' + this.blue;
-          section.getElementsByTagName('a')[0].style.color = "white";
-          section.style.borderTop = "none";
-          nav.style.backgroundColor = '' + this.blue;
-          nav.getElementsByTagName('a')[0].style.color = "white";
-          nav.getElementsByTagName('h3')[1].style.color = "white";
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.blue);
           break;
         case "/science":
-          section = document.getElementById("navigation-bar-bottom-section-five");
-          section.style.backgroundColor = '' + this.orange;
-          section.getElementsByTagName('a')[0].style.color = "white";
-          section.style.borderTop = "none";
-          nav.style.backgroundColor = '' + this.orange;
-          nav.getElementsByTagName('a')[0].style.color = "white";
-          nav.getElementsByTagName('h3')[1].style.color = "white";
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.orange);
           break;
         case "/security":
-          section = document.getElementById("navigation-bar-bottom-section-six");
-          section.style.backgroundColor = '' + this.brown;
-          section.getElementsByTagName('a')[0].style.color = "white";
-          section.style.borderTop = "none";
-          nav.style.backgroundColor = '' + this.brown;
-          nav.getElementsByTagName('a')[0].style.color = "white";
-          nav.getElementsByTagName('h3')[1].style.color = "white";
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.brown);
           break;
         case "/transportation":
-          section = document.getElementById("navigation-bar-bottom-section-seven");
-          section.style.backgroundColor = '' + this.red;
-          section.getElementsByTagName('a')[0].style.color = "white";
-          section.style.borderTop = "none";
-          nav.style.backgroundColor = '' + this.red;
-          nav.getElementsByTagName('a')[0].style.color = "white";
-          nav.getElementsByTagName('h3')[1].style.color = "white";
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.red);
           break;
         default:
-          // section = document.getElementById("navigation-bar-bottom-section-seven");
-          // section.style.backgroundColor = "white";
-          // section.getElementsByTagName('a')[0].style.color = "#6C6C6C";
-          // section.style.borderTop = "1px solid #CCCCCC";
-          // nav.style.backgroundColor = "white";
           break;
       }
     }

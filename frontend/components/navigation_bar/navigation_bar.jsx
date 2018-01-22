@@ -11,6 +11,7 @@ class NavigationBar extends React.Component {
   constructor(props){
       super(props);
       this.toggleNav = this.toggleNav.bind(this);
+      this.changeNav = this.changeNav.bind(this);
       this.convertTitle = this.convertTitle.bind(this);
       this.handleMouseHover = this.handleMouseHover.bind(this);
       this.handleClick = this.handleClick.bind(this);
@@ -34,79 +35,43 @@ class NavigationBar extends React.Component {
     this.toggleNav();
   }
 
-  toggleNav(){
+  changeNav(section, color){
     let nav = document.getElementById("navigation-bar-top");
-    let section;
+    section.style.backgroundColor = color;
+    section.getElementsByTagName('a')[0].style.color = "white";
+    section.style.borderTop = "none";
+    nav.style.backgroundColor = color;
+    nav.getElementsByTagName('a')[0].style.color = "white";
+    nav.getElementsByTagName('h3')[1].style.color = "white";
+    nav.getElementsByTagName('h2')[1].style.color = "white";
+    nav.getElementsByTagName('i')[0].style.color = "white";
+    nav.getElementsByTagName('i')[1].style.color = "white";
+  }
+
+  toggleNav(){
     switch (this.props.location.pathname) {
       case "/business":
-        section = document.getElementById("navigation-bar-bottom-section-one");
-        section.style.backgroundColor = `${this.green}`;
-        section.getElementsByTagName('a')[0].style.color = "white";
-        section.style.borderTop = "none";
-        nav.style.backgroundColor = `${this.green}`;
-        nav.getElementsByTagName('a')[0].style.color = "white";
-        nav.getElementsByTagName('h3')[1].style.color = "white";
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.green);
         break;
       case "/culture":
-        section = document.getElementById("navigation-bar-bottom-section-two");
-        section.style.backgroundColor = `${this.purple}`;
-        section.getElementsByTagName('a')[0].style.color = "white";
-        section.style.borderTop = "none";
-        nav.style.backgroundColor = `${this.purple}`;
-        nav.getElementsByTagName('a')[0].style.color = "white";
-        nav.getElementsByTagName('h3')[1].style.color = "white";
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.purple);
         break;
       case "/design":
-        section = document.getElementById("navigation-bar-bottom-section-three");
-        section.style.backgroundColor = `${this.teal}`;
-        section.getElementsByTagName('a')[0].style.color = "white";
-        section.style.borderTop = "none";
-        nav.style.backgroundColor = `${this.teal}`;
-        nav.getElementsByTagName('a')[0].style.color = "white";
-        nav.getElementsByTagName('h3')[1].style.color = "white";
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.teal);
         break;
       case "/gear":
-        section = document.getElementById("navigation-bar-bottom-section-four");
-        section.style.backgroundColor = `${this.blue}`;
-        section.getElementsByTagName('a')[0].style.color = "white";
-        section.style.borderTop = "none";
-        nav.style.backgroundColor = `${this.blue}`;
-        nav.getElementsByTagName('a')[0].style.color = "white";
-        nav.getElementsByTagName('h3')[1].style.color = "white";
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.blue);
         break;
       case "/science":
-        section = document.getElementById("navigation-bar-bottom-section-five");
-        section.style.backgroundColor = `${this.orange}`;
-        section.getElementsByTagName('a')[0].style.color = "white";
-        section.style.borderTop = "none";
-        nav.style.backgroundColor = `${this.orange}`;
-        nav.getElementsByTagName('a')[0].style.color = "white";
-        nav.getElementsByTagName('h3')[1].style.color = "white";
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.orange);
         break;
       case "/security":
-        section = document.getElementById("navigation-bar-bottom-section-six");
-        section.style.backgroundColor = `${this.brown}`;
-        section.getElementsByTagName('a')[0].style.color = "white";
-        section.style.borderTop = "none";
-        nav.style.backgroundColor = `${this.brown}`;
-        nav.getElementsByTagName('a')[0].style.color = "white";
-        nav.getElementsByTagName('h3')[1].style.color = "white";
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.brown);
         break;
       case "/transportation":
-        section = document.getElementById("navigation-bar-bottom-section-seven");
-        section.style.backgroundColor = `${this.red}`;
-        section.getElementsByTagName('a')[0].style.color = "white";
-        section.style.borderTop = "none";
-        nav.style.backgroundColor = `${this.red}`;
-        nav.getElementsByTagName('a')[0].style.color = "white";
-        nav.getElementsByTagName('h3')[1].style.color = "white";
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.red);
         break;
       default:
-        // section = document.getElementById("navigation-bar-bottom-section-seven");
-        // section.style.backgroundColor = "white";
-        // section.getElementsByTagName('a')[0].style.color = "#6C6C6C";
-        // section.style.borderTop = "1px solid #CCCCCC";
-        // nav.style.backgroundColor = "white";
         break;
     }
   }
