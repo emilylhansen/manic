@@ -313,7 +313,7 @@
 
 .article-unit-list-item .article-unit-list-item-image {
   height: 75px;
-  width: 30%;
+  width: 75px;
   position: relative;
   overflow: hidden;
   margin-right: 15px;
@@ -340,7 +340,7 @@
   margin-right: 15px;
 }
 
-.article-unit-list-item-one,
+.article-unit-list-item,
 .article-unit-list-item-three {
   width: 100%;
 }
