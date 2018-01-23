@@ -42,7 +42,7 @@ class Category extends React.Component{
     });
 
     MainUtil.fetchBestStories().then(stories => {
-      stories.slice(0, 10).map(storyId => {
+      stories.map(storyId => {
         MainUtil.fetchStory(storyId).then(story => {
           bestStories[story.id] = story;
           this.setState({bestStories: bestStories});

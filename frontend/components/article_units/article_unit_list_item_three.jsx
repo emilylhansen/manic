@@ -21,23 +21,23 @@ class ArticleUnitListItemThree extends React.Component {
 
   render(){
     return (
-      <li className="article-unit-list-item-three article-unit-list-item">
-        <div className="article-unit-list-item-three-bottom article-unit-list-item-three-bottom">
-          <div className="article-unit-list-item-three-bottom-context horizontal">
-            <div className="article-unit-list-item-three-bottom-context-image article-unit-image article-unit-list-item-three-image">
+      <li className="article-unit-list-item-three">
+        <div className="article-unit-list-item-three-bottom">
+          <div className="horizontal">
+            <div className="article-unit-image article-unit-list-item-image">
               <img src="frontend/images/world.jpg"></img>
             </div>
-            <div className="article-unit-list-item-three-bottom-context-text article-unit-list-item-three-bottom-context-text">
-              <div className="article-unit-list-item-three-bottom-context-text-type article-unit-author">
+            <div className="article-unit-list-item-text">
+              <div className="article-unit-author">
                 <h2>{`${this.convertTime()} | ${this.props.story.by}`}</h2>
               </div>
-              <div className="article-unit-list-item-three-bottom-context-text-title article-unit-title article-unit-list-item-three-title">
+              <div className="article-unit-title">
                 <h6><a href={this.props.story.url}>
                   {this.props.story.title.length > 50 ?
                     `${this.props.story.title.split("").slice(0, 50).join("")}...` :
                   this.props.story.title}</a></h6>
               </div>
-              <div className="article-unit-list-item-three-bottom-context-text article-unit-list-item-title">
+              <div className="article-unit-list-item-title">
                 <h1>{this.props.story.title}</h1>
               </div>
             </div>

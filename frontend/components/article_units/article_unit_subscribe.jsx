@@ -11,8 +11,8 @@ class ArticleUnitSubscribe extends React.Component {
   render(){
     return (
       <div className="article-unit-subscribe article-unit">
-        <div className="article-unit-subscribe-top article-unit-list-top"></div>
-        <div className="article-unit-subscribe-bottom horizontal">
+        <div className="article-unit-list-top"></div>
+        <div className="horizontal">
           <ul className="horizontal">
             <ArticleUnitSubscribeItem
               header="Get The Magazine"

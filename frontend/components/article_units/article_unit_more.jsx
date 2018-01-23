@@ -15,7 +15,7 @@ class ArticleUnitMore extends React.Component{
           <div className="article-unit-more-context horizontal">
             <div className="article-unit-more-button">
               <i className="fa fa-long-arrow-right" aria-hidden="true"></i></div>
-              <h2>{`more ${this.props.header}`}</h2>
+              <h2>{this.props.header}</h2>
           </div>
         </a>
       </div>

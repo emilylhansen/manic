@@ -8,17 +8,17 @@ h1 {
 }
 
 h2 {
-  font-size: 12px;
+  font-size: 11px;
   color: #686868;
   font-family: 'Rajdhani', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
 h3 {
   font-size: 18px;
   color: black;
-  font-family: 'Chonburi', cursive;
+  font-family: 'Oranienbaum', serif;
 }
 
 h4 {
@@ -32,8 +32,8 @@ h4 {
 h5 {
   font-size: 12px;
   color: white;
-  font-family: 'Chonburi', cursive;
   margin: 5px 0px 0px 0px;
+  font-family: 'Oranienbaum', serif;
 }
 
 h6 {
@@ -52,7 +52,10 @@ ul {
 
 a {
   text-decoration: none;
-  color: black;
+}
+
+.horizontal {
+  display: flex;
 }
 
 .loading {

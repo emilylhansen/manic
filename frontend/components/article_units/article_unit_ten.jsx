@@ -12,9 +12,9 @@ class ArticleUnitTen extends React.Component {
   render(){
     return (
       <div className="article-unit-ten article-unit">
-        <div className="article-unit-ten-top article-unit-list-top"></div>
-        <div className="article-unit-ten-middle article-unit-middle">
-          <div className="article-unit-ten-middle-header article-unit-middle-header">
+        <div className="article-unit-list-top"></div>
+        <div className="article-unit-middle">
+          <div className="article-unit-middle-header">
             <h3>{this.props.header}</h3>
           </div>
         </div>

@@ -41,8 +41,8 @@
 
 .navigation-bar-top-section:first-child h3 {
   padding-left: 20px;
-  font-size: 16px;
-  padding-top: 20px;
+  font-size: 20px;
+  padding-top: 18px;
 }
 
 .navigation-bar-top-section:first-child h3:hover a,
@@ -61,14 +61,11 @@
 
 .navigation-bar-top-section:last-child h2{
   margin: 0px;
-  padding-top: 20px;
-  font-size: 14px;
   margin-left: auto;
 }
 
 .navigation-bar-top-section:last-child h2:first-child{
-  padding-right: 10px;
-  font-size: 11px;
+  padding-right: 20px;
   padding-top: 25px;
 }
 
@@ -76,7 +73,7 @@
   margin-left: 0px;
   padding-right: 25px;
   font-size: 20px;
-  font-weight: lighter;
+  padding-top: 20px;
 }
 
 .navigation-bar-top-section {
@@ -228,16 +225,16 @@
 .navigation-bar-menu-bottom-list ul{
   justify-content: space-between;
   text-transform: uppercase;
-  padding-top: 2px;
+  /* padding-top: 2px; */
+}
+
+.navigation-bar-menu-bottom-list li h2 a {
+  color: #686868;
 }
 
 .navigation-bar-menu-bottom-list li:hover h2 a{
   color: black;
   cursor: pointer;
-}
-
-.navigation-bar-menu-bottom-list li h2{
-  font-size: 10px;
 }
 
 .navigation-bar-menu-section-content {

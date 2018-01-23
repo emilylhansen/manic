@@ -18,13 +18,13 @@ class ArticleUnitTwelve extends React.Component {
     ));
     return (
       <div className="article-unit-twelve article-unit">
-        <div className="article-unit-twelve-top article-unit-list-top"></div>
-        <div className="article-unit-twelve-middle article-unit-middle">
-          <div className="article-unit-twelve-middle-header article-unit-middle-header">
+        <div className="article-unit-list-top"></div>
+        <div className="article-unit-middle">
+          <div className="article-unit-middle-header">
             <h3>{this.props.header}</h3>
           </div>
         </div>
-        <div className="article-unit-twelve-bottom article-unit-list-bottom">
+        <div className="article-unit-list-bottom">
           <ul>
             {items}
           </ul>

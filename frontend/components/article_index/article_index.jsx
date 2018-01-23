@@ -11,7 +11,7 @@ import ArticleUnitSix from '../article_units/article_unit_six.jsx';
 import ArticleUnitSeven from '../article_units/article_unit_seven.jsx';
 import ArticleUnitEight from '../article_units/article_unit_eight.jsx';
 import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
-import ArticleUnitTen from '../article_units/article_unit_ten.jsx';
+// import ArticleUnitTen from '../article_units/article_unit_ten.jsx';
 import ArticleUnitEleven from '../article_units/article_unit_eleven.jsx';
 import ArticleUnitSubscribe from '../article_units/article_unit_subscribe.jsx';
 import Footer from '../footer/footer.jsx';
@@ -105,7 +105,7 @@ class ArticleIndex extends React.Component{
           Object.values(this.state.bestStories)[7]]}
         header="Culture"
         />;
-      articleTen = <ArticleUnitTen
+      articleTen = <ArticleUnitNine
         stories={[Object.values(this.state.bestStories)[7],
           Object.values(this.state.bestStories)[7],
           Object.values(this.state.bestStories)[7],

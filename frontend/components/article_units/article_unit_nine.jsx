@@ -19,19 +19,19 @@ class ArticleUnitNine extends React.Component {
 
     return (
       <div className="article-unit-nine article-unit">
-        <div className="article-unit-nine-top article-unit-list-top"></div>
-        <div className="article-unit-nine-middle article-unit-middle">
-          <div className="article-unit-nine-middle-header article-unit-middle-header">
+        <div className="article-unit-list-top"></div>
+        <div className="article-unit-middle">
+          <div className="article-unit-middle-header">
             <h3>{this.props.header}</h3>
           </div>
         </div>
-        <div className="article-unit-nine-bottom article-unit-list-bottom">
+        <div className="article-unit-list-bottom">
           <ul>
             {items}
           </ul>
         </div>
         <ArticleUnitMore
-          header={this.props.header}
+          header={`more ${this.props.header}`}
           />
       </div>
     );

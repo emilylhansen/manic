@@ -37,7 +37,7 @@ class ArticleUnitEleven extends React.Component {
           </ul>
         </div>
         <ArticleUnitMore
-          header={this.props.header}
+          header={`more ${this.props.header}`}
           />
       </div>
     );
