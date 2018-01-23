@@ -11,30 +11,30 @@ class ArticleIndexGridThree extends React.Component{
       <div className="horizontal margin-bottom">
         <div className="margin-right">
           <div>
-            {this.props.articles["ten"]}
+            {this.props.articles[0]}
           </div>
         </div>
         <div className="">
           <div className="horizontal margin-bottom">
             <div className="margin-right">
-              {this.props.articles["two"]}
+              {this.props.articles[1]}
             </div>
             <div>
-              {this.props.articles["one"]}
+              {this.props.articles[2]}
             </div>
           </div>
           <div className="horizontal">
             <div className="">
               <div className="margin-right">
-                {this.props.articles["five"]}
+                {this.props.articles[3]}
               </div>
             </div>
             <div className="">
               <div className="margin-bottom">
-                {this.props.articles["three"]}
+                {this.props.articles[4]}
               </div>
               <div>
-                {this.props.articles["four"]}
+                {this.props.articles[5]}
               </div>
             </div>
           </div>

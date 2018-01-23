@@ -18,6 +18,7 @@ import Loading from '../loading/loading.jsx';
 import ArticleIndexGridOne from './article_index_grid_one.jsx';
 import ArticleIndexGridTwo from './article_index_grid_two.jsx';
 import ArticleIndexGridThree from './article_index_grid_three.jsx';
+import ArticleIndexGridFour from './article_index_grid_four.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(){
@@ -74,6 +75,12 @@ class ArticleIndex extends React.Component{
     let articleNine;
     let articleTen;
     let articleEleven;
+    let articleTwelve;
+    let articleThirteen;
+    let articleFourteen;
+    let articleFifteen;
+    let articleSixteen;
+    let articleSeventeen;
     let articleSubscribe;
 
     if(Object.keys(this.state.bestStories).length > 9){
@@ -121,6 +128,42 @@ class ArticleIndex extends React.Component{
           Object.values(this.state.bestStories)[7]]}
         header="Science"
         />;
+      articleTwelve = <ArticleUnitEleven
+        stories={[Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7]]}
+        header="Business"
+        />;
+      articleThirteen = <ArticleUnitEleven
+        stories={[Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7]]}
+        header="Culture"
+        />;
+      articleFourteen = <ArticleUnitEleven
+        stories={[Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7]]}
+        header="Design"
+        />;
+      articleFifteen = <ArticleUnitEleven
+        stories={[Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7]]}
+        header="Gear"
+        />;
+      articleSixteen = <ArticleUnitEleven
+        stories={[Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7]]}
+        header="Science"
+        />;
+      articleSeventeen = <ArticleUnitEleven
+        stories={[Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7],
+          Object.values(this.state.bestStories)[7]]}
+        header="Security"
+        />;
       articleSubscribe = <ArticleUnitSubscribe/>;
     }
 
@@ -133,27 +176,40 @@ class ArticleIndex extends React.Component{
         <div className="article-index-background">
           <div className="article-index">
             <ArticleIndexGridOne
-              articles={{one: articleOne,
-                        two: articleTwo,
-                        three: articleThree,
-                        four: articleFour,
-                        five: articleFive,
-                        six: articleSix,
-                        nine: articleNine,
-                        eleven: articleEleven}}
+              articles={[articleOne,
+                        articleTwo,
+                        articleThree,
+                        articleFour,
+                        articleFive,
+                        articleSix,
+                        articleNine]}
               />
 
             <ArticleIndexGridTwo
-              articles={{eight: articleEight}}
+              articles={[articleSeven,
+                        articleFive,
+                        articleEight]}
               />
 
             <ArticleIndexGridThree
-              articles={{ten: articleTen,
-                        two: articleTwo,
-                        one: articleOne,
-                        five: articleFive,
-                        three: articleThree,
-                        four: articleFour}}
+              articles={[articleTen,
+                        articleTwo,
+                        articleOne,
+                        articleFive,
+                        articleThree,
+                        articleFour]}
+              />
+
+            <ArticleIndexGridFour
+              articles={[articleTwelve,
+                        articleThirteen,
+                        articleFourteen]}
+              />
+
+            <ArticleIndexGridFour
+              articles={[articleFifteen,
+                        articleSixteen,
+                        articleSeventeen]}
               />
 
             <div className="horizontal">

@@ -12,39 +12,42 @@ class ArticleIndexGridOne extends React.Component{
         <div className="margin-right">
           <div className="horizontal margin-bottom">
             <div className="margin-right">
-              {this.props.articles["one"]}
+              {this.props.articles[0]}
             </div>
             <div>
-              {this.props.articles["two"]}
+              {this.props.articles[1]}
             </div>
           </div>
           <div className="horizontal margin-bottom">
             <div className="margin-right">
               <div className="margin-bottom">
-                {this.props.articles["three"]}
+                {this.props.articles[2]}
               </div>
               <div>
-                {this.props.articles["four"]}
+                {this.props.articles[3]}
               </div>
             </div>
             <div className="">
               <div>
-                {this.props.articles["five"]}
+                {this.props.articles[4]}
               </div>
             </div>
           </div>
           <div className="">
             <div>
-              {this.props.articles["six"]}
+              {this.props.articles[5]}
             </div>
           </div>
         </div>
         <div className="">
           <div className="margin-bottom">
-            {this.props.articles["nine"]}
+            {this.props.articles[6]}
+          </div>
+          <div className="margin-bottom">
+            {this.props.articles[4]}
           </div>
           <div>
-            {this.props.articles["eleven"]}
+            {this.props.articles[3]}
           </div>
         </div>
       </div>

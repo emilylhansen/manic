@@ -26139,6 +26139,10 @@ var _article_index_grid_three = __webpack_require__(145);
 
 var _article_index_grid_three2 = _interopRequireDefault(_article_index_grid_three);
 
+var _article_index_grid_four = __webpack_require__(146);
+
+var _article_index_grid_four2 = _interopRequireDefault(_article_index_grid_four);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26215,6 +26219,12 @@ var ArticleIndex = function (_React$Component) {
       var articleNine = void 0;
       var articleTen = void 0;
       var articleEleven = void 0;
+      var articleTwelve = void 0;
+      var articleThirteen = void 0;
+      var articleFourteen = void 0;
+      var articleFifteen = void 0;
+      var articleSixteen = void 0;
+      var articleSeventeen = void 0;
       var articleSubscribe = void 0;
 
       if (Object.keys(this.state.bestStories).length > 9) {
@@ -26254,6 +26264,30 @@ var ArticleIndex = function (_React$Component) {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
           header: 'Science'
         });
+        articleTwelve = _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
+          header: 'Business'
+        });
+        articleThirteen = _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
+          header: 'Culture'
+        });
+        articleFourteen = _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
+          header: 'Design'
+        });
+        articleFifteen = _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
+          header: 'Gear'
+        });
+        articleSixteen = _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
+          header: 'Science'
+        });
+        articleSeventeen = _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
+          header: 'Security'
+        });
         articleSubscribe = _react2.default.createElement(_article_unit_subscribe2.default, null);
       }
 
@@ -26267,25 +26301,19 @@ var ArticleIndex = function (_React$Component) {
             'div',
             { className: 'article-index' },
             _react2.default.createElement(_article_index_grid_one2.default, {
-              articles: { one: articleOne,
-                two: articleTwo,
-                three: articleThree,
-                four: articleFour,
-                five: articleFive,
-                six: articleSix,
-                nine: articleNine,
-                eleven: articleEleven }
+              articles: [articleOne, articleTwo, articleThree, articleFour, articleFive, articleSix, articleNine]
             }),
             _react2.default.createElement(_article_index_grid_two2.default, {
-              articles: { eight: articleEight }
+              articles: [articleSeven, articleFive, articleEight]
             }),
             _react2.default.createElement(_article_index_grid_three2.default, {
-              articles: { ten: articleTen,
-                two: articleTwo,
-                one: articleOne,
-                five: articleFive,
-                three: articleThree,
-                four: articleFour }
+              articles: [articleTen, articleTwo, articleOne, articleFive, articleThree, articleFour]
+            }),
+            _react2.default.createElement(_article_index_grid_four2.default, {
+              articles: [articleTwelve, articleThirteen, articleFourteen]
+            }),
+            _react2.default.createElement(_article_index_grid_four2.default, {
+              articles: [articleFifteen, articleSixteen, articleSeventeen]
             }),
             _react2.default.createElement(
               'div',
@@ -28810,12 +28838,12 @@ var ArticleIndexGridOne = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'margin-right' },
-              this.props.articles["one"]
+              this.props.articles[0]
             ),
             _react2.default.createElement(
               'div',
               null,
-              this.props.articles["two"]
+              this.props.articles[1]
             )
           ),
           _react2.default.createElement(
@@ -28827,12 +28855,12 @@ var ArticleIndexGridOne = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'margin-bottom' },
-                this.props.articles["three"]
+                this.props.articles[2]
               ),
               _react2.default.createElement(
                 'div',
                 null,
-                this.props.articles["four"]
+                this.props.articles[3]
               )
             ),
             _react2.default.createElement(
@@ -28841,7 +28869,7 @@ var ArticleIndexGridOne = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 null,
-                this.props.articles["five"]
+                this.props.articles[4]
               )
             )
           ),
@@ -28851,7 +28879,7 @@ var ArticleIndexGridOne = function (_React$Component) {
             _react2.default.createElement(
               'div',
               null,
-              this.props.articles["six"]
+              this.props.articles[5]
             )
           )
         ),
@@ -28861,12 +28889,17 @@ var ArticleIndexGridOne = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'margin-bottom' },
-            this.props.articles["nine"]
+            this.props.articles[6]
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'margin-bottom' },
+            this.props.articles[4]
           ),
           _react2.default.createElement(
             'div',
             null,
-            this.props.articles["eleven"]
+            this.props.articles[3]
           )
         )
       );
@@ -28922,8 +28955,22 @@ var ArticleIndexGridTwo = function (_React$Component) {
         { className: 'margin-bottom' },
         _react2.default.createElement(
           'div',
+          { className: 'horizontal margin-bottom' },
+          _react2.default.createElement(
+            'div',
+            { className: 'margin-right' },
+            this.props.articles[0]
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            this.props.articles[1]
+          )
+        ),
+        _react2.default.createElement(
+          'div',
           null,
-          this.props.articles["eight"]
+          this.props.articles[2]
         )
       );
     }
@@ -28982,7 +29029,7 @@ var ArticleIndexGridThree = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            this.props.articles["ten"]
+            this.props.articles[0]
           )
         ),
         _react2.default.createElement(
@@ -28994,12 +29041,12 @@ var ArticleIndexGridThree = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'margin-right' },
-              this.props.articles["two"]
+              this.props.articles[1]
             ),
             _react2.default.createElement(
               'div',
               null,
-              this.props.articles["one"]
+              this.props.articles[2]
             )
           ),
           _react2.default.createElement(
@@ -29011,7 +29058,7 @@ var ArticleIndexGridThree = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'margin-right' },
-                this.props.articles["five"]
+                this.props.articles[3]
               )
             ),
             _react2.default.createElement(
@@ -29020,12 +29067,12 @@ var ArticleIndexGridThree = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'margin-bottom' },
-                this.props.articles["three"]
+                this.props.articles[4]
               ),
               _react2.default.createElement(
                 'div',
                 null,
-                this.props.articles["four"]
+                this.props.articles[5]
               )
             )
           )
@@ -29038,6 +29085,76 @@ var ArticleIndexGridThree = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = ArticleIndexGridThree;
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleIndexGridFour = function (_React$Component) {
+  _inherits(ArticleIndexGridFour, _React$Component);
+
+  function ArticleIndexGridFour(props) {
+    _classCallCheck(this, ArticleIndexGridFour);
+
+    return _possibleConstructorReturn(this, (ArticleIndexGridFour.__proto__ || Object.getPrototypeOf(ArticleIndexGridFour)).call(this, props));
+  }
+
+  _createClass(ArticleIndexGridFour, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'margin-bottom inline-block' },
+        _react2.default.createElement(
+          'div',
+          { className: 'horizontal' },
+          _react2.default.createElement(
+            'div',
+            { className: 'margin-right' },
+            this.props.articles[0]
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'margin-right' },
+            this.props.articles[1]
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            this.props.articles[2]
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleIndexGridFour;
+}(_react2.default.Component);
+
+exports.default = ArticleIndexGridFour;
 
 /***/ })
 /******/ ]);

@@ -252,6 +252,13 @@
   text-transform: uppercase;
 }
 
+.article-unit-seven .article-unit-title h4 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: lighter;
+  font-size: 24px;
+}
+
 /* article unit eight **************************************/
 .article-unit-eight {
   height: 372px;

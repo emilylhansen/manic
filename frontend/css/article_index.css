@@ -21,3 +21,7 @@
 .margin-left {
   margin-left: 15px;
 }
+
+.inline-block {
+  display: inline-block;
+}
