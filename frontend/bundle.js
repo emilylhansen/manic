@@ -26127,6 +26127,18 @@ var _loading = __webpack_require__(27);
 
 var _loading2 = _interopRequireDefault(_loading);
 
+var _article_index_grid_one = __webpack_require__(143);
+
+var _article_index_grid_one2 = _interopRequireDefault(_article_index_grid_one);
+
+var _article_index_grid_two = __webpack_require__(144);
+
+var _article_index_grid_two2 = _interopRequireDefault(_article_index_grid_two);
+
+var _article_index_grid_three = __webpack_require__(145);
+
+var _article_index_grid_three2 = _interopRequireDefault(_article_index_grid_three);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26136,8 +26148,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import ArticleUnitTen from '../article_units/article_unit_ten.jsx';
-
 
 var ArticleIndex = function (_React$Component) {
   _inherits(ArticleIndex, _React$Component);
@@ -26234,11 +26244,11 @@ var ArticleIndex = function (_React$Component) {
         });
         articleNine = _react2.default.createElement(_article_unit_nine2.default, {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
-          header: 'Culture'
+          header: 'most popular'
         });
         articleTen = _react2.default.createElement(_article_unit_nine2.default, {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
-          header: 'Gear'
+          header: 'most recent'
         });
         articleEleven = _react2.default.createElement(_article_unit_eleven2.default, {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
@@ -26256,148 +26266,30 @@ var ArticleIndex = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'article-index' },
+            _react2.default.createElement(_article_index_grid_one2.default, {
+              articles: { one: articleOne,
+                two: articleTwo,
+                three: articleThree,
+                four: articleFour,
+                five: articleFive,
+                six: articleSix,
+                nine: articleNine,
+                eleven: articleEleven }
+            }),
+            _react2.default.createElement(_article_index_grid_two2.default, {
+              articles: { eight: articleEight }
+            }),
+            _react2.default.createElement(_article_index_grid_three2.default, {
+              articles: { ten: articleTen,
+                two: articleTwo,
+                one: articleOne,
+                five: articleFive,
+                three: articleThree,
+                four: articleFour }
+            }),
             _react2.default.createElement(
               'div',
-              { className: 'article-index-1 horizontal margin-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'article-index-1-1 margin-right' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'article-index-1-1-1 horizontal margin-bottom' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'margin-right' },
-                    articleOne
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    null,
-                    articleTwo
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'article-index-1-1-2 horizontal margin-bottom' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'article-index-1-1-2-1 margin-right' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'margin-bottom' },
-                      articleThree
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      articleFour
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'article-index-1-1-2-2' },
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      articleFive
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'article-index-1-1-3' },
-                  _react2.default.createElement(
-                    'div',
-                    null,
-                    articleSix
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-index-1-2' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'margin-bottom' },
-                  articleNine
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  articleEleven
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-index-2 margin-bottom' },
-              _react2.default.createElement(
-                'div',
-                null,
-                articleEight
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-index-3 horizontal margin-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'article-index-3-1 margin-right' },
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  articleTen
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-index-3-2' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'article-index-3-2-1 horizontal margin-bottom' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'margin-right' },
-                    articleTwo
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    null,
-                    articleOne
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'article-index-3-2-2 horizontal' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'article-index-3-2-2-1' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'margin-right' },
-                      articleFive
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'article-index-3-2-2-2' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'margin-bottom' },
-                      articleThree
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      articleFour
-                    )
-                  )
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-index-3 horizontal' },
+              { className: 'horizontal' },
               _react2.default.createElement(
                 'div',
                 null,
@@ -28866,6 +28758,286 @@ var MostPopular = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = MostPopular;
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleIndexGridOne = function (_React$Component) {
+  _inherits(ArticleIndexGridOne, _React$Component);
+
+  function ArticleIndexGridOne(props) {
+    _classCallCheck(this, ArticleIndexGridOne);
+
+    return _possibleConstructorReturn(this, (ArticleIndexGridOne.__proto__ || Object.getPrototypeOf(ArticleIndexGridOne)).call(this, props));
+  }
+
+  _createClass(ArticleIndexGridOne, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'horizontal margin-bottom' },
+        _react2.default.createElement(
+          'div',
+          { className: 'margin-right' },
+          _react2.default.createElement(
+            'div',
+            { className: 'horizontal margin-bottom' },
+            _react2.default.createElement(
+              'div',
+              { className: 'margin-right' },
+              this.props.articles["one"]
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              this.props.articles["two"]
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'horizontal margin-bottom' },
+            _react2.default.createElement(
+              'div',
+              { className: 'margin-right' },
+              _react2.default.createElement(
+                'div',
+                { className: 'margin-bottom' },
+                this.props.articles["three"]
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                this.props.articles["four"]
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: '' },
+              _react2.default.createElement(
+                'div',
+                null,
+                this.props.articles["five"]
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: '' },
+            _react2.default.createElement(
+              'div',
+              null,
+              this.props.articles["six"]
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: '' },
+          _react2.default.createElement(
+            'div',
+            { className: 'margin-bottom' },
+            this.props.articles["nine"]
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            this.props.articles["eleven"]
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleIndexGridOne;
+}(_react2.default.Component);
+
+exports.default = ArticleIndexGridOne;
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleIndexGridTwo = function (_React$Component) {
+  _inherits(ArticleIndexGridTwo, _React$Component);
+
+  function ArticleIndexGridTwo(props) {
+    _classCallCheck(this, ArticleIndexGridTwo);
+
+    return _possibleConstructorReturn(this, (ArticleIndexGridTwo.__proto__ || Object.getPrototypeOf(ArticleIndexGridTwo)).call(this, props));
+  }
+
+  _createClass(ArticleIndexGridTwo, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'margin-bottom' },
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.articles["eight"]
+        )
+      );
+    }
+  }]);
+
+  return ArticleIndexGridTwo;
+}(_react2.default.Component);
+
+exports.default = ArticleIndexGridTwo;
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleIndexGridThree = function (_React$Component) {
+  _inherits(ArticleIndexGridThree, _React$Component);
+
+  function ArticleIndexGridThree(props) {
+    _classCallCheck(this, ArticleIndexGridThree);
+
+    return _possibleConstructorReturn(this, (ArticleIndexGridThree.__proto__ || Object.getPrototypeOf(ArticleIndexGridThree)).call(this, props));
+  }
+
+  _createClass(ArticleIndexGridThree, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'horizontal margin-bottom' },
+        _react2.default.createElement(
+          'div',
+          { className: 'margin-right' },
+          _react2.default.createElement(
+            'div',
+            null,
+            this.props.articles["ten"]
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: '' },
+          _react2.default.createElement(
+            'div',
+            { className: 'horizontal margin-bottom' },
+            _react2.default.createElement(
+              'div',
+              { className: 'margin-right' },
+              this.props.articles["two"]
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              this.props.articles["one"]
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'horizontal' },
+            _react2.default.createElement(
+              'div',
+              { className: '' },
+              _react2.default.createElement(
+                'div',
+                { className: 'margin-right' },
+                this.props.articles["five"]
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: '' },
+              _react2.default.createElement(
+                'div',
+                { className: 'margin-bottom' },
+                this.props.articles["three"]
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                this.props.articles["four"]
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ArticleIndexGridThree;
+}(_react2.default.Component);
+
+exports.default = ArticleIndexGridThree;
 
 /***/ })
 /******/ ]);

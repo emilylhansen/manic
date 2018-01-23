@@ -99,13 +99,6 @@
   color: #98003B;
 }
 
-.article-unit-six-bottom-context-text-title h4 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 14px;
-  font-weight: lighter;
-  font-size: 24px;
-}
-
 .article-unit-image {
   position: relative;
   overflow: hidden;
@@ -231,6 +224,13 @@
   text-transform: uppercase;
 }
 
+.article-unit-six .article-unit-title h4 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: lighter;
+  font-size: 24px;
+}
+
 /* article unit seven **************************************/
 .article-unit-seven {
   height: 250px;
@@ -273,6 +273,13 @@
   text-transform: uppercase;
 }
 
+.article-unit-eight .article-unit-title h4 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 95%;
+  letter-spacing: -2px;
+}
 /* article unit list item **************************************/
 .article-unit-list-item-title h1 {
   font-family: "Times New Roman", Times, serif;
