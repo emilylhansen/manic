@@ -26515,7 +26515,7 @@ var ArticleUnitTwo = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26617,7 +26617,7 @@ var ArticleUnitThree = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26714,7 +26714,7 @@ var ArticleUnitFour = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -27415,7 +27415,7 @@ var ArticleUnitSubscribe = function (_React$Component) {
             }),
             _react2.default.createElement(_article_unit_subscribe_item2.default, {
               header: 'Get Our Newsletter',
-              text: 'WIRED\u2019s biggest stories delivered to your inbox.',
+              text: 'MANIC\u2019s biggest stories delivered to your inbox.',
               action: 'submit'
             }),
             _react2.default.createElement(_article_unit_subscribe_item2.default, {

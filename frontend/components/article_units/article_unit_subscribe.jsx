@@ -21,7 +21,7 @@ class ArticleUnitSubscribe extends React.Component {
               />
             <ArticleUnitSubscribeItem
               header="Get Our Newsletter"
-              text="WIRED’s biggest stories delivered to your inbox."
+              text="MANIC’s biggest stories delivered to your inbox."
               action="submit"
               />
             <ArticleUnitSubscribeItem
