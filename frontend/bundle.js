@@ -27638,7 +27638,8 @@ var NavigationBar = function (_React$Component) {
         }),
         !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_bottom2.default, null),
         this.state.isHovering && _react2.default.createElement(_navigation_bar_subscribe2.default, {
-          handleMouseHover: this.handleMouseHover
+          handleMouseHover: this.handleMouseHover,
+          handleInput: this.handleInput
         }),
         this.state.searchIsClicked && _react2.default.createElement(_navigation_bar_search2.default, {
           search: this.state.search,
@@ -28365,6 +28366,10 @@ var _article_unit_subscribe_item = __webpack_require__(52);
 
 var _article_unit_subscribe_item2 = _interopRequireDefault(_article_unit_subscribe_item);
 
+var _article_unit_subscribe_item_two = __webpack_require__(147);
+
+var _article_unit_subscribe_item_two2 = _interopRequireDefault(_article_unit_subscribe_item_two);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28400,10 +28405,11 @@ var NavigationSubscribe = function (_React$Component) {
               text: 'Special Holiday Gift Offer \u2013 Buy one, get one FREE.',
               action: 'subscribe'
             }),
-            _react2.default.createElement(_article_unit_subscribe_item2.default, {
+            _react2.default.createElement(_article_unit_subscribe_item_two2.default, {
               header: 'Get Our Newsletter',
               text: 'WIRED\u2019s biggest stories delivered to your inbox.',
-              action: 'submit'
+              action: 'submit',
+              handleInput: this.props.handleInput
             }),
             _react2.default.createElement(_article_unit_subscribe_item2.default, {
               header: 'We\'re On Pinterest',

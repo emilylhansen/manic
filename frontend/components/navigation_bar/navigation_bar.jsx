@@ -135,6 +135,7 @@ class NavigationBar extends React.Component {
             this.state.isHovering &&
             <NavigationBarSubscribe
               handleMouseHover={this.handleMouseHover}
+              handleInput={this.handleInput}
               />
           }
           {

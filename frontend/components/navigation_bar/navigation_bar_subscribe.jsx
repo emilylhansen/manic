@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import ArticleUnitSubscribeItem from '../article_units/article_unit_subscribe_item.jsx';
+import ArticleUnitSubscribeItemTwo from '../article_units/article_unit_subscribe_item_two.jsx';
 
 class NavigationSubscribe extends React.Component {
   constructor(props){
@@ -19,10 +20,11 @@ class NavigationSubscribe extends React.Component {
               text="Special Holiday Gift Offer – Buy one, get one FREE."
               action="subscribe"
               />
-            <ArticleUnitSubscribeItem
+            <ArticleUnitSubscribeItemTwo
               header="Get Our Newsletter"
               text="WIRED’s biggest stories delivered to your inbox."
               action="submit"
+              handleInput={this.props.handleInput}
               />
             <ArticleUnitSubscribeItem
               header="We're On Pinterest"
