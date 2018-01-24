@@ -27283,7 +27283,8 @@ var ArticleUnitEleven = function (_React$Component) {
           )
         ),
         _react2.default.createElement(_article_unit_more2.default, {
-          header: 'more ' + this.props.header
+          header: 'more ' + this.props.header,
+          link: '#/category/' + this.props.header.toLowerCase()
         })
       );
     }

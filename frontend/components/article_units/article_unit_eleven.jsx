@@ -38,6 +38,7 @@ class ArticleUnitEleven extends React.Component {
         </div>
         <ArticleUnitMore
           header={`more ${this.props.header}`}
+          link={`#/category/${this.props.header.toLowerCase()}`}
           />
       </div>
     );
