@@ -32,6 +32,7 @@ class ArticleUnitNine extends React.Component {
         </div>
         <ArticleUnitMore
           header={`more ${this.props.header}`}
+          link={this.props.link}
           />
       </div>
     );

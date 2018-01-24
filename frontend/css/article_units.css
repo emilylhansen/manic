@@ -378,7 +378,7 @@
 
 /* article unit subscribe **************************************/
 .article-unit-subscribe {
-  height: 306px;
+  height: 270px;
   width: 940px;
 }
 
@@ -417,7 +417,7 @@
 
 .article-unit-subscribe-item-top h3 {
   margin: 0px;
-  font-size: 40px;
+  font-size: 45px;
   line-height: 90%;
 }
 

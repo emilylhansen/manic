@@ -3673,7 +3673,8 @@ var ArticleUnitNine = function (_React$Component) {
           )
         ),
         _react2.default.createElement(_article_unit_more2.default, {
-          header: 'more ' + this.props.header
+          header: 'more ' + this.props.header,
+          link: this.props.link
         })
       );
     }
@@ -28518,7 +28519,8 @@ var Category = function (_React$Component) {
         });
         articleTwo = _react2.default.createElement(_article_unit_nine2.default, {
           stories: [Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1]],
-          header: 'popular'
+          header: 'most popular',
+          link: '#/most-popular'
         });
       }
 

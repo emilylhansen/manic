@@ -73,7 +73,8 @@ class Category extends React.Component{
                   Object.values(this.state.bestStories)[1],
                   Object.values(this.state.bestStories)[1],
                   Object.values(this.state.bestStories)[1]]}
-        header="popular"
+        header="most popular"
+        link="#/most-popular"
         />;
     }
 
