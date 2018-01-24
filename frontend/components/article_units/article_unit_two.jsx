@@ -13,7 +13,7 @@ class ArticleUnitTwo extends React.Component {
         <div className="article-unit-bottom">
           <div>
             <div className="article-unit-image">
-              <img src="frontend/images/world.jpg"></img>
+              <img src="frontend/images/four.png"></img>
             </div>
             <div>
               <div className="article-unit-type">

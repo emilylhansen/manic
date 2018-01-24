@@ -27,7 +27,7 @@ class ArticleUnitSeven extends React.Component {
               </div>
             </div>
             <div className="article-unit-image">
-              <img src="frontend/images/world.jpg"></img>
+              <img src="frontend/images/two.png"></img>
             </div>
           </div>
         </div>

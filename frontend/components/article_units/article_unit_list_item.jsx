@@ -12,7 +12,7 @@ class ArticleUnitListItem extends React.Component {
         <div className="article-unit-list-item-bottom">
           <div className="horizontal">
             <div className="article-unit-image article-unit-list-item-image">
-              <img src="frontend/images/world.jpg"></img>
+              <img src="frontend/images/seventeen.png"></img>
             </div>
             <div className="article-unit-list-item-text">
               <div className="article-unit-list-item-type">

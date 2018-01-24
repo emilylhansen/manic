@@ -1623,7 +1623,7 @@ var ArticleUnitListItem = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/seventeen.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -3759,7 +3759,7 @@ var ArticleUnitSubscribeItem = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/twelve.png' })
             )
           ),
           _react2.default.createElement(
@@ -26390,7 +26390,7 @@ var ArticleUnitOne = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/seven.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -26492,7 +26492,7 @@ var ArticleUnitTwo = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/four.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -26594,7 +26594,7 @@ var ArticleUnitThree = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/five.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -26731,7 +26731,7 @@ var ArticleUnitFour = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/fourteen.png' })
             )
           )
         )
@@ -26798,7 +26798,7 @@ var ArticleUnitFive = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/six.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -26900,7 +26900,7 @@ var ArticleUnitSix = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/three.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -27037,7 +27037,7 @@ var ArticleUnitSeven = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/two.png' })
             )
           )
         )
@@ -27104,7 +27104,7 @@ var ArticleUnitEight = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/twentythree.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -27314,7 +27314,7 @@ var ArticleUnitListItemTwo = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/twentyfive.png' })
             ),
             _react2.default.createElement(
               'div',
@@ -28619,7 +28619,7 @@ var ArticleUnitListItemThree = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+              _react2.default.createElement('img', { src: 'frontend/images/one.png' })
             ),
             _react2.default.createElement(
               'div',

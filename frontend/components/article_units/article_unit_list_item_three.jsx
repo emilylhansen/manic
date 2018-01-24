@@ -25,7 +25,7 @@ class ArticleUnitListItemThree extends React.Component {
         <div className="article-unit-list-item-three-bottom">
           <div className="horizontal">
             <div className="article-unit-image article-unit-list-item-image">
-              <img src="frontend/images/world.jpg"></img>
+              <img src="frontend/images/one.png"></img>
             </div>
             <div className="article-unit-list-item-text">
               <div className="article-unit-author">
