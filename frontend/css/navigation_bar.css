@@ -41,7 +41,7 @@
 
 .navigation-bar-top-section:first-child h3 {
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 22px;
   padding-top: 18px;
 }
 
@@ -53,9 +53,9 @@
 }
 
 .navigation-bar-top-section:nth-child(2) h3{
-  font-size: 35px;
+  font-size: 45px;
   margin: 0px;
-  padding-top: 10px;
+  padding-top: 8px;
   text-align: center;
 }
 
