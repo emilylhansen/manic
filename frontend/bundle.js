@@ -1719,7 +1719,7 @@ var Footer = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'footer' },
-        this.props.pathname !== '/' && !this.props.pathname.includes("page") && !this.props.pathname.includes("most-popular") && _react2.default.createElement(_article_unit_more2.default, {
+        this.props.pathname !== '/' && !this.props.pathname.includes("page") && !this.props.pathname.includes("most-popular") && !this.props.pathname.includes("most-recent") && _react2.default.createElement(_article_unit_more2.default, {
           header: 'more results',
           link: '#' + this.props.pathname + '/page'
 
@@ -24816,10 +24816,6 @@ var _article_index = __webpack_require__(121);
 
 var _article_index2 = _interopRequireDefault(_article_index);
 
-var _navigation_bar = __webpack_require__(134);
-
-var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
-
 var _category = __webpack_require__(140);
 
 var _category2 = _interopRequireDefault(_category);
@@ -24834,8 +24830,8 @@ var App = function App() {
   return _react2.default.createElement(
     'div',
     { className: 'app' },
-    _react2.default.createElement(_navigation_bar2.default, null),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/most-popular', component: _most_popular2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/most-recent', component: _category2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/category/:categoryName', component: _article_index2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/category/:categoryName/page', component: _category2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _article_index2.default })
@@ -26144,6 +26140,10 @@ var _article_index_grid_four = __webpack_require__(146);
 
 var _article_index_grid_four2 = _interopRequireDefault(_article_index_grid_four);
 
+var _navigation_bar = __webpack_require__(134);
+
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26260,7 +26260,8 @@ var ArticleIndex = function (_React$Component) {
         });
         articleTen = _react2.default.createElement(_article_unit_nine2.default, {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
-          header: 'most recent'
+          header: 'most recent',
+          link: '#/most-recent'
         });
         articleEleven = _react2.default.createElement(_article_unit_eleven2.default, {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
@@ -26298,38 +26299,45 @@ var ArticleIndex = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           'div',
-          { className: 'article-index-background' },
+          null,
+          _react2.default.createElement(_navigation_bar2.default, {
+            header: this.props.location.pathname === "/" ? "" : this.props.match.params.categoryName
+          }),
           _react2.default.createElement(
             'div',
-            { className: 'article-index' },
-            _react2.default.createElement(_article_index_grid_one2.default, {
-              articles: [articleOne, articleTwo, articleThree, articleFour, articleFive, articleSix, articleNine]
-            }),
-            _react2.default.createElement(_article_index_grid_two2.default, {
-              articles: [articleSeven, articleFive, articleEight]
-            }),
-            _react2.default.createElement(_article_index_grid_three2.default, {
-              articles: [articleTen, articleTwo, articleOne, articleFive, articleThree, articleFour]
-            }),
-            _react2.default.createElement(_article_index_grid_four2.default, {
-              articles: [articleTwelve, articleThirteen, articleFourteen]
-            }),
-            _react2.default.createElement(_article_index_grid_four2.default, {
-              articles: [articleFifteen, articleSixteen, articleSeventeen]
-            }),
+            { className: 'article-index-background' },
             _react2.default.createElement(
               'div',
-              { className: 'horizontal' },
+              { className: 'article-index' },
+              _react2.default.createElement(_article_index_grid_one2.default, {
+                articles: [articleOne, articleTwo, articleThree, articleFour, articleFive, articleSix, articleNine]
+              }),
+              _react2.default.createElement(_article_index_grid_two2.default, {
+                articles: [articleSeven, articleFive, articleEight]
+              }),
+              _react2.default.createElement(_article_index_grid_three2.default, {
+                articles: [articleTen, articleTwo, articleOne, articleFive, articleThree, articleFour]
+              }),
+              _react2.default.createElement(_article_index_grid_four2.default, {
+                articles: [articleTwelve, articleThirteen, articleFourteen]
+              }),
+              _react2.default.createElement(_article_index_grid_four2.default, {
+                articles: [articleFifteen, articleSixteen, articleSeventeen]
+              }),
               _react2.default.createElement(
                 'div',
-                null,
-                articleSubscribe
+                { className: 'horizontal' },
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  articleSubscribe
+                )
               )
-            )
-          ),
-          _react2.default.createElement(_footer2.default, {
-            pathname: this.props.location.pathname
-          })
+            ),
+            _react2.default.createElement(_footer2.default, {
+              pathname: this.props.location.pathname
+            })
+          )
         );
       }
     }
@@ -27519,7 +27527,6 @@ var NavigationBar = function (_React$Component) {
 
     _this.toggleNav = _this.toggleNav.bind(_this);
     _this.changeNav = _this.changeNav.bind(_this);
-    _this.convertTitle = _this.convertTitle.bind(_this);
     _this.handleMouseHover = _this.handleMouseHover.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
     _this.handleInput = _this.handleInput.bind(_this);
@@ -27564,41 +27571,23 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'toggleNav',
     value: function toggleNav() {
-      var category = void 0;
-      if (this.props.location.pathname !== "/") {
-        category = this.props.location.pathname.split(/\/|-/)[2];
-      }
+      var category = this.props.location.pathname;
 
-      switch (category) {
-        case "business":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.colors.green);
-          break;
-        case "culture":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-two"), this.colors.purple);
-          break;
-        case "design":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
-          break;
-        case "gear":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-four"), this.colors.blue);
-          break;
-        case "science":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-five"), this.colors.orange);
-          break;
-        case "security":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-six"), this.colors.brown);
-          break;
-        case "transportation":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"), this.colors.red);
-          break;
-        default:
-          break;
+      if (category.includes("business")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.colors.green);
+      } else if (category.includes("culture")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-two"), this.colors.purple);
+      } else if (category.includes("design")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
+      } else if (category.includes("gear")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-four"), this.colors.blue);
+      } else if (category.includes("science")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-five"), this.colors.orange);
+      } else if (category.includes("security")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-six"), this.colors.brown);
+      } else if (category.includes("transportation")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"), this.colors.red);
       }
-    }
-  }, {
-    key: 'convertTitle',
-    value: function convertTitle(title) {
-      return title.split(/\/|-/)[2].toUpperCase();
     }
   }, {
     key: 'handleMouseHover',
@@ -27633,9 +27622,9 @@ var NavigationBar = function (_React$Component) {
           handleClick: this.handleClick,
           menuIsClicked: this.state.menuIsClicked,
           pathname: this.props.location.pathname,
-          convertTitle: this.convertTitle,
           handleMouseHover: this.handleMouseHover,
-          searchIsClicked: this.state.searchIsClicked
+          searchIsClicked: this.state.searchIsClicked,
+          header: this.props.header.toUpperCase()
         }),
         !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_bottom2.default, null),
         this.state.isHovering && _react2.default.createElement(_navigation_bar_subscribe2.default, {
@@ -27648,7 +27637,8 @@ var NavigationBar = function (_React$Component) {
         }),
         this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_menu2.default, {
           colors: this.colors,
-          pathname: this.props.location.pathname
+          pathname: this.props.location.pathname,
+          header: this.props.header
         })
       );
     }
@@ -27716,35 +27706,22 @@ var NavigationBarMenu = function (_React$Component) {
   }, {
     key: 'toggleNav',
     value: function toggleNav() {
-      var category = void 0;
-      if (this.props.location.pathname !== "/") {
-        category = this.props.location.pathname.split(/\/|-/)[2];
-      }
+      var category = this.props.location.pathname;
 
-      switch (category) {
-        case "business":
-          this.changeNav(document.getElementById("navigation-bar-menu-section-one"), this.props.colors.green);
-          break;
-        case "culture":
-          this.changeNav(document.getElementById("navigation-bar-menu-section-two"), this.props.colors.purple);
-          break;
-        case "design":
-          this.changeNav(document.getElementById("navigation-bar-menu-section-three"), this.props.colors.teal);
-          break;
-        case "gear":
-          this.changeNav(document.getElementById("navigation-bar-menu-section-four"), this.props.colors.blue);
-          break;
-        case "science":
-          this.changeNav(document.getElementById("navigation-bar-menu-section-five"), this.props.colors.orange);
-          break;
-        case "security":
-          this.changeNav(document.getElementById("navigation-bar-menu-section-six"), this.props.colors.brown);
-          break;
-        case "transportation":
-          this.changeNav(document.getElementById("navigation-bar-menu-section-seven"), this.props.colors.red);
-          break;
-        default:
-          break;
+      if (category.includes("business")) {
+        this.changeNav(document.getElementById("navigation-bar-menu-section-one"), this.props.colors.green);
+      } else if (category.includes("culture")) {
+        this.changeNav(document.getElementById("navigation-bar-menu-section-two"), this.propscolors.purple);
+      } else if (category.includes("design")) {
+        this.changeNav(document.getElementById("navigation-bar-menu-section-three"), this.props.colors.teal);
+      } else if (category.includes("gear")) {
+        this.changeNav(document.getElementById("navigation-bar-menu-section-four"), this.props.colors.blue);
+      } else if (category.includes("science")) {
+        this.changeNav(document.getElementById("navigation-bar-menu-section-five"), this.props.colors.orange);
+      } else if (category.includes("security")) {
+        this.changeNav(document.getElementById("navigation-bar-menu-section-six"), this.props.colors.brown);
+      } else if (category.includes("transportation")) {
+        this.changeNav(document.getElementById("navigation-bar-menu-section-seven"), this.props.colors.red);
       }
     }
   }, {
@@ -28092,7 +28069,7 @@ var NavigationBarTop = function (_React$Component) {
           _react2.default.createElement(
             'h3',
             null,
-            this.props.pathname !== "/" ? this.props.convertTitle(this.props.pathname) : "MANIC"
+            this.props.pathname !== "/" ? this.props.header : "MANIC"
           )
         ),
         _react2.default.createElement(
@@ -28469,6 +28446,10 @@ var _footer = __webpack_require__(26);
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _navigation_bar = __webpack_require__(134);
+
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -28535,7 +28516,11 @@ var Category = function (_React$Component) {
   }, {
     key: 'convertTitle',
     value: function convertTitle() {
-      return this.props.location.pathname.split(/\/|-/)[2].toUpperCase();
+      if (this.props.location.pathname === "/most-recent") {
+        return "MOST RECENT";
+      } else {
+        return this.props.match.params.categoryName.toUpperCase();
+      }
     }
   }, {
     key: 'render',
@@ -28559,24 +28544,31 @@ var Category = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           'div',
-          { className: 'category-background' },
+          null,
+          _react2.default.createElement(_navigation_bar2.default, {
+            header: this.convertTitle()
+          }),
           _react2.default.createElement(
             'div',
-            { className: 'category-index horizontal' },
+            { className: 'category-background' },
             _react2.default.createElement(
               'div',
-              { className: 'margin-right' },
-              articleOne
+              { className: 'category-index horizontal' },
+              _react2.default.createElement(
+                'div',
+                { className: 'margin-right' },
+                articleOne
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                articleTwo
+              )
             ),
-            _react2.default.createElement(
-              'div',
-              null,
-              articleTwo
-            )
-          ),
-          _react2.default.createElement(_footer2.default, {
-            pathname: this.props.location.pathname
-          })
+            _react2.default.createElement(_footer2.default, {
+              pathname: this.props.location.pathname
+            })
+          )
         );
       }
     }
@@ -28736,6 +28728,10 @@ var _footer = __webpack_require__(26);
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _navigation_bar = __webpack_require__(134);
+
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -28796,19 +28792,26 @@ var MostPopular = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           'div',
-          { className: 'most-popular-background' },
+          null,
+          _react2.default.createElement(_navigation_bar2.default, {
+            header: 'most popular'
+          }),
           _react2.default.createElement(
             'div',
-            { className: 'most-popular-index horizontal' },
+            { className: 'most-popular-background' },
             _react2.default.createElement(
               'div',
-              { className: 'most-popular-index-content' },
-              articleOne
-            )
-          ),
-          _react2.default.createElement(_footer2.default, {
-            pathname: this.props.location.pathname
-          })
+              { className: 'most-popular-index horizontal' },
+              _react2.default.createElement(
+                'div',
+                { className: 'most-popular-index-content' },
+                articleOne
+              )
+            ),
+            _react2.default.createElement(_footer2.default, {
+              pathname: this.props.location.pathname
+            })
+          )
         );
       }
     }

@@ -5,6 +5,7 @@ import * as MainUtil from '../../util/main_util';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
 import Loading from '../loading/loading.jsx';
 import Footer from '../footer/footer.jsx';
+import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 
 class MostPopular extends React.Component{
   constructor(){
@@ -46,15 +47,20 @@ class MostPopular extends React.Component{
       );
     } else {
       return (
-        <div className="most-popular-background">
-          <div className="most-popular-index horizontal">
-            <div className="most-popular-index-content">
-              {articleOne}
-            </div>
-          </div>
-          <Footer
-            pathname={this.props.location.pathname}
+        <div>
+          <NavigationBar
+            header="most popular"
             />
+          <div className="most-popular-background">
+            <div className="most-popular-index horizontal">
+              <div className="most-popular-index-content">
+                {articleOne}
+              </div>
+            </div>
+            <Footer
+              pathname={this.props.location.pathname}
+              />
+          </div>
         </div>
       );
     }

@@ -19,42 +19,29 @@ class NavigationBarMenu extends React.Component {
   }
 
   toggleNav(){
-    let category;
-    if(this.props.location.pathname !== "/") {
-      category = (this.props.location.pathname).split(/\/|-/)[2];
-    }
+    let category = this.props.location.pathname;
 
-    switch (category) {
-      case "business":
-        this.changeNav(document.getElementById("navigation-bar-menu-section-one"),
-        this.props.colors.green);
-        break;
-      case "culture":
-        this.changeNav(document.getElementById("navigation-bar-menu-section-two"),
-        this.props.colors.purple);
-        break;
-      case "design":
-        this.changeNav(document.getElementById("navigation-bar-menu-section-three"),
-        this.props.colors.teal);
-        break;
-      case "gear":
-        this.changeNav(document.getElementById("navigation-bar-menu-section-four"),
-        this.props.colors.blue);
-        break;
-      case "science":
-        this.changeNav(document.getElementById("navigation-bar-menu-section-five"),
-        this.props.colors.orange);
-        break;
-      case "security":
-        this.changeNav(document.getElementById("navigation-bar-menu-section-six"),
-        this.props.colors.brown);
-        break;
-      case "transportation":
-        this.changeNav(document.getElementById("navigation-bar-menu-section-seven"),
-        this.props.colors.red);
-        break;
-      default:
-        break;
+    if (category.includes("business")){
+      this.changeNav(document.getElementById("navigation-bar-menu-section-one"),
+      this.props.colors.green);
+    } else if (category.includes("culture")) {
+      this.changeNav(document.getElementById("navigation-bar-menu-section-two"),
+      this.propscolors.purple);
+    } else if (category.includes("design")) {
+      this.changeNav(document.getElementById("navigation-bar-menu-section-three"),
+      this.props.colors.teal);
+    } else if (category.includes("gear")) {
+      this.changeNav(document.getElementById("navigation-bar-menu-section-four"),
+      this.props.colors.blue);
+    } else if (category.includes("science")) {
+      this.changeNav(document.getElementById("navigation-bar-menu-section-five"),
+      this.props.colors.orange);
+    } else if (category.includes("security")) {
+      this.changeNav(document.getElementById("navigation-bar-menu-section-six"),
+      this.props.colors.brown);
+    } else if (category.includes("transportation")) {
+      this.changeNav(document.getElementById("navigation-bar-menu-section-seven"),
+      this.props.colors.red);
     }
   }
 

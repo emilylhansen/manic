@@ -6,6 +6,7 @@ import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
 import Loading from '../loading/loading.jsx';
 import Footer from '../footer/footer.jsx';
+import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 
 class Category extends React.Component{
   constructor(){
@@ -52,7 +53,11 @@ class Category extends React.Component{
   }
 
   convertTitle(){
-    return this.props.location.pathname.split(/\/|-/)[2].toUpperCase();
+    if(this.props.location.pathname === "/most-recent"){
+      return "MOST RECENT";
+    } else {
+      return this.props.match.params.categoryName.toUpperCase();
+    }
   }
 
   render(){
@@ -84,18 +89,23 @@ class Category extends React.Component{
       );
     } else {
       return (
-        <div className="category-background">
-          <div className="category-index horizontal">
-            <div className="margin-right">
-              {articleOne}
-            </div>
-            <div>
-              {articleTwo}
-            </div>
-          </div>
-          <Footer
-            pathname={this.props.location.pathname}
+        <div>
+          <NavigationBar
+            header={this.convertTitle()}
             />
+          <div className="category-background">
+            <div className="category-index horizontal">
+              <div className="margin-right">
+                {articleOne}
+              </div>
+              <div>
+                {articleTwo}
+              </div>
+            </div>
+            <Footer
+              pathname={this.props.location.pathname}
+              />
+          </div>
         </div>
       );
     }

@@ -12,7 +12,6 @@ class NavigationBar extends React.Component {
       super(props);
       this.toggleNav = this.toggleNav.bind(this);
       this.changeNav = this.changeNav.bind(this);
-      this.convertTitle = this.convertTitle.bind(this);
       this.handleMouseHover = this.handleMouseHover.bind(this);
       this.handleClick = this.handleClick.bind(this);
       this.handleInput = this.handleInput.bind(this);
@@ -52,47 +51,30 @@ class NavigationBar extends React.Component {
   }
 
   toggleNav(){
-    let category;
-    if(this.props.location.pathname !== "/") {
-      category = (this.props.location.pathname).split(/\/|-/)[2];
-    }
+    let category = this.props.location.pathname;
 
-    switch (category) {
-      case "business":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"),
-        this.colors.green);
-        break;
-      case "culture":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-two"),
-        this.colors.purple);
-        break;
-      case "design":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-three"),
-        this.colors.teal);
-        break;
-      case "gear":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-four"),
-        this.colors.blue);
-        break;
-      case "science":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-five"),
-        this.colors.orange);
-        break;
-      case "security":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-six"),
-        this.colors.brown);
-        break;
-      case "transportation":
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"),
-        this.colors.red);
-        break;
-      default:
-        break;
+    if (category.includes("business")){
+      this.changeNav(document.getElementById("navigation-bar-bottom-section-one"),
+      this.colors.green);
+    } else if (category.includes("culture")) {
+      this.changeNav(document.getElementById("navigation-bar-bottom-section-two"),
+      this.colors.purple);
+    } else if (category.includes("design")) {
+      this.changeNav(document.getElementById("navigation-bar-bottom-section-three"),
+      this.colors.teal);
+    } else if (category.includes("gear")) {
+      this.changeNav(document.getElementById("navigation-bar-bottom-section-four"),
+      this.colors.blue);
+    } else if (category.includes("science")) {
+      this.changeNav(document.getElementById("navigation-bar-bottom-section-five"),
+      this.colors.orange);
+    } else if (category.includes("security")) {
+      this.changeNav(document.getElementById("navigation-bar-bottom-section-six"),
+      this.colors.brown);
+    } else if (category.includes("transportation")) {
+      this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"),
+      this.colors.red);
     }
-  }
-
-  convertTitle(title){
-    return title.split(/\/|-/)[2].toUpperCase();
   }
 
   handleMouseHover() {
@@ -121,9 +103,9 @@ class NavigationBar extends React.Component {
             handleClick={this.handleClick}
             menuIsClicked={this.state.menuIsClicked}
             pathname={this.props.location.pathname}
-            convertTitle={this.convertTitle}
             handleMouseHover={this.handleMouseHover}
             searchIsClicked={this.state.searchIsClicked}
+            header={this.props.header.toUpperCase()}
             />
 
           { (!this.state.isHovering &&
@@ -150,6 +132,7 @@ class NavigationBar extends React.Component {
             <NavigationBarMenu
               colors={this.colors}
               pathname={this.props.location.pathname}
+              header={this.props.header}
               />
           }
         </div>

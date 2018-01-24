@@ -19,6 +19,7 @@ import ArticleIndexGridOne from './article_index_grid_one.jsx';
 import ArticleIndexGridTwo from './article_index_grid_two.jsx';
 import ArticleIndexGridThree from './article_index_grid_three.jsx';
 import ArticleIndexGridFour from './article_index_grid_four.jsx';
+import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(){
@@ -122,6 +123,7 @@ class ArticleIndex extends React.Component{
           Object.values(this.state.bestStories)[7],
           Object.values(this.state.bestStories)[7]]}
         header="most recent"
+        link="#/most-recent"
         />;
       articleEleven = <ArticleUnitEleven
         stories={[Object.values(this.state.bestStories)[7],
@@ -174,55 +176,60 @@ class ArticleIndex extends React.Component{
       );
     } else {
       return (
-        <div className="article-index-background">
-          <div className="article-index">
-            <ArticleIndexGridOne
-              articles={[articleOne,
-                        articleTwo,
-                        articleThree,
-                        articleFour,
-                        articleFive,
-                        articleSix,
-                        articleNine]}
-              />
-
-            <ArticleIndexGridTwo
-              articles={[articleSeven,
-                        articleFive,
-                        articleEight]}
-              />
-
-            <ArticleIndexGridThree
-              articles={[articleTen,
-                        articleTwo,
-                        articleOne,
-                        articleFive,
-                        articleThree,
-                        articleFour]}
-              />
-
-            <ArticleIndexGridFour
-              articles={[articleTwelve,
-                        articleThirteen,
-                        articleFourteen]}
-              />
-
-            <ArticleIndexGridFour
-              articles={[articleFifteen,
-                        articleSixteen,
-                        articleSeventeen]}
-              />
-
-            <div className="horizontal">
-              <div>
-                {articleSubscribe}
-              </div>
-            </div>
-
-          </div>
-          <Footer
-            pathname={this.props.location.pathname}
+        <div>
+          <NavigationBar
+            header={this.props.location.pathname === "/" ? "" : this.props.match.params.categoryName}
             />
+          <div className="article-index-background">
+            <div className="article-index">
+              <ArticleIndexGridOne
+                articles={[articleOne,
+                          articleTwo,
+                          articleThree,
+                          articleFour,
+                          articleFive,
+                          articleSix,
+                          articleNine]}
+                />
+
+              <ArticleIndexGridTwo
+                articles={[articleSeven,
+                          articleFive,
+                          articleEight]}
+                />
+
+              <ArticleIndexGridThree
+                articles={[articleTen,
+                          articleTwo,
+                          articleOne,
+                          articleFive,
+                          articleThree,
+                          articleFour]}
+                />
+
+              <ArticleIndexGridFour
+                articles={[articleTwelve,
+                          articleThirteen,
+                          articleFourteen]}
+                />
+
+              <ArticleIndexGridFour
+                articles={[articleFifteen,
+                          articleSixteen,
+                          articleSeventeen]}
+                />
+
+              <div className="horizontal">
+                <div>
+                  {articleSubscribe}
+                </div>
+              </div>
+
+            </div>
+            <Footer
+              pathname={this.props.location.pathname}
+              />
+          </div>
         </div>
       );
     }
