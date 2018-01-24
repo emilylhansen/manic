@@ -2,10 +2,21 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import ArticleUnitSubscribeItem from './article_unit_subscribe_item.jsx';
+import ArticleUnitSubscribeItemTwo from './article_unit_subscribe_item_two.jsx';
 
 class ArticleUnitSubscribe extends React.Component {
   constructor(props){
       super(props);
+      this.handleInput = this.handleInput.bind(this);
+      this.state = {
+        email: ""
+      };
+  }
+
+  handleInput(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    };
   }
 
   render(){
@@ -19,10 +30,11 @@ class ArticleUnitSubscribe extends React.Component {
               text="Special Holiday Gift Offer – Buy one, get one FREE."
               action="subscribe"
               />
-            <ArticleUnitSubscribeItem
+            <ArticleUnitSubscribeItemTwo
               header="Get Our Newsletter"
               text="MANIC’s biggest stories delivered to your inbox."
               action="submit"
+              handleInput={this.handleInput}
               />
             <ArticleUnitSubscribeItem
               header="We're On Pinterest"

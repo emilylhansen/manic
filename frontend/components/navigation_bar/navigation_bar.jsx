@@ -29,7 +29,8 @@ class NavigationBar extends React.Component {
         blue: "#0086A1",
         orange: "#FFC00A",
         brown: "#6A0000",
-        red: "#F52143"
+        red: "#F52143",
+        gray: "#686868"
       };
   }
 
