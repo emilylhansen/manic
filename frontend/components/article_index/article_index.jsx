@@ -113,6 +113,7 @@ class ArticleIndex extends React.Component{
           Object.values(this.state.bestStories)[7],
           Object.values(this.state.bestStories)[7]]}
         header="most popular"
+        link="#/most-popular"
         />;
       articleTen = <ArticleUnitNine
         stories={[Object.values(this.state.bestStories)[7],

@@ -1719,7 +1719,7 @@ var Footer = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'footer' },
-        this.props.pathname !== '/' && !this.props.pathname.includes("page") && _react2.default.createElement(_article_unit_more2.default, {
+        this.props.pathname !== '/' && !this.props.pathname.includes("page") && !this.props.pathname.includes("most-popular") && _react2.default.createElement(_article_unit_more2.default, {
           header: 'more results',
           link: '#' + this.props.pathname + '/page'
 
@@ -26255,7 +26255,8 @@ var ArticleIndex = function (_React$Component) {
         });
         articleNine = _react2.default.createElement(_article_unit_nine2.default, {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
-          header: 'most popular'
+          header: 'most popular',
+          link: '#/most-popular'
         });
         articleTen = _react2.default.createElement(_article_unit_nine2.default, {
           stories: [Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7], Object.values(this.state.bestStories)[7]],
