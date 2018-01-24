@@ -12,7 +12,7 @@ class ArticleUnitSubscribeItemTwo extends React.Component {
       <li className="article-unit-subscribe-item-two">
         <div className="article-unit-bottom">
           <div className="article-unit-subscribe-item-top">
-            <h3>{this.props.header}</h3>
+            <h3>{this.props.header.toUpperCase()}</h3>
           </div>
           <div className="article-unit-subscribe-item-bottom">
             <div className="article-unit-list-item-title">
@@ -26,11 +26,11 @@ class ArticleUnitSubscribeItemTwo extends React.Component {
             </div>
           </div>
           <div className="article-unit-subscribe-item-more">
-            <ArticleUnitMore
-              header={this.props.action}
-              />
           </div>
         </div>
+        <ArticleUnitMore
+          header={this.props.action}
+          />
       </li>
     );
   }

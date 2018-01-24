@@ -59,6 +59,16 @@ a {
   display: flex;
 }
 
+.app {
+  background-color: #FFFFFF;
+  z-index: -1;
+}
+
+.hide {
+  display: none;
+}
+
+/* LOADING ******************************************/
 .loading {
   height: 100vh;
   width: 100vw;
@@ -75,13 +85,4 @@ a {
   font-size: 40px;
   color: white;
   text-align: center;
-}
-
-.app {
-  background-color: #FFFFFF;
-  z-index: -1;
-}
-
-.hide {
-  display: none;
 }

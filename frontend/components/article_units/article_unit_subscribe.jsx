@@ -37,9 +37,10 @@ class ArticleUnitSubscribe extends React.Component {
               handleInput={this.handleInput}
               />
             <ArticleUnitSubscribeItem
-              header="We're On Pinterest"
+              header={`We're On Twitter`}
               text="See what's inspiring us."
               action="follow"
+              link="https://twitter.com/wired"
               />
           </ul>
         </div>

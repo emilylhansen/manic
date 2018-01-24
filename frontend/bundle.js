@@ -3765,7 +3765,7 @@ var ArticleUnitSubscribeItem = function (_React$Component) {
             _react2.default.createElement(
               'h3',
               null,
-              this.props.header
+              this.props.header.toUpperCase()
             )
           ),
           _react2.default.createElement(
@@ -3786,14 +3786,12 @@ var ArticleUnitSubscribeItem = function (_React$Component) {
               _react2.default.createElement('img', { src: 'frontend/images/twelve.png' })
             )
           ),
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-subscribe-item-more' },
-            _react2.default.createElement(_article_unit_more2.default, {
-              header: this.props.action
-            })
-          )
-        )
+          _react2.default.createElement('div', { className: 'article-unit-subscribe-item-more' })
+        ),
+        _react2.default.createElement(_article_unit_more2.default, {
+          header: this.props.action,
+          link: this.props.link
+        })
       );
     }
   }]);
@@ -26347,7 +26345,7 @@ var ArticleIndex = function (_React$Component) {
               _react2.default.createElement(_article_index_grid_four2.default, {
                 articles: [articleFifteen, articleSixteen, articleSeventeen]
               }),
-              _react2.default.createElement(
+              this.props.location.pathname === "/" && _react2.default.createElement(
                 'div',
                 { className: 'horizontal' },
                 _react2.default.createElement(
@@ -27475,9 +27473,10 @@ var ArticleUnitSubscribe = function (_React$Component) {
               handleInput: this.handleInput
             }),
             _react2.default.createElement(_article_unit_subscribe_item2.default, {
-              header: 'We\'re On Pinterest',
+              header: 'We\'re On Twitter',
               text: 'See what\'s inspiring us.',
-              action: 'follow'
+              action: 'follow',
+              link: 'https://twitter.com/wired'
             })
           )
         )
@@ -29270,7 +29269,7 @@ var ArticleUnitSubscribeItemTwo = function (_React$Component) {
             _react2.default.createElement(
               'h3',
               null,
-              this.props.header
+              this.props.header.toUpperCase()
             )
           ),
           _react2.default.createElement(
@@ -29294,14 +29293,11 @@ var ArticleUnitSubscribeItemTwo = function (_React$Component) {
                 placeholder: 'Enter your email' })
             )
           ),
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-subscribe-item-more' },
-            _react2.default.createElement(_article_unit_more2.default, {
-              header: this.props.action
-            })
-          )
-        )
+          _react2.default.createElement('div', { className: 'article-unit-subscribe-item-more' })
+        ),
+        _react2.default.createElement(_article_unit_more2.default, {
+          header: this.props.action
+        })
       );
     }
   }]);

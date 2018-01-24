@@ -219,11 +219,14 @@ class ArticleIndex extends React.Component{
                           articleSeventeen]}
                 />
 
-              <div className="horizontal">
-                <div>
-                  {articleSubscribe}
+              {
+                this.props.location.pathname === "/" &&
+                <div className="horizontal">
+                  <div>
+                    {articleSubscribe}
+                  </div>
                 </div>
-              </div>
+              }
 
             </div>
             <Footer
