@@ -16,6 +16,10 @@
   margin: 0px;
 }
 
+.footer-content-logo a{
+  color: black;
+}
+
 .footer-content-media {
   width: 330px;
   margin: 0 auto;

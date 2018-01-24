@@ -1733,7 +1733,11 @@ var Footer = function (_React$Component) {
             _react2.default.createElement(
               'h3',
               null,
-              'MANIC'
+              _react2.default.createElement(
+                'a',
+                { href: '#/' },
+                'MANIC'
+              )
             )
           ),
           _react2.default.createElement(
@@ -1742,27 +1746,47 @@ var Footer = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-facebook', 'aria-hidden': 'true' })
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.facebook.com/wired', target: '_blank' },
+                _react2.default.createElement('i', { className: 'fa fa-facebook', 'aria-hidden': 'true' })
+              )
             ),
             _react2.default.createElement(
               'div',
               { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
+              _react2.default.createElement(
+                'a',
+                { href: 'https://twitter.com/wired', target: '_blank' },
+                _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
+              )
             ),
             _react2.default.createElement(
               'div',
               { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-pinterest-p', 'aria-hidden': 'true' })
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.pinterest.com/wired/', target: '_blank' },
+                _react2.default.createElement('i', { className: 'fa fa-pinterest-p', 'aria-hidden': 'true' })
+              )
             ),
             _react2.default.createElement(
               'div',
               { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-youtube-play', 'aria-hidden': 'true' })
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.youtube.com/wired', target: '_blank' },
+                _react2.default.createElement('i', { className: 'fa fa-youtube-play', 'aria-hidden': 'true' })
+              )
             ),
             _react2.default.createElement(
               'div',
               { className: 'footer-content-media-item' },
-              _react2.default.createElement('i', { className: 'fa fa-instagram', 'aria-hidden': 'true' })
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.instagram.com/wired/', target: '_blank' },
+                _react2.default.createElement('i', { className: 'fa fa-instagram', 'aria-hidden': 'true' })
+              )
             )
           ),
           _react2.default.createElement(
@@ -1832,7 +1856,6 @@ var Footer = function (_React$Component) {
               'p',
               null,
               'CNMN Collection',
-              _react2.default.createElement('br', null),
               _react2.default.createElement('br', null),
               'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.'
             )
