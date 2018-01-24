@@ -27739,7 +27739,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+                _react2.default.createElement('img', { src: 'frontend/images/eight.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -27764,7 +27764,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+                _react2.default.createElement('img', { src: 'frontend/images/eighteen.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -27789,7 +27789,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+                _react2.default.createElement('img', { src: 'frontend/images/eleven.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -27814,7 +27814,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+                _react2.default.createElement('img', { src: 'frontend/images/fifteen.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -27839,7 +27839,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+                _react2.default.createElement('img', { src: 'frontend/images/nineteen.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -27864,7 +27864,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+                _react2.default.createElement('img', { src: 'frontend/images/sixteen.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -27889,7 +27889,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/world.jpg' })
+                _react2.default.createElement('img', { src: 'frontend/images/twentytwo.png' })
               ),
               _react2.default.createElement(
                 'h2',
