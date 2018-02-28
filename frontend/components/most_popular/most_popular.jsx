@@ -11,29 +11,27 @@ class MostPopular extends React.Component{
   constructor(){
     super();
     this.state = {
-      bestStories: {}
+      topStories: {}
     };
   }
 
   componentDidMount(){
-    let bestStories = {};
+    let topStories = {};
 
-    MainUtil.fetchBestStories().then(stories => {
-      stories.slice(0,20).map(storyId => {
-        MainUtil.fetchStory(storyId).then(story => {
-          bestStories[story.id] = story;
-          this.setState({bestStories: bestStories});
-        });
+    MainUtil.fetchTopStories().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topStories[i] = el;
+        this.setState({topStories: topStories});
       });
     });
   }
 
   render(){
     let articleOne;
-    if(Object.keys(this.state.bestStories).length >= 20){
+    if(Object.keys(this.state.topStories).length >= 20){
       let stories = [];
       for(let i = 0; i < 20; i++) {
-        stories.push(Object.values(this.state.bestStories)[i]);
+        stories.push(Object.values(this.state.topStories)[i]);
       }
       articleOne = <ArticleUnitTwelve
         stories={stories}

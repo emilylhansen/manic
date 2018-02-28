@@ -12,10 +12,10 @@ class ArticleUnitListItemThree extends React.Component {
                   "April", "May", "June",
                   "July", "August", "September",
                   "October", "November", "December"];
-    let date = new Date(this.props.story.time*1000);
-    let month = months[date.getMonth()];
-    let day = date.getDate();
-    let year = date.getFullYear();
+    let date = this.props.story.publishedAt.split(/-|T|Z|:|\./);
+    let month = months[parseInt(date[1])];
+    let day = date[2];
+    let year = date[0];
     return (`${month} ${day}, ${year}`);
   }
 

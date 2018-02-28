@@ -21,15 +21,15 @@ class ArticleUnitThree extends React.Component {
               </div>
               <div className="article-unit-title">
                 <h6><a href={this.props.story.url}>
-                  {this.props.story.title.length > 60 ?
-                    `${this.props.story.title.split("").slice(0, 60).join("")}...` :
+                  {this.props.story.title.length > 55 ?
+                    `${this.props.story.title.split("").slice(0, 55).join("")}...` :
                   this.props.story.title}</a></h6>
               </div>
               <div className="article-unit-author">
                 <h2>
                   {this.props.story.author ?
-                  (this.props.story.author.length > 20 ?
-                  `${this.props.story.author.split("").slice(0, 20).join("")}...` :
+                  (this.props.story.author.length > 15 ?
+                  `${this.props.story.author.split("").slice(0, 15).join("")}...` :
                   this.props.story.author) :
                   ""}
                 </h2>

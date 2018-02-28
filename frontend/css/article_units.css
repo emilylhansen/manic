@@ -351,7 +351,8 @@
   width: 100%;
 }
 
-.article-unit-list-item .article-unit-list-item-text {
+.article-unit-list-item .article-unit-list-item-text,
+.article-unit-list-item-three .article-unit-list-item-text {
   width: 70%;
 }
 

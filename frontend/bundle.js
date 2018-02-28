@@ -26567,12 +26567,12 @@ var ArticleIndex = function (_React$Component) {
           story: Object.values(this.state.topStories)[7]
         });
         articleNine = _react2.default.createElement(_article_unit_nine2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
+          stories: [Object.values(this.state.topStories)[8], Object.values(this.state.topStories)[9], Object.values(this.state.topStories)[10]],
           header: 'most popular',
           link: '#/most-popular'
         });
         articleTen = _react2.default.createElement(_article_unit_nine2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
+          stories: [Object.values(this.state.topStories)[11], Object.values(this.state.topStories)[12], Object.values(this.state.topStories)[13], Object.values(this.state.topStories)[14], Object.values(this.state.topStories)[15]],
           header: 'most recent',
           link: '#/most-recent'
         });
@@ -26838,7 +26838,7 @@ var ArticleUnitTwo = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 65 ? this.props.story.title.split("").slice(0, 65).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26940,7 +26940,7 @@ var ArticleUnitThree = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 55 ? this.props.story.title.split("").slice(0, 55).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26950,7 +26950,7 @@ var ArticleUnitThree = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
+                  this.props.story.author ? this.props.story.author.length > 15 ? this.props.story.author.split("").slice(0, 15).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
@@ -27047,7 +27047,7 @@ var ArticleUnitFour = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
+                  this.props.story.author ? this.props.story.author.length > 15 ? this.props.story.author.split("").slice(0, 15).join("") + '...' : this.props.story.author : ""
                 )
               )
             ),
@@ -27154,7 +27154,7 @@ var ArticleUnitFive = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
+                  this.props.story.author ? this.props.story.author.length > 30 ? this.props.story.author.split("").slice(0, 30).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
@@ -27246,7 +27246,7 @@ var ArticleUnitSix = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 120 ? this.props.story.title.split("").slice(0, 120).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -27343,7 +27343,7 @@ var ArticleUnitSeven = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 100 ? this.props.story.title.split("").slice(0, 100).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -28970,9 +28970,7 @@ var Category = function (_React$Component) {
 
     _this.convertTitle = _this.convertTitle.bind(_this);
     _this.state = {
-      topStories: {},
-      newStories: {},
-      bestStories: {}
+      topStories: {}
     };
     return _this;
   }
@@ -28983,33 +28981,11 @@ var Category = function (_React$Component) {
       var _this2 = this;
 
       var topStories = {};
-      var newStories = {};
-      var bestStories = {};
 
-      MainUtil.fetchTopStories().then(function (stories) {
-        stories.slice(0, 3).map(function (storyId) {
-          MainUtil.fetchStory(storyId).then(function (story) {
-            topStories[story.id] = story;
-            _this2.setState({ topStories: topStories });
-          });
-        });
-      });
-
-      MainUtil.fetchNewStories().then(function (stories) {
-        stories.slice(0, 5).map(function (storyId) {
-          MainUtil.fetchStory(storyId).then(function (story) {
-            newStories[story.id] = story;
-            _this2.setState({ newStories: newStories });
-          });
-        });
-      });
-
-      MainUtil.fetchBestStories().then(function (stories) {
-        stories.map(function (storyId) {
-          MainUtil.fetchStory(storyId).then(function (story) {
-            bestStories[story.id] = story;
-            _this2.setState({ bestStories: bestStories });
-          });
+      MainUtil.fetchTopStories().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topStories[i] = el;
+          _this2.setState({ topStories: topStories });
         });
       });
     }
@@ -29027,13 +29003,13 @@ var Category = function (_React$Component) {
     value: function render() {
       var articleOne = void 0;
       var articleTwo = void 0;
-      if (Object.keys(this.state.bestStories).length > 9) {
+      if (Object.keys(this.state.topStories).length > 9) {
         articleOne = _react2.default.createElement(_article_unit_twelve2.default, {
-          stories: [Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1]],
+          stories: [Object.values(this.state.topStories)[0], Object.values(this.state.topStories)[1], Object.values(this.state.topStories)[2], Object.values(this.state.topStories)[3], Object.values(this.state.topStories)[4]],
           header: this.convertTitle()
         });
         articleTwo = _react2.default.createElement(_article_unit_nine2.default, {
-          stories: [Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1], Object.values(this.state.bestStories)[1]],
+          stories: [Object.values(this.state.topStories)[0], Object.values(this.state.topStories)[1], Object.values(this.state.topStories)[2], Object.values(this.state.topStories)[3], Object.values(this.state.topStories)[4]],
           header: 'most popular',
           link: '#/most-popular'
         });
@@ -29122,10 +29098,10 @@ var ArticleUnitListItemThree = function (_React$Component) {
     key: 'convertTime',
     value: function convertTime() {
       var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      var date = new Date(this.props.story.time * 1000);
-      var month = months[date.getMonth()];
-      var day = date.getDate();
-      var year = date.getFullYear();
+      var date = this.props.story.publishedAt.split(/-|T|Z|:|\./);
+      var month = months[parseInt(date[1])];
+      var day = date[2];
+      var year = date[0];
       return month + ' ' + day + ', ' + year;
     }
   }, {
@@ -29252,7 +29228,7 @@ var MostPopular = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (MostPopular.__proto__ || Object.getPrototypeOf(MostPopular)).call(this));
 
     _this.state = {
-      bestStories: {}
+      topStories: {}
     };
     return _this;
   }
@@ -29262,14 +29238,12 @@ var MostPopular = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var bestStories = {};
+      var topStories = {};
 
-      MainUtil.fetchBestStories().then(function (stories) {
-        stories.slice(0, 20).map(function (storyId) {
-          MainUtil.fetchStory(storyId).then(function (story) {
-            bestStories[story.id] = story;
-            _this2.setState({ bestStories: bestStories });
-          });
+      MainUtil.fetchTopStories().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topStories[i] = el;
+          _this2.setState({ topStories: topStories });
         });
       });
     }
@@ -29277,10 +29251,10 @@ var MostPopular = function (_React$Component) {
     key: 'render',
     value: function render() {
       var articleOne = void 0;
-      if (Object.keys(this.state.bestStories).length >= 20) {
+      if (Object.keys(this.state.topStories).length >= 20) {
         var stories = [];
         for (var i = 0; i < 20; i++) {
-          stories.push(Object.values(this.state.bestStories)[i]);
+          stories.push(Object.values(this.state.topStories)[i]);
         }
         articleOne = _react2.default.createElement(_article_unit_twelve2.default, {
           stories: stories,

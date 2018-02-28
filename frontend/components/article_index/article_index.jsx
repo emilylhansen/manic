@@ -116,18 +116,18 @@ class ArticleIndex extends React.Component{
         story={Object.values(this.state.topStories)[7]}
         />;
       articleNine = <ArticleUnitNine
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
+        stories={[Object.values(this.state.topStories)[8],
+          Object.values(this.state.topStories)[9],
+          Object.values(this.state.topStories)[10]]}
         header="most popular"
         link="#/most-popular"
         />;
       articleTen = <ArticleUnitNine
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
+        stories={[Object.values(this.state.topStories)[11],
+          Object.values(this.state.topStories)[12],
+          Object.values(this.state.topStories)[13],
+          Object.values(this.state.topStories)[14],
+          Object.values(this.state.topStories)[15]]}
         header="most recent"
         link="#/most-recent"
         />;

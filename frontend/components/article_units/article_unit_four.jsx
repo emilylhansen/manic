@@ -25,8 +25,8 @@ class ArticleUnitFour extends React.Component {
               <div className="article-unit-author">
                 <h2>
                   {this.props.story.author ?
-                  (this.props.story.author.length > 20 ?
-                  `${this.props.story.author.split("").slice(0, 20).join("")}...` :
+                  (this.props.story.author.length > 15 ?
+                  `${this.props.story.author.split("").slice(0, 15).join("")}...` :
                   this.props.story.author) :
                   ""}
                 </h2>

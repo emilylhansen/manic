@@ -13,43 +13,20 @@ class Category extends React.Component{
     super();
     this.convertTitle = this.convertTitle.bind(this);
     this.state = {
-      topStories: {},
-      newStories: {},
-      bestStories: {}
+      topStories: {}
     };
   }
 
   componentDidMount(){
     let topStories = {};
-    let newStories = {};
-    let bestStories = {};
 
-    MainUtil.fetchTopStories().then(stories => {
-      stories.slice(0, 3).map(storyId => {
-        MainUtil.fetchStory(storyId).then(story => {
-          topStories[story.id] = story;
-          this.setState({topStories: topStories});
-        });
+    MainUtil.fetchTopStories().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topStories[i] = el;
+        this.setState({topStories: topStories});
       });
     });
 
-    MainUtil.fetchNewStories().then(stories => {
-      stories.slice(0, 5).map(storyId => {
-        MainUtil.fetchStory(storyId).then(story => {
-          newStories[story.id] = story;
-          this.setState({newStories: newStories});
-        });
-      });
-    });
-
-    MainUtil.fetchBestStories().then(stories => {
-      stories.map(storyId => {
-        MainUtil.fetchStory(storyId).then(story => {
-          bestStories[story.id] = story;
-          this.setState({bestStories: bestStories});
-        });
-      });
-    });
   }
 
   convertTitle(){
@@ -63,21 +40,21 @@ class Category extends React.Component{
   render(){
     let articleOne;
     let articleTwo;
-    if(Object.keys(this.state.bestStories).length > 9){
+    if(Object.keys(this.state.topStories).length > 9){
       articleOne = <ArticleUnitTwelve
-        stories={[Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1]]}
+        stories={[Object.values(this.state.topStories)[0],
+                  Object.values(this.state.topStories)[1],
+                  Object.values(this.state.topStories)[2],
+                  Object.values(this.state.topStories)[3],
+                  Object.values(this.state.topStories)[4]]}
         header={this.convertTitle()}
         />;
       articleTwo = <ArticleUnitNine
-        stories={[Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1],
-                  Object.values(this.state.bestStories)[1]]}
+        stories={[Object.values(this.state.topStories)[0],
+                  Object.values(this.state.topStories)[1],
+                  Object.values(this.state.topStories)[2],
+                  Object.values(this.state.topStories)[3],
+                  Object.values(this.state.topStories)[4]]}
         header="most popular"
         link="#/most-popular"
         />;
