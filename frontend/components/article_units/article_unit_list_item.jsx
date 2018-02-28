@@ -12,11 +12,11 @@ class ArticleUnitListItem extends React.Component {
         <div className="article-unit-list-item-bottom">
           <div className="horizontal">
             <div className="article-unit-image article-unit-list-item-image">
-              <img src="frontend/images/seventeen.png"></img>
+              <img src={this.props.story.urlToImage}></img>
             </div>
             <div className="article-unit-list-item-text">
               <div className="article-unit-list-item-type">
-                <h2>{this.props.story.type}</h2>
+                <h2>{this.props.story.source.name}</h2>
               </div>
               <div className="article-unit-title article-unit-list-item-title">
                 <h1><a href={this.props.story.url}>
@@ -25,7 +25,13 @@ class ArticleUnitListItem extends React.Component {
                   this.props.story.title}</a></h1>
               </div>
               <div className="article-unit-author">
-                <h2>{this.props.story.by}</h2>
+                <h2>
+                  {this.props.story.author ?
+                  (this.props.story.author.length > 20 ?
+                  `${this.props.story.author.split("").slice(0, 20).join("")}...` :
+                  this.props.story.author) :
+                  ""}
+                </h2>
               </div>
             </div>
           </div>
