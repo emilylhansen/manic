@@ -13,11 +13,11 @@ class ArticleUnitSix extends React.Component {
         <div className="article-unit-bottom">
           <div className="horizontal">
             <div className="article-unit-image">
-              <img src="frontend/images/three.png"></img>
+              <img src={this.props.story.urlToImage}></img>
             </div>
             <div className="article-unit-text">
               <div className="article-unit-type">
-                <h2>{this.props.story.type}</h2>
+                <h2>{this.props.story.source.name}</h2>
               </div>
               <div className="article-unit-title">
                 <h4><a href={this.props.story.url}>
@@ -26,7 +26,13 @@ class ArticleUnitSix extends React.Component {
                   this.props.story.title}</a></h4>
               </div>
               <div className="article-unit-author">
-                <h2>{this.props.story.by}</h2>
+                <h2>
+                  {this.props.story.author ?
+                  (this.props.story.author.length > 20 ?
+                  `${this.props.story.author.split("").slice(0, 20).join("")}...` :
+                  this.props.story.author) :
+                  ""}
+                </h2>
               </div>
             </div>
           </div>

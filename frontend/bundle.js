@@ -26848,7 +26848,7 @@ var ArticleUnitTwo = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
@@ -26950,7 +26950,7 @@ var ArticleUnitThree = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
@@ -27025,7 +27025,7 @@ var ArticleUnitFour = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.type
+                  this.props.story.source.name
                 )
               ),
               _react2.default.createElement(
@@ -27047,14 +27047,14 @@ var ArticleUnitFour = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.by
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             ),
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/fourteen.png' })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage })
             )
           )
         )
@@ -27121,7 +27121,7 @@ var ArticleUnitFive = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/six.png' })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage })
             ),
             _react2.default.createElement(
               'div',
@@ -27132,7 +27132,7 @@ var ArticleUnitFive = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.type
+                  this.props.story.source.name
                 )
               ),
               _react2.default.createElement(
@@ -27154,7 +27154,7 @@ var ArticleUnitFive = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.by
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
@@ -27223,7 +27223,7 @@ var ArticleUnitSix = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/three.png' })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage })
             ),
             _react2.default.createElement(
               'div',
@@ -27234,7 +27234,7 @@ var ArticleUnitSix = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.type
+                  this.props.story.source.name
                 )
               ),
               _react2.default.createElement(
@@ -27256,7 +27256,7 @@ var ArticleUnitSix = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.by
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
@@ -27331,7 +27331,7 @@ var ArticleUnitSeven = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.type
+                  this.props.story.source.name
                 )
               ),
               _react2.default.createElement(
@@ -27353,14 +27353,14 @@ var ArticleUnitSeven = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.by
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             ),
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/two.png' })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage })
             )
           )
         )
@@ -27427,7 +27427,7 @@ var ArticleUnitEight = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/twentythree.png' })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage })
             ),
             _react2.default.createElement(
               'div',
@@ -27438,7 +27438,7 @@ var ArticleUnitEight = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.type
+                  this.props.story.source.name
                 )
               ),
               _react2.default.createElement(
@@ -27460,7 +27460,7 @@ var ArticleUnitEight = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.by
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
