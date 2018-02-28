@@ -7,7 +7,6 @@ class ArticleUnitOne extends React.Component {
   }
 
   render(){
-    // <img src="frontend/images/seven.png"></img>
     return (
       <div className="article-unit-one article-unit jump">
         <div className="article-unit-top"></div>
@@ -23,11 +22,15 @@ class ArticleUnitOne extends React.Component {
               <div className="article-unit-title">
                 <h1><a href={this.props.story.url}>
                   {this.props.story.title.length > 60 ?
-                    `${this.props.story.title.split("").slice(0, 90).join("")}...` :
+                  `${this.props.story.title.split("").slice(0, 90).join("")}...` :
                   this.props.story.title}</a></h1>
               </div>
               <div className="article-unit-author">
-                <h2>{this.props.story.author}</h2>
+                <h2>
+                  {this.props.story.author.length > 20 ?
+                  `${this.props.story.author.split("").slice(0, 20).join("")}...` :
+                  this.props.story.author}
+                </h2>
               </div>
             </div>
           </div>

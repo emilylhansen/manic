@@ -26700,7 +26700,6 @@ var ArticleUnitOne = function (_React$Component) {
   _createClass(ArticleUnitOne, [{
     key: 'render',
     value: function render() {
-      // <img src="frontend/images/seven.png"></img>
       return _react2.default.createElement(
         'div',
         { className: 'article-unit-one article-unit jump' },
@@ -26747,7 +26746,7 @@ var ArticleUnitOne = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.author
+                  this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author
                 )
               )
             )
@@ -26816,7 +26815,7 @@ var ArticleUnitTwo = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/four.png' })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage })
             ),
             _react2.default.createElement(
               'div',
@@ -26827,7 +26826,7 @@ var ArticleUnitTwo = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.type
+                  this.props.story.source.name
                 )
               ),
               _react2.default.createElement(
@@ -26839,7 +26838,7 @@ var ArticleUnitTwo = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26849,7 +26848,7 @@ var ArticleUnitTwo = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.by
+                  this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author
                 )
               )
             )
