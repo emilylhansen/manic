@@ -26,42 +26,48 @@ class ArticleIndex extends React.Component{
     super();
     this.state = {
       topStories: {},
-      newStories: {},
-      bestStories: {}
+      newStories: {}
     };
   }
 
   componentDidMount(){
     let topStories = {};
     let newStories = {};
-    let bestStories = {};
 
-    MainUtil.fetchTopStories().then(stories => {
-      stories.slice(0, 3).map(storyId => {
-        MainUtil.fetchStory(storyId).then(story => {
-          topStories[story.id] = story;
-          this.setState({topStories: topStories});
-        });
+    MainUtil.fetchTopStories().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topStories[i] = el;
+        this.setState({topStories: topStories});
       });
     });
 
-    MainUtil.fetchNewStories().then(stories => {
-      stories.slice(0, 5).map(storyId => {
-        MainUtil.fetchStory(storyId).then(story => {
-          newStories[story.id] = story;
-          this.setState({newStories: newStories});
-        });
-      });
-    });
-
-    MainUtil.fetchBestStories().then(stories => {
-      stories.slice(0, 10).map(storyId => {
-        MainUtil.fetchStory(storyId).then(story => {
-          bestStories[story.id] = story;
-          this.setState({bestStories: bestStories});
-        });
-      });
-    });
+    //
+    // MainUtil.fetchTopStories().then(stories => {
+    //   stories.slice(0, 3).map(storyId => {
+    //     MainUtil.fetchStory(storyId).then(story => {
+    //       topStories[story.id] = story;
+    //       this.setState({topStories: topStories});
+    //     });
+    //   });
+    // });
+    //
+    // MainUtil.fetchNewStories().then(stories => {
+    //   stories.slice(0, 5).map(storyId => {
+    //     MainUtil.fetchStory(storyId).then(story => {
+    //       newStories[story.id] = story;
+    //       this.setState({newStories: newStories});
+    //     });
+    //   });
+    // });
+    //
+    // MainUtil.fetchtopStories().then(stories => {
+    //   stories.slice(0, 10).map(storyId => {
+    //     MainUtil.fetchStory(storyId).then(story => {
+    //       topStories[story.id] = story;
+    //       this.setState({topStories: topStories});
+    //     });
+    //   });
+    // });
   }
 
   render(){
@@ -84,87 +90,87 @@ class ArticleIndex extends React.Component{
     let articleSeventeen;
     let articleSubscribe;
 
-    if(Object.keys(this.state.bestStories).length > 9){
+    if(Object.keys(this.state.topStories).length > 9){
       articleOne = <ArticleUnitOne
-        story={Object.values(this.state.bestStories)[0]}
+        story={Object.values(this.state.topStories)[0]}
         />;
       articleTwo = <ArticleUnitTwo
-        story={Object.values(this.state.bestStories)[1]}
+        story={Object.values(this.state.topStories)[1]}
         />;
       articleThree = <ArticleUnitThree
-        story={Object.values(this.state.bestStories)[2]}
+        story={Object.values(this.state.topStories)[2]}
         />;
       articleFour = <ArticleUnitFour
-        story={Object.values(this.state.bestStories)[3]}
+        story={Object.values(this.state.topStories)[3]}
         />;
       articleFive = <ArticleUnitFive
-        story={Object.values(this.state.bestStories)[4]}
+        story={Object.values(this.state.topStories)[4]}
         />;
       articleSix = <ArticleUnitSix
-        story={Object.values(this.state.bestStories)[5]}
+        story={Object.values(this.state.topStories)[5]}
         />;
       articleSeven = <ArticleUnitSeven
-        story={Object.values(this.state.bestStories)[6]}
+        story={Object.values(this.state.topStories)[6]}
         />;
       articleEight = <ArticleUnitEight
-        story={Object.values(this.state.bestStories)[7]}
+        story={Object.values(this.state.topStories)[7]}
         />;
       articleNine = <ArticleUnitNine
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="most popular"
         link="#/most-popular"
         />;
       articleTen = <ArticleUnitNine
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="most recent"
         link="#/most-recent"
         />;
       articleEleven = <ArticleUnitEleven
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="Science"
         />;
       articleTwelve = <ArticleUnitEleven
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="Business"
         />;
       articleThirteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="Culture"
         />;
       articleFourteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="Design"
         />;
       articleFifteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="Gear"
         />;
       articleSixteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="Science"
         />;
       articleSeventeen = <ArticleUnitEleven
-        stories={[Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7],
-          Object.values(this.state.bestStories)[7]]}
+        stories={[Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7],
+          Object.values(this.state.topStories)[7]]}
         header="Security"
         />;
       articleSubscribe = <ArticleUnitSubscribe/>;
