@@ -90,7 +90,7 @@ class ArticleIndex extends React.Component{
     let articleSeventeen;
     let articleSubscribe;
 
-    if(Object.keys(this.state.topStories).length > 9){
+    if(Object.keys(this.state.topStories).length >= 20){
       articleOne = <ArticleUnitOne
         story={Object.values(this.state.topStories)[0]}
         />;
