@@ -13,7 +13,9 @@ class ArticleUnitTwo extends React.Component {
         <div className="article-unit-bottom">
           <div>
             <div className="article-unit-image">
-              <img src={this.props.story.urlToImage}></img>
+              <img src={this.props.story.urlToImage ?
+                        this.props.story.urlToImage :
+                        "frontend/images/Image-not-available.jpg"}></img>
             </div>
             <div>
               <div className="article-unit-type">

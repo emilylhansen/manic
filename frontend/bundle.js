@@ -1540,6 +1540,62 @@ var fetchTopStories = exports.fetchTopStories = function fetchTopStories() {
   });
 };
 
+var fetchTopBusiness = exports.fetchTopBusiness = function fetchTopBusiness() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
+var fetchTopEntertainment = exports.fetchTopEntertainment = function fetchTopEntertainment() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
+var fetchTopGeneral = exports.fetchTopGeneral = function fetchTopGeneral() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
+var fetchTopHealth = exports.fetchTopHealth = function fetchTopHealth() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
+var fetchTopScience = exports.fetchTopScience = function fetchTopScience() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
+var fetchTopSports = exports.fetchTopSports = function fetchTopSports() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
+var fetchTopTechnology = exports.fetchTopTechnology = function fetchTopTechnology() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
 // export const fetchTopStories = () => (
 //   $.ajax({
 //     method: 'get',
@@ -1952,9 +2008,9 @@ var NavigationBar = function (_React$Component) {
         this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.colors.green);
       } else if (category.includes("culture")) {
         this.changeNav(document.getElementById("navigation-bar-bottom-section-two"), this.colors.purple);
-      } else if (category.includes("design")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
       } else if (category.includes("gear")) {
+        this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
+      } else if (category.includes("ideas")) {
         this.changeNav(document.getElementById("navigation-bar-bottom-section-four"), this.colors.blue);
       } else if (category.includes("science")) {
         this.changeNav(document.getElementById("navigation-bar-bottom-section-five"), this.colors.orange);
@@ -3857,7 +3913,7 @@ var ArticleUnitListItem = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -26477,7 +26533,13 @@ var ArticleIndex = function (_React$Component) {
 
     _this.state = {
       topStories: {},
-      newStories: {}
+      topBusiness: {},
+      topEntertainment: {},
+      topGeneral: {},
+      topHealth: {},
+      topScience: {},
+      topSports: {},
+      topTechnology: {}
     };
     return _this;
   }
@@ -26488,7 +26550,13 @@ var ArticleIndex = function (_React$Component) {
       var _this2 = this;
 
       var topStories = {};
-      var newStories = {};
+      var topBusiness = {};
+      var topEntertainment = {};
+      var topGeneral = {};
+      var topHealth = {};
+      var topScience = {};
+      var topSports = {};
+      var topTechnology = {};
 
       MainUtil.fetchTopStories().then(function (resultHash) {
         resultHash.articles.map(function (el, i) {
@@ -26497,33 +26565,54 @@ var ArticleIndex = function (_React$Component) {
         });
       });
 
-      //
-      // MainUtil.fetchTopStories().then(stories => {
-      //   stories.slice(0, 3).map(storyId => {
-      //     MainUtil.fetchStory(storyId).then(story => {
-      //       topStories[story.id] = story;
-      //       this.setState({topStories: topStories});
-      //     });
-      //   });
-      // });
-      //
-      // MainUtil.fetchNewStories().then(stories => {
-      //   stories.slice(0, 5).map(storyId => {
-      //     MainUtil.fetchStory(storyId).then(story => {
-      //       newStories[story.id] = story;
-      //       this.setState({newStories: newStories});
-      //     });
-      //   });
-      // });
-      //
-      // MainUtil.fetchtopStories().then(stories => {
-      //   stories.slice(0, 10).map(storyId => {
-      //     MainUtil.fetchStory(storyId).then(story => {
-      //       topStories[story.id] = story;
-      //       this.setState({topStories: topStories});
-      //     });
-      //   });
-      // });
+      MainUtil.fetchTopBusiness().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topBusiness[i] = el;
+          _this2.setState({ topBusiness: topBusiness });
+        });
+      });
+
+      MainUtil.fetchTopEntertainment().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topEntertainment[i] = el;
+          _this2.setState({ topEntertainment: topEntertainment });
+        });
+      });
+
+      MainUtil.fetchTopGeneral().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topGeneral[i] = el;
+          _this2.setState({ topGeneral: topGeneral });
+        });
+      });
+
+      MainUtil.fetchTopHealth().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topHealth[i] = el;
+          _this2.setState({ topHealth: topHealth });
+        });
+      });
+
+      MainUtil.fetchTopScience().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topScience[i] = el;
+          _this2.setState({ topScience: topScience });
+        });
+      });
+
+      MainUtil.fetchTopSports().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topSports[i] = el;
+          _this2.setState({ topSports: topSports });
+        });
+      });
+
+      MainUtil.fetchTopTechnology().then(function (resultHash) {
+        resultHash.articles.map(function (el, i) {
+          topTechnology[i] = el;
+          _this2.setState({ topTechnology: topTechnology });
+        });
+      });
     }
   }, {
     key: 'render',
@@ -26547,7 +26636,7 @@ var ArticleIndex = function (_React$Component) {
       var articleSeventeen = void 0;
       var articleSubscribe = void 0;
 
-      if (Object.keys(this.state.topStories).length >= 20) {
+      if (Object.keys(this.state.topTechnology).length >= 20) {
         articleOne = _react2.default.createElement(_article_unit_one2.default, {
           story: Object.values(this.state.topStories)[0]
         });
@@ -26583,32 +26672,32 @@ var ArticleIndex = function (_React$Component) {
           link: '#/most-recent'
         });
         articleEleven = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Science'
+          stories: [Object.values(this.state.topScience)[0], Object.values(this.state.topScience)[1], Object.values(this.state.topScience)[2]],
+          header: 'Business'
         });
         articleTwelve = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Business'
+          stories: [Object.values(this.state.topBusiness)[0], Object.values(this.state.topStories)[1], Object.values(this.state.topStories)[2]],
+          header: 'Culture'
         });
         articleThirteen = _react2.default.createElement(_article_unit_eleven2.default, {
           stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Culture'
+          header: 'Gear'
         });
         articleFourteen = _react2.default.createElement(_article_unit_eleven2.default, {
           stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Design'
+          header: 'Ideas'
         });
         articleFifteen = _react2.default.createElement(_article_unit_eleven2.default, {
           stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Gear'
+          header: 'Science'
         });
         articleSixteen = _react2.default.createElement(_article_unit_eleven2.default, {
           stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Science'
+          header: 'Security'
         });
         articleSeventeen = _react2.default.createElement(_article_unit_eleven2.default, {
           stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Security'
+          header: 'Transportation'
         });
         articleSubscribe = _react2.default.createElement(_article_unit_subscribe2.default, null);
       }
@@ -26629,7 +26718,10 @@ var ArticleIndex = function (_React$Component) {
               'div',
               { className: 'article-index' },
               _react2.default.createElement(_article_index_grid_one2.default, {
-                articles: [articleOne, articleTwo, articleThree, articleFour, articleFive, articleSix, articleNine]
+                stories: [Object.values(this.state.topStories)[0], Object.values(this.state.topStories)[1], Object.values(this.state.topStories)[2], Object.values(this.state.topStories)[3], Object.values(this.state.topStories)[4], Object.values(this.state.topStories)[5]],
+                listStories: [Object.values(this.state.topStories)[6], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[8]],
+                headers: ["most popular"],
+                links: ["#/most-popular"]
               }),
               _react2.default.createElement(_article_index_grid_two2.default, {
                 articles: [articleSeven, articleFive, articleEight]
@@ -26719,7 +26811,7 @@ var ArticleUnitOne = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -26742,7 +26834,7 @@ var ArticleUnitOne = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 90).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -26752,7 +26844,7 @@ var ArticleUnitOne = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author
+                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
                 )
               )
             )
@@ -26821,7 +26913,7 @@ var ArticleUnitTwo = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -26923,7 +27015,7 @@ var ArticleUnitThree = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -27060,7 +27152,7 @@ var ArticleUnitFour = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             )
           )
         )
@@ -27127,7 +27219,7 @@ var ArticleUnitFive = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -27229,7 +27321,7 @@ var ArticleUnitSix = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -27366,7 +27458,7 @@ var ArticleUnitSeven = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             )
           )
         )
@@ -27433,7 +27525,7 @@ var ArticleUnitEight = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -27643,7 +27735,7 @@ var ArticleUnitListItemTwo = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -27807,6 +27899,34 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
+var _article_unit_one = __webpack_require__(124);
+
+var _article_unit_one2 = _interopRequireDefault(_article_unit_one);
+
+var _article_unit_two = __webpack_require__(125);
+
+var _article_unit_two2 = _interopRequireDefault(_article_unit_two);
+
+var _article_unit_three = __webpack_require__(126);
+
+var _article_unit_three2 = _interopRequireDefault(_article_unit_three);
+
+var _article_unit_four = __webpack_require__(127);
+
+var _article_unit_four2 = _interopRequireDefault(_article_unit_four);
+
+var _article_unit_five = __webpack_require__(128);
+
+var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
+
+var _article_unit_six = __webpack_require__(129);
+
+var _article_unit_six2 = _interopRequireDefault(_article_unit_six);
+
+var _article_unit_nine = __webpack_require__(51);
+
+var _article_unit_nine2 = _interopRequireDefault(_article_unit_nine);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27839,12 +27959,16 @@ var ArticleIndexGridOne = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'margin-right' },
-              this.props.articles[0]
+              _react2.default.createElement(_article_unit_one2.default, {
+                story: Object.values(this.props.stories)[0]
+              })
             ),
             _react2.default.createElement(
               'div',
               null,
-              this.props.articles[1]
+              _react2.default.createElement(_article_unit_two2.default, {
+                story: Object.values(this.props.stories)[1]
+              })
             )
           ),
           _react2.default.createElement(
@@ -27856,12 +27980,16 @@ var ArticleIndexGridOne = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'margin-bottom' },
-                this.props.articles[2]
+                _react2.default.createElement(_article_unit_three2.default, {
+                  story: Object.values(this.props.stories)[2]
+                })
               ),
               _react2.default.createElement(
                 'div',
                 null,
-                this.props.articles[3]
+                _react2.default.createElement(_article_unit_four2.default, {
+                  story: Object.values(this.props.stories)[3]
+                })
               )
             ),
             _react2.default.createElement(
@@ -27870,7 +27998,9 @@ var ArticleIndexGridOne = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 null,
-                this.props.articles[4]
+                _react2.default.createElement(_article_unit_five2.default, {
+                  story: Object.values(this.props.stories)[4]
+                })
               )
             )
           ),
@@ -27880,7 +28010,9 @@ var ArticleIndexGridOne = function (_React$Component) {
             _react2.default.createElement(
               'div',
               null,
-              this.props.articles[5]
+              _react2.default.createElement(_article_unit_six2.default, {
+                story: Object.values(this.props.stories)[5]
+              })
             )
           )
         ),
@@ -27890,17 +28022,25 @@ var ArticleIndexGridOne = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'margin-bottom' },
-            this.props.articles[6]
+            _react2.default.createElement(_article_unit_nine2.default, {
+              stories: [Object.values(this.props.listStories)[0], Object.values(this.props.listStories)[1], Object.values(this.props.listStories)[2]],
+              header: this.props.headers[0],
+              link: this.props.links[0]
+            })
           ),
           _react2.default.createElement(
             'div',
             { className: 'margin-bottom' },
-            this.props.articles[4]
+            _react2.default.createElement(_article_unit_five2.default, {
+              story: Object.values(this.props.stories)[4]
+            })
           ),
           _react2.default.createElement(
             'div',
             null,
-            this.props.articles[3]
+            _react2.default.createElement(_article_unit_four2.default, {
+              story: Object.values(this.props.stories)[3]
+            })
           )
         )
       );
@@ -28217,7 +28357,7 @@ var NavigationBarMenu = function (_React$Component) {
       if (category.includes("business")) {
         this.changeNav(document.getElementById("navigation-bar-menu-section-one"), this.props.colors.green);
       } else if (category.includes("culture")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-two"), this.propscolors.purple);
+        this.changeNav(document.getElementById("navigation-bar-menu-section-two"), this.props.colors.purple);
       } else if (category.includes("design")) {
         this.changeNav(document.getElementById("navigation-bar-menu-section-three"), this.props.colors.teal);
       } else if (category.includes("gear")) {
@@ -29125,7 +29265,7 @@ var ArticleUnitListItemThree = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
             ),
             _react2.default.createElement(
               'div',
@@ -29136,8 +29276,8 @@ var ArticleUnitListItemThree = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.convertTime() + ' | ',
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
+                  this.convertTime() + ' ',
+                  this.props.story.author ? this.props.story.author.length > 35 ? '| ' + this.props.story.author.split("").slice(0, 35).join("") + '...' : '| ' + this.props.story.author : ""
                 )
               ),
               _react2.default.createElement(

@@ -26,13 +26,25 @@ class ArticleIndex extends React.Component{
     super();
     this.state = {
       topStories: {},
-      newStories: {}
+      topBusiness: {},
+      topEntertainment: {},
+      topGeneral: {},
+      topHealth: {},
+      topScience: {},
+      topSports: {},
+      topTechnology: {}
     };
   }
 
   componentDidMount(){
     let topStories = {};
-    let newStories = {};
+    let topBusiness = {};
+    let topEntertainment = {};
+    let topGeneral = {};
+    let topHealth = {};
+    let topScience = {};
+    let topSports = {};
+    let topTechnology = {};
 
     MainUtil.fetchTopStories().then(resultHash => {
       resultHash.articles.map((el, i) => {
@@ -41,33 +53,55 @@ class ArticleIndex extends React.Component{
       });
     });
 
-    //
-    // MainUtil.fetchTopStories().then(stories => {
-    //   stories.slice(0, 3).map(storyId => {
-    //     MainUtil.fetchStory(storyId).then(story => {
-    //       topStories[story.id] = story;
-    //       this.setState({topStories: topStories});
-    //     });
-    //   });
-    // });
-    //
-    // MainUtil.fetchNewStories().then(stories => {
-    //   stories.slice(0, 5).map(storyId => {
-    //     MainUtil.fetchStory(storyId).then(story => {
-    //       newStories[story.id] = story;
-    //       this.setState({newStories: newStories});
-    //     });
-    //   });
-    // });
-    //
-    // MainUtil.fetchtopStories().then(stories => {
-    //   stories.slice(0, 10).map(storyId => {
-    //     MainUtil.fetchStory(storyId).then(story => {
-    //       topStories[story.id] = story;
-    //       this.setState({topStories: topStories});
-    //     });
-    //   });
-    // });
+    MainUtil.fetchTopBusiness().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topBusiness[i] = el;
+        this.setState({topBusiness: topBusiness});
+      });
+    });
+
+    MainUtil.fetchTopEntertainment().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topEntertainment[i] = el;
+        this.setState({topEntertainment: topEntertainment});
+      });
+    });
+
+    MainUtil.fetchTopGeneral().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topGeneral[i] = el;
+        this.setState({topGeneral: topGeneral});
+      });
+    });
+
+    MainUtil.fetchTopHealth().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topHealth[i] = el;
+        this.setState({topHealth: topHealth});
+      });
+    });
+
+    MainUtil.fetchTopScience().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topScience[i] = el;
+        this.setState({topScience: topScience});
+      });
+    });
+
+    MainUtil.fetchTopSports().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topSports[i] = el;
+        this.setState({topSports: topSports});
+      });
+    });
+
+    MainUtil.fetchTopTechnology().then(resultHash => {
+      resultHash.articles.map((el, i) => {
+        topTechnology[i] = el;
+        this.setState({topTechnology: topTechnology});
+      });
+    });
+
   }
 
   render(){
@@ -90,7 +124,7 @@ class ArticleIndex extends React.Component{
     let articleSeventeen;
     let articleSubscribe;
 
-    if(Object.keys(this.state.topStories).length >= 20){
+    if(Object.keys(this.state.topTechnology).length >= 20){
       articleOne = <ArticleUnitOne
         story={Object.values(this.state.topStories)[0]}
         />;
@@ -132,46 +166,46 @@ class ArticleIndex extends React.Component{
         link="#/most-recent"
         />;
       articleEleven = <ArticleUnitEleven
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
-        header="Science"
+        stories={[Object.values(this.state.topScience)[0],
+          Object.values(this.state.topScience)[1],
+          Object.values(this.state.topScience)[2]]}
+        header="Business"
         />;
       articleTwelve = <ArticleUnitEleven
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
-        header="Business"
+        stories={[Object.values(this.state.topBusiness)[0],
+          Object.values(this.state.topStories)[1],
+          Object.values(this.state.topStories)[2]]}
+        header="Culture"
         />;
       articleThirteen = <ArticleUnitEleven
         stories={[Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7]]}
-        header="Culture"
+        header="Gear"
         />;
       articleFourteen = <ArticleUnitEleven
         stories={[Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7]]}
-        header="Design"
+        header="Ideas"
         />;
       articleFifteen = <ArticleUnitEleven
         stories={[Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7]]}
-        header="Gear"
+        header="Science"
         />;
       articleSixteen = <ArticleUnitEleven
         stories={[Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7]]}
-        header="Science"
+        header="Security"
         />;
       articleSeventeen = <ArticleUnitEleven
         stories={[Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7],
           Object.values(this.state.topStories)[7]]}
-        header="Security"
+        header="Transportation"
         />;
       articleSubscribe = <ArticleUnitSubscribe/>;
     }
@@ -189,13 +223,17 @@ class ArticleIndex extends React.Component{
           <div className="article-index-background">
             <div className="article-index">
               <ArticleIndexGridOne
-                articles={[articleOne,
-                          articleTwo,
-                          articleThree,
-                          articleFour,
-                          articleFive,
-                          articleSix,
-                          articleNine]}
+                stories={[Object.values(this.state.topStories)[0],
+                    Object.values(this.state.topStories)[1],
+                    Object.values(this.state.topStories)[2],
+                    Object.values(this.state.topStories)[3],
+                    Object.values(this.state.topStories)[4],
+                    Object.values(this.state.topStories)[5]]}
+                listStories={[Object.values(this.state.topStories)[6],
+                    Object.values(this.state.topStories)[7],
+                    Object.values(this.state.topStories)[8]]}
+                headers={["most popular"]}
+                links={["#/most-popular"]}
                 />
 
               <ArticleIndexGridTwo

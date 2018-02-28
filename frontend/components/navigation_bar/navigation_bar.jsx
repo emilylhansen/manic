@@ -59,10 +59,10 @@ class NavigationBar extends React.Component {
     } else if (category.includes("culture")) {
       this.changeNav(document.getElementById("navigation-bar-bottom-section-two"),
       this.colors.purple);
-    } else if (category.includes("design")) {
+    } else if (category.includes("gear")) {
       this.changeNav(document.getElementById("navigation-bar-bottom-section-three"),
       this.colors.teal);
-    } else if (category.includes("gear")) {
+    } else if (category.includes("ideas")) {
       this.changeNav(document.getElementById("navigation-bar-bottom-section-four"),
       this.colors.blue);
     } else if (category.includes("science")) {

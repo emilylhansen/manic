@@ -25,15 +25,17 @@ class ArticleUnitListItemThree extends React.Component {
         <div className="article-unit-list-item-three-bottom">
           <div className="horizontal">
             <div className="article-unit-image article-unit-list-item-image">
-              <img src={this.props.story.urlToImage}></img>
+              <img src={this.props.story.urlToImage ?
+                        this.props.story.urlToImage :
+                        "frontend/images/Image-not-available.jpg"}></img>
             </div>
             <div className="article-unit-list-item-text">
               <div className="article-unit-author">
-                <h2>{`${this.convertTime()} | `}
+                <h2>{`${this.convertTime()} `}
                   {this.props.story.author ?
-                  (this.props.story.author.length > 20 ?
-                  `${this.props.story.author.split("").slice(0, 20).join("")}...` :
-                  this.props.story.author) :
+                  (this.props.story.author.length > 35 ?
+                  `| ${this.props.story.author.split("").slice(0, 35).join("")}...` :
+                  `| ${this.props.story.author}`) :
                   ""}
                 </h2>
               </div>

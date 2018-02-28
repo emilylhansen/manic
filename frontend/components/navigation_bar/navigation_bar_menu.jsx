@@ -26,7 +26,7 @@ class NavigationBarMenu extends React.Component {
       this.props.colors.green);
     } else if (category.includes("culture")) {
       this.changeNav(document.getElementById("navigation-bar-menu-section-two"),
-      this.propscolors.purple);
+      this.props.colors.purple);
     } else if (category.includes("design")) {
       this.changeNav(document.getElementById("navigation-bar-menu-section-three"),
       this.props.colors.teal);
