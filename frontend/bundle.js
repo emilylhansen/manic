@@ -1764,7 +1764,13 @@ var Footer = function (_React$Component) {
               null,
               'CNMN Collection',
               _react2.default.createElement('br', null),
-              'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.'
+              'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'a',
+                { href: 'https://newsapi.org/' },
+                'Powered by News API'
+              )
             )
           )
         )

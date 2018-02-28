@@ -66,6 +66,8 @@ class Footer extends React.Component{
               CNMN Collection
               <br></br>
               Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Condé Nast.
+              <br></br>
+              <a href="https://newsapi.org/">Powered by News API</a>
             </p>
           </div>
         </div>

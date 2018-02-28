@@ -90,7 +90,8 @@
   padding-top: 30px;
 }
 
-.footer-content-policy p {
+.footer-content-policy p,
+.footer-content-policy a {
   color: #8B8B8B;
   font-size: 14px;
   text-align: center;
@@ -98,6 +99,7 @@
   line-height: 25px;
   margin: 0px;
 }
+
 
 .footer .article-unit-more {
   border-bottom: 1px solid #CCCCCC;
