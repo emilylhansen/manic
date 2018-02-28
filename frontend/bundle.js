@@ -26917,7 +26917,7 @@ var ArticleUnitThree = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/five.png' })
+              _react2.default.createElement('img', { src: this.props.story.urlToImage })
             ),
             _react2.default.createElement(
               'div',
@@ -26928,7 +26928,7 @@ var ArticleUnitThree = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.type
+                  this.props.story.source.name
                 )
               ),
               _react2.default.createElement(
@@ -26950,7 +26950,7 @@ var ArticleUnitThree = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  this.props.story.by
+                  this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author
                 )
               )
             )
