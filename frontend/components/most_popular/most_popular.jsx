@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as MainUtil from '../../util/main_util';
+import * as StoryApiUtil from '../../util/story_api_util';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
 import Loading from '../loading/loading.jsx';
 import Footer from '../footer/footer.jsx';
@@ -18,7 +18,7 @@ class MostPopular extends React.Component{
   componentDidMount(){
     let topStories = {};
 
-    MainUtil.fetchTopStories().then(resultHash => {
+    StoryApiUtil.fetchTopStories().then(resultHash => {
       resultHash.articles.map((el, i) => {
         topStories[i] = el;
         this.setState({topStories: topStories});

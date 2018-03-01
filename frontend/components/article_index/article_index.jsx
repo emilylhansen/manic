@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as MainUtil from '../../util/main_util';
+import * as StoryApiUtil from '../../util/story_api_util';
 import ArticleUnitOne from '../article_units/article_unit_one.jsx';
 import ArticleUnitTwo from '../article_units/article_unit_two.jsx';
 import ArticleUnitThree from '../article_units/article_unit_three.jsx';
@@ -22,90 +22,98 @@ import ArticleIndexGridFour from './article_index_grid_four.jsx';
 import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 
 class ArticleIndex extends React.Component{
-  constructor(){
-    super();
-    this.state = {
-      topStories: [],
-      topBusiness: [],
-      topEntertainment: [],
-      topGeneral: [],
-      topHealth: [],
-      topScience: [],
-      topSports: [],
-      topTechnology: []
-    };
+  constructor(props){
+    super(props);
+    // this.state = {
+    //   topStories: this.props.topStories,
+    //   topBusiness: this.props.topBusiness,
+    //   topEntertainment: this.props.topEntertainment,
+    //   topGeneral: this.props.topGeneral,
+    //   topHealth: this.props.topHealth,
+    //   topScience: this.props.topScience,
+    //   topSports: this.props.topSports,
+    //   topTechnology: this.props.topTechnology
+    // };
   }
 
   componentDidMount(){
-    let topStories = [];
-    let topBusiness = [];
-    let topEntertainment = [];
-    let topGeneral = [];
-    let topHealth = [];
-    let topScience = [];
-    let topSports = [];
-    let topTechnology = [];
-
-    MainUtil.fetchTopStories().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topStories.push(el);
-        this.setState({topStories: topStories});
-      });
-    });
-
-    MainUtil.fetchTopBusiness().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topBusiness.push(el);
-        this.setState({topBusiness: topBusiness});
-      });
-    });
-
-    MainUtil.fetchTopEntertainment().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topEntertainment.push(el);
-        this.setState({topEntertainment: topEntertainment});
-      });
-    });
-
-    MainUtil.fetchTopGeneral().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topGeneral.push(el);
-        this.setState({topGeneral: topGeneral});
-      });
-    });
-
-    MainUtil.fetchTopHealth().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topHealth.push(el);
-        this.setState({topHealth: topHealth});
-      });
-    });
-
-    MainUtil.fetchTopScience().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topScience.push(el);
-        this.setState({topScience: topScience});
-      });
-    });
-
-    MainUtil.fetchTopSports().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topSports.push(el);
-        this.setState({topSports: topSports});
-      });
-    });
-
-    MainUtil.fetchTopTechnology().then(resultHash => {
-      resultHash.articles.map((el) => {
-        topTechnology.push(el);
-        this.setState({topTechnology: topTechnology});
-      });
-    });
-
+    // let topStories = [];
+    // let topBusiness = [];
+    // let topEntertainment = [];
+    // let topGeneral = [];
+    // let topHealth = [];
+    // let topScience = [];
+    // let topSports = [];
+    // let topTechnology = [];
+    //
+    // StoryApiUtil.fetchTopStories().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topStories.push(el);
+    //     this.setState({topStories: topStories});
+    //   });
+    // });
+    //
+    // StoryApiUtil.fetchTopBusiness().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topBusiness.push(el);
+    //     this.setState({topBusiness: topBusiness});
+    //   });
+    // });
+    //
+    // StoryApiUtil.fetchTopEntertainment().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topEntertainment.push(el);
+    //     this.setState({topEntertainment: topEntertainment});
+    //   });
+    // });
+    //
+    // StoryApiUtil.fetchTopGeneral().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topGeneral.push(el);
+    //     this.setState({topGeneral: topGeneral});
+    //   });
+    // });
+    //
+    // StoryApiUtil.fetchTopHealth().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topHealth.push(el);
+    //     this.setState({topHealth: topHealth});
+    //   });
+    // });
+    //
+    // StoryApiUtil.fetchTopScience().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topScience.push(el);
+    //     this.setState({topScience: topScience});
+    //   });
+    // });
+    //
+    // StoryApiUtil.fetchTopSports().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topSports.push(el);
+    //     this.setState({topSports: topSports});
+    //   });
+    // });
+    //
+    // StoryApiUtil.fetchTopTechnology().then(resultHash => {
+    //   resultHash.articles.map((el) => {
+    //     topTechnology.push(el);
+    //     this.setState({topTechnology: topTechnology});
+    //   });
+    // });
+    this.props.fetchTopStories();
+    this.props.fetchTopBusiness();
+    this.props.fetchTopEntertainment();
+    this.props.fetchTopGeneral();
+    this.props.fetchTopScience();
+    this.props.fetchTopSports();
+    this.props.fetchTopTechnology();
+    this.props.fetchTopHealth();
   }
 
   render(){
-    if (this.state.topTechnology.length < 20) {
+    debugger
+    if (this.props.topHealth.length < 20) {
       return (
         <Loading/>
       );
@@ -118,30 +126,30 @@ class ArticleIndex extends React.Component{
           <div className="article-index-background">
             <div className="article-index">
               <ArticleIndexGridOne
-                stories={this.state.topStories.slice(0, 8)}
-                listStories={this.state.topStories.slice(8, 11)}
+                stories={this.props.topStories.slice(0, 8)}
+                listStories={this.props.topStories.slice(8, 11)}
                 headers={["most popular"]}
                 links={["#/most-popular"]}
                 />
 
               <ArticleIndexGridTwo
-                stories={this.state.topStories.slice(11, 14)}
+                stories={this.props.topStories.slice(11, 14)}
                 />
 
               <ArticleIndexGridThree
-               stories={this.state.topStories.slice(14, 19)}
-               listStories={this.state.topStories.slice(0, 5)}
+               stories={this.props.topStories.slice(14, 19)}
+               listStories={this.props.topStories.slice(0, 5)}
                headers={["most recent"]}
                links={["#/most-recent"]}
                />
 
                <ArticleIndexGridFour
-               listStories={this.state.topStories.slice(0, 9)}
+               listStories={this.props.topStories.slice(0, 9)}
                headers={["Business", "Culture", "Gear"]}
                />
 
                <ArticleIndexGridFour
-               listStories={this.state.topStories.slice(9, 18)}
+               listStories={this.props.topStories.slice(9, 18)}
                headers={["Ideas", "Science", "Security"]}
                />
 

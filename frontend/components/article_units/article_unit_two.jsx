@@ -23,8 +23,8 @@ class ArticleUnitTwo extends React.Component {
               </div>
               <div className="article-unit-title">
                 <h1><a href={this.props.story.url}>
-                  {this.props.story.title.length > 65 ?
-                  `${this.props.story.title.split("").slice(0, 65).join("")}...` :
+                  {this.props.story.title.length > 50 ?
+                  `${this.props.story.title.split("").slice(0, 50).join("")}...` :
                   this.props.story.title}</a></h1>
               </div>
               <div className="article-unit-author">
