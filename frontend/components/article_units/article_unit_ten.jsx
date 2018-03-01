@@ -10,6 +10,12 @@ class ArticleUnitTen extends React.Component {
   }
 
   render(){
+    let items = this.props.stories.map((el, i) => (
+      <ArticleUnitListItem
+        key={i}
+        story={this.props.stories[i]}
+        />
+    ));
     return (
       <div className="article-unit-ten article-unit">
         <div className="article-unit-list-top"></div>
@@ -20,21 +26,7 @@ class ArticleUnitTen extends React.Component {
         </div>
         <div className="article-unit-ten-bottom article-unit-list-bottom">
           <ul>
-            <ArticleUnitListItem
-              story={this.props.stories[0]}
-              />
-            <ArticleUnitListItem
-              story={this.props.stories[1]}
-              />
-            <ArticleUnitListItem
-              story={this.props.stories[2]}
-              />
-            <ArticleUnitListItem
-              story={this.props.stories[3]}
-              />
-            <ArticleUnitListItem
-              story={this.props.stories[4]}
-              />
+            {items}
           </ul>
         </div>
         <ArticleUnitMore

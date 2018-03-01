@@ -21,12 +21,12 @@ class ArticleIndexGridOne extends React.Component{
           <div className="horizontal margin-bottom">
             <div className="margin-right">
               <ArticleUnitOne
-                story={Object.values(this.props.stories)[0]}
+                story={this.props.stories[0]}
                 />
             </div>
             <div>
               <ArticleUnitTwo
-                story={Object.values(this.props.stories)[1]}
+                story={this.props.stories[1]}
                 />
             </div>
           </div>
@@ -34,19 +34,19 @@ class ArticleIndexGridOne extends React.Component{
             <div className="margin-right">
               <div className="margin-bottom">
                 <ArticleUnitThree
-                  story={Object.values(this.props.stories)[2]}
+                  story={this.props.stories[2]}
                   />
               </div>
               <div>
                 <ArticleUnitFour
-                  story={Object.values(this.props.stories)[3]}
+                  story={this.props.stories[3]}
                   />
               </div>
             </div>
             <div className="">
               <div>
                 <ArticleUnitFive
-                  story={Object.values(this.props.stories)[4]}
+                  story={this.props.stories[4]}
                   />
               </div>
             </div>
@@ -54,7 +54,7 @@ class ArticleIndexGridOne extends React.Component{
           <div className="">
             <div>
               <ArticleUnitSix
-                story={Object.values(this.props.stories)[5]}
+                story={this.props.stories[5]}
                 />
             </div>
           </div>
@@ -62,21 +62,21 @@ class ArticleIndexGridOne extends React.Component{
         <div className="">
           <div className="margin-bottom">
             <ArticleUnitNine
-              stories={[Object.values(this.props.listStories)[0],
-                      Object.values(this.props.listStories)[1],
-                      Object.values(this.props.listStories)[2]]}
+              stories={[this.props.listStories[0],
+                      this.props.listStories[1],
+                      this.props.listStories[2]]}
               header={this.props.headers[0]}
               link={this.props.links[0]}
               />
           </div>
           <div className="margin-bottom">
             <ArticleUnitFive
-              story={Object.values(this.props.stories)[4]}
+              story={this.props.stories[6]}
               />
           </div>
           <div>
             <ArticleUnitFour
-              story={Object.values(this.props.stories)[3]}
+              story={this.props.stories[7]}
               />
           </div>
         </div>

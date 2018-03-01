@@ -25,79 +25,79 @@ class ArticleIndex extends React.Component{
   constructor(){
     super();
     this.state = {
-      topStories: {},
-      topBusiness: {},
-      topEntertainment: {},
-      topGeneral: {},
-      topHealth: {},
-      topScience: {},
-      topSports: {},
-      topTechnology: {}
+      topStories: [],
+      topBusiness: [],
+      topEntertainment: [],
+      topGeneral: [],
+      topHealth: [],
+      topScience: [],
+      topSports: [],
+      topTechnology: []
     };
   }
 
   componentDidMount(){
-    let topStories = {};
-    let topBusiness = {};
-    let topEntertainment = {};
-    let topGeneral = {};
-    let topHealth = {};
-    let topScience = {};
-    let topSports = {};
-    let topTechnology = {};
+    let topStories = [];
+    let topBusiness = [];
+    let topEntertainment = [];
+    let topGeneral = [];
+    let topHealth = [];
+    let topScience = [];
+    let topSports = [];
+    let topTechnology = [];
 
     MainUtil.fetchTopStories().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topStories[i] = el;
+      resultHash.articles.map((el) => {
+        topStories.push(el);
         this.setState({topStories: topStories});
       });
     });
 
     MainUtil.fetchTopBusiness().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topBusiness[i] = el;
+      resultHash.articles.map((el) => {
+        topBusiness.push(el);
         this.setState({topBusiness: topBusiness});
       });
     });
 
     MainUtil.fetchTopEntertainment().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topEntertainment[i] = el;
+      resultHash.articles.map((el) => {
+        topEntertainment.push(el);
         this.setState({topEntertainment: topEntertainment});
       });
     });
 
     MainUtil.fetchTopGeneral().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topGeneral[i] = el;
+      resultHash.articles.map((el) => {
+        topGeneral.push(el);
         this.setState({topGeneral: topGeneral});
       });
     });
 
     MainUtil.fetchTopHealth().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topHealth[i] = el;
+      resultHash.articles.map((el) => {
+        topHealth.push(el);
         this.setState({topHealth: topHealth});
       });
     });
 
     MainUtil.fetchTopScience().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topScience[i] = el;
+      resultHash.articles.map((el) => {
+        topScience.push(el);
         this.setState({topScience: topScience});
       });
     });
 
     MainUtil.fetchTopSports().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topSports[i] = el;
+      resultHash.articles.map((el) => {
+        topSports.push(el);
         this.setState({topSports: topSports});
       });
     });
 
     MainUtil.fetchTopTechnology().then(resultHash => {
-      resultHash.articles.map((el, i) => {
-        topTechnology[i] = el;
+      resultHash.articles.map((el) => {
+        topTechnology.push(el);
         this.setState({topTechnology: topTechnology});
       });
     });
@@ -105,112 +105,7 @@ class ArticleIndex extends React.Component{
   }
 
   render(){
-    let articleOne;
-    let articleTwo;
-    let articleThree;
-    let articleFour;
-    let articleFive;
-    let articleSix;
-    let articleSeven;
-    let articleEight;
-    let articleNine;
-    let articleTen;
-    let articleEleven;
-    let articleTwelve;
-    let articleThirteen;
-    let articleFourteen;
-    let articleFifteen;
-    let articleSixteen;
-    let articleSeventeen;
-    let articleSubscribe;
-
-    if(Object.keys(this.state.topTechnology).length >= 20){
-      articleOne = <ArticleUnitOne
-        story={Object.values(this.state.topStories)[0]}
-        />;
-      articleTwo = <ArticleUnitTwo
-        story={Object.values(this.state.topStories)[1]}
-        />;
-      articleThree = <ArticleUnitThree
-        story={Object.values(this.state.topStories)[2]}
-        />;
-      articleFour = <ArticleUnitFour
-        story={Object.values(this.state.topStories)[3]}
-        />;
-      articleFive = <ArticleUnitFive
-        story={Object.values(this.state.topStories)[4]}
-        />;
-      articleSix = <ArticleUnitSix
-        story={Object.values(this.state.topStories)[5]}
-        />;
-      articleSeven = <ArticleUnitSeven
-        story={Object.values(this.state.topStories)[6]}
-        />;
-      articleEight = <ArticleUnitEight
-        story={Object.values(this.state.topStories)[7]}
-        />;
-      articleNine = <ArticleUnitNine
-        stories={[Object.values(this.state.topStories)[8],
-          Object.values(this.state.topStories)[9],
-          Object.values(this.state.topStories)[10]]}
-        header="most popular"
-        link="#/most-popular"
-        />;
-      articleTen = <ArticleUnitNine
-        stories={[Object.values(this.state.topStories)[11],
-          Object.values(this.state.topStories)[12],
-          Object.values(this.state.topStories)[13],
-          Object.values(this.state.topStories)[14],
-          Object.values(this.state.topStories)[15]]}
-        header="most recent"
-        link="#/most-recent"
-        />;
-      articleEleven = <ArticleUnitEleven
-        stories={[Object.values(this.state.topScience)[0],
-          Object.values(this.state.topScience)[1],
-          Object.values(this.state.topScience)[2]]}
-        header="Business"
-        />;
-      articleTwelve = <ArticleUnitEleven
-        stories={[Object.values(this.state.topBusiness)[0],
-          Object.values(this.state.topStories)[1],
-          Object.values(this.state.topStories)[2]]}
-        header="Culture"
-        />;
-      articleThirteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
-        header="Gear"
-        />;
-      articleFourteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
-        header="Ideas"
-        />;
-      articleFifteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
-        header="Science"
-        />;
-      articleSixteen = <ArticleUnitEleven
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
-        header="Security"
-        />;
-      articleSeventeen = <ArticleUnitEleven
-        stories={[Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7],
-          Object.values(this.state.topStories)[7]]}
-        header="Transportation"
-        />;
-      articleSubscribe = <ArticleUnitSubscribe/>;
-    }
-
-    if (articleSubscribe === undefined) {
+    if (this.state.topTechnology.length < 20) {
       return (
         <Loading/>
       );
@@ -223,51 +118,38 @@ class ArticleIndex extends React.Component{
           <div className="article-index-background">
             <div className="article-index">
               <ArticleIndexGridOne
-                stories={[Object.values(this.state.topStories)[0],
-                    Object.values(this.state.topStories)[1],
-                    Object.values(this.state.topStories)[2],
-                    Object.values(this.state.topStories)[3],
-                    Object.values(this.state.topStories)[4],
-                    Object.values(this.state.topStories)[5]]}
-                listStories={[Object.values(this.state.topStories)[6],
-                    Object.values(this.state.topStories)[7],
-                    Object.values(this.state.topStories)[8]]}
+                stories={this.state.topStories.slice(0, 8)}
+                listStories={this.state.topStories.slice(8, 11)}
                 headers={["most popular"]}
                 links={["#/most-popular"]}
                 />
 
               <ArticleIndexGridTwo
-                articles={[articleSeven,
-                          articleFive,
-                          articleEight]}
+                stories={this.state.topStories.slice(11, 14)}
                 />
 
               <ArticleIndexGridThree
-                articles={[articleTen,
-                          articleTwo,
-                          articleOne,
-                          articleFive,
-                          articleThree,
-                          articleFour]}
-                />
+               stories={this.state.topStories.slice(14, 19)}
+               listStories={this.state.topStories.slice(0, 5)}
+               headers={["most recent"]}
+               links={["#/most-recent"]}
+               />
 
-              <ArticleIndexGridFour
-                articles={[articleTwelve,
-                          articleThirteen,
-                          articleFourteen]}
-                />
+               <ArticleIndexGridFour
+               listStories={this.state.topStories.slice(0, 9)}
+               headers={["Business", "Culture", "Gear"]}
+               />
 
-              <ArticleIndexGridFour
-                articles={[articleFifteen,
-                          articleSixteen,
-                          articleSeventeen]}
-                />
+               <ArticleIndexGridFour
+               listStories={this.state.topStories.slice(9, 18)}
+               headers={["Ideas", "Science", "Security"]}
+               />
 
               {
                 this.props.location.pathname === "/" &&
                 <div className="horizontal">
                   <div>
-                    {articleSubscribe}
+                    <ArticleUnitSubscribe/>
                   </div>
                 </div>
               }

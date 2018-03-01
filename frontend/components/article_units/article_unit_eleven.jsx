@@ -14,7 +14,7 @@ class ArticleUnitEleven extends React.Component {
     let items = this.props.stories.slice(1).map((el, i) => (
       <ArticleUnitListItem
         key={i}
-        story={this.props.stories[i]}
+        story={this.props.stories[i+1]}
         />
     ));
 

@@ -26532,14 +26532,14 @@ var ArticleIndex = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ArticleIndex.__proto__ || Object.getPrototypeOf(ArticleIndex)).call(this));
 
     _this.state = {
-      topStories: {},
-      topBusiness: {},
-      topEntertainment: {},
-      topGeneral: {},
-      topHealth: {},
-      topScience: {},
-      topSports: {},
-      topTechnology: {}
+      topStories: [],
+      topBusiness: [],
+      topEntertainment: [],
+      topGeneral: [],
+      topHealth: [],
+      topScience: [],
+      topSports: [],
+      topTechnology: []
     };
     return _this;
   }
@@ -26549,67 +26549,67 @@ var ArticleIndex = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var topStories = {};
-      var topBusiness = {};
-      var topEntertainment = {};
-      var topGeneral = {};
-      var topHealth = {};
-      var topScience = {};
-      var topSports = {};
-      var topTechnology = {};
+      var topStories = [];
+      var topBusiness = [];
+      var topEntertainment = [];
+      var topGeneral = [];
+      var topHealth = [];
+      var topScience = [];
+      var topSports = [];
+      var topTechnology = [];
 
       MainUtil.fetchTopStories().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topStories[i] = el;
+        resultHash.articles.map(function (el) {
+          topStories.push(el);
           _this2.setState({ topStories: topStories });
         });
       });
 
       MainUtil.fetchTopBusiness().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topBusiness[i] = el;
+        resultHash.articles.map(function (el) {
+          topBusiness.push(el);
           _this2.setState({ topBusiness: topBusiness });
         });
       });
 
       MainUtil.fetchTopEntertainment().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topEntertainment[i] = el;
+        resultHash.articles.map(function (el) {
+          topEntertainment.push(el);
           _this2.setState({ topEntertainment: topEntertainment });
         });
       });
 
       MainUtil.fetchTopGeneral().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topGeneral[i] = el;
+        resultHash.articles.map(function (el) {
+          topGeneral.push(el);
           _this2.setState({ topGeneral: topGeneral });
         });
       });
 
       MainUtil.fetchTopHealth().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topHealth[i] = el;
+        resultHash.articles.map(function (el) {
+          topHealth.push(el);
           _this2.setState({ topHealth: topHealth });
         });
       });
 
       MainUtil.fetchTopScience().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topScience[i] = el;
+        resultHash.articles.map(function (el) {
+          topScience.push(el);
           _this2.setState({ topScience: topScience });
         });
       });
 
       MainUtil.fetchTopSports().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topSports[i] = el;
+        resultHash.articles.map(function (el) {
+          topSports.push(el);
           _this2.setState({ topSports: topSports });
         });
       });
 
       MainUtil.fetchTopTechnology().then(function (resultHash) {
-        resultHash.articles.map(function (el, i) {
-          topTechnology[i] = el;
+        resultHash.articles.map(function (el) {
+          topTechnology.push(el);
           _this2.setState({ topTechnology: topTechnology });
         });
       });
@@ -26617,92 +26617,7 @@ var ArticleIndex = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var articleOne = void 0;
-      var articleTwo = void 0;
-      var articleThree = void 0;
-      var articleFour = void 0;
-      var articleFive = void 0;
-      var articleSix = void 0;
-      var articleSeven = void 0;
-      var articleEight = void 0;
-      var articleNine = void 0;
-      var articleTen = void 0;
-      var articleEleven = void 0;
-      var articleTwelve = void 0;
-      var articleThirteen = void 0;
-      var articleFourteen = void 0;
-      var articleFifteen = void 0;
-      var articleSixteen = void 0;
-      var articleSeventeen = void 0;
-      var articleSubscribe = void 0;
-
-      if (Object.keys(this.state.topTechnology).length >= 20) {
-        articleOne = _react2.default.createElement(_article_unit_one2.default, {
-          story: Object.values(this.state.topStories)[0]
-        });
-        articleTwo = _react2.default.createElement(_article_unit_two2.default, {
-          story: Object.values(this.state.topStories)[1]
-        });
-        articleThree = _react2.default.createElement(_article_unit_three2.default, {
-          story: Object.values(this.state.topStories)[2]
-        });
-        articleFour = _react2.default.createElement(_article_unit_four2.default, {
-          story: Object.values(this.state.topStories)[3]
-        });
-        articleFive = _react2.default.createElement(_article_unit_five2.default, {
-          story: Object.values(this.state.topStories)[4]
-        });
-        articleSix = _react2.default.createElement(_article_unit_six2.default, {
-          story: Object.values(this.state.topStories)[5]
-        });
-        articleSeven = _react2.default.createElement(_article_unit_seven2.default, {
-          story: Object.values(this.state.topStories)[6]
-        });
-        articleEight = _react2.default.createElement(_article_unit_eight2.default, {
-          story: Object.values(this.state.topStories)[7]
-        });
-        articleNine = _react2.default.createElement(_article_unit_nine2.default, {
-          stories: [Object.values(this.state.topStories)[8], Object.values(this.state.topStories)[9], Object.values(this.state.topStories)[10]],
-          header: 'most popular',
-          link: '#/most-popular'
-        });
-        articleTen = _react2.default.createElement(_article_unit_nine2.default, {
-          stories: [Object.values(this.state.topStories)[11], Object.values(this.state.topStories)[12], Object.values(this.state.topStories)[13], Object.values(this.state.topStories)[14], Object.values(this.state.topStories)[15]],
-          header: 'most recent',
-          link: '#/most-recent'
-        });
-        articleEleven = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topScience)[0], Object.values(this.state.topScience)[1], Object.values(this.state.topScience)[2]],
-          header: 'Business'
-        });
-        articleTwelve = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topBusiness)[0], Object.values(this.state.topStories)[1], Object.values(this.state.topStories)[2]],
-          header: 'Culture'
-        });
-        articleThirteen = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Gear'
-        });
-        articleFourteen = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Ideas'
-        });
-        articleFifteen = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Science'
-        });
-        articleSixteen = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Security'
-        });
-        articleSeventeen = _react2.default.createElement(_article_unit_eleven2.default, {
-          stories: [Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[7]],
-          header: 'Transportation'
-        });
-        articleSubscribe = _react2.default.createElement(_article_unit_subscribe2.default, null);
-      }
-
-      if (articleSubscribe === undefined) {
+      if (this.state.topTechnology.length < 20) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
         return _react2.default.createElement(
@@ -26718,22 +26633,27 @@ var ArticleIndex = function (_React$Component) {
               'div',
               { className: 'article-index' },
               _react2.default.createElement(_article_index_grid_one2.default, {
-                stories: [Object.values(this.state.topStories)[0], Object.values(this.state.topStories)[1], Object.values(this.state.topStories)[2], Object.values(this.state.topStories)[3], Object.values(this.state.topStories)[4], Object.values(this.state.topStories)[5]],
-                listStories: [Object.values(this.state.topStories)[6], Object.values(this.state.topStories)[7], Object.values(this.state.topStories)[8]],
+                stories: this.state.topStories.slice(0, 8),
+                listStories: this.state.topStories.slice(8, 11),
                 headers: ["most popular"],
                 links: ["#/most-popular"]
               }),
               _react2.default.createElement(_article_index_grid_two2.default, {
-                articles: [articleSeven, articleFive, articleEight]
+                stories: this.state.topStories.slice(11, 14)
               }),
               _react2.default.createElement(_article_index_grid_three2.default, {
-                articles: [articleTen, articleTwo, articleOne, articleFive, articleThree, articleFour]
+                stories: this.state.topStories.slice(14, 19),
+                listStories: this.state.topStories.slice(0, 5),
+                headers: ["most recent"],
+                links: ["#/most-recent"]
               }),
               _react2.default.createElement(_article_index_grid_four2.default, {
-                articles: [articleTwelve, articleThirteen, articleFourteen]
+                listStories: this.state.topStories.slice(0, 9),
+                headers: ["Business", "Culture", "Gear"]
               }),
               _react2.default.createElement(_article_index_grid_four2.default, {
-                articles: [articleFifteen, articleSixteen, articleSeventeen]
+                listStories: this.state.topStories.slice(9, 18),
+                headers: ["Ideas", "Science", "Security"]
               }),
               this.props.location.pathname === "/" && _react2.default.createElement(
                 'div',
@@ -26741,7 +26661,7 @@ var ArticleIndex = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   null,
-                  articleSubscribe
+                  _react2.default.createElement(_article_unit_subscribe2.default, null)
                 )
               )
             ),
@@ -27135,7 +27055,7 @@ var ArticleUnitFour = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -27548,7 +27468,7 @@ var ArticleUnitEight = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 100 ? this.props.story.title.split("").slice(0, 100).join("") + ' ...' : this.props.story.title
                   )
                 )
               ),
@@ -27631,7 +27551,7 @@ var ArticleUnitEleven = function (_React$Component) {
       var items = this.props.stories.slice(1).map(function (el, i) {
         return _react2.default.createElement(_article_unit_list_item2.default, {
           key: i,
-          story: _this2.props.stories[i]
+          story: _this2.props.stories[i + 1]
         });
       });
 
@@ -27960,14 +27880,14 @@ var ArticleIndexGridOne = function (_React$Component) {
               'div',
               { className: 'margin-right' },
               _react2.default.createElement(_article_unit_one2.default, {
-                story: Object.values(this.props.stories)[0]
+                story: this.props.stories[0]
               })
             ),
             _react2.default.createElement(
               'div',
               null,
               _react2.default.createElement(_article_unit_two2.default, {
-                story: Object.values(this.props.stories)[1]
+                story: this.props.stories[1]
               })
             )
           ),
@@ -27981,14 +27901,14 @@ var ArticleIndexGridOne = function (_React$Component) {
                 'div',
                 { className: 'margin-bottom' },
                 _react2.default.createElement(_article_unit_three2.default, {
-                  story: Object.values(this.props.stories)[2]
+                  story: this.props.stories[2]
                 })
               ),
               _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(_article_unit_four2.default, {
-                  story: Object.values(this.props.stories)[3]
+                  story: this.props.stories[3]
                 })
               )
             ),
@@ -27999,7 +27919,7 @@ var ArticleIndexGridOne = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(_article_unit_five2.default, {
-                  story: Object.values(this.props.stories)[4]
+                  story: this.props.stories[4]
                 })
               )
             )
@@ -28011,7 +27931,7 @@ var ArticleIndexGridOne = function (_React$Component) {
               'div',
               null,
               _react2.default.createElement(_article_unit_six2.default, {
-                story: Object.values(this.props.stories)[5]
+                story: this.props.stories[5]
               })
             )
           )
@@ -28023,7 +27943,7 @@ var ArticleIndexGridOne = function (_React$Component) {
             'div',
             { className: 'margin-bottom' },
             _react2.default.createElement(_article_unit_nine2.default, {
-              stories: [Object.values(this.props.listStories)[0], Object.values(this.props.listStories)[1], Object.values(this.props.listStories)[2]],
+              stories: [this.props.listStories[0], this.props.listStories[1], this.props.listStories[2]],
               header: this.props.headers[0],
               link: this.props.links[0]
             })
@@ -28032,14 +27952,14 @@ var ArticleIndexGridOne = function (_React$Component) {
             'div',
             { className: 'margin-bottom' },
             _react2.default.createElement(_article_unit_five2.default, {
-              story: Object.values(this.props.stories)[4]
+              story: this.props.stories[6]
             })
           ),
           _react2.default.createElement(
             'div',
             null,
             _react2.default.createElement(_article_unit_four2.default, {
-              story: Object.values(this.props.stories)[3]
+              story: this.props.stories[7]
             })
           )
         )
@@ -28071,6 +27991,18 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
+var _article_unit_seven = __webpack_require__(130);
+
+var _article_unit_seven2 = _interopRequireDefault(_article_unit_seven);
+
+var _article_unit_five = __webpack_require__(128);
+
+var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
+
+var _article_unit_eight = __webpack_require__(131);
+
+var _article_unit_eight2 = _interopRequireDefault(_article_unit_eight);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28100,18 +28032,24 @@ var ArticleIndexGridTwo = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'margin-right' },
-            this.props.articles[0]
+            _react2.default.createElement(_article_unit_seven2.default, {
+              story: this.props.stories[0]
+            })
           ),
           _react2.default.createElement(
             'div',
             null,
-            this.props.articles[1]
+            _react2.default.createElement(_article_unit_five2.default, {
+              story: this.props.stories[1]
+            })
           )
         ),
         _react2.default.createElement(
           'div',
           null,
-          this.props.articles[2]
+          _react2.default.createElement(_article_unit_eight2.default, {
+            story: this.props.stories[2]
+          })
         )
       );
     }
@@ -28140,6 +28078,30 @@ var _react = __webpack_require__(0);
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
+
+var _article_unit_one = __webpack_require__(124);
+
+var _article_unit_one2 = _interopRequireDefault(_article_unit_one);
+
+var _article_unit_two = __webpack_require__(125);
+
+var _article_unit_two2 = _interopRequireDefault(_article_unit_two);
+
+var _article_unit_three = __webpack_require__(126);
+
+var _article_unit_three2 = _interopRequireDefault(_article_unit_three);
+
+var _article_unit_four = __webpack_require__(127);
+
+var _article_unit_four2 = _interopRequireDefault(_article_unit_four);
+
+var _article_unit_five = __webpack_require__(128);
+
+var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
+
+var _article_unit_ten = __webpack_require__(147);
+
+var _article_unit_ten2 = _interopRequireDefault(_article_unit_ten);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28170,7 +28132,11 @@ var ArticleIndexGridThree = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            this.props.articles[0]
+            _react2.default.createElement(_article_unit_ten2.default, {
+              stories: [this.props.listStories[0], this.props.listStories[1], this.props.listStories[2], this.props.listStories[3], this.props.listStories[4]],
+              header: this.props.headers[0],
+              link: this.props.links[0]
+            })
           )
         ),
         _react2.default.createElement(
@@ -28182,12 +28148,16 @@ var ArticleIndexGridThree = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'margin-right' },
-              this.props.articles[1]
+              _react2.default.createElement(_article_unit_two2.default, {
+                story: this.props.stories[0]
+              })
             ),
             _react2.default.createElement(
               'div',
               null,
-              this.props.articles[2]
+              _react2.default.createElement(_article_unit_one2.default, {
+                story: this.props.stories[1]
+              })
             )
           ),
           _react2.default.createElement(
@@ -28199,7 +28169,9 @@ var ArticleIndexGridThree = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'margin-right' },
-                this.props.articles[3]
+                _react2.default.createElement(_article_unit_five2.default, {
+                  story: this.props.stories[2]
+                })
               )
             ),
             _react2.default.createElement(
@@ -28208,12 +28180,16 @@ var ArticleIndexGridThree = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'margin-bottom' },
-                this.props.articles[4]
+                _react2.default.createElement(_article_unit_three2.default, {
+                  story: this.props.stories[3]
+                })
               ),
               _react2.default.createElement(
                 'div',
                 null,
-                this.props.articles[5]
+                _react2.default.createElement(_article_unit_four2.default, {
+                  story: this.props.stories[4]
+                })
               )
             )
           )
@@ -28246,6 +28222,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
+var _article_unit_eleven = __webpack_require__(132);
+
+var _article_unit_eleven2 = _interopRequireDefault(_article_unit_eleven);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28275,17 +28255,26 @@ var ArticleIndexGridFour = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'margin-right' },
-            this.props.articles[0]
+            _react2.default.createElement(_article_unit_eleven2.default, {
+              stories: [this.props.listStories[0], this.props.listStories[1], this.props.listStories[2]],
+              header: this.props.headers[0]
+            })
           ),
           _react2.default.createElement(
             'div',
             { className: 'margin-right' },
-            this.props.articles[1]
+            _react2.default.createElement(_article_unit_eleven2.default, {
+              stories: [this.props.listStories[3], this.props.listStories[4], this.props.listStories[5]],
+              header: this.props.headers[1]
+            })
           ),
           _react2.default.createElement(
             'div',
             null,
-            this.props.articles[2]
+            _react2.default.createElement(_article_unit_eleven2.default, {
+              stories: [this.props.listStories[6], this.props.listStories[7], this.props.listStories[8]],
+              header: this.props.headers[2]
+            })
           )
         )
       );
@@ -29442,6 +29431,101 @@ var MostPopular = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = MostPopular;
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+var _article_unit_list_item = __webpack_require__(52);
+
+var _article_unit_list_item2 = _interopRequireDefault(_article_unit_list_item);
+
+var _article_unit_more = __webpack_require__(6);
+
+var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArticleUnitTen = function (_React$Component) {
+  _inherits(ArticleUnitTen, _React$Component);
+
+  function ArticleUnitTen(props) {
+    _classCallCheck(this, ArticleUnitTen);
+
+    return _possibleConstructorReturn(this, (ArticleUnitTen.__proto__ || Object.getPrototypeOf(ArticleUnitTen)).call(this, props));
+  }
+
+  _createClass(ArticleUnitTen, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var items = this.props.stories.map(function (el, i) {
+        return _react2.default.createElement(_article_unit_list_item2.default, {
+          key: i,
+          story: _this2.props.stories[i]
+        });
+      });
+      return _react2.default.createElement(
+        'div',
+        { className: 'article-unit-ten article-unit' },
+        _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-middle' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-middle-header' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              this.props.header
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-ten-bottom article-unit-list-bottom' },
+          _react2.default.createElement(
+            'ul',
+            null,
+            items
+          )
+        ),
+        _react2.default.createElement(_article_unit_more2.default, {
+          header: this.props.header
+        })
+      );
+    }
+  }]);
+
+  return ArticleUnitTen;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitTen);
+
+// comment
 
 /***/ })
 /******/ ]);

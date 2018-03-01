@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ArticleUnitSeven from '../article_units/article_unit_seven.jsx';
+import ArticleUnitFive from '../article_units/article_unit_five.jsx';
+import ArticleUnitEight from '../article_units/article_unit_eight.jsx';
+
 class ArticleIndexGridTwo extends React.Component{
   constructor(props){
     super(props);
@@ -11,14 +15,20 @@ class ArticleIndexGridTwo extends React.Component{
       <div className="margin-bottom">
         <div className="horizontal margin-bottom">
           <div className="margin-right">
-            {this.props.articles[0]}
+            <ArticleUnitSeven
+              story={this.props.stories[0]}
+              />
           </div>
           <div>
-            {this.props.articles[1]}
+            <ArticleUnitFive
+              story={this.props.stories[1]}
+              />
           </div>
         </div>
         <div>
-          {this.props.articles[2]}
+          <ArticleUnitEight
+            story={this.props.stories[2]}
+            />
         </div>
       </div>
     );
