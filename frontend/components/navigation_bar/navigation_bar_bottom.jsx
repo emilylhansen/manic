@@ -17,12 +17,12 @@ class NavigationBarBottom extends React.Component {
             onClick={() => window.location.reload()}>CULTURE</a></h2>
         </div>
         <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-three">
-          <h2><a href={`index.html#/category/design`}
-            onClick={() => window.location.reload()}>DESIGN</a></h2>
-        </div>
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-four">
           <h2><a href={`index.html#/category/gear`}
             onClick={() => window.location.reload()}>GEAR</a></h2>
+        </div>
+        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-four">
+          <h2><a href={`index.html#/category/ideas`}
+            onClick={() => window.location.reload()}>IDEAS</a></h2>
         </div>
         <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-five">
           <h2><a href={`index.html#/category/science`}

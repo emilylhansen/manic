@@ -51,29 +51,37 @@ class NavigationBar extends React.Component {
   }
 
   toggleNav(){
-    let category = this.props.location.pathname;
-
-    if (category.includes("business")){
+    switch (this.props.match.params.categoryName) {
+      case "business":
       this.changeNav(document.getElementById("navigation-bar-bottom-section-one"),
       this.colors.green);
-    } else if (category.includes("culture")) {
+      break;
+      case "culture":
       this.changeNav(document.getElementById("navigation-bar-bottom-section-two"),
       this.colors.purple);
-    } else if (category.includes("gear")) {
+      break;
+      case "gear":
       this.changeNav(document.getElementById("navigation-bar-bottom-section-three"),
       this.colors.teal);
-    } else if (category.includes("ideas")) {
+      break;
+      case "ideas":
       this.changeNav(document.getElementById("navigation-bar-bottom-section-four"),
       this.colors.blue);
-    } else if (category.includes("science")) {
+      break;
+      case "science":
       this.changeNav(document.getElementById("navigation-bar-bottom-section-five"),
       this.colors.orange);
-    } else if (category.includes("security")) {
+      break;
+      case "security":
       this.changeNav(document.getElementById("navigation-bar-bottom-section-six"),
       this.colors.brown);
-    } else if (category.includes("transportation")) {
+      break;
+      case "transportation":
       this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"),
       this.colors.red);
+      break;
+      default:
+
     }
   }
 

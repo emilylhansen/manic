@@ -1738,22 +1738,30 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'toggleNav',
     value: function toggleNav() {
-      var category = this.props.location.pathname;
+      switch (this.props.match.params.categoryName) {
+        case "business":
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.colors.green);
+          break;
+        case "culture":
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-two"), this.colors.purple);
+          break;
+        case "gear":
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
+          break;
+        case "ideas":
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-four"), this.colors.blue);
+          break;
+        case "science":
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-five"), this.colors.orange);
+          break;
+        case "security":
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-six"), this.colors.brown);
+          break;
+        case "transportation":
+          this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"), this.colors.red);
+          break;
+        default:
 
-      if (category.includes("business")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.colors.green);
-      } else if (category.includes("culture")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-two"), this.colors.purple);
-      } else if (category.includes("gear")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
-      } else if (category.includes("ideas")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-four"), this.colors.blue);
-      } else if (category.includes("science")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-five"), this.colors.orange);
-      } else if (category.includes("security")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-six"), this.colors.brown);
-      } else if (category.includes("transportation")) {
-        this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"), this.colors.red);
       }
     }
   }, {
@@ -30687,17 +30695,7 @@ var _article_index2 = _interopRequireDefault(_article_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// topStories: Object.values(state.entities.topStories),
-// topHealth: Object.values(state.entities.topHealth),
-// topSports: Object.values(state.entities.topSports),
-// topGeneral: Object.values(state.entities.topGeneral),
-// topScience: Object.values(state.entities.topScience),
-// topBusiness: Object.values(state.entities.topBusiness),
-// topTechnology: Object.values(state.entities.topTechnology),
-// topEntertainment: Object.values(state.entities.topEntertainment)
-
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     topStories: Object.values(state.entities.stories.topStories),
     topHealth: Object.values(state.entities.stories.topHealth),
@@ -30895,6 +30893,7 @@ var ArticleIndex = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var stories = this.getStories();
       if (this.props.topHealth.length < 20) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
@@ -30911,17 +30910,17 @@ var ArticleIndex = function (_React$Component) {
               'div',
               { className: 'article-index' },
               _react2.default.createElement(_article_index_grid_one2.default, {
-                stories: this.getStories().slice(0, 8),
-                listStories: this.getStories().slice(8, 11),
+                stories: stories.slice(0, 8),
+                listStories: stories.slice(8, 11),
                 headers: ["most popular"],
                 links: ["#/most-popular"]
               }),
               _react2.default.createElement(_article_index_grid_two2.default, {
-                stories: this.getStories().slice(11, 14)
+                stories: stories.slice(11, 14)
               }),
               _react2.default.createElement(_article_index_grid_three2.default, {
-                stories: this.getStories().slice(14, 19),
-                listStories: this.getStories().slice(0, 5),
+                stories: stories.slice(14, 19),
+                listStories: stories.slice(0, 5),
                 headers: ["most recent"],
                 links: ["#/most-recent"]
               }),
@@ -31789,22 +31788,30 @@ var NavigationBarMenu = function (_React$Component) {
   }, {
     key: 'toggleNav',
     value: function toggleNav() {
-      var category = this.props.location.pathname;
+      switch (this.props.match.params.categoryName) {
+        case "business":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-one"), this.props.colors.green);
+          break;
+        case "culture":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-two"), this.props.colors.purple);
+          break;
+        case "gear":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-three"), this.props.colors.teal);
+          break;
+        case "ideas":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-four"), this.props.colors.blue);
+          break;
+        case "science":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-five"), this.props.colors.orange);
+          break;
+        case "security":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-six"), this.props.colors.brown);
+          break;
+        case "transportation":
+          this.changeNav(document.getElementById("navigation-bar-menu-section-seven"), this.props.colors.red);
+          break;
+        default:
 
-      if (category.includes("business")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-one"), this.props.colors.green);
-      } else if (category.includes("culture")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-two"), this.props.colors.purple);
-      } else if (category.includes("design")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-three"), this.props.colors.teal);
-      } else if (category.includes("gear")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-four"), this.props.colors.blue);
-      } else if (category.includes("science")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-five"), this.props.colors.orange);
-      } else if (category.includes("security")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-six"), this.props.colors.brown);
-      } else if (category.includes("transportation")) {
-        this.changeNav(document.getElementById("navigation-bar-menu-section-seven"), this.props.colors.red);
       }
     }
   }, {
@@ -31882,11 +31889,11 @@ var NavigationBarMenu = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: 'index.html#/category/design',
+                  { href: 'index.html#/category/gear',
                     onClick: function onClick() {
                       return window.location.reload();
                     } },
-                  'DESIGN'
+                  'GEAR'
                 )
               )
             )
@@ -31907,11 +31914,11 @@ var NavigationBarMenu = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: 'index.html#/category/gear',
+                  { href: 'index.html#/category/ideas',
                     onClick: function onClick() {
                       return window.location.reload();
                     } },
-                  'GEAR'
+                  'IDEAS'
                 )
               )
             )
@@ -32264,11 +32271,11 @@ var NavigationBarBottom = function (_React$Component) {
             null,
             _react2.default.createElement(
               'a',
-              { href: 'index.html#/category/design',
+              { href: 'index.html#/category/gear',
                 onClick: function onClick() {
                   return window.location.reload();
                 } },
-              'DESIGN'
+              'GEAR'
             )
           )
         ),
@@ -32280,11 +32287,11 @@ var NavigationBarBottom = function (_React$Component) {
             null,
             _react2.default.createElement(
               'a',
-              { href: 'index.html#/category/gear',
+              { href: 'index.html#/category/ideas',
                 onClick: function onClick() {
                   return window.location.reload();
                 } },
-              'GEAR'
+              'IDEAS'
             )
           )
         ),

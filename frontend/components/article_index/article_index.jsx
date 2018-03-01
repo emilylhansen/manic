@@ -60,6 +60,7 @@ class ArticleIndex extends React.Component{
   }
 
   render(){
+    let stories = this.getStories();
     if (this.props.topHealth.length < 20) {
       return (
         <Loading/>
@@ -73,19 +74,19 @@ class ArticleIndex extends React.Component{
           <div className="article-index-background">
             <div className="article-index">
               <ArticleIndexGridOne
-                stories={this.getStories().slice(0, 8)}
-                listStories={this.getStories().slice(8, 11)}
+                stories={stories.slice(0, 8)}
+                listStories={stories.slice(8, 11)}
                 headers={["most popular"]}
                 links={["#/most-popular"]}
                 />
 
               <ArticleIndexGridTwo
-                stories={this.getStories().slice(11, 14)}
+                stories={stories.slice(11, 14)}
                 />
 
               <ArticleIndexGridThree
-               stories={this.getStories().slice(14, 19)}
-               listStories={this.getStories().slice(0, 5)}
+               stories={stories.slice(14, 19)}
+               listStories={stories.slice(0, 5)}
                headers={["most recent"]}
                links={["#/most-recent"]}
                />

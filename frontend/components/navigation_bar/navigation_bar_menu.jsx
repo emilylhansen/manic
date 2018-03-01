@@ -19,29 +19,37 @@ class NavigationBarMenu extends React.Component {
   }
 
   toggleNav(){
-    let category = this.props.location.pathname;
-
-    if (category.includes("business")){
+    switch (this.props.match.params.categoryName) {
+      case "business":
       this.changeNav(document.getElementById("navigation-bar-menu-section-one"),
       this.props.colors.green);
-    } else if (category.includes("culture")) {
+      break;
+      case "culture":
       this.changeNav(document.getElementById("navigation-bar-menu-section-two"),
       this.props.colors.purple);
-    } else if (category.includes("design")) {
+      break;
+      case "gear":
       this.changeNav(document.getElementById("navigation-bar-menu-section-three"),
       this.props.colors.teal);
-    } else if (category.includes("gear")) {
+      break;
+      case "ideas":
       this.changeNav(document.getElementById("navigation-bar-menu-section-four"),
       this.props.colors.blue);
-    } else if (category.includes("science")) {
+      break;
+      case "science":
       this.changeNav(document.getElementById("navigation-bar-menu-section-five"),
       this.props.colors.orange);
-    } else if (category.includes("security")) {
+      break;
+      case "security":
       this.changeNav(document.getElementById("navigation-bar-menu-section-six"),
       this.props.colors.brown);
-    } else if (category.includes("transportation")) {
+      break;
+      case "transportation":
       this.changeNav(document.getElementById("navigation-bar-menu-section-seven"),
       this.props.colors.red);
+      break;
+      default:
+
     }
   }
 
@@ -72,8 +80,8 @@ class NavigationBarMenu extends React.Component {
               <div className="navigation-bar-menu-section-image">
                 <img src="frontend/images/eleven.png"></img>
               </div>
-              <h2><a href={`index.html#/category/design`}
-                onClick={() => window.location.reload()}>DESIGN</a></h2>
+              <h2><a href={`index.html#/category/gear`}
+                onClick={() => window.location.reload()}>GEAR</a></h2>
             </div>
           </div>
           <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-four">
@@ -81,8 +89,8 @@ class NavigationBarMenu extends React.Component {
               <div className="navigation-bar-menu-section-image">
                 <img src="frontend/images/fifteen.png"></img>
               </div>
-              <h2><a href={`index.html#/category/gear`}
-                onClick={() => window.location.reload()}>GEAR</a></h2>
+              <h2><a href={`index.html#/category/ideas`}
+                onClick={() => window.location.reload()}>IDEAS</a></h2>
             </div>
           </div>
           <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-five">
