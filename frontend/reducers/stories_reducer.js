@@ -21,7 +21,6 @@ const defaultState = {
 };
 
 const StoriesReducer = (oldState=defaultState, action) => {
-  debugger
   Object.freeze(oldState);
   let newState;
   switch (action.type) {

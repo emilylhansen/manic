@@ -24,83 +24,10 @@ import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 class ArticleIndex extends React.Component{
   constructor(props){
     super(props);
-    // this.state = {
-    //   topStories: this.props.topStories,
-    //   topBusiness: this.props.topBusiness,
-    //   topEntertainment: this.props.topEntertainment,
-    //   topGeneral: this.props.topGeneral,
-    //   topHealth: this.props.topHealth,
-    //   topScience: this.props.topScience,
-    //   topSports: this.props.topSports,
-    //   topTechnology: this.props.topTechnology
-    // };
+    this.getStories = this.getStories.bind(this);
   }
 
   componentDidMount(){
-    // let topStories = [];
-    // let topBusiness = [];
-    // let topEntertainment = [];
-    // let topGeneral = [];
-    // let topHealth = [];
-    // let topScience = [];
-    // let topSports = [];
-    // let topTechnology = [];
-    //
-    // StoryApiUtil.fetchTopStories().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topStories.push(el);
-    //     this.setState({topStories: topStories});
-    //   });
-    // });
-    //
-    // StoryApiUtil.fetchTopBusiness().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topBusiness.push(el);
-    //     this.setState({topBusiness: topBusiness});
-    //   });
-    // });
-    //
-    // StoryApiUtil.fetchTopEntertainment().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topEntertainment.push(el);
-    //     this.setState({topEntertainment: topEntertainment});
-    //   });
-    // });
-    //
-    // StoryApiUtil.fetchTopGeneral().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topGeneral.push(el);
-    //     this.setState({topGeneral: topGeneral});
-    //   });
-    // });
-    //
-    // StoryApiUtil.fetchTopHealth().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topHealth.push(el);
-    //     this.setState({topHealth: topHealth});
-    //   });
-    // });
-    //
-    // StoryApiUtil.fetchTopScience().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topScience.push(el);
-    //     this.setState({topScience: topScience});
-    //   });
-    // });
-    //
-    // StoryApiUtil.fetchTopSports().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topSports.push(el);
-    //     this.setState({topSports: topSports});
-    //   });
-    // });
-    //
-    // StoryApiUtil.fetchTopTechnology().then(resultHash => {
-    //   resultHash.articles.map((el) => {
-    //     topTechnology.push(el);
-    //     this.setState({topTechnology: topTechnology});
-    //   });
-    // });
     this.props.fetchTopStories();
     this.props.fetchTopBusiness();
     this.props.fetchTopEntertainment();
@@ -111,8 +38,28 @@ class ArticleIndex extends React.Component{
     this.props.fetchTopHealth();
   }
 
+  getStories(){
+    switch (this.props.match.params.categoryName) {
+      case "business":
+      return this.props.topBusiness;
+      case "culture":
+      return this.props.topEntertainment;
+      case "gear":
+      return this.props.topTechnology;
+      case "ideas":
+      return this.props.topGeneral;
+      case "science":
+      return this.props.topScience;
+      case "security":
+      return this.props.topSports;
+      case "transportation":
+      return this.props.topHealth;
+      default:
+      return this.props.topStories;
+    }
+  }
+
   render(){
-    debugger
     if (this.props.topHealth.length < 20) {
       return (
         <Loading/>
@@ -126,41 +73,45 @@ class ArticleIndex extends React.Component{
           <div className="article-index-background">
             <div className="article-index">
               <ArticleIndexGridOne
-                stories={this.props.topStories.slice(0, 8)}
-                listStories={this.props.topStories.slice(8, 11)}
+                stories={this.getStories().slice(0, 8)}
+                listStories={this.getStories().slice(8, 11)}
                 headers={["most popular"]}
                 links={["#/most-popular"]}
                 />
 
               <ArticleIndexGridTwo
-                stories={this.props.topStories.slice(11, 14)}
+                stories={this.getStories().slice(11, 14)}
                 />
 
               <ArticleIndexGridThree
-               stories={this.props.topStories.slice(14, 19)}
-               listStories={this.props.topStories.slice(0, 5)}
+               stories={this.getStories().slice(14, 19)}
+               listStories={this.getStories().slice(0, 5)}
                headers={["most recent"]}
                links={["#/most-recent"]}
                />
 
-               <ArticleIndexGridFour
-               listStories={this.props.topStories.slice(0, 9)}
-               headers={["Business", "Culture", "Gear"]}
-               />
+              { this.props.location.pathname === "/" &&
+                <ArticleIndexGridFour
+                listStories={this.props.topBusiness.slice(0, 3).
+                            concat(this.props.topEntertainment.slice(0, 3)).
+                            concat(this.props.topTechnology.slice(0, 3))}
+                headers={["Business", "Culture", "Gear"]}
+                /> }
 
-               <ArticleIndexGridFour
-               listStories={this.props.topStories.slice(9, 18)}
-               headers={["Ideas", "Science", "Security"]}
-               />
+              { this.props.location.pathname === "/" &&
+                <ArticleIndexGridFour
+                listStories={this.props.topGeneral.slice(0, 3).
+                            concat(this.props.topScience.slice(0, 3)).
+                            concat(this.props.topSports.slice(0,3))}
+                headers={["Ideas", "Science", "Security"]}
+                /> }
 
-              {
-                this.props.location.pathname === "/" &&
+              { this.props.location.pathname === "/" &&
                 <div className="horizontal">
                   <div>
                     <ArticleUnitSubscribe/>
                   </div>
-                </div>
-              }
+                </div> }
 
             </div>
             <Footer

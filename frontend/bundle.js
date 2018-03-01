@@ -24234,7 +24234,6 @@ var StoriesReducer = function StoriesReducer() {
   var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
   var action = arguments[1];
 
-  debugger;
   Object.freeze(oldState);
   var newState = void 0;
   switch (action.type) {
@@ -30853,86 +30852,15 @@ var ArticleIndex = function (_React$Component) {
   function ArticleIndex(props) {
     _classCallCheck(this, ArticleIndex);
 
-    return _possibleConstructorReturn(this, (ArticleIndex.__proto__ || Object.getPrototypeOf(ArticleIndex)).call(this, props));
-    // this.state = {
-    //   topStories: this.props.topStories,
-    //   topBusiness: this.props.topBusiness,
-    //   topEntertainment: this.props.topEntertainment,
-    //   topGeneral: this.props.topGeneral,
-    //   topHealth: this.props.topHealth,
-    //   topScience: this.props.topScience,
-    //   topSports: this.props.topSports,
-    //   topTechnology: this.props.topTechnology
-    // };
+    var _this = _possibleConstructorReturn(this, (ArticleIndex.__proto__ || Object.getPrototypeOf(ArticleIndex)).call(this, props));
+
+    _this.getStories = _this.getStories.bind(_this);
+    return _this;
   }
 
   _createClass(ArticleIndex, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      // let topStories = [];
-      // let topBusiness = [];
-      // let topEntertainment = [];
-      // let topGeneral = [];
-      // let topHealth = [];
-      // let topScience = [];
-      // let topSports = [];
-      // let topTechnology = [];
-      //
-      // StoryApiUtil.fetchTopStories().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topStories.push(el);
-      //     this.setState({topStories: topStories});
-      //   });
-      // });
-      //
-      // StoryApiUtil.fetchTopBusiness().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topBusiness.push(el);
-      //     this.setState({topBusiness: topBusiness});
-      //   });
-      // });
-      //
-      // StoryApiUtil.fetchTopEntertainment().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topEntertainment.push(el);
-      //     this.setState({topEntertainment: topEntertainment});
-      //   });
-      // });
-      //
-      // StoryApiUtil.fetchTopGeneral().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topGeneral.push(el);
-      //     this.setState({topGeneral: topGeneral});
-      //   });
-      // });
-      //
-      // StoryApiUtil.fetchTopHealth().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topHealth.push(el);
-      //     this.setState({topHealth: topHealth});
-      //   });
-      // });
-      //
-      // StoryApiUtil.fetchTopScience().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topScience.push(el);
-      //     this.setState({topScience: topScience});
-      //   });
-      // });
-      //
-      // StoryApiUtil.fetchTopSports().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topSports.push(el);
-      //     this.setState({topSports: topSports});
-      //   });
-      // });
-      //
-      // StoryApiUtil.fetchTopTechnology().then(resultHash => {
-      //   resultHash.articles.map((el) => {
-      //     topTechnology.push(el);
-      //     this.setState({topTechnology: topTechnology});
-      //   });
-      // });
       this.props.fetchTopStories();
       this.props.fetchTopBusiness();
       this.props.fetchTopEntertainment();
@@ -30943,9 +30871,30 @@ var ArticleIndex = function (_React$Component) {
       this.props.fetchTopHealth();
     }
   }, {
+    key: 'getStories',
+    value: function getStories() {
+      switch (this.props.match.params.categoryName) {
+        case "business":
+          return this.props.topBusiness;
+        case "culture":
+          return this.props.topEntertainment;
+        case "gear":
+          return this.props.topTechnology;
+        case "ideas":
+          return this.props.topGeneral;
+        case "science":
+          return this.props.topScience;
+        case "security":
+          return this.props.topSports;
+        case "transportation":
+          return this.props.topHealth;
+        default:
+          return this.props.topStories;
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      debugger;
       if (this.props.topHealth.length < 20) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
@@ -30962,26 +30911,26 @@ var ArticleIndex = function (_React$Component) {
               'div',
               { className: 'article-index' },
               _react2.default.createElement(_article_index_grid_one2.default, {
-                stories: this.props.topStories.slice(0, 8),
-                listStories: this.props.topStories.slice(8, 11),
+                stories: this.getStories().slice(0, 8),
+                listStories: this.getStories().slice(8, 11),
                 headers: ["most popular"],
                 links: ["#/most-popular"]
               }),
               _react2.default.createElement(_article_index_grid_two2.default, {
-                stories: this.props.topStories.slice(11, 14)
+                stories: this.getStories().slice(11, 14)
               }),
               _react2.default.createElement(_article_index_grid_three2.default, {
-                stories: this.props.topStories.slice(14, 19),
-                listStories: this.props.topStories.slice(0, 5),
+                stories: this.getStories().slice(14, 19),
+                listStories: this.getStories().slice(0, 5),
                 headers: ["most recent"],
                 links: ["#/most-recent"]
               }),
-              _react2.default.createElement(_article_index_grid_four2.default, {
-                listStories: this.props.topStories.slice(0, 9),
+              this.props.location.pathname === "/" && _react2.default.createElement(_article_index_grid_four2.default, {
+                listStories: this.props.topBusiness.slice(0, 3).concat(this.props.topEntertainment.slice(0, 3)).concat(this.props.topTechnology.slice(0, 3)),
                 headers: ["Business", "Culture", "Gear"]
               }),
-              _react2.default.createElement(_article_index_grid_four2.default, {
-                listStories: this.props.topStories.slice(9, 18),
+              this.props.location.pathname === "/" && _react2.default.createElement(_article_index_grid_four2.default, {
+                listStories: this.props.topGeneral.slice(0, 3).concat(this.props.topScience.slice(0, 3)).concat(this.props.topSports.slice(0, 3)),
                 headers: ["Ideas", "Science", "Security"]
               }),
               this.props.location.pathname === "/" && _react2.default.createElement(
