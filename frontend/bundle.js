@@ -31637,7 +31637,8 @@ var ArticleUnitTen = function (_React$Component) {
           )
         ),
         _react2.default.createElement(_article_unit_more2.default, {
-          header: this.props.header
+          header: this.props.header,
+          link: this.props.link
         })
       );
     }
