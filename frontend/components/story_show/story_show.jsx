@@ -7,6 +7,8 @@ import Loading from '../loading/loading.jsx';
 import StoryShowArticle from './story_show_article.jsx';
 import StoryShowShare from './story_show_share.jsx';
 import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
+import ArticleUnitSubscribe from '../article_units/article_unit_subscribe.jsx';
+import ArticleIndexGridThree from '../article_index/article_index_grid_three.jsx';
 
 class StoryShow extends React.Component {
   constructor(props){
@@ -77,14 +79,27 @@ class StoryShow extends React.Component {
                   />
                 <div className="story-show-popular">
                   <ArticleUnitNine
-                    stories={[this.props.topStories[0],
-                      this.props.topStories[1],
-                      this.props.topStories[2]]}
+                    stories={this.props.topStories.slice(0,3)}
                       header={["most popular"]}
                       link={["#/most-popular"]}
                       />
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="story-show-bottom-background">
+            <div className="story-show-bottom-index">
+              <ArticleIndexGridThree
+               stories={this.props.topStories.slice(3, 8)}
+               listStories={this.props.topStories.slice(8, 13)}
+               headers={["most recent"]}
+               links={["#/most-recent"]}
+               />
+             <div className="horizontal">
+               <div>
+                 <ArticleUnitSubscribe/>
+               </div>
+             </div>
             </div>
             <Footer
               pathname={this.props.location.pathname}

@@ -33057,6 +33057,14 @@ var _article_unit_nine = __webpack_require__(51);
 
 var _article_unit_nine2 = _interopRequireDefault(_article_unit_nine);
 
+var _article_unit_subscribe = __webpack_require__(238);
+
+var _article_unit_subscribe2 = _interopRequireDefault(_article_unit_subscribe);
+
+var _article_index_grid_three = __webpack_require__(241);
+
+var _article_index_grid_three2 = _interopRequireDefault(_article_index_grid_three);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33148,10 +33156,33 @@ var StoryShow = function (_React$Component) {
                   'div',
                   { className: 'story-show-popular' },
                   _react2.default.createElement(_article_unit_nine2.default, {
-                    stories: [this.props.topStories[0], this.props.topStories[1], this.props.topStories[2]],
+                    stories: this.props.topStories.slice(0, 3),
                     header: ["most popular"],
                     link: ["#/most-popular"]
                   })
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'story-show-bottom-background' },
+            _react2.default.createElement(
+              'div',
+              { className: 'story-show-bottom-index' },
+              _react2.default.createElement(_article_index_grid_three2.default, {
+                stories: this.props.topStories.slice(3, 8),
+                listStories: this.props.topStories.slice(8, 13),
+                headers: ["most recent"],
+                links: ["#/most-recent"]
+              }),
+              _react2.default.createElement(
+                'div',
+                { className: 'horizontal' },
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement(_article_unit_subscribe2.default, null)
                 )
               )
             ),

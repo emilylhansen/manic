@@ -121,3 +121,13 @@
   margin: 0px;
   text-transform: uppercase;
 }
+
+/* story show bottom  */
+.story-show-bottom-background {
+  background-color: #F6F6F6;
+}
+
+.story-show-bottom-index {
+  margin: 0 auto;
+  width: 940px;
+}
