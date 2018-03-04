@@ -22,10 +22,16 @@ class ArticleUnitThree extends React.Component {
                 <h2>{this.props.story.source.name}</h2>
               </div>
               <div className="article-unit-title">
-                <h6><a href={this.props.story.url}>
-                  {this.props.story.title.length > 45 ?
+                <h6>
+                  <Link to={{
+                      pathname: `/story/${this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join("")}`,
+                      state: { story: this.props.story }}}
+                      >
+                    {this.props.story.title.length > 45 ?
                     `${this.props.story.title.split("").slice(0, 45).join("")}...` :
-                  this.props.story.title}</a></h6>
+                    this.props.story.title}
+                  </Link>
+                </h6>
               </div>
               <div className="article-unit-author">
                 <h2>

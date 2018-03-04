@@ -18,10 +18,16 @@ class ArticleUnitListItemTwo extends React.Component {
             </div>
             <div className="article-unit-list-item-text">
               <div className="article-unit-title">
-                <h6><a href={this.props.story.url}>
-                  {this.props.story.title.length > 30 ?
+                <h6>
+                  <Link to={{
+                      pathname: `/story/${this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join("")}`,
+                      state: { story: this.props.story }}}
+                      >
+                    {this.props.story.title.length > 30 ?
                     `${this.props.story.title.split("").slice(0, 30).join("")}...` :
-                  this.props.story.title}</a></h6>
+                    this.props.story.title}
+                  </Link>
+                </h6>
               </div>
               <div className="article-unit-author">
                 <h2>

@@ -49,7 +49,7 @@ class StoryShow extends React.Component {
   }
 
   render(){
-    // debugger
+    debugger
     let dateTime = this.convertDateTime();
     return (
       <div>
@@ -69,16 +69,21 @@ class StoryShow extends React.Component {
                   <h2>{dateTime.time}</h2>
                 </div>
                 <div className="story-show-article-title">
-                  <h3>{this.state.story.title}</h3>
+                  <h3><a href={this.state.story.url}>{this.state.story.title}</a></h3>
                 </div>
-                <div className="story-show-article-img">
-                  <img src={this.state.story.urlToImage ?
-                            this.props.story.urlToImage :
-                            "frontend/images/Image-not-available.jpg"}></img>                </div>
                 <div className="story-show-article-description">
+                  <p>{this.state.story.description}</p>
+                </div>
+                {
+                  this.state.story.urlToImage &&
+                  <div className="story-show-article-img">
+                    <img src={this.state.story.urlToImage}></img>
+                  </div>
+                }
+                <div className="story-show-article-text">
                   <div>
                     <p>
-                      Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.
+                      <span>Alohamora wand elf</span> parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.
                     </p>
                     <p>
                       Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.

@@ -40,10 +40,16 @@ class ArticleUnitListItemThree extends React.Component {
                 </h2>
               </div>
               <div className="article-unit-title">
-                <h6><a href={this.props.story.url}>
-                  {this.props.story.title.length > 50 ?
+                <h6>
+                  <Link to={{
+                      pathname: `/story/${this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join("")}`,
+                      state: { story: this.props.story }}}
+                      >
+                    {this.props.story.title.length > 50 ?
                     `${this.props.story.title.split("").slice(0, 50).join("")}...` :
-                  this.props.story.title}</a></h6>
+                    this.props.story.title}
+                  </Link>
+                </h6>
               </div>
               <div className="article-unit-list-item-title">
                 <h1>{this.props.story.title}</h1>

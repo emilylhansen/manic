@@ -1523,8 +1523,11 @@ var ArticleUnitFive = function (_React$Component) {
                   'h1',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
                   )
                 )
@@ -3004,8 +3007,11 @@ var ArticleUnitTwo = function (_React$Component) {
                   'h1',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
                   )
                 )
@@ -3106,8 +3112,11 @@ var ArticleUnitThree = function (_React$Component) {
                   'h6',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 45 ? this.props.story.title.split("").slice(0, 45).join("") + '...' : this.props.story.title
                   )
                 )
@@ -3203,8 +3212,11 @@ var ArticleUnitFour = function (_React$Component) {
                   'h6',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 45 ? this.props.story.title.split("").slice(0, 45).join("") + '...' : this.props.story.title
                   )
                 )
@@ -3404,8 +3416,11 @@ var ArticleUnitListItem = function (_React$Component) {
                   'h1',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
                   )
                 )
@@ -5594,8 +5609,11 @@ var ArticleUnitSix = function (_React$Component) {
                   'h4',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 120 ? this.props.story.title.split("").slice(0, 120).join("") + '...' : this.props.story.title
                   )
                 )
@@ -5691,8 +5709,11 @@ var ArticleUnitSeven = function (_React$Component) {
                   'h4',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 100 ? this.props.story.title.split("").slice(0, 100).join("") + '...' : this.props.story.title
                   )
                 )
@@ -5798,9 +5819,12 @@ var ArticleUnitEight = function (_React$Component) {
                   'h4',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
-                    this.props.story.title.length > 100 ? this.props.story.title.split("").slice(0, 100).join("") + ' ...' : this.props.story.title
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
+                    this.props.story.title.length > 100 ? this.props.story.title.split("").slice(0, 100).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -31043,8 +31067,11 @@ var ArticleUnitListItemTwo = function (_React$Component) {
                   'h6',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 30 ? this.props.story.title.split("").slice(0, 30).join("") + '...' : this.props.story.title
                   )
                 )
@@ -32756,8 +32783,11 @@ var ArticleUnitListItemThree = function (_React$Component) {
                   'h6',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
                   )
                 )
@@ -33077,7 +33107,7 @@ var StoryShow = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      // debugger
+      debugger;
       var dateTime = this.convertDateTime();
       return _react2.default.createElement(
         'div',
@@ -33135,25 +33165,42 @@ var StoryShow = function (_React$Component) {
                   _react2.default.createElement(
                     'h3',
                     null,
-                    this.state.story.title
+                    _react2.default.createElement(
+                      'a',
+                      { href: this.state.story.url },
+                      this.state.story.title
+                    )
                   )
                 ),
                 _react2.default.createElement(
                   'div',
+                  { className: 'story-show-article-description' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    this.state.story.description
+                  )
+                ),
+                this.state.story.urlToImage && _react2.default.createElement(
+                  'div',
                   { className: 'story-show-article-img' },
-                  _react2.default.createElement('img', { src: this.state.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" }),
-                  '                '
+                  _react2.default.createElement('img', { src: this.state.story.urlToImage })
                 ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'story-show-article-description' },
+                  { className: 'story-show-article-text' },
                   _react2.default.createElement(
                     'div',
                     null,
                     _react2.default.createElement(
                       'p',
                       null,
-                      'Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \xBE dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.'
+                      _react2.default.createElement(
+                        'span',
+                        null,
+                        'Alohamora wand elf'
+                      ),
+                      ' parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \xBE dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.'
                     ),
                     _react2.default.createElement(
                       'p',

@@ -17,10 +17,16 @@ class ArticleUnitSeven extends React.Component {
                 <h2>{this.props.story.source.name}</h2>
               </div>
               <div className="article-unit-title">
-                <h4><a href={this.props.story.url}>
-                  {this.props.story.title.length > 100 ?
+                <h4>
+                  <Link to={{
+                      pathname: `/story/${this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join("")}`,
+                      state: { story: this.props.story }}}
+                      >
+                    {this.props.story.title.length > 100 ?
                     `${this.props.story.title.split("").slice(0, 100).join("")}...` :
-                  this.props.story.title}</a></h4>
+                    this.props.story.title}
+                  </Link>
+                </h4>
               </div>
               <div className="article-unit-author">
                 <h2>
