@@ -18,8 +18,8 @@ class ArticleUnitFour extends React.Component {
               </div>
               <div className="article-unit-title">
                 <h6><a href={this.props.story.url}>
-                  {this.props.story.title.length > 50 ?
-                    `${this.props.story.title.split("").slice(0, 50).join("")}...` :
+                  {this.props.story.title.length > 45 ?
+                    `${this.props.story.title.split("").slice(0, 45).join("")}...` :
                   this.props.story.title}</a></h6>
               </div>
               <div className="article-unit-author">

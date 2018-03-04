@@ -1088,7 +1088,7 @@ module.exports = baseGetTag;
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(33);
+var getNative = __webpack_require__(35);
 
 /* Built-in method references that are verified to be native. */
 var nativeCreate = getNative(Object, 'create');
@@ -1122,6 +1122,167 @@ module.exports = getMapData;
 
 /***/ }),
 /* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fetchStory = exports.fetchTopTechnology = exports.fetchTopSports = exports.fetchTopScience = exports.fetchTopHealth = exports.fetchTopGeneral = exports.fetchTopEntertainment = exports.fetchTopBusiness = exports.fetchTopStories = exports.receiveStory = exports.receiveTopTechnology = exports.receiveTopSports = exports.receiveTopScience = exports.receiveTopHealth = exports.receiveTopGeneral = exports.receiveTopEntertainment = exports.receiveTopBusiness = exports.receiveTopStories = exports.RECEIVE_STORY = exports.RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_STORIES = undefined;
+
+var _story_api_util = __webpack_require__(25);
+
+var StoryApiUtil = _interopRequireWildcard(_story_api_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_TOP_STORIES = exports.RECEIVE_TOP_STORIES = 'RECEIVE_TOP_STORIES';
+var RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_BUSINESS = 'RECEIVE_TOP_BUSINESS';
+var RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_ENTERTAINMENT = 'RECEIVE_TOP_ENTERTAINMENT';
+var RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_GENERAL = 'RECEIVE_TOP_GENERAL';
+var RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_HEALTH = 'RECEIVE_TOP_HEALTH';
+var RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_SCIENCE = 'RECEIVE_TOP_SCIENCE';
+var RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SPORTS = 'RECEIVE_TOP_SPORTS';
+var RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_TECHNOLOGY = 'RECEIVE_TOP_TECHNOLOGY';
+var RECEIVE_STORY = exports.RECEIVE_STORY = 'RECEIVE_STORY';
+
+var receiveTopStories = exports.receiveTopStories = function receiveTopStories(topStories) {
+  return {
+    type: RECEIVE_TOP_STORIES,
+    topStories: topStories
+  };
+};
+
+var receiveTopBusiness = exports.receiveTopBusiness = function receiveTopBusiness(topBusiness) {
+  return {
+    type: RECEIVE_TOP_BUSINESS,
+    topBusiness: topBusiness
+  };
+};
+
+var receiveTopEntertainment = exports.receiveTopEntertainment = function receiveTopEntertainment(topEntertainment) {
+  return {
+    type: RECEIVE_TOP_ENTERTAINMENT,
+    topEntertainment: topEntertainment
+  };
+};
+
+var receiveTopGeneral = exports.receiveTopGeneral = function receiveTopGeneral(topGeneral) {
+  return {
+    type: RECEIVE_TOP_GENERAL,
+    topGeneral: topGeneral
+  };
+};
+
+var receiveTopHealth = exports.receiveTopHealth = function receiveTopHealth(topHealth) {
+  return {
+    type: RECEIVE_TOP_HEALTH,
+    topHealth: topHealth
+  };
+};
+
+var receiveTopScience = exports.receiveTopScience = function receiveTopScience(topScience) {
+  return {
+    type: RECEIVE_TOP_SCIENCE,
+    topScience: topScience
+  };
+};
+
+var receiveTopSports = exports.receiveTopSports = function receiveTopSports(topSports) {
+  return {
+    type: RECEIVE_TOP_SPORTS,
+    topSports: topSports
+  };
+};
+
+var receiveTopTechnology = exports.receiveTopTechnology = function receiveTopTechnology(topTechnology) {
+  return {
+    type: RECEIVE_TOP_TECHNOLOGY,
+    topTechnology: topTechnology
+  };
+};
+
+var receiveStory = exports.receiveStory = function receiveStory(story) {
+  return {
+    type: RECEIVE_STORY,
+    story: story
+  };
+};
+
+var fetchTopStories = exports.fetchTopStories = function fetchTopStories() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopStories().then(function (topStories) {
+      return dispatch(receiveTopStories(topStories));
+    });
+  };
+};
+
+var fetchTopBusiness = exports.fetchTopBusiness = function fetchTopBusiness() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopBusiness().then(function (topBusiness) {
+      return dispatch(receiveTopBusiness(topBusiness));
+    });
+  };
+};
+
+var fetchTopEntertainment = exports.fetchTopEntertainment = function fetchTopEntertainment() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopEntertainment().then(function (topEntertainment) {
+      return dispatch(receiveTopEntertainment(topEntertainment));
+    });
+  };
+};
+
+var fetchTopGeneral = exports.fetchTopGeneral = function fetchTopGeneral() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopGeneral().then(function (topGeneral) {
+      return dispatch(receiveTopGeneral(topGeneral));
+    });
+  };
+};
+
+var fetchTopHealth = exports.fetchTopHealth = function fetchTopHealth() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopHealth().then(function (topHealth) {
+      return dispatch(receiveTopHealth(topHealth));
+    });
+  };
+};
+
+var fetchTopScience = exports.fetchTopScience = function fetchTopScience() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopScience().then(function (topScience) {
+      return dispatch(receiveTopScience(topScience));
+    });
+  };
+};
+
+var fetchTopSports = exports.fetchTopSports = function fetchTopSports() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopSports().then(function (topSports) {
+      return dispatch(receiveTopSports(topSports));
+    });
+  };
+};
+
+var fetchTopTechnology = exports.fetchTopTechnology = function fetchTopTechnology() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchTopTechnology().then(function (topTechnology) {
+      return dispatch(receiveTopTechnology(topTechnology));
+    });
+  };
+};
+
+var fetchStory = exports.fetchStory = function fetchStory(story) {
+  return function (dispatch) {
+    return dispatch(receiveStory(story));
+  };
+};
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1195,7 +1356,26 @@ var fetchTopTechnology = exports.fetchTopTechnology = function fetchTopTechnolog
 };
 
 /***/ }),
-/* 25 */
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connect_connect__ = __webpack_require__(202);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createProvider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
+
+
+
+
+
+
+/***/ }),
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1271,7 +1451,7 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 };
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1373,7 +1553,7 @@ exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitFive);
 // comment
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1561,7 +1741,7 @@ var Footer = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: 'https://newsapi.org/' },
-                'Powered by News API'
+                'Powered by News API: an API where objects don\'t have unique ids :('
               )
             )
           )
@@ -1576,7 +1756,7 @@ var Footer = function (_React$Component) {
 exports.default = Footer;
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1636,7 +1816,7 @@ var Loading = function (_React$Component) {
 exports.default = Loading;
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1827,7 +2007,7 @@ exports.default = (0, _reactRouterDom.withRouter)(NavigationBar);
 // comment
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1843,7 +2023,7 @@ exports.default = (0, _reactRouterDom.withRouter)(NavigationBar);
 if (undefined !== 'production') {
   var invariant = __webpack_require__(10);
   var warning = __webpack_require__(15);
-  var ReactPropTypesSecret = __webpack_require__(31);
+  var ReactPropTypesSecret = __webpack_require__(33);
   var loggedTypeFailures = {};
 }
 
@@ -1893,7 +2073,7 @@ module.exports = checkPropTypes;
 
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1912,7 +2092,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1984,7 +2164,7 @@ function isPlainObject(value) {
 
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsNative = __webpack_require__(143),
@@ -2007,7 +2187,7 @@ module.exports = getNative;
 
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(21),
@@ -2050,7 +2230,7 @@ module.exports = isFunction;
 
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var defineProperty = __webpack_require__(67);
@@ -2081,7 +2261,7 @@ module.exports = baseAssignValue;
 
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -2109,10 +2289,10 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(34),
+var isFunction = __webpack_require__(36),
     isLength = __webpack_require__(72);
 
 /**
@@ -2145,172 +2325,6 @@ function isArrayLike(value) {
 }
 
 module.exports = isArrayLike;
-
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.fetchTopTechnology = exports.fetchTopSports = exports.fetchTopScience = exports.fetchTopHealth = exports.fetchTopGeneral = exports.fetchTopEntertainment = exports.fetchTopBusiness = exports.fetchTopStories = exports.receiveTopTechnology = exports.receiveTopSports = exports.receiveTopScience = exports.receiveTopHealth = exports.receiveTopGeneral = exports.receiveTopEntertainment = exports.receiveTopBusiness = exports.receiveTopStories = exports.RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_STORIES = undefined;
-
-var _story_api_util = __webpack_require__(24);
-
-var StoryApiUtil = _interopRequireWildcard(_story_api_util);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var RECEIVE_TOP_STORIES = exports.RECEIVE_TOP_STORIES = 'RECEIVE_TOP_STORIES';
-var RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_BUSINESS = 'RECEIVE_TOP_BUSINESS';
-var RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_ENTERTAINMENT = 'RECEIVE_TOP_ENTERTAINMENT';
-var RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_GENERAL = 'RECEIVE_TOP_GENERAL';
-var RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_HEALTH = 'RECEIVE_TOP_HEALTH';
-var RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_SCIENCE = 'RECEIVE_TOP_SCIENCE';
-var RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SPORTS = 'RECEIVE_TOP_SPORTS';
-var RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_TECHNOLOGY = 'RECEIVE_TOP_TECHNOLOGY';
-
-var receiveTopStories = exports.receiveTopStories = function receiveTopStories(topStories) {
-  return {
-    type: RECEIVE_TOP_STORIES,
-    topStories: topStories
-  };
-};
-
-var receiveTopBusiness = exports.receiveTopBusiness = function receiveTopBusiness(topBusiness) {
-  return {
-    type: RECEIVE_TOP_BUSINESS,
-    topBusiness: topBusiness
-  };
-};
-
-var receiveTopEntertainment = exports.receiveTopEntertainment = function receiveTopEntertainment(topEntertainment) {
-  return {
-    type: RECEIVE_TOP_ENTERTAINMENT,
-    topEntertainment: topEntertainment
-  };
-};
-
-var receiveTopGeneral = exports.receiveTopGeneral = function receiveTopGeneral(topGeneral) {
-  return {
-    type: RECEIVE_TOP_GENERAL,
-    topGeneral: topGeneral
-  };
-};
-
-var receiveTopHealth = exports.receiveTopHealth = function receiveTopHealth(topHealth) {
-  return {
-    type: RECEIVE_TOP_HEALTH,
-    topHealth: topHealth
-  };
-};
-
-var receiveTopScience = exports.receiveTopScience = function receiveTopScience(topScience) {
-  return {
-    type: RECEIVE_TOP_SCIENCE,
-    topScience: topScience
-  };
-};
-
-var receiveTopSports = exports.receiveTopSports = function receiveTopSports(topSports) {
-  return {
-    type: RECEIVE_TOP_SPORTS,
-    topSports: topSports
-  };
-};
-
-var receiveTopTechnology = exports.receiveTopTechnology = function receiveTopTechnology(topTechnology) {
-  return {
-    type: RECEIVE_TOP_TECHNOLOGY,
-    topTechnology: topTechnology
-  };
-};
-
-var fetchTopStories = exports.fetchTopStories = function fetchTopStories() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopStories().then(function (topStories) {
-      return dispatch(receiveTopStories(topStories));
-    });
-  };
-};
-
-var fetchTopBusiness = exports.fetchTopBusiness = function fetchTopBusiness() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopBusiness().then(function (topBusiness) {
-      return dispatch(receiveTopBusiness(topBusiness));
-    });
-  };
-};
-
-var fetchTopEntertainment = exports.fetchTopEntertainment = function fetchTopEntertainment() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopEntertainment().then(function (topEntertainment) {
-      return dispatch(receiveTopEntertainment(topEntertainment));
-    });
-  };
-};
-
-var fetchTopGeneral = exports.fetchTopGeneral = function fetchTopGeneral() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopGeneral().then(function (topGeneral) {
-      return dispatch(receiveTopGeneral(topGeneral));
-    });
-  };
-};
-
-var fetchTopHealth = exports.fetchTopHealth = function fetchTopHealth() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopHealth().then(function (topHealth) {
-      return dispatch(receiveTopHealth(topHealth));
-    });
-  };
-};
-
-var fetchTopScience = exports.fetchTopScience = function fetchTopScience() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopScience().then(function (topScience) {
-      return dispatch(receiveTopScience(topScience));
-    });
-  };
-};
-
-var fetchTopSports = exports.fetchTopSports = function fetchTopSports() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopSports().then(function (topSports) {
-      return dispatch(receiveTopSports(topSports));
-    });
-  };
-};
-
-var fetchTopTechnology = exports.fetchTopTechnology = function fetchTopTechnology() {
-  return function (dispatch) {
-    return StoryApiUtil.fetchTopTechnology().then(function (topTechnology) {
-      return dispatch(receiveTopTechnology(topTechnology));
-    });
-  };
-};
-
-/***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connect_connect__ = __webpack_require__(202);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createProvider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
-
-
-
-
 
 
 /***/ }),
@@ -2847,6 +2861,10 @@ var ArticleUnitOne = function (_React$Component) {
   _createClass(ArticleUnitOne, [{
     key: 'render',
     value: function render() {
+      // <h1><a href={`/#/story/${this.props.story.title.split(/[^A-Za-z]/).join("")}`}>
+      //   {this.props.story.title.length > 60 ?
+      //   `${this.props.story.title.split("").slice(0, 60).join("")}...` :
+      //   this.props.story.title}</a></h1>
       return _react2.default.createElement(
         'div',
         { className: 'article-unit-one article-unit jump' },
@@ -2881,8 +2899,11 @@ var ArticleUnitOne = function (_React$Component) {
                   'h1',
                   null,
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.story.url },
+                    _reactRouterDom.Link,
+                    { to: {
+                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                        state: { story: this.props.story } }
+                    },
                     this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
                   )
                 )
@@ -3087,7 +3108,7 @@ var ArticleUnitThree = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 55 ? this.props.story.title.split("").slice(0, 55).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 45 ? this.props.story.title.split("").slice(0, 45).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -3184,7 +3205,7 @@ var ArticleUnitFour = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     { href: this.props.story.url },
-                    this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
+                    this.props.story.title.length > 45 ? this.props.story.title.split("").slice(0, 45).join("") + '...' : this.props.story.title
                   )
                 )
               ),
@@ -3724,7 +3745,7 @@ module.exports = focusNode;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = createStore;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(119);
 
 
@@ -4060,7 +4081,7 @@ function compose() {
 /* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(33),
+var getNative = __webpack_require__(35),
     root = __webpack_require__(8);
 
 /* Built-in method references that are verified to be native. */
@@ -4096,7 +4117,7 @@ module.exports = freeGlobal;
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(35),
+var baseAssignValue = __webpack_require__(37),
     eq = __webpack_require__(20);
 
 /**
@@ -4122,7 +4143,7 @@ module.exports = assignMergeValue;
 /* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(33);
+var getNative = __webpack_require__(35);
 
 var defineProperty = (function() {
   try {
@@ -4329,7 +4350,7 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(38)(module)))
 
 /***/ }),
 /* 74 */
@@ -4391,7 +4412,7 @@ module.exports = safeGet;
 
 var arrayLikeKeys = __webpack_require__(184),
     baseKeysIn = __webpack_require__(186),
-    isArrayLike = __webpack_require__(37);
+    isArrayLike = __webpack_require__(39);
 
 /**
  * Creates an array of the own and inherited enumerable property names of `object`.
@@ -4970,7 +4991,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifyPlainObject;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(40);
 
 
@@ -6216,7 +6237,7 @@ var _root = __webpack_require__(197);
 
 var _root2 = _interopRequireDefault(_root);
 
-var _story_actions = __webpack_require__(38);
+var _story_actions = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6301,7 +6322,7 @@ var emptyObject = __webpack_require__(14);
 var invariant = __webpack_require__(10);
 var warning = __webpack_require__(15);
 var emptyFunction = __webpack_require__(5);
-var checkPropTypes = __webpack_require__(30);
+var checkPropTypes = __webpack_require__(32);
 
 // TODO: this is special because it gets imported during build.
 
@@ -8009,7 +8030,7 @@ var shallowEqual = __webpack_require__(56);
 var containsNode = __webpack_require__(57);
 var focusNode = __webpack_require__(58);
 var emptyObject = __webpack_require__(14);
-var checkPropTypes = __webpack_require__(30);
+var checkPropTypes = __webpack_require__(32);
 var hyphenateStyleName = __webpack_require__(106);
 var camelizeStyleName = __webpack_require__(108);
 
@@ -23878,7 +23899,7 @@ function symbolObservablePonyfill(root) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = combineReducers;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(61);
 
 
@@ -24223,7 +24244,7 @@ var _merge = __webpack_require__(130);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _story_actions = __webpack_require__(38);
+var _story_actions = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24235,7 +24256,8 @@ var defaultState = {
   topHealth: {},
   topScience: {},
   topSports: {},
-  topTechnology: {}
+  topTechnology: {},
+  story: null
 };
 
 var StoriesReducer = function StoriesReducer() {
@@ -24261,6 +24283,8 @@ var StoriesReducer = function StoriesReducer() {
       return (0, _merge2.default)({}, oldState, { topSports: action.topSports.articles });
     case _story_actions.RECEIVE_TOP_TECHNOLOGY:
       return (0, _merge2.default)({}, oldState, { topTechnology: action.topTechnology.articles });
+    case _story_actions.RECEIVE_STORY:
+      return (0, _merge2.default)({}, oldState, { story: action.story });
     default:
       return oldState;
   }
@@ -24662,7 +24686,7 @@ module.exports = stackSet;
 /* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(34),
+var isFunction = __webpack_require__(36),
     isMasked = __webpack_require__(146),
     isObject = __webpack_require__(6),
     toSource = __webpack_require__(148);
@@ -25304,7 +25328,7 @@ var assignMergeValue = __webpack_require__(66),
     isArray = __webpack_require__(71),
     isArrayLikeObject = __webpack_require__(175),
     isBuffer = __webpack_require__(73),
-    isFunction = __webpack_require__(34),
+    isFunction = __webpack_require__(36),
     isObject = __webpack_require__(6),
     isPlainObject = __webpack_require__(177),
     isTypedArray = __webpack_require__(74),
@@ -25431,7 +25455,7 @@ function cloneBuffer(buffer, isDeep) {
 
 module.exports = cloneBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(38)(module)))
 
 /***/ }),
 /* 167 */
@@ -25624,7 +25648,7 @@ module.exports = baseIsArguments;
 /* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArrayLike = __webpack_require__(37),
+var isArrayLike = __webpack_require__(39),
     isObjectLike = __webpack_require__(11);
 
 /**
@@ -25864,7 +25888,7 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(38)(module)))
 
 /***/ }),
 /* 181 */
@@ -25909,7 +25933,7 @@ module.exports = toPlainObject;
 /***/ (function(module, exports, __webpack_require__) {
 
 var assignValue = __webpack_require__(183),
-    baseAssignValue = __webpack_require__(35);
+    baseAssignValue = __webpack_require__(37);
 
 /**
  * Copies properties of `source` to `object`.
@@ -25954,7 +25978,7 @@ module.exports = copyObject;
 /* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(35),
+var baseAssignValue = __webpack_require__(37),
     eq = __webpack_require__(20);
 
 /** Used for built-in method references. */
@@ -26393,7 +26417,7 @@ module.exports = shortOut;
 /***/ (function(module, exports, __webpack_require__) {
 
 var eq = __webpack_require__(20),
-    isArrayLike = __webpack_require__(37),
+    isArrayLike = __webpack_require__(39),
     isIndex = __webpack_require__(77),
     isObject = __webpack_require__(6);
 
@@ -26439,7 +26463,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(39);
+var _reactRedux = __webpack_require__(26);
 
 var _reactRouterDom = __webpack_require__(1);
 
@@ -26568,8 +26592,8 @@ var invariant = __webpack_require__(10);
 var warning = __webpack_require__(15);
 var assign = __webpack_require__(9);
 
-var ReactPropTypesSecret = __webpack_require__(31);
-var checkPropTypes = __webpack_require__(30);
+var ReactPropTypesSecret = __webpack_require__(33);
+var checkPropTypes = __webpack_require__(32);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -27114,7 +27138,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 var emptyFunction = __webpack_require__(5);
 var invariant = __webpack_require__(10);
-var ReactPropTypesSecret = __webpack_require__(31);
+var ReactPropTypesSecret = __webpack_require__(33);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -29445,7 +29469,7 @@ Redirect.contextTypes = {
 /* unused harmony reexport createHashHistory */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(226);
 /* unused harmony reexport createMemoryHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(27);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(13);
@@ -29470,7 +29494,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(90);
@@ -29774,7 +29798,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(90);
@@ -30094,7 +30118,7 @@ var createHashHistory = function createHashHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(46);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -30635,7 +30659,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(39);
+var _reactRedux = __webpack_require__(26);
 
 var _reactRouterDom = __webpack_require__(1);
 
@@ -30651,9 +30675,9 @@ var _most_popular = __webpack_require__(251);
 
 var _most_popular2 = _interopRequireDefault(_most_popular);
 
-var _story_show = __webpack_require__(252);
+var _story_show_container = __webpack_require__(252);
 
-var _story_show2 = _interopRequireDefault(_story_show);
+var _story_show_container2 = _interopRequireDefault(_story_show_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30665,7 +30689,7 @@ var App = function App() {
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/most-recent', component: _category2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/category/:categoryName', component: _article_index_container2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/category/:categoryName/page', component: _category2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/story/:storyName', component: _story_show2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/story/:storyName', component: _story_show_container2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _article_index_container2.default })
   );
 };
@@ -30683,11 +30707,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _reactRedux = __webpack_require__(39);
+var _reactRedux = __webpack_require__(26);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _story_actions = __webpack_require__(38);
+var _story_actions = __webpack_require__(24);
 
 var _article_index = __webpack_require__(236);
 
@@ -30758,7 +30782,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _story_api_util = __webpack_require__(24);
+var _story_api_util = __webpack_require__(25);
 
 var StoryApiUtil = _interopRequireWildcard(_story_api_util);
 
@@ -30778,7 +30802,7 @@ var _article_unit_four = __webpack_require__(50);
 
 var _article_unit_four2 = _interopRequireDefault(_article_unit_four);
 
-var _article_unit_five = __webpack_require__(26);
+var _article_unit_five = __webpack_require__(28);
 
 var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
 
@@ -30806,11 +30830,11 @@ var _article_unit_subscribe = __webpack_require__(238);
 
 var _article_unit_subscribe2 = _interopRequireDefault(_article_unit_subscribe);
 
-var _footer = __webpack_require__(27);
+var _footer = __webpack_require__(29);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _loading = __webpack_require__(28);
+var _loading = __webpack_require__(30);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -30830,7 +30854,7 @@ var _article_index_grid_four = __webpack_require__(243);
 
 var _article_index_grid_four2 = _interopRequireDefault(_article_index_grid_four);
 
-var _navigation_bar = __webpack_require__(29);
+var _navigation_bar = __webpack_require__(31);
 
 var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
@@ -30893,10 +30917,10 @@ var ArticleIndex = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var stories = this.getStories();
-      if (this.props.topHealth.length < 20) {
+      if (this.props.topHealth.length <= 0 || this.props.topStories.length <= 0 || this.props.topBusiness.length <= 0 || this.props.topEntertainment.length <= 0 || this.props.topGeneral.length <= 0 || this.props.topScience.length <= 0 || this.props.topSports.length <= 0 || this.props.topTechnology.length <= 0) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
+        var stories = this.getStories();
         return _react2.default.createElement(
           'div',
           null,
@@ -31187,7 +31211,7 @@ var _article_unit_four = __webpack_require__(50);
 
 var _article_unit_four2 = _interopRequireDefault(_article_unit_four);
 
-var _article_unit_five = __webpack_require__(26);
+var _article_unit_five = __webpack_require__(28);
 
 var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
 
@@ -31347,7 +31371,7 @@ var _article_unit_seven = __webpack_require__(92);
 
 var _article_unit_seven2 = _interopRequireDefault(_article_unit_seven);
 
-var _article_unit_five = __webpack_require__(26);
+var _article_unit_five = __webpack_require__(28);
 
 var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
 
@@ -31447,7 +31471,7 @@ var _article_unit_four = __webpack_require__(50);
 
 var _article_unit_four2 = _interopRequireDefault(_article_unit_four);
 
-var _article_unit_five = __webpack_require__(26);
+var _article_unit_five = __webpack_require__(28);
 
 var _article_unit_five2 = _interopRequireDefault(_article_unit_five);
 
@@ -31833,7 +31857,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/eight.png' })
+                _react2.default.createElement('img', { src: 'frontend/images/b.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -31858,7 +31882,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/eighteen.png' })
+                _react2.default.createElement('img', { src: 'frontend/images/c.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -31883,7 +31907,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/eleven.png' })
+                _react2.default.createElement('img', { src: 'frontend/images/g.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -31908,7 +31932,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/fifteen.png' })
+                _react2.default.createElement('img', { src: 'frontend/images/i.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -31933,7 +31957,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/nineteen.png' })
+                _react2.default.createElement('img', { src: 'frontend/images/s.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -31958,7 +31982,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/sixteen.png' })
+                _react2.default.createElement('img', { src: 'frontend/images/s2.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -31983,7 +32007,7 @@ var NavigationBarMenu = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navigation-bar-menu-section-image' },
-                _react2.default.createElement('img', { src: 'frontend/images/twentytwo.png' })
+                _react2.default.createElement('img', { src: 'frontend/images/t.png' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -32517,7 +32541,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _story_api_util = __webpack_require__(24);
+var _story_api_util = __webpack_require__(25);
 
 var StoryApiUtil = _interopRequireWildcard(_story_api_util);
 
@@ -32529,15 +32553,15 @@ var _article_unit_twelve = __webpack_require__(97);
 
 var _article_unit_twelve2 = _interopRequireDefault(_article_unit_twelve);
 
-var _loading = __webpack_require__(28);
+var _loading = __webpack_require__(30);
 
 var _loading2 = _interopRequireDefault(_loading);
 
-var _footer = __webpack_require__(27);
+var _footer = __webpack_require__(29);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar = __webpack_require__(29);
+var _navigation_bar = __webpack_require__(31);
 
 var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
@@ -32780,7 +32804,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _story_api_util = __webpack_require__(24);
+var _story_api_util = __webpack_require__(25);
 
 var StoryApiUtil = _interopRequireWildcard(_story_api_util);
 
@@ -32788,15 +32812,15 @@ var _article_unit_twelve = __webpack_require__(97);
 
 var _article_unit_twelve2 = _interopRequireDefault(_article_unit_twelve);
 
-var _loading = __webpack_require__(28);
+var _loading = __webpack_require__(30);
 
 var _loading2 = _interopRequireDefault(_loading);
 
-var _footer = __webpack_require__(27);
+var _footer = __webpack_require__(29);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar = __webpack_require__(29);
+var _navigation_bar = __webpack_require__(31);
 
 var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
@@ -32899,6 +32923,78 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _reactRedux = __webpack_require__(26);
+
+var _reactRouterDom = __webpack_require__(1);
+
+var _story_actions = __webpack_require__(24);
+
+var _story_show = __webpack_require__(253);
+
+var _story_show2 = _interopRequireDefault(_story_show);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var story = ownProps.location.state ? ownProps.location.state.story : JSON.parse(localStorage.story);
+  return {
+    topStories: Object.values(state.entities.stories.topStories),
+    topHealth: Object.values(state.entities.stories.topHealth),
+    topSports: Object.values(state.entities.stories.topSports),
+    topGeneral: Object.values(state.entities.stories.topGeneral),
+    topScience: Object.values(state.entities.stories.topScience),
+    topBusiness: Object.values(state.entities.stories.topBusiness),
+    topTechnology: Object.values(state.entities.stories.topTechnology),
+    topEntertainment: Object.values(state.entities.stories.topEntertainment),
+    story: story
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchTopStories: function fetchTopStories() {
+      return dispatch((0, _story_actions.fetchTopStories)());
+    },
+    fetchTopHealth: function fetchTopHealth() {
+      return dispatch((0, _story_actions.fetchTopHealth)());
+    },
+    fetchTopSports: function fetchTopSports() {
+      return dispatch((0, _story_actions.fetchTopSports)());
+    },
+    fetchTopGeneral: function fetchTopGeneral() {
+      return dispatch((0, _story_actions.fetchTopGeneral)());
+    },
+    fetchTopScience: function fetchTopScience() {
+      return dispatch((0, _story_actions.fetchTopScience)());
+    },
+    fetchTopBusiness: function fetchTopBusiness() {
+      return dispatch((0, _story_actions.fetchTopBusiness)());
+    },
+    fetchTopTechnology: function fetchTopTechnology() {
+      return dispatch((0, _story_actions.fetchTopTechnology)());
+    },
+    fetchTopEntertainment: function fetchTopEntertainment() {
+      return dispatch((0, _story_actions.fetchTopEntertainment)());
+    },
+    fetchStory: function fetchStory(story) {
+      return dispatch((0, _story_actions.fetchStory)(story));
+    }
+  };
+};
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_story_show2.default));
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -32907,15 +33003,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _navigation_bar = __webpack_require__(29);
+var _navigation_bar = __webpack_require__(31);
 
 var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
-var _footer = __webpack_require__(27);
+var _footer = __webpack_require__(29);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _loading = __webpack_require__(28);
+var _loading = __webpack_require__(30);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -32933,40 +33029,162 @@ var StoryShow = function (_React$Component) {
   function StoryShow(props) {
     _classCallCheck(this, StoryShow);
 
-    return _possibleConstructorReturn(this, (StoryShow.__proto__ || Object.getPrototypeOf(StoryShow)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (StoryShow.__proto__ || Object.getPrototypeOf(StoryShow)).call(this, props));
+
+    _this.state = {
+      story: _this.props.story
+    };
+    _this.convertDateTime = _this.convertDateTime.bind(_this);
+    return _this;
   }
 
   _createClass(StoryShow, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.location.state) {
+        localStorage.story = JSON.stringify(this.props.story);
+        // this.props.fetchStory(this.props.story);
+      }
+    }
+  }, {
+    key: 'convertDateTime',
+    value: function convertDateTime() {
+      var date = this.state.story.publishedAt.split(/-|T|Z|:|\./);
+      var month = date[1];
+      var day = date[2];
+      var year = date[0].slice(2);
+      var hours = date[3];
+      var minutes = date[4];
+
+      var hourConversion = hours % 12;
+      var time = void 0;
+      if (hourConversion === 0) {
+        time = 12 + ':' + minutes + ' am';
+      } else if (hourConversion === 12) {
+        time = 12 + ':' + minutes + ' pm';
+      } else if (hours > 12) {
+        if (hourConversion < 10) {
+          time = '0' + hourConversion + ':' + minutes + ' pm';
+        } else {
+          time = hourConversion + ':' + minutes + ' pm';
+        }
+      } else {
+        time = hours + ':' + minutes + ' am';
+      }
+
+      return { date: month + '.' + day + '.' + year, time: time };
+    }
+  }, {
     key: 'render',
     value: function render() {
+      // debugger
+      var dateTime = this.convertDateTime();
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(_navigation_bar2.default, {
-          header: this.props.location.pathname === "/" ? "" : this.props.match.params.categoryName
+          header: this.props.location.pathname === "/" ? "" : this.state.story.title
         }),
         _react2.default.createElement(
           'div',
-          { className: 'story-show' },
+          { className: 'story-show-background' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
-            _react2.default.createElement('div', { className: 'story-show-share' }),
+            { className: 'story-show' },
             _react2.default.createElement(
               'div',
-              { className: 'story-show-article' },
+              { className: 'horizontal' },
+              _react2.default.createElement('div', { className: 'story-show-share' }),
               _react2.default.createElement(
                 'div',
-                null,
-                'hi'
-              )
-            ),
-            _react2.default.createElement('div', { className: 'story-show-popular' })
-          )
-        ),
-        _react2.default.createElement(_footer2.default, {
-          pathname: this.props.location.pathname
-        })
+                { className: 'story-show-article' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'story-show-article-author horizontal' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    _react2.default.createElement(
+                      'u',
+                      null,
+                      this.state.story.author
+                    )
+                  ),
+                  '\xA0',
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    this.state.story.source.name
+                  ),
+                  '\xA0',
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    dateTime.date
+                  ),
+                  '\xA0',
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    dateTime.time
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'story-show-article-title' },
+                  _react2.default.createElement(
+                    'h3',
+                    null,
+                    this.state.story.title
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'story-show-article-img' },
+                  _react2.default.createElement('img', { src: this.state.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" }),
+                  '                '
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'story-show-article-description' },
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \xBE dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.'
+                    ),
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+                    ),
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Toad-like smile Flourish and Blotts he knew I\u2019d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs\u2019 years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.'
+                    ),
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages \u2018zis is a chance many would die for!'
+                    ),
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement('div', { className: 'story-show-popular' })
+            )
+          ),
+          _react2.default.createElement(_footer2.default, {
+            pathname: this.props.location.pathname
+          })
+        )
       );
     }
   }]);

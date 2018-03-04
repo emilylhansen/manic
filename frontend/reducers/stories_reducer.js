@@ -7,7 +7,8 @@ RECEIVE_TOP_GENERAL,
 RECEIVE_TOP_HEALTH,
 RECEIVE_TOP_SCIENCE,
 RECEIVE_TOP_SPORTS,
-RECEIVE_TOP_TECHNOLOGY} from '../actions/story_actions';
+RECEIVE_TOP_TECHNOLOGY,
+RECEIVE_STORY} from '../actions/story_actions';
 
 const defaultState = {
   topStories: {},
@@ -17,7 +18,8 @@ const defaultState = {
   topHealth: {},
   topScience: {},
   topSports: {},
-  topTechnology: {}
+  topTechnology: {},
+  story: null
 };
 
 const StoriesReducer = (oldState=defaultState, action) => {
@@ -40,6 +42,8 @@ const StoriesReducer = (oldState=defaultState, action) => {
     return merge({}, oldState, {topSports: action.topSports.articles});
     case RECEIVE_TOP_TECHNOLOGY:
     return merge({}, oldState, {topTechnology: action.topTechnology.articles});
+    case RECEIVE_STORY:
+    return merge({}, oldState, {story: action.story});
     default:
     return oldState;
   }

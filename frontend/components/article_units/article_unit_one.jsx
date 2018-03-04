@@ -7,6 +7,10 @@ class ArticleUnitOne extends React.Component {
   }
 
   render(){
+    // <h1><a href={`/#/story/${this.props.story.title.split(/[^A-Za-z]/).join("")}`}>
+    //   {this.props.story.title.length > 60 ?
+    //   `${this.props.story.title.split("").slice(0, 60).join("")}...` :
+    //   this.props.story.title}</a></h1>
     return (
       <div className="article-unit-one article-unit jump">
         <div className="article-unit-top"></div>
@@ -22,10 +26,16 @@ class ArticleUnitOne extends React.Component {
                 <h2>{this.props.story.source.name}</h2>
               </div>
               <div className="article-unit-title">
-                <h1><a href={this.props.story.url}>
-                  {this.props.story.title.length > 60 ?
-                  `${this.props.story.title.split("").slice(0, 60).join("")}...` :
-                  this.props.story.title}</a></h1>
+                <h1>
+                  <Link to={{
+                      pathname: `/story/${this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join("")}`,
+                      state: { story: this.props.story }}}
+                      >
+                    {this.props.story.title.length > 60 ?
+                    `${this.props.story.title.split("").slice(0, 60).join("")}...` :
+                    this.props.story.title}
+                  </Link>
+                </h1>
               </div>
               <div className="article-unit-author">
                 <h2>

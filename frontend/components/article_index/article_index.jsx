@@ -60,12 +60,19 @@ class ArticleIndex extends React.Component{
   }
 
   render(){
-    let stories = this.getStories();
-    if (this.props.topHealth.length < 20) {
+    if (this.props.topHealth.length <= 0 ||
+        this.props.topStories.length <= 0 ||
+        this.props.topBusiness.length <= 0 ||
+        this.props.topEntertainment.length <= 0 ||
+        this.props.topGeneral.length <= 0 ||
+        this.props.topScience.length <= 0 ||
+        this.props.topSports.length <= 0 ||
+        this.props.topTechnology.length <= 0) {
       return (
         <Loading/>
       );
     } else {
+      let stories = this.getStories();
       return (
         <div>
           <NavigationBar

@@ -1,0 +1,61 @@
+.story-show-background {
+  background-color: white;
+}
+
+.story-show {
+  /* border: 1px solid black; */
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 150px;
+  padding-bottom: 15px;
+}
+
+.story-show div {
+  /* border: 1px solid black; */
+}
+
+.story-show-article-author u{
+  text-decoration: none;
+  border-bottom: 4px solid #A9E9FA;
+}
+
+.story-show-article-author h2:first-child:hover,
+.story-show-article-author h2:nth-child(2):hover {
+  background-color: #A9E9FA;
+  cursor: pointer;
+}
+
+.story-show-article-title {
+}
+
+.story-show-article-title h3{
+  margin: 0px;
+  font-size: 64px;
+}
+
+.story-show-article-img {
+  width: 590px;
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  margin: 50px 0px;
+}
+
+.story-show-article-img img {
+  position: absolute;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.story-show-article-description div:first-child {
+  width: 90%;
+  float: right;
+}
+
+.story-show-article-description p{
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  line-height: 28px;
+}

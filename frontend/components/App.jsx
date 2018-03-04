@@ -11,7 +11,7 @@ import {
 import ArticleIndexContainer from './article_index/article_index_container.jsx';
 import Category from './category/category.jsx';
 import MostPopular from './most_popular/most_popular.jsx';
-import StoryShow from './story_show/story_show.jsx';
+import StoryShowContainer from './story_show/story_show_container.jsx';
 
 const App = () => (
   <div className="app">
@@ -19,7 +19,7 @@ const App = () => (
     <Route exact path="/most-recent" component={Category}/>
     <Route exact path="/category/:categoryName" component={ArticleIndexContainer}/>
     <Route exact path="/category/:categoryName/page" component={Category}/>
-    <Route exact path="/story/:storyName" component={StoryShow}/>
+    <Route exact path="/story/:storyName" component={StoryShowContainer}/>
     <Route exact path="/" component={ArticleIndexContainer}/>
   </div>
 );

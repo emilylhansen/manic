@@ -8,6 +8,7 @@ export const RECEIVE_TOP_HEALTH = 'RECEIVE_TOP_HEALTH';
 export const RECEIVE_TOP_SCIENCE = 'RECEIVE_TOP_SCIENCE';
 export const RECEIVE_TOP_SPORTS = 'RECEIVE_TOP_SPORTS';
 export const RECEIVE_TOP_TECHNOLOGY = 'RECEIVE_TOP_TECHNOLOGY';
+export const RECEIVE_STORY = 'RECEIVE_STORY';
 
 export const receiveTopStories = topStories => ({
   type: RECEIVE_TOP_STORIES,
@@ -49,6 +50,11 @@ export const receiveTopTechnology = topTechnology => ({
   topTechnology
 });
 
+export const receiveStory = story => ({
+  type: RECEIVE_STORY,
+  story
+});
+
 export const fetchTopStories = () => dispatch => (
   StoryApiUtil.fetchTopStories().then(
     topStories => dispatch(receiveTopStories(topStories)))
@@ -87,4 +93,8 @@ export const fetchTopSports = () => dispatch => (
 export const fetchTopTechnology = () => dispatch => (
   StoryApiUtil.fetchTopTechnology().then(
     topTechnology => dispatch(receiveTopTechnology(topTechnology)))
+);
+
+export const fetchStory = story => dispatch => (
+  dispatch(receiveStory(story))
 );
