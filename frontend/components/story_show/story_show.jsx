@@ -20,11 +20,20 @@ class StoryShow extends React.Component {
   }
 
   componentDidMount(){
+    debugger
     if (this.props.location.state) {
       localStorage.story = JSON.stringify(this.props.story);
       // this.props.fetchStory(this.props.story);
     }
     this.props.fetchTopStories();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    debugger
+    if (nextProps.story !== this.props.story) {
+      localStorage.story = JSON.stringify(nextProps.story);
+      this.setState({story: nextProps.story});
+    }
   }
 
   convertDateTime(){
@@ -55,6 +64,7 @@ class StoryShow extends React.Component {
   }
 
   render(){
+    debugger
     if (this.props.topStories.length <= 0){
       return (
         <Loading/>

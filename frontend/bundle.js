@@ -32966,6 +32966,7 @@ var _story_show2 = _interopRequireDefault(_story_show);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   var story = ownProps.location.state ? ownProps.location.state.story : JSON.parse(localStorage.story);
   return {
     topStories: Object.values(state.entities.stories.topStories),
@@ -33091,11 +33092,21 @@ var StoryShow = function (_React$Component) {
   _createClass(StoryShow, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      debugger;
       if (this.props.location.state) {
         localStorage.story = JSON.stringify(this.props.story);
         // this.props.fetchStory(this.props.story);
       }
       this.props.fetchTopStories();
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      debugger;
+      if (nextProps.story !== this.props.story) {
+        localStorage.story = JSON.stringify(nextProps.story);
+        this.setState({ story: nextProps.story });
+      }
     }
   }, {
     key: 'convertDateTime',
@@ -33128,6 +33139,7 @@ var StoryShow = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      debugger;
       if (this.props.topStories.length <= 0) {
         return _react2.default.createElement(_loading2.default, null);
       } else {

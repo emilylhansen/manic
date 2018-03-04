@@ -14,6 +14,7 @@ fetchStory} from '../../actions/story_actions';
 import StoryShow from './story_show.jsx';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   let story = ownProps.location.state ? ownProps.location.state.story : JSON.parse(localStorage.story);
   return({
     topStories: Object.values(state.entities.stories.topStories),
