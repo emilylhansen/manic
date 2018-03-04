@@ -33045,6 +33045,18 @@ var _loading = __webpack_require__(30);
 
 var _loading2 = _interopRequireDefault(_loading);
 
+var _story_show_article = __webpack_require__(254);
+
+var _story_show_article2 = _interopRequireDefault(_story_show_article);
+
+var _story_show_share = __webpack_require__(255);
+
+var _story_show_share2 = _interopRequireDefault(_story_show_share);
+
+var _article_unit_nine = __webpack_require__(51);
+
+var _article_unit_nine2 = _interopRequireDefault(_article_unit_nine);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33075,6 +33087,7 @@ var StoryShow = function (_React$Component) {
         localStorage.story = JSON.stringify(this.props.story);
         // this.props.fetchStory(this.props.story);
       }
+      this.props.fetchTopStories();
     }
   }, {
     key: 'convertDateTime',
@@ -33107,132 +33120,47 @@ var StoryShow = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      debugger;
-      var dateTime = this.convertDateTime();
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_navigation_bar2.default, {
-          header: this.props.location.pathname === "/" ? "" : this.state.story.title
-        }),
-        _react2.default.createElement(
+      if (this.props.topStories.length <= 0) {
+        return _react2.default.createElement(_loading2.default, null);
+      } else {
+        var dateTime = this.convertDateTime();
+        return _react2.default.createElement(
           'div',
-          { className: 'story-show-background' },
+          null,
+          _react2.default.createElement(_navigation_bar2.default, {
+            header: this.props.location.pathname === "/" ? "" : this.state.story.title.length < 30 ? this.state.story.title.length : this.state.story.title.slice(0, 30) + '...'
+          }),
           _react2.default.createElement(
             'div',
-            { className: 'story-show' },
+            { className: 'story-show-background' },
             _react2.default.createElement(
               'div',
-              { className: 'horizontal' },
-              _react2.default.createElement('div', { className: 'story-show-share' }),
+              { className: 'story-show' },
               _react2.default.createElement(
                 'div',
-                { className: 'story-show-article' },
+                { className: 'horizontal' },
+                _react2.default.createElement(_story_show_share2.default, null),
+                _react2.default.createElement(_story_show_article2.default, {
+                  story: this.state.story,
+                  dateTime: dateTime
+                }),
                 _react2.default.createElement(
                   'div',
-                  { className: 'story-show-article-author horizontal' },
-                  _react2.default.createElement(
-                    'h2',
-                    null,
-                    _react2.default.createElement(
-                      'u',
-                      null,
-                      this.state.story.author
-                    )
-                  ),
-                  '\xA0',
-                  _react2.default.createElement(
-                    'h2',
-                    null,
-                    this.state.story.source.name
-                  ),
-                  '\xA0',
-                  _react2.default.createElement(
-                    'h2',
-                    null,
-                    dateTime.date
-                  ),
-                  '\xA0',
-                  _react2.default.createElement(
-                    'h2',
-                    null,
-                    dateTime.time
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'story-show-article-title' },
-                  _react2.default.createElement(
-                    'h3',
-                    null,
-                    _react2.default.createElement(
-                      'a',
-                      { href: this.state.story.url },
-                      this.state.story.title
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'story-show-article-description' },
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    this.state.story.description
-                  )
-                ),
-                this.state.story.urlToImage && _react2.default.createElement(
-                  'div',
-                  { className: 'story-show-article-img' },
-                  _react2.default.createElement('img', { src: this.state.story.urlToImage })
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'story-show-article-text' },
-                  _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      _react2.default.createElement(
-                        'span',
-                        null,
-                        'Alohamora wand elf'
-                      ),
-                      ' parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \xBE dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Toad-like smile Flourish and Blotts he knew I\u2019d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs\u2019 years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages \u2018zis is a chance many would die for!'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
-                    )
-                  )
+                  { className: 'story-show-popular' },
+                  _react2.default.createElement(_article_unit_nine2.default, {
+                    stories: [this.props.topStories[0], this.props.topStories[1], this.props.topStories[2]],
+                    header: ["most popular"],
+                    link: ["#/most-popular"]
+                  })
                 )
-              ),
-              _react2.default.createElement('div', { className: 'story-show-popular' })
-            )
-          ),
-          _react2.default.createElement(_footer2.default, {
-            pathname: this.props.location.pathname
-          })
-        )
-      );
+              )
+            ),
+            _react2.default.createElement(_footer2.default, {
+              pathname: this.props.location.pathname
+            })
+          )
+        );
+      }
     }
   }]);
 
@@ -33242,6 +33170,291 @@ var StoryShow = function (_React$Component) {
 exports.default = (0, _reactRouterDom.withRouter)(StoryShow);
 
 // comment
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var StoryShowArticle = function (_React$Component) {
+  _inherits(StoryShowArticle, _React$Component);
+
+  function StoryShowArticle(props) {
+    _classCallCheck(this, StoryShowArticle);
+
+    return _possibleConstructorReturn(this, (StoryShowArticle.__proto__ || Object.getPrototypeOf(StoryShowArticle)).call(this, props));
+  }
+
+  _createClass(StoryShowArticle, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'story-show-article' },
+        _react2.default.createElement(
+          'div',
+          { className: 'story-show-article-author horizontal' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            _react2.default.createElement(
+              'u',
+              null,
+              this.props.story.author
+            )
+          ),
+          '\xA0',
+          _react2.default.createElement(
+            'h2',
+            null,
+            this.props.story.source.name
+          ),
+          '\xA0',
+          _react2.default.createElement(
+            'h2',
+            null,
+            this.props.dateTime.date
+          ),
+          '\xA0',
+          _react2.default.createElement(
+            'h2',
+            null,
+            this.props.dateTime.time
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'story-show-article-title' },
+          _react2.default.createElement(
+            'h3',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: this.props.story.url },
+              this.props.story.title
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'story-show-article-description' },
+          _react2.default.createElement(
+            'p',
+            null,
+            this.props.story.description
+          )
+        ),
+        this.props.story.urlToImage && _react2.default.createElement(
+          'div',
+          { className: 'story-show-article-img' },
+          _react2.default.createElement('img', { src: this.props.story.urlToImage })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'story-show-article-text' },
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'span',
+                null,
+                'Alohamora wand elf'
+              ),
+              ' parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \xBE dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Toad-like smile Flourish and Blotts he knew I\u2019d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs\u2019 years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages \u2018zis is a chance many would die for!'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return StoryShowArticle;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(StoryShowArticle);
+
+// comment
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+var _story_show_share_item = __webpack_require__(256);
+
+var _story_show_share_item2 = _interopRequireDefault(_story_show_share_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var StoryShowShare = function (_React$Component) {
+  _inherits(StoryShowShare, _React$Component);
+
+  function StoryShowShare(props) {
+    _classCallCheck(this, StoryShowShare);
+
+    return _possibleConstructorReturn(this, (StoryShowShare.__proto__ || Object.getPrototypeOf(StoryShowShare)).call(this, props));
+  }
+
+  _createClass(StoryShowShare, [{
+    key: 'render',
+    value: function render() {
+      var media = ["share", "tweet", "comment", "email"];
+      var images = ["frontend/images/facebook.png", "frontend/images/twitter.png", "frontend/images/comment.png", "frontend/images/email.png"];
+      var items = media.map(function (el, i) {
+        return _react2.default.createElement(_story_show_share_item2.default, {
+          key: i,
+          header: el,
+          image: images[i]
+        });
+      });
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'story-show-share' },
+        _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-middle' },
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-middle-header' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              'share'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-list-bottom' },
+          _react2.default.createElement(
+            'ul',
+            null,
+            items
+          )
+        )
+      );
+    }
+  }]);
+
+  return StoryShowShare;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(StoryShowShare);
+
+// comment
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StoryShowShareItem = function StoryShowShareItem(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'story-show-share-item' },
+    _react2.default.createElement(
+      'div',
+      { className: 'story-show-share-item-contents horizontal' },
+      _react2.default.createElement(
+        'div',
+        { className: 'story-show-share-item-img' },
+        _react2.default.createElement('img', { src: props.image })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'story-show-share-item-text' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          props.header
+        )
+      )
+    )
+  );
+};
+
+exports.default = (0, _reactRouterDom.withRouter)(StoryShowShareItem);
 
 /***/ })
 /******/ ]);
