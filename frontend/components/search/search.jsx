@@ -11,17 +11,12 @@ import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 class Search extends React.Component{
   constructor(){
     super();
-    this.convertTitle = this.convertTitle.bind(this);
   }
 
   componentDidMount(){
-    // debugger
+    debugger
     this.props.searchStories(this.props.searchTerm);
     this.props.fetchTopStories();
-  }
-
-  convertTitle(){
-    return `Search: "${this.props.searchTerm}"`;
   }
 
   render(){
@@ -35,14 +30,14 @@ class Search extends React.Component{
       return (
         <div>
           <NavigationBar
-            header={this.convertTitle()}
+            header={`Search: "${this.props.searchTerm}"`}
             />
           <div className="category-background">
             <div className="category-index horizontal">
               <div className="margin-right">
                 <ArticleUnitTwelve
                   stories={this.props.stories.slice(0, 20)}
-                  header={this.convertTitle()}
+                  header={this.props.searchTerm}
                   />
               </div>
               <div>

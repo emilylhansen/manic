@@ -32487,7 +32487,7 @@ var NavigationBarSearch = function (_React$Component) {
   _createClass(NavigationBarSearch, [{
     key: 'handleSubmit',
     value: function handleSubmit(e) {
-      debugger;
+      // debugger
       e.preventDefault();
       this.props.receiveSearchTerm(this.props.search);
       this.props.history.push('/search/' + this.props.search.split(/[^A-Za-z]/).join("+"));
@@ -33666,23 +33666,15 @@ var Search = function (_React$Component) {
   function Search() {
     _classCallCheck(this, Search);
 
-    var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this));
-
-    _this.convertTitle = _this.convertTitle.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this));
   }
 
   _createClass(Search, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      // debugger
+      debugger;
       this.props.searchStories(this.props.searchTerm);
       this.props.fetchTopStories();
-    }
-  }, {
-    key: 'convertTitle',
-    value: function convertTitle() {
-      return 'Search: "' + this.props.searchTerm + '"';
     }
   }, {
     key: 'render',
@@ -33695,7 +33687,7 @@ var Search = function (_React$Component) {
           'div',
           null,
           _react2.default.createElement(_navigation_bar2.default, {
-            header: this.convertTitle()
+            header: 'Search: "' + this.props.searchTerm + '"'
           }),
           _react2.default.createElement(
             'div',
@@ -33708,7 +33700,7 @@ var Search = function (_React$Component) {
                 { className: 'margin-right' },
                 _react2.default.createElement(_article_unit_twelve2.default, {
                   stories: this.props.stories.slice(0, 20),
-                  header: this.convertTitle()
+                  header: this.props.searchTerm
                 })
               ),
               _react2.default.createElement(
