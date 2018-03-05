@@ -26,9 +26,11 @@ class NavigationBarTop extends React.Component {
           </h3>
         </div>
         <div className="navigation-bar-top-section">
-          <h3>
-            {this.props.pathname !== "/" ? this.props.header : "MANIC"}
-          </h3>
+          {
+            this.props.pathname !== "/" ?
+            <p>{this.props.header}</p> :
+            <h3>"MANIC"</h3>
+          }
         </div>
         <div className="navigation-bar-top-section horizontal">
           <h2 onMouseEnter={this.props.handleMouseHover}>

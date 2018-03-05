@@ -32249,10 +32249,14 @@ var NavigationBarTop = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'navigation-bar-top-section' },
-          _react2.default.createElement(
+          this.props.pathname !== "/" ? _react2.default.createElement(
+            'p',
+            null,
+            this.props.header
+          ) : _react2.default.createElement(
             'h3',
             null,
-            this.props.pathname !== "/" ? this.props.header : "MANIC"
+            '"MANIC"'
           )
         ),
         _react2.default.createElement(
