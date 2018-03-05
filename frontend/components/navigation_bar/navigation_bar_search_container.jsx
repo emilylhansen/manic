@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import {receiveSearchTerm} from '../../actions/story_actions';
 
-import NavigationBar from './navigation_bar.jsx';
+import NavigationBarSearch from './navigation_bar_search.jsx';
 
 const mapStateToProps = state => {
   return({
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   receiveSearchTerm: (searchTerm) => dispatch(receiveSearchTerm(searchTerm))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavigationBar));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavigationBarSearch));

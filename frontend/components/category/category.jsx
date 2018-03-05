@@ -6,7 +6,7 @@ import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
 import Loading from '../loading/loading.jsx';
 import Footer from '../footer/footer.jsx';
-import NavigationBarContainer from '../navigation_bar/navigation_bar_container.jsx';
+import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 
 class Category extends React.Component{
   constructor(){
@@ -67,7 +67,7 @@ class Category extends React.Component{
     } else {
       return (
         <div>
-          <NavigationBarContainer
+          <NavigationBar
             header={this.convertTitle()}
             />
           <div className="category-background">

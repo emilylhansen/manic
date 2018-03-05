@@ -14,7 +14,7 @@ const mapStateToProps = state => {
                    [];
   let searchTerm = state.entities.stories.searchTerm ? state.entities.stories.searchTerm : null;
 
-  debugger
+  // debugger
   return({
     stories: stories,
     topStories: topStories,

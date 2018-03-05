@@ -6,7 +6,7 @@ import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
 import Loading from '../loading/loading.jsx';
 import Footer from '../footer/footer.jsx';
-import NavigationBarContainer from '../navigation_bar/navigation_bar_container.jsx';
+import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 
 class Search extends React.Component{
   constructor(){
@@ -15,7 +15,7 @@ class Search extends React.Component{
   }
 
   componentDidMount(){
-    debugger
+    // debugger
     this.props.searchStories(this.props.searchTerm);
     this.props.fetchTopStories();
   }
@@ -31,10 +31,10 @@ class Search extends React.Component{
         <Loading/>
       );
     } else {
-      debugger
+      // debugger
       return (
         <div>
-          <NavigationBarContainer
+          <NavigationBar
             header={this.convertTitle()}
             />
           <div className="category-background">

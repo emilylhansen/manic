@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import NavigationBarMenu from './navigation_bar_menu.jsx';
 import NavigationBarTop from './navigation_bar_top.jsx';
 import NavigationBarBottom from './navigation_bar_bottom.jsx';
-import NavigationBarSearch from './navigation_bar_search.jsx';
+import NavigationBarSearchContainer from './navigation_bar_search_container.jsx';
 import NavigationBarSubscribe from './navigation_bar_subscribe.jsx';
 
 class NavigationBar extends React.Component {
@@ -130,10 +130,9 @@ class NavigationBar extends React.Component {
           }
           {
             this.state.searchIsClicked &&
-            <NavigationBarSearch
+            <NavigationBarSearchContainer
               search={this.state.search}
               handleInput={this.handleInput}
-              receiveSearchTerm={this.props.receiveSearchTerm}
               />
           }
           {

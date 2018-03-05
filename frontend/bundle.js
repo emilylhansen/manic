@@ -1976,9 +1976,9 @@ var _navigation_bar_bottom = __webpack_require__(246);
 
 var _navigation_bar_bottom2 = _interopRequireDefault(_navigation_bar_bottom);
 
-var _navigation_bar_search = __webpack_require__(247);
+var _navigation_bar_search_container = __webpack_require__(260);
 
-var _navigation_bar_search2 = _interopRequireDefault(_navigation_bar_search);
+var _navigation_bar_search_container2 = _interopRequireDefault(_navigation_bar_search_container);
 
 var _navigation_bar_subscribe = __webpack_require__(248);
 
@@ -2116,10 +2116,9 @@ var NavigationBar = function (_React$Component) {
           handleMouseHover: this.handleMouseHover,
           handleInput: this.handleInput
         }),
-        this.state.searchIsClicked && _react2.default.createElement(_navigation_bar_search2.default, {
+        this.state.searchIsClicked && _react2.default.createElement(_navigation_bar_search_container2.default, {
           search: this.state.search,
-          handleInput: this.handleInput,
-          receiveSearchTerm: this.props.receiveSearchTerm
+          handleInput: this.handleInput
         }),
         this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_menu2.default, {
           colors: this.colors,
@@ -31167,9 +31166,9 @@ var _article_index_grid_four = __webpack_require__(243);
 
 var _article_index_grid_four2 = _interopRequireDefault(_article_index_grid_four);
 
-var _navigation_bar_container = __webpack_require__(259);
+var _navigation_bar = __webpack_require__(32);
 
-var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -31237,7 +31236,7 @@ var ArticleIndex = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar_container2.default, {
+          _react2.default.createElement(_navigation_bar2.default, {
             header: this.props.location.pathname === "/" ? "" : this.props.match.params.categoryName
           }),
           _react2.default.createElement(
@@ -32645,9 +32644,9 @@ var _footer = __webpack_require__(30);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar_container = __webpack_require__(259);
+var _navigation_bar = __webpack_require__(32);
 
-var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -32720,7 +32719,7 @@ var Category = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar_container2.default, {
+          _react2.default.createElement(_navigation_bar2.default, {
             header: this.convertTitle()
           }),
           _react2.default.createElement(
@@ -32907,9 +32906,9 @@ var _footer = __webpack_require__(30);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar_container = __webpack_require__(259);
+var _navigation_bar = __webpack_require__(32);
 
-var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -32970,7 +32969,7 @@ var MostPopular = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar_container2.default, {
+          _react2.default.createElement(_navigation_bar2.default, {
             header: 'most popular'
           }),
           _react2.default.createElement(
@@ -33584,7 +33583,7 @@ var mapStateToProps = function mapStateToProps(state) {
   var topStories = state.entities.stories.topStories ? Object.values(state.entities.stories.topStories) : [];
   var searchTerm = state.entities.stories.searchTerm ? state.entities.stories.searchTerm : null;
 
-  debugger;
+  // debugger
   return {
     stories: stories,
     topStories: topStories,
@@ -33647,9 +33646,9 @@ var _footer = __webpack_require__(30);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar_container = __webpack_require__(259);
+var _navigation_bar = __webpack_require__(32);
 
-var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -33676,7 +33675,7 @@ var Search = function (_React$Component) {
   _createClass(Search, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      debugger;
+      // debugger
       this.props.searchStories(this.props.searchTerm);
       this.props.fetchTopStories();
     }
@@ -33691,11 +33690,11 @@ var Search = function (_React$Component) {
       if (this.props.topStories.length <= 0 || this.props.stories.length <= 0) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
-        debugger;
+        // debugger
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar_container2.default, {
+          _react2.default.createElement(_navigation_bar2.default, {
             header: this.convertTitle()
           }),
           _react2.default.createElement(
@@ -33737,7 +33736,8 @@ var Search = function (_React$Component) {
 exports.default = Search;
 
 /***/ }),
-/* 259 */
+/* 259 */,
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33753,9 +33753,9 @@ var _reactRouterDom = __webpack_require__(1);
 
 var _story_actions = __webpack_require__(24);
 
-var _navigation_bar = __webpack_require__(32);
+var _navigation_bar_search = __webpack_require__(247);
 
-var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+var _navigation_bar_search2 = _interopRequireDefault(_navigation_bar_search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33771,7 +33771,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_navigation_bar2.default));
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_navigation_bar_search2.default));
 
 /***/ })
 /******/ ]);
