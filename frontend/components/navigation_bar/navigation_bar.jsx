@@ -133,6 +133,7 @@ class NavigationBar extends React.Component {
             <NavigationBarSearch
               search={this.state.search}
               handleInput={this.handleInput}
+              receiveSearchTerm={this.props.receiveSearchTerm}
               />
           }
           {

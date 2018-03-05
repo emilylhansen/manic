@@ -19,7 +19,7 @@ import ArticleIndexGridOne from './article_index_grid_one.jsx';
 import ArticleIndexGridTwo from './article_index_grid_two.jsx';
 import ArticleIndexGridThree from './article_index_grid_three.jsx';
 import ArticleIndexGridFour from './article_index_grid_four.jsx';
-import NavigationBar from '../navigation_bar/navigation_bar.jsx';
+import NavigationBarContainer from '../navigation_bar/navigation_bar_container.jsx';
 
 class ArticleIndex extends React.Component{
   constructor(props){
@@ -75,7 +75,7 @@ class ArticleIndex extends React.Component{
       let stories = this.getStories();
       return (
         <div>
-          <NavigationBar
+          <NavigationBarContainer
             header={this.props.location.pathname === "/" ? "" : this.props.match.params.categoryName}
             />
           <div className="article-index-background">
