@@ -32273,7 +32273,7 @@ var NavigationBarTop = function (_React$Component) {
           ) : _react2.default.createElement(
             'h3',
             null,
-            '"MANIC"'
+            'MANIC'
           )
         ),
         _react2.default.createElement(

@@ -29,7 +29,7 @@ class NavigationBarTop extends React.Component {
           {
             this.props.pathname !== "/" ?
             <p>{this.props.header}</p> :
-            <h3>"MANIC"</h3>
+            <h3>MANIC</h3>
           }
         </div>
         <div className="navigation-bar-top-section horizontal">
