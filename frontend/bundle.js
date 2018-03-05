@@ -5973,7 +5973,7 @@ var ArticleUnitEleven = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-eleven-middle-header-icon' },
-              _react2.default.createElement('i', { className: 'fa fa-bullseye', 'aria-hidden': 'true' })
+              _react2.default.createElement('img', { src: this.props.icon })
             ),
             _react2.default.createElement(
               'h3',
@@ -6186,7 +6186,7 @@ var ArticleUnitSubscribeItem = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/twelve.png' })
+              _react2.default.createElement('img', { src: 'frontend/images/one.png' })
             )
           ),
           _react2.default.createElement('div', { className: 'article-unit-subscribe-item-more' })
@@ -31279,11 +31279,13 @@ var ArticleIndex = function (_React$Component) {
               }),
               this.props.location.pathname === "/" && _react2.default.createElement(_article_index_grid_four2.default, {
                 listStories: this.props.topBusiness.slice(0, 3).concat(this.props.topEntertainment.slice(0, 3)).concat(this.props.topTechnology.slice(0, 3)),
-                headers: ["Business", "Culture", "Gear"]
+                headers: ["Business", "Culture", "Gear"],
+                icons: ["frontend/images/b.png", "frontend/images/c.png", "frontend/images/g.png"]
               }),
               this.props.location.pathname === "/" && _react2.default.createElement(_article_index_grid_four2.default, {
                 listStories: this.props.topGeneral.slice(0, 3).concat(this.props.topScience.slice(0, 3)).concat(this.props.topSports.slice(0, 3)),
-                headers: ["Ideas", "Science", "Security"]
+                headers: ["Ideas", "Science", "Security"],
+                icons: ["frontend/images/i.png", "frontend/images/s.png", "frontend/images/s2.png"]
               }),
               this.props.location.pathname === "/" && _react2.default.createElement(
                 'div',
@@ -31814,7 +31816,8 @@ var ArticleIndexGridFour = function (_React$Component) {
             { className: 'margin-right' },
             _react2.default.createElement(_article_unit_eleven2.default, {
               stories: [this.props.listStories[0], this.props.listStories[1], this.props.listStories[2]],
-              header: this.props.headers[0]
+              header: this.props.headers[0],
+              icon: this.props.icons[0]
             })
           ),
           _react2.default.createElement(
@@ -31822,7 +31825,8 @@ var ArticleIndexGridFour = function (_React$Component) {
             { className: 'margin-right' },
             _react2.default.createElement(_article_unit_eleven2.default, {
               stories: [this.props.listStories[3], this.props.listStories[4], this.props.listStories[5]],
-              header: this.props.headers[1]
+              header: this.props.headers[1],
+              icon: this.props.icons[1]
             })
           ),
           _react2.default.createElement(
@@ -31830,7 +31834,8 @@ var ArticleIndexGridFour = function (_React$Component) {
             null,
             _react2.default.createElement(_article_unit_eleven2.default, {
               stories: [this.props.listStories[6], this.props.listStories[7], this.props.listStories[8]],
-              header: this.props.headers[2]
+              header: this.props.headers[2],
+              icon: this.props.icons[2]
             })
           )
         )

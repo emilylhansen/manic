@@ -104,6 +104,7 @@ class ArticleIndex extends React.Component{
                             concat(this.props.topEntertainment.slice(0, 3)).
                             concat(this.props.topTechnology.slice(0, 3))}
                 headers={["Business", "Culture", "Gear"]}
+                icons={["frontend/images/b.png", "frontend/images/c.png", "frontend/images/g.png"]}
                 /> }
 
               { this.props.location.pathname === "/" &&
@@ -112,6 +113,7 @@ class ArticleIndex extends React.Component{
                             concat(this.props.topScience.slice(0, 3)).
                             concat(this.props.topSports.slice(0,3))}
                 headers={["Ideas", "Science", "Security"]}
+                icons={["frontend/images/i.png", "frontend/images/s.png", "frontend/images/s2.png"]}
                 /> }
 
               { this.props.location.pathname === "/" &&

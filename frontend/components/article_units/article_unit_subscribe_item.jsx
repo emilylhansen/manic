@@ -19,7 +19,7 @@ class ArticleUnitSubscribeItem extends React.Component {
               <h1>{this.props.text}</h1>
             </div>
             <div className="article-unit-image">
-              <img src="frontend/images/twelve.png"></img>
+              <img src="frontend/images/one.png"></img>
             </div>
           </div>
           <div className="article-unit-subscribe-item-more">

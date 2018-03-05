@@ -18,6 +18,7 @@ class ArticleIndexGridFour extends React.Component{
                       this.props.listStories[1],
                       this.props.listStories[2]]}
               header={this.props.headers[0]}
+              icon={this.props.icons[0]}
               />
           </div>
           <div className="margin-right">
@@ -26,6 +27,7 @@ class ArticleIndexGridFour extends React.Component{
                       this.props.listStories[4],
                       this.props.listStories[5]]}
               header={this.props.headers[1]}
+              icon={this.props.icons[1]}
               />
           </div>
           <div>
@@ -34,6 +36,7 @@ class ArticleIndexGridFour extends React.Component{
                       this.props.listStories[7],
                       this.props.listStories[8]]}
               header={this.props.headers[2]}
+              icon={this.props.icons[2]}
               />
           </div>
         </div>
