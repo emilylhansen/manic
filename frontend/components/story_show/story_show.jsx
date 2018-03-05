@@ -25,6 +25,7 @@ class StoryShow extends React.Component {
       // this.props.fetchStory(this.props.story);
     }
     this.props.fetchTopStories();
+    this.props.fetchMostRecentStories();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -63,7 +64,7 @@ class StoryShow extends React.Component {
   }
 
   render(){
-    if (this.props.topStories.length <= 0){
+    if (this.props.topStories.length <= 0 || this.props.mostRecentStories.length <= 0){
       return (
         <Loading/>
       );
@@ -99,7 +100,7 @@ class StoryShow extends React.Component {
             <div className="story-show-bottom-index">
               <ArticleIndexGridThree
                stories={this.props.topStories.slice(3, 8)}
-               listStories={this.props.topStories.slice(8, 13)}
+               listStories={this.props.mostRecentStories.slice(8, 13)}
                headers={["most recent"]}
                links={["#/most-recent"]}
                />

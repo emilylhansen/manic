@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import {RECEIVE_TOP_STORIES,
+RECEIVE_MOST_RECENT_STORIES,
 RECEIVE_TOP_BUSINESS,
 RECEIVE_TOP_ENTERTAINMENT,
 RECEIVE_TOP_GENERAL,
@@ -14,14 +15,14 @@ RECEIVE_SEARCH_TERM} from '../actions/story_actions';
 
 const defaultState = {
   topStories: {},
+  mostRecentStories: {},
   topBusiness: {},
   topEntertainment: {},
   topGeneral: {},
   topHealth: {},
   topScience: {},
   topSports: {},
-  topTechnology: {},
-  story: null
+  topTechnology: {}
 };
 
 const StoriesReducer = (oldState=defaultState, action) => {
@@ -30,6 +31,8 @@ const StoriesReducer = (oldState=defaultState, action) => {
   switch (action.type) {
     case RECEIVE_TOP_STORIES:
     return merge({}, oldState, {topStories: action.topStories.articles});
+    case RECEIVE_MOST_RECENT_STORIES:
+    return merge({}, oldState, {mostRecentStories: action.mostRecentStories.articles});
     case RECEIVE_TOP_BUSINESS:
     return merge({}, oldState, {topBusiness: action.topBusiness.articles});
     case RECEIVE_TOP_ENTERTAINMENT:
@@ -44,8 +47,6 @@ const StoriesReducer = (oldState=defaultState, action) => {
     return merge({}, oldState, {topSports: action.topSports.articles});
     case RECEIVE_TOP_TECHNOLOGY:
     return merge({}, oldState, {topTechnology: action.topTechnology.articles});
-    case RECEIVE_STORY:
-    return merge({}, oldState, {story: action.story});
     case RECEIVE_SEARCH_STORIES:
     return merge({}, oldState, {searchStories: action.searchStories.articles});
     case RECEIVE_SEARCH_TERM:

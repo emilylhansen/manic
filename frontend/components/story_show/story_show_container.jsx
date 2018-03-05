@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import {fetchTopStories,
 fetchTopHealth,
+fetchMostRecentStories,
 fetchTopSports,
 fetchTopGeneral,
 fetchTopScience,
@@ -17,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
   let story = ownProps.location.state ? ownProps.location.state.story : JSON.parse(localStorage.story);
   return({
     topStories: Object.values(state.entities.stories.topStories),
+    mostRecentStories: Object.values(state.entities.stories.mostRecentStories),
     topHealth: Object.values(state.entities.stories.topHealth),
     topSports: Object.values(state.entities.stories.topSports),
     topGeneral: Object.values(state.entities.stories.topGeneral),
@@ -30,6 +32,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchTopStories: () => dispatch(fetchTopStories()),
+  fetchMostRecentStories: () => dispatch(fetchMostRecentStories()),
   fetchTopHealth: () => dispatch(fetchTopHealth()),
   fetchTopSports: () => dispatch(fetchTopSports()),
   fetchTopGeneral: () => dispatch(fetchTopGeneral()),

@@ -29,6 +29,7 @@ class ArticleIndex extends React.Component{
 
   componentDidMount(){
     this.props.fetchTopStories();
+    this.props.fetchMostRecentStories();
     this.props.fetchTopBusiness();
     this.props.fetchTopEntertainment();
     this.props.fetchTopGeneral();
@@ -67,6 +68,7 @@ class ArticleIndex extends React.Component{
         this.props.topGeneral.length <= 0 ||
         this.props.topScience.length <= 0 ||
         this.props.topSports.length <= 0 ||
+        this.props.mostRecentStories.length <= 0 ||
         this.props.topTechnology.length <= 0) {
       return (
         <Loading/>
@@ -82,7 +84,7 @@ class ArticleIndex extends React.Component{
             <div className="article-index">
               <ArticleIndexGridOne
                 stories={stories.slice(0, 8)}
-                listStories={stories.slice(8, 11)}
+                listStories={this.props.topStories.slice(8, 11)}
                 headers={["most popular"]}
                 links={["#/most-popular"]}
                 />
@@ -93,7 +95,7 @@ class ArticleIndex extends React.Component{
 
               <ArticleIndexGridThree
                stories={stories.slice(14, 19)}
-               listStories={stories.slice(0, 5)}
+               listStories={this.props.mostRecentStories.slice(0, 5)}
                headers={["most recent"]}
                links={["#/most-recent"]}
                />

@@ -1130,7 +1130,7 @@ module.exports = getMapData;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.searchStories = exports.fetchStory = exports.fetchTopTechnology = exports.fetchTopSports = exports.fetchTopScience = exports.fetchTopHealth = exports.fetchTopGeneral = exports.fetchTopEntertainment = exports.fetchTopBusiness = exports.fetchTopStories = exports.receiveSearchTerm = exports.receiveSearchStories = exports.receiveStory = exports.receiveTopTechnology = exports.receiveTopSports = exports.receiveTopScience = exports.receiveTopHealth = exports.receiveTopGeneral = exports.receiveTopEntertainment = exports.receiveTopBusiness = exports.receiveTopStories = exports.RECEIVE_SEARCH_TERM = exports.RECEIVE_SEARCH_STORIES = exports.RECEIVE_STORY = exports.RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_STORIES = undefined;
+exports.searchStories = exports.fetchTopTechnology = exports.fetchTopSports = exports.fetchTopScience = exports.fetchTopHealth = exports.fetchTopGeneral = exports.fetchTopEntertainment = exports.fetchTopBusiness = exports.fetchMostRecentStories = exports.fetchTopStories = exports.receiveSearchTerm = exports.receiveSearchStories = exports.receiveTopTechnology = exports.receiveTopSports = exports.receiveTopScience = exports.receiveTopHealth = exports.receiveTopGeneral = exports.receiveTopEntertainment = exports.receiveTopBusiness = exports.receiveMostRecentStories = exports.receiveTopStories = exports.RECEIVE_MOST_RECENT_STORIES = exports.RECEIVE_SEARCH_TERM = exports.RECEIVE_SEARCH_STORIES = exports.RECEIVE_STORY = exports.RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_STORIES = undefined;
 
 var _story_api_util = __webpack_require__(25);
 
@@ -1149,11 +1149,19 @@ var RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_TECHNOLOGY = 'RECEIVE_TOP_TECHN
 var RECEIVE_STORY = exports.RECEIVE_STORY = 'RECEIVE_STORY';
 var RECEIVE_SEARCH_STORIES = exports.RECEIVE_SEARCH_STORIES = 'RECEIVE_SEARCH_STORIES';
 var RECEIVE_SEARCH_TERM = exports.RECEIVE_SEARCH_TERM = 'RECEIVE_SEARCH_TERM';
+var RECEIVE_MOST_RECENT_STORIES = exports.RECEIVE_MOST_RECENT_STORIES = 'RECEIVE_MOST_RECENT_STORIES';
 
 var receiveTopStories = exports.receiveTopStories = function receiveTopStories(topStories) {
   return {
     type: RECEIVE_TOP_STORIES,
     topStories: topStories
+  };
+};
+
+var receiveMostRecentStories = exports.receiveMostRecentStories = function receiveMostRecentStories(mostRecentStories) {
+  return {
+    type: RECEIVE_MOST_RECENT_STORIES,
+    mostRecentStories: mostRecentStories
   };
 };
 
@@ -1206,13 +1214,6 @@ var receiveTopTechnology = exports.receiveTopTechnology = function receiveTopTec
   };
 };
 
-var receiveStory = exports.receiveStory = function receiveStory(story) {
-  return {
-    type: RECEIVE_STORY,
-    story: story
-  };
-};
-
 var receiveSearchStories = exports.receiveSearchStories = function receiveSearchStories(searchStories) {
   return {
     type: RECEIVE_SEARCH_STORIES,
@@ -1231,6 +1232,14 @@ var fetchTopStories = exports.fetchTopStories = function fetchTopStories() {
   return function (dispatch) {
     return StoryApiUtil.fetchTopStories().then(function (topStories) {
       return dispatch(receiveTopStories(topStories));
+    });
+  };
+};
+
+var fetchMostRecentStories = exports.fetchMostRecentStories = function fetchMostRecentStories() {
+  return function (dispatch) {
+    return StoryApiUtil.fetchMostRecentStories().then(function (mostRecentStories) {
+      return dispatch(receiveMostRecentStories(mostRecentStories));
     });
   };
 };
@@ -1291,12 +1300,6 @@ var fetchTopTechnology = exports.fetchTopTechnology = function fetchTopTechnolog
   };
 };
 
-var fetchStory = exports.fetchStory = function fetchStory(story) {
-  return function (dispatch) {
-    return dispatch(receiveStory(story));
-  };
-};
-
 var searchStories = exports.searchStories = function searchStories(words) {
   return function (dispatch) {
     return StoryApiUtil.searchStories(words).then(function (stories) {
@@ -1318,7 +1321,15 @@ Object.defineProperty(exports, "__esModule", {
 var fetchTopStories = exports.fetchTopStories = function fetchTopStories() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    dataType: 'json'
+  });
+};
+
+var fetchMostRecentStories = exports.fetchMostRecentStories = function fetchMostRecentStories() {
+  return $.ajax({
+    method: 'get',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&sortBy=publishedAt&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -1326,7 +1337,7 @@ var fetchTopStories = exports.fetchTopStories = function fetchTopStories() {
 var fetchTopBusiness = exports.fetchTopBusiness = function fetchTopBusiness() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -1334,7 +1345,7 @@ var fetchTopBusiness = exports.fetchTopBusiness = function fetchTopBusiness() {
 var fetchTopEntertainment = exports.fetchTopEntertainment = function fetchTopEntertainment() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -1342,7 +1353,7 @@ var fetchTopEntertainment = exports.fetchTopEntertainment = function fetchTopEnt
 var fetchTopGeneral = exports.fetchTopGeneral = function fetchTopGeneral() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=general&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -1350,7 +1361,7 @@ var fetchTopGeneral = exports.fetchTopGeneral = function fetchTopGeneral() {
 var fetchTopHealth = exports.fetchTopHealth = function fetchTopHealth() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=health&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -1358,7 +1369,7 @@ var fetchTopHealth = exports.fetchTopHealth = function fetchTopHealth() {
 var fetchTopScience = exports.fetchTopScience = function fetchTopScience() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=science&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -1366,7 +1377,7 @@ var fetchTopScience = exports.fetchTopScience = function fetchTopScience() {
 var fetchTopSports = exports.fetchTopSports = function fetchTopSports() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=sports&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -1374,7 +1385,7 @@ var fetchTopSports = exports.fetchTopSports = function fetchTopSports() {
 var fetchTopTechnology = exports.fetchTopTechnology = function fetchTopTechnology() {
   return $.ajax({
     method: 'get',
-    url: 'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=e31273b82fa14d1380a5c584caf9f674',
+    url: 'https://newsapi.org/v2/top-headlines?country=us&category=technology&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674',
     dataType: 'json'
   });
 };
@@ -24570,14 +24581,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var defaultState = {
   topStories: {},
+  mostRecentStories: {},
   topBusiness: {},
   topEntertainment: {},
   topGeneral: {},
   topHealth: {},
   topScience: {},
   topSports: {},
-  topTechnology: {},
-  story: null
+  topTechnology: {}
 };
 
 var StoriesReducer = function StoriesReducer() {
@@ -24589,6 +24600,8 @@ var StoriesReducer = function StoriesReducer() {
   switch (action.type) {
     case _story_actions.RECEIVE_TOP_STORIES:
       return (0, _merge2.default)({}, oldState, { topStories: action.topStories.articles });
+    case _story_actions.RECEIVE_MOST_RECENT_STORIES:
+      return (0, _merge2.default)({}, oldState, { mostRecentStories: action.mostRecentStories.articles });
     case _story_actions.RECEIVE_TOP_BUSINESS:
       return (0, _merge2.default)({}, oldState, { topBusiness: action.topBusiness.articles });
     case _story_actions.RECEIVE_TOP_ENTERTAINMENT:
@@ -24603,8 +24616,6 @@ var StoriesReducer = function StoriesReducer() {
       return (0, _merge2.default)({}, oldState, { topSports: action.topSports.articles });
     case _story_actions.RECEIVE_TOP_TECHNOLOGY:
       return (0, _merge2.default)({}, oldState, { topTechnology: action.topTechnology.articles });
-    case _story_actions.RECEIVE_STORY:
-      return (0, _merge2.default)({}, oldState, { story: action.story });
     case _story_actions.RECEIVE_SEARCH_STORIES:
       return (0, _merge2.default)({}, oldState, { searchStories: action.searchStories.articles });
     case _story_actions.RECEIVE_SEARCH_TERM:
@@ -31051,6 +31062,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return {
     topStories: Object.values(state.entities.stories.topStories),
+    mostRecentStories: Object.values(state.entities.stories.mostRecentStories),
     topHealth: Object.values(state.entities.stories.topHealth),
     topSports: Object.values(state.entities.stories.topSports),
     topGeneral: Object.values(state.entities.stories.topGeneral),
@@ -31065,6 +31077,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchTopStories: function fetchTopStories() {
       return dispatch((0, _story_actions.fetchTopStories)());
+    },
+    fetchMostRecentStories: function fetchMostRecentStories() {
+      return dispatch((0, _story_actions.fetchMostRecentStories)());
     },
     fetchTopHealth: function fetchTopHealth() {
       return dispatch((0, _story_actions.fetchTopHealth)());
@@ -31213,6 +31228,7 @@ var ArticleIndex = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.props.fetchTopStories();
+      this.props.fetchMostRecentStories();
       this.props.fetchTopBusiness();
       this.props.fetchTopEntertainment();
       this.props.fetchTopGeneral();
@@ -31246,7 +31262,7 @@ var ArticleIndex = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.props.topHealth.length <= 0 || this.props.topStories.length <= 0 || this.props.topBusiness.length <= 0 || this.props.topEntertainment.length <= 0 || this.props.topGeneral.length <= 0 || this.props.topScience.length <= 0 || this.props.topSports.length <= 0 || this.props.topTechnology.length <= 0) {
+      if (this.props.topHealth.length <= 0 || this.props.topStories.length <= 0 || this.props.topBusiness.length <= 0 || this.props.topEntertainment.length <= 0 || this.props.topGeneral.length <= 0 || this.props.topScience.length <= 0 || this.props.topSports.length <= 0 || this.props.mostRecentStories.length <= 0 || this.props.topTechnology.length <= 0) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
         var stories = this.getStories();
@@ -31264,7 +31280,7 @@ var ArticleIndex = function (_React$Component) {
               { className: 'article-index' },
               _react2.default.createElement(_article_index_grid_one2.default, {
                 stories: stories.slice(0, 8),
-                listStories: stories.slice(8, 11),
+                listStories: this.props.topStories.slice(8, 11),
                 headers: ["most popular"],
                 links: ["#/most-popular"]
               }),
@@ -31273,7 +31289,7 @@ var ArticleIndex = function (_React$Component) {
               }),
               _react2.default.createElement(_article_index_grid_three2.default, {
                 stories: stories.slice(14, 19),
-                listStories: stories.slice(0, 5),
+                listStories: this.props.mostRecentStories.slice(0, 5),
                 headers: ["most recent"],
                 links: ["#/most-recent"]
               }),
@@ -33050,6 +33066,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var story = ownProps.location.state ? ownProps.location.state.story : JSON.parse(localStorage.story);
   return {
     topStories: Object.values(state.entities.stories.topStories),
+    mostRecentStories: Object.values(state.entities.stories.mostRecentStories),
     topHealth: Object.values(state.entities.stories.topHealth),
     topSports: Object.values(state.entities.stories.topSports),
     topGeneral: Object.values(state.entities.stories.topGeneral),
@@ -33065,6 +33082,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchTopStories: function fetchTopStories() {
       return dispatch((0, _story_actions.fetchTopStories)());
+    },
+    fetchMostRecentStories: function fetchMostRecentStories() {
+      return dispatch((0, _story_actions.fetchMostRecentStories)());
     },
     fetchTopHealth: function fetchTopHealth() {
       return dispatch((0, _story_actions.fetchTopHealth)());
@@ -33177,6 +33197,7 @@ var StoryShow = function (_React$Component) {
         // this.props.fetchStory(this.props.story);
       }
       this.props.fetchTopStories();
+      this.props.fetchMostRecentStories();
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -33218,7 +33239,7 @@ var StoryShow = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.props.topStories.length <= 0) {
+      if (this.props.topStories.length <= 0 || this.props.mostRecentStories.length <= 0) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
         var dateTime = this.convertDateTime();
@@ -33262,7 +33283,7 @@ var StoryShow = function (_React$Component) {
               { className: 'story-show-bottom-index' },
               _react2.default.createElement(_article_index_grid_three2.default, {
                 stories: this.props.topStories.slice(3, 8),
-                listStories: this.props.topStories.slice(8, 13),
+                listStories: this.props.mostRecentStories.slice(8, 13),
                 headers: ["most recent"],
                 links: ["#/most-recent"]
               }),

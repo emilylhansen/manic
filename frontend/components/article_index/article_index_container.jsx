@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import {fetchTopStories,
+fetchMostRecentStories,
 fetchTopHealth,
 fetchTopSports,
 fetchTopGeneral,
@@ -15,6 +16,7 @@ import ArticleIndex from './article_index.jsx';
 const mapStateToProps = state => {
   return({
     topStories: Object.values(state.entities.stories.topStories),
+    mostRecentStories: Object.values(state.entities.stories.mostRecentStories),
     topHealth: Object.values(state.entities.stories.topHealth),
     topSports: Object.values(state.entities.stories.topSports),
     topGeneral: Object.values(state.entities.stories.topGeneral),
@@ -27,6 +29,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchTopStories: () => dispatch(fetchTopStories()),
+  fetchMostRecentStories: () => dispatch(fetchMostRecentStories()),
   fetchTopHealth: () => dispatch(fetchTopHealth()),
   fetchTopSports: () => dispatch(fetchTopSports()),
   fetchTopGeneral: () => dispatch(fetchTopGeneral()),
