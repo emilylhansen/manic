@@ -8,7 +8,6 @@ class NavigationBarSearch extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     this.props.receiveSearchTerm(this.props.search);
     this.props.history.push(`/search/${this.props.search.split(/[^A-Za-z]/).join("+")}`);

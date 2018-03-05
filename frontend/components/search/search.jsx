@@ -14,7 +14,6 @@ class Search extends React.Component{
   }
 
   componentDidMount(){
-    debugger
     this.props.searchStories(this.props.searchTerm);
     this.props.fetchTopStories();
   }
@@ -26,7 +25,6 @@ class Search extends React.Component{
         <Loading/>
       );
     } else {
-      // debugger
       return (
         <div>
           <NavigationBar
