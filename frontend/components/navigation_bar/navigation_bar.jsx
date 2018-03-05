@@ -15,11 +15,13 @@ class NavigationBar extends React.Component {
       this.handleMouseHover = this.handleMouseHover.bind(this);
       this.handleClick = this.handleClick.bind(this);
       this.handleInput = this.handleInput.bind(this);
+      this.handleScroll = this.handleScroll.bind(this);
       this.state = {
         isHovering: false,
         searchIsClicked: false,
         search: "",
-        menuIsClicked: false
+        menuIsClicked: false,
+        isScrolling: false
       };
       this.colors = {
         green: "#00A85F",
@@ -35,6 +37,19 @@ class NavigationBar extends React.Component {
 
   componentDidMount(){
     this.toggleNav();
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(e){
+    if(document.body.scrollTop >= 150){
+      this.setState({isScrolling: true});
+    } else {
+      this.setState({isScrolling: false});
+    }
   }
 
   changeNav(section, color){
@@ -118,7 +133,8 @@ class NavigationBar extends React.Component {
 
           { (!this.state.isHovering &&
             !this.state.searchIsClicked &&
-            !this.state.menuIsClicked) &&
+            !this.state.menuIsClicked &&
+            !this.state.isScrolling) &&
             <NavigationBarBottom/>
           }
           {

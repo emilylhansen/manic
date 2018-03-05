@@ -2007,11 +2007,13 @@ var NavigationBar = function (_React$Component) {
     _this.handleMouseHover = _this.handleMouseHover.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
     _this.handleInput = _this.handleInput.bind(_this);
+    _this.handleScroll = _this.handleScroll.bind(_this);
     _this.state = {
       isHovering: false,
       searchIsClicked: false,
       search: "",
-      menuIsClicked: false
+      menuIsClicked: false,
+      isScrolling: false
     };
     _this.colors = {
       green: "#00A85F",
@@ -2030,6 +2032,21 @@ var NavigationBar = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.toggleNav();
+      window.addEventListener('scroll', this.handleScroll);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
+  }, {
+    key: 'handleScroll',
+    value: function handleScroll(e) {
+      if (document.body.scrollTop >= 150) {
+        this.setState({ isScrolling: true });
+      } else {
+        this.setState({ isScrolling: false });
+      }
     }
   }, {
     key: 'changeNav',
@@ -2111,7 +2128,7 @@ var NavigationBar = function (_React$Component) {
           searchIsClicked: this.state.searchIsClicked,
           header: this.props.header.toUpperCase()
         }),
-        !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && _react2.default.createElement(_navigation_bar_bottom2.default, null),
+        !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && !this.state.isScrolling && _react2.default.createElement(_navigation_bar_bottom2.default, null),
         this.state.isHovering && _react2.default.createElement(_navigation_bar_subscribe2.default, {
           handleMouseHover: this.handleMouseHover,
           handleInput: this.handleInput

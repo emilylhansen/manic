@@ -5,6 +5,7 @@ class NavigationBarBottom extends React.Component {
   constructor(props){
       super(props);
   }
+
   render() {
     return (
       <div className="navigation-bar-bottom">
