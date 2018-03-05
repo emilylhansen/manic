@@ -28,7 +28,7 @@ class StoryShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
+    document.body.scrollTop = 0;
     if (nextProps.story !== this.props.story) {
       localStorage.story = JSON.stringify(nextProps.story);
       this.setState({story: nextProps.story});

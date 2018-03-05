@@ -15,11 +15,11 @@ class Footer extends React.Component{
           (this.props.pathname !== '/' &&
           !this.props.pathname.includes("page") &&
           !this.props.pathname.includes("most-popular") &&
+          !this.props.pathname.includes("story") &&
           !this.props.pathname.includes("most-recent")) &&
           <ArticleUnitMore
             header="more results"
             link={`#${this.props.pathname}/page`}
-
             />
         }
         <div className="footer-content">
@@ -66,6 +66,7 @@ class Footer extends React.Component{
               CNMN Collection
               <br></br>
               Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Condé Nast.
+              <br></br>
               <br></br>
               <a href="https://newsapi.org/">Powered by News API: an API where objects don't have unique ids :(</a>
             </p>

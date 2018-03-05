@@ -45,7 +45,7 @@ class NavigationBar extends React.Component {
   }
 
   handleScroll(e){
-    if(document.body.scrollTop >= 150){
+    if(document.body.scrollTop >= 80){
       this.setState({isScrolling: true});
     } else {
       this.setState({isScrolling: false});

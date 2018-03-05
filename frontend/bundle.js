@@ -1728,10 +1728,9 @@ var Footer = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'footer' },
-        this.props.pathname !== '/' && !this.props.pathname.includes("page") && !this.props.pathname.includes("most-popular") && !this.props.pathname.includes("most-recent") && _react2.default.createElement(_article_unit_more2.default, {
+        this.props.pathname !== '/' && !this.props.pathname.includes("page") && !this.props.pathname.includes("most-popular") && !this.props.pathname.includes("story") && !this.props.pathname.includes("most-recent") && _react2.default.createElement(_article_unit_more2.default, {
           header: 'more results',
           link: '#' + this.props.pathname + '/page'
-
         }),
         _react2.default.createElement(
           'div',
@@ -1867,6 +1866,7 @@ var Footer = function (_React$Component) {
               'CNMN Collection',
               _react2.default.createElement('br', null),
               'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.',
+              _react2.default.createElement('br', null),
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 'a',
@@ -2042,7 +2042,7 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'handleScroll',
     value: function handleScroll(e) {
-      if (document.body.scrollTop >= 150) {
+      if (document.body.scrollTop >= 80) {
         this.setState({ isScrolling: true });
       } else {
         this.setState({ isScrolling: false });
@@ -33176,7 +33176,7 @@ var StoryShow = function (_React$Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-
+      document.body.scrollTop = 0;
       if (nextProps.story !== this.props.story) {
         localStorage.story = JSON.stringify(nextProps.story);
         this.setState({ story: nextProps.story });
