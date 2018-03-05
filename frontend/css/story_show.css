@@ -2,6 +2,11 @@
   background-color: white;
 }
 
+.story-show-popular .article-unit-nine {
+  border: none;
+  box-shadow: none;
+}
+
 .story-show {
   /* border: 1px solid black; */
   width: 1134px;
