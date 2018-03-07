@@ -1687,7 +1687,6 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      debugger;
       return _react2.default.createElement(
         'div',
         { className: 'navigation-bar' },
@@ -33419,7 +33418,6 @@ var StoryShow = function (_React$Component) {
       if (this.props.topStories.length <= 0 || this.props.mostRecentStories.length <= 0) {
         return _react2.default.createElement(_loading2.default, null);
       } else {
-        debugger;
         var dateTime = this.convertDateTime();
         return _react2.default.createElement(
           'div',
@@ -33908,14 +33906,12 @@ var Search = function (_React$Component) {
   _createClass(Search, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      debugger;
       this.props.searchStories(this.searchTerm);
       this.props.fetchTopStories();
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      debugger;
       if (nextProps.stories !== this.props.stories) {
         this.setState({ stories: nextProps.stories });
       }
@@ -33940,7 +33936,6 @@ var Search = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      debugger;
       if (this.props.topStories.length <= 0 || this.props.stories.length <= 0) {
         return _react2.default.createElement(_loading2.default, null);
       } else {

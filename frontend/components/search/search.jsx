@@ -19,13 +19,11 @@ class Search extends React.Component{
   }
 
   componentDidMount(){
-    debugger
     this.props.searchStories(this.searchTerm);
     this.props.fetchTopStories();
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (nextProps.stories !== this.props.stories) {
       this.setState({stories: nextProps.stories});
     }
@@ -48,7 +46,6 @@ class Search extends React.Component{
   }
 
   render(){
-    debugger
     if (this.props.topStories.length <= 0 ||
         this.props.stories.length <= 0) {
       return (

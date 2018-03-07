@@ -69,7 +69,6 @@ class StoryShow extends React.Component {
         <Loading/>
       );
     } else {
-      debugger
       let dateTime = this.convertDateTime();
       return (
         <div>
