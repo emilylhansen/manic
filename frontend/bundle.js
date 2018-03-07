@@ -1621,7 +1621,6 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'changeNav',
     value: function changeNav(section, color) {
-      debugger;
       var navTop = document.getElementById("navigation-bar-top");
       section.style.backgroundColor = color;
       section.getElementsByTagName('a')[0].style.color = "white";

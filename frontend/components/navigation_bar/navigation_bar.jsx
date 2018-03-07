@@ -53,7 +53,6 @@ class NavigationBar extends React.Component {
   }
 
   changeNav(section, color){
-    debugger
     let navTop = document.getElementById("navigation-bar-top");
     section.style.backgroundColor = color;
     section.getElementsByTagName('a')[0].style.color = "white";
