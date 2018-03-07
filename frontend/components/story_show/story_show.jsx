@@ -69,13 +69,14 @@ class StoryShow extends React.Component {
         <Loading/>
       );
     } else {
+      debugger
       let dateTime = this.convertDateTime();
       return (
         <div>
           <NavigationBar
             header={this.props.location.pathname === "/" ? "" :
                     (this.state.story.title.length < 30 ?
-                    this.state.story.title.length :
+                    this.state.story.title :
                     `${this.state.story.title.slice(0, 30)}...`)}
           />
           <div className="story-show-background">

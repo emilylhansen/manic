@@ -11,6 +11,9 @@ export const RECEIVE_TOP_TECHNOLOGY = 'RECEIVE_TOP_TECHNOLOGY';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
 export const RECEIVE_SEARCH_STORIES = 'RECEIVE_SEARCH_STORIES';
 export const RECEIVE_SEARCH_TERM = 'RECEIVE_SEARCH_TERM';
+export const RECEIVE_SEARCH_POPULARITY = 'RECEIVE_SEARCH_POPULARITY';
+export const RECEIVE_SEARCH_NEWEST = 'RECEIVE_SEARCH_NEWEST';
+export const RECEIVE_SEARCH_RELEVANCY = 'RECEIVE_SEARCH_RELEVANCY';
 export const RECEIVE_MOST_RECENT_STORIES = 'RECEIVE_MOST_RECENT_STORIES';
 
 export const receiveTopStories = topStories => ({
@@ -68,6 +71,21 @@ export const receiveSearchTerm = searchTerm => ({
   searchTerm
 });
 
+export const receiveSearchPopularity = searchTerm => ({
+  type: RECEIVE_SEARCH_POPULARITY,
+  searchPopularity
+});
+
+export const receiveSearchNewest = searchTerm => ({
+  type: RECEIVE_SEARCH_NEWEST,
+  searchNewest
+});
+
+export const receiveSearchRelevancy = searchTerm => ({
+  type: RECEIVE_SEARCH_RELEVANCY,
+  searchRelevancy
+});
+
 export const fetchTopStories = () => dispatch => (
   StoryApiUtil.fetchTopStories().then(
     topStories => dispatch(receiveTopStories(topStories)))
@@ -116,5 +134,23 @@ export const fetchTopTechnology = () => dispatch => (
 export const searchStories = words => dispatch => (
   StoryApiUtil.searchStories(words).then(
     stories => dispatch(receiveSearchStories(stories))
+  )
+);
+
+export const searchPopularity = words => dispatch => (
+  StoryApiUtil.searchPopularity(words).then(
+    stories => dispatch(receiveSearchPopularity(stories))
+  )
+);
+
+export const searchNewest = words => dispatch => (
+  StoryApiUtil.searchNewest(words).then(
+    stories => dispatch(receiveSearchNewest(stories))
+  )
+);
+
+export const searchRelevancy = words => dispatch => (
+  StoryApiUtil.searchRelevancy(words).then(
+    stories => dispatch(receiveSearchRelevancy(stories))
   )
 );

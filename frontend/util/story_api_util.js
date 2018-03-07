@@ -77,3 +77,27 @@ export const searchStories = (words) => (
     dataType: 'json'
   })
 );
+
+export const searchPopularity = (words) => (
+  $.ajax({
+    method: 'get',
+    url: `https://newsapi.org/v2/everything?q=${words.split(/[^A-Za-z]/).join("+")}&sortBy=popularity&apiKey=e31273b82fa14d1380a5c584caf9f674`,
+    dataType: 'json'
+  })
+);
+
+export const searchNewest = (words) => (
+  $.ajax({
+    method: 'get',
+    url: `https://newsapi.org/v2/everything?q=${words.split(/[^A-Za-z]/).join("+")}&sortBy=publishedAt&apiKey=e31273b82fa14d1380a5c584caf9f674`,
+    dataType: 'json'
+  })
+);
+
+export const searchRelevancy = (words) => (
+  $.ajax({
+    method: 'get',
+    url: `https://newsapi.org/v2/everything?q=${words.split(/[^A-Za-z]/).join("+")}&sortBy=relevancy&apiKey=e31273b82fa14d1380a5c584caf9f674`,
+    dataType: 'json'
+  })
+);

@@ -9,16 +9,46 @@ import Footer from '../footer/footer.jsx';
 import NavigationBar from '../navigation_bar/navigation_bar.jsx';
 
 class Search extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.state = {
+      stories: this.props.stories
+    };
+    this.searchTerm = this.props.searchTerm ? this.props.searchTerm : this.props.match.params.searchTerm;
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
-    this.props.searchStories(this.props.searchTerm);
+    debugger
+    this.props.searchStories(this.searchTerm);
     this.props.fetchTopStories();
   }
 
+  componentWillReceiveProps(nextProps) {
+    debugger
+    if (nextProps.stories !== this.props.stories) {
+      this.setState({stories: nextProps.stories});
+    }
+  }
+
+  handleClick(option){
+    switch (option) {
+      case "popular":
+      this.props.searchPopularity(this.searchTerm);
+      break;
+      case "newest":
+      this.props.searchNewest(this.searchTerm);
+      break;
+      case "relevancy":
+      this.props.searchRelevancy(this.searchTerm);
+      break;
+      default:
+
+    }
+  }
+
   render(){
+    debugger
     if (this.props.topStories.length <= 0 ||
         this.props.stories.length <= 0) {
       return (
@@ -28,14 +58,15 @@ class Search extends React.Component{
       return (
         <div>
           <NavigationBar
-            header={`Search: "${this.props.searchTerm}"`}
+            header={`Search: "${this.searchTerm}"`}
             />
           <div className="category-background">
             <div className="category-index horizontal">
               <div className="margin-right">
                 <ArticleUnitTwelve
-                  stories={this.props.stories.slice(0, 20)}
-                  header={this.props.searchTerm}
+                  stories={this.state.stories.slice(0, 20)}
+                  header={this.searchTerm}
+                  handleClick={this.handleClick}
                   />
               </div>
               <div>

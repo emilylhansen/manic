@@ -119,6 +119,7 @@ class NavigationBar extends React.Component {
   }
 
   render(){
+    debugger
     return (
         <div className="navigation-bar">
 

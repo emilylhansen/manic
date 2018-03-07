@@ -1,7 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import {searchStories, fetchTopStories, receiveSearchTerm} from '../../actions/story_actions';
+import {searchStories,
+        searchPopularity,
+        searchNewest,
+        searchRelevancy,
+        fetchTopStories,
+        receiveSearchTerm} from '../../actions/story_actions';
 
 import Search from './search.jsx';
 
@@ -23,6 +28,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   searchStories: (words) => dispatch(searchStories(words)),
+  searchPopularity: (words) => dispatch(searchPopularity(words)),
+  searchNewest: (words) => dispatch(searchNewest(words)),
+  searchRelevancy: (words) => dispatch(searchRelevancy(words)),
   fetchTopStories: () => dispatch(fetchTopStories()),
   receiveSearchTerm: (searchTerm) => dispatch(receiveSearchTerm(searchTerm))
 });
