@@ -1621,13 +1621,16 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'changeNav',
     value: function changeNav(section, color) {
+      debugger;
       var navTop = document.getElementById("navigation-bar-top");
       section.style.backgroundColor = color;
       section.getElementsByTagName('a')[0].style.color = "white";
       section.style.borderTop = "none";
       navTop.style.backgroundColor = color;
       navTop.getElementsByTagName('a')[0].style.color = "white";
-      navTop.getElementsByTagName('h3')[1].style.color = "white";
+
+      this.props.location.pathname === "/" || this.props.location.pathname.includes("business") || this.props.location.pathname.includes("culture") || this.props.location.pathname.includes("gear") || this.props.location.pathname.includes("ideas") || this.props.location.pathname.includes("science") || this.props.location.pathname.includes("security") || this.props.location.pathname.includes("transportation") || this.props.location.pathname.includes("most-popular") || this.props.location.pathname.includes("most-recent") ? navTop.getElementsByTagName('h3')[1].style.color = "white" : navTop.getElementsByTagName('p')[0].style.color = "white";
+
       navTop.getElementsByTagName('h2')[1].style.color = "white";
       navTop.getElementsByTagName('i')[0].style.color = "white";
       navTop.getElementsByTagName('i')[1].style.color = "white";
@@ -32390,10 +32393,37 @@ var NavigationBarTop = function (_React$Component) {
   function NavigationBarTop(props) {
     _classCallCheck(this, NavigationBarTop);
 
-    return _possibleConstructorReturn(this, (NavigationBarTop.__proto__ || Object.getPrototypeOf(NavigationBarTop)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (NavigationBarTop.__proto__ || Object.getPrototypeOf(NavigationBarTop)).call(this, props));
+
+    _this.getHeader = _this.getHeader.bind(_this);
+    return _this;
   }
 
   _createClass(NavigationBarTop, [{
+    key: 'getHeader',
+    value: function getHeader() {
+      var pathname = this.props.pathname;
+      if (pathname === "/") {
+        return _react2.default.createElement(
+          'h3',
+          null,
+          'MANIC'
+        );
+      } else if (pathname.includes("business") || pathname.includes("culture") || pathname.includes("gear") || pathname.includes("ideas") || pathname.includes("science") || pathname.includes("security") || pathname.includes("transportation") || pathname.includes("most-popular") || pathname.includes("most-recent")) {
+        return _react2.default.createElement(
+          'h3',
+          null,
+          this.props.header
+        );
+      } else {
+        return _react2.default.createElement(
+          'p',
+          null,
+          this.props.header
+        );
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -32426,15 +32456,7 @@ var NavigationBarTop = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'navigation-bar-top-section' },
-          this.props.pathname !== "/" ? _react2.default.createElement(
-            'p',
-            null,
-            this.props.header
-          ) : _react2.default.createElement(
-            'h3',
-            null,
-            'MANIC'
-          )
+          this.getHeader()
         ),
         _react2.default.createElement(
           'div',

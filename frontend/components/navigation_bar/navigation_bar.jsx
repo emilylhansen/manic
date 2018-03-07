@@ -53,13 +53,27 @@ class NavigationBar extends React.Component {
   }
 
   changeNav(section, color){
+    debugger
     let navTop = document.getElementById("navigation-bar-top");
     section.style.backgroundColor = color;
     section.getElementsByTagName('a')[0].style.color = "white";
     section.style.borderTop = "none";
     navTop.style.backgroundColor = color;
     navTop.getElementsByTagName('a')[0].style.color = "white";
-    navTop.getElementsByTagName('h3')[1].style.color = "white";
+
+    (this.props.location.pathname === "/" ||
+    this.props.location.pathname.includes("business") ||
+    this.props.location.pathname.includes("culture") ||
+    this.props.location.pathname.includes("gear") ||
+    this.props.location.pathname.includes("ideas") ||
+    this.props.location.pathname.includes("science") ||
+    this.props.location.pathname.includes("security") ||
+    this.props.location.pathname.includes("transportation") ||
+    this.props.location.pathname.includes("most-popular") ||
+    this.props.location.pathname.includes("most-recent")) ?
+    navTop.getElementsByTagName('h3')[1].style.color = "white":
+    navTop.getElementsByTagName('p')[0].style.color = "white";
+
     navTop.getElementsByTagName('h2')[1].style.color = "white";
     navTop.getElementsByTagName('i')[0].style.color = "white";
     navTop.getElementsByTagName('i')[1].style.color = "white";

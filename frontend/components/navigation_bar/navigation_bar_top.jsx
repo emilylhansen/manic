@@ -4,6 +4,26 @@ import { Link, withRouter } from 'react-router-dom';
 class NavigationBarTop extends React.Component {
   constructor(props){
     super(props);
+    this.getHeader = this.getHeader.bind(this);
+  }
+
+  getHeader(){
+    let pathname = this.props.pathname;
+    if(pathname === "/") {
+      return <h3>MANIC</h3>;
+    } else if (pathname.includes("business") ||
+              pathname.includes("culture") ||
+              pathname.includes("gear") ||
+              pathname.includes("ideas") ||
+              pathname.includes("science") ||
+              pathname.includes("security") ||
+              pathname.includes("transportation") ||
+              pathname.includes("most-popular") ||
+              pathname.includes("most-recent")) {
+      return <h3>{this.props.header}</h3>;
+    } else {
+      return <p>{this.props.header}</p>;
+    }
   }
 
   render(){
@@ -27,9 +47,7 @@ class NavigationBarTop extends React.Component {
         </div>
         <div className="navigation-bar-top-section">
           {
-            this.props.pathname !== "/" ?
-            <p>{this.props.header}</p> :
-            <h3>MANIC</h3>
+            this.getHeader()
           }
         </div>
         <div className="navigation-bar-top-section horizontal">
