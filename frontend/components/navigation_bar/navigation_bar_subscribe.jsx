@@ -6,7 +6,7 @@ import ArticleUnitSubscribeItemTwo from '../article_units/article_unit_subscribe
 const NavigationSubscribe = (props) => {
   return (
     <div className="navigation-bar-subscribe"
-      onMouseLeave={this.props.handleMouseHover}>
+      onMouseLeave={props.handleMouseHover}>
       <div className="navigation-bar-subscribe-items">
         <ul className="horizontal">
           <ArticleUnitSubscribeItem
@@ -18,7 +18,7 @@ const NavigationSubscribe = (props) => {
             header="Get Our Newsletter"
             text="WIRED’s biggest stories delivered to your inbox."
             action="submit"
-            handleInput={this.props.handleInput}
+            handleInput={props.handleInput}
             />
           <ArticleUnitSubscribeItem
             header="We're On Pinterest"

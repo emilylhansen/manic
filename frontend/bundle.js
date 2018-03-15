@@ -31901,7 +31901,7 @@ var NavigationSubscribe = function NavigationSubscribe(props) {
   return _react2.default.createElement(
     'div',
     { className: 'navigation-bar-subscribe',
-      onMouseLeave: undefined.props.handleMouseHover },
+      onMouseLeave: props.handleMouseHover },
     _react2.default.createElement(
       'div',
       { className: 'navigation-bar-subscribe-items' },
@@ -31917,7 +31917,7 @@ var NavigationSubscribe = function NavigationSubscribe(props) {
           header: 'Get Our Newsletter',
           text: 'WIRED\u2019s biggest stories delivered to your inbox.',
           action: 'submit',
-          handleInput: undefined.props.handleInput
+          handleInput: props.handleInput
         }),
         _react2.default.createElement(_article_unit_subscribe_item2.default, {
           header: 'We\'re On Pinterest',
