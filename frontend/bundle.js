@@ -469,7 +469,7 @@ module.exports = root;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.searchRelevancy = exports.searchNewest = exports.searchPopularity = exports.searchStories = exports.fetchTopTechnology = exports.fetchTopSports = exports.fetchTopScience = exports.fetchTopHealth = exports.fetchTopGeneral = exports.fetchTopEntertainment = exports.fetchTopBusiness = exports.fetchMostRecentStories = exports.fetchTopStories = exports.receiveSearchRelevancy = exports.receiveSearchNewest = exports.receiveSearchPopularity = exports.receiveSearchTerm = exports.receiveSearchStories = exports.receiveTopTechnology = exports.receiveTopSports = exports.receiveTopScience = exports.receiveTopHealth = exports.receiveTopGeneral = exports.receiveTopEntertainment = exports.receiveTopBusiness = exports.receiveMostRecentStories = exports.receiveTopStories = exports.RECEIVE_MOST_RECENT_STORIES = exports.RECEIVE_SEARCH_RELEVANCY = exports.RECEIVE_SEARCH_NEWEST = exports.RECEIVE_SEARCH_POPULARITY = exports.RECEIVE_SEARCH_TERM = exports.RECEIVE_SEARCH_STORIES = exports.RECEIVE_STORY = exports.RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_STORIES = undefined;
+exports.saveCategory = exports.searchRelevancy = exports.searchNewest = exports.searchPopularity = exports.searchStories = exports.fetchTopTechnology = exports.fetchTopSports = exports.fetchTopScience = exports.fetchTopHealth = exports.fetchTopGeneral = exports.fetchTopEntertainment = exports.fetchTopBusiness = exports.fetchMostRecentStories = exports.fetchTopStories = exports.receiveCategory = exports.receiveSearchRelevancy = exports.receiveSearchNewest = exports.receiveSearchPopularity = exports.receiveSearchTerm = exports.receiveSearchStories = exports.receiveTopTechnology = exports.receiveTopSports = exports.receiveTopScience = exports.receiveTopHealth = exports.receiveTopGeneral = exports.receiveTopEntertainment = exports.receiveTopBusiness = exports.receiveMostRecentStories = exports.receiveTopStories = exports.RECEIVE_CATEGORY = exports.RECEIVE_MOST_RECENT_STORIES = exports.RECEIVE_SEARCH_RELEVANCY = exports.RECEIVE_SEARCH_NEWEST = exports.RECEIVE_SEARCH_POPULARITY = exports.RECEIVE_SEARCH_TERM = exports.RECEIVE_SEARCH_STORIES = exports.RECEIVE_STORY = exports.RECEIVE_TOP_TECHNOLOGY = exports.RECEIVE_TOP_SPORTS = exports.RECEIVE_TOP_SCIENCE = exports.RECEIVE_TOP_HEALTH = exports.RECEIVE_TOP_GENERAL = exports.RECEIVE_TOP_ENTERTAINMENT = exports.RECEIVE_TOP_BUSINESS = exports.RECEIVE_TOP_STORIES = undefined;
 
 var _story_api_util = __webpack_require__(14);
 
@@ -492,6 +492,7 @@ var RECEIVE_SEARCH_POPULARITY = exports.RECEIVE_SEARCH_POPULARITY = 'RECEIVE_SEA
 var RECEIVE_SEARCH_NEWEST = exports.RECEIVE_SEARCH_NEWEST = 'RECEIVE_SEARCH_NEWEST';
 var RECEIVE_SEARCH_RELEVANCY = exports.RECEIVE_SEARCH_RELEVANCY = 'RECEIVE_SEARCH_RELEVANCY';
 var RECEIVE_MOST_RECENT_STORIES = exports.RECEIVE_MOST_RECENT_STORIES = 'RECEIVE_MOST_RECENT_STORIES';
+var RECEIVE_CATEGORY = exports.RECEIVE_CATEGORY = 'RECEIVE_CATEGORY';
 
 var receiveTopStories = exports.receiveTopStories = function receiveTopStories(topStories) {
   return {
@@ -588,6 +589,13 @@ var receiveSearchRelevancy = exports.receiveSearchRelevancy = function receiveSe
   return {
     type: RECEIVE_SEARCH_RELEVANCY,
     searchRelevancy: searchRelevancy
+  };
+};
+
+var receiveCategory = exports.receiveCategory = function receiveCategory(category) {
+  return {
+    type: RECEIVE_CATEGORY,
+    category: category
   };
 };
 
@@ -692,6 +700,12 @@ var searchRelevancy = exports.searchRelevancy = function searchRelevancy(words) 
     return StoryApiUtil.searchRelevancy(words).then(function (stories) {
       return dispatch(receiveSearchRelevancy(stories));
     });
+  };
+};
+
+var saveCategory = exports.saveCategory = function saveCategory(category) {
+  return function (dispatch) {
+    return dispatch(receiveCategory(category));
   };
 };
 
@@ -1572,8 +1586,6 @@ var NavigationBar = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (NavigationBar.__proto__ || Object.getPrototypeOf(NavigationBar)).call(this, props));
 
-    _this.toggleNav = _this.toggleNav.bind(_this);
-    _this.changeNav = _this.changeNav.bind(_this);
     _this.handleMouseHover = _this.handleMouseHover.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
     _this.handleInput = _this.handleInput.bind(_this);
@@ -1585,23 +1597,13 @@ var NavigationBar = function (_React$Component) {
       menuIsClicked: false,
       isScrolling: false
     };
-    _this.colors = {
-      green: "#00A85F",
-      purple: "#461F4B",
-      teal: "#96CCCE",
-      blue: "#0086A1",
-      orange: "#FFC00A",
-      brown: "#6A0000",
-      red: "#F52143",
-      gray: "#686868"
-    };
     return _this;
   }
 
   _createClass(NavigationBar, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.toggleNav();
+      this.props.saveCategory(this.props.match.params.categoryName);
       window.addEventListener('scroll', this.handleScroll);
     }
   }, {
@@ -1616,51 +1618,6 @@ var NavigationBar = function (_React$Component) {
         this.setState({ isScrolling: true });
       } else {
         this.setState({ isScrolling: false });
-      }
-    }
-  }, {
-    key: 'changeNav',
-    value: function changeNav(section, color) {
-      var navTop = document.getElementById("navigation-bar-top");
-      section.style.backgroundColor = color;
-      section.getElementsByTagName('a')[0].style.color = "white";
-      section.style.borderTop = "none";
-      navTop.style.backgroundColor = color;
-      navTop.getElementsByTagName('a')[0].style.color = "white";
-
-      this.props.location.pathname === "/" || this.props.location.pathname.includes("business") || this.props.location.pathname.includes("culture") || this.props.location.pathname.includes("gear") || this.props.location.pathname.includes("ideas") || this.props.location.pathname.includes("science") || this.props.location.pathname.includes("security") || this.props.location.pathname.includes("transportation") || this.props.location.pathname.includes("most-popular") || this.props.location.pathname.includes("most-recent") ? navTop.getElementsByTagName('h3')[1].style.color = "white" : navTop.getElementsByTagName('p')[0].style.color = "white";
-
-      navTop.getElementsByTagName('h2')[1].style.color = "white";
-      navTop.getElementsByTagName('i')[0].style.color = "white";
-      navTop.getElementsByTagName('i')[1].style.color = "white";
-    }
-  }, {
-    key: 'toggleNav',
-    value: function toggleNav() {
-      switch (this.props.match.params.categoryName) {
-        case "business":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-one"), this.colors.green);
-          break;
-        case "culture":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-two"), this.colors.purple);
-          break;
-        case "gear":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-three"), this.colors.teal);
-          break;
-        case "ideas":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-four"), this.colors.blue);
-          break;
-        case "science":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-five"), this.colors.orange);
-          break;
-        case "security":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-six"), this.colors.brown);
-          break;
-        case "transportation":
-          this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"), this.colors.red);
-          break;
-        default:
-
       }
     }
   }, {
@@ -1698,9 +1655,12 @@ var NavigationBar = function (_React$Component) {
           pathname: this.props.location.pathname,
           handleMouseHover: this.handleMouseHover,
           searchIsClicked: this.state.searchIsClicked,
-          header: this.props.header.toUpperCase()
+          header: this.props.header.toUpperCase(),
+          category: this.props.category
         }),
-        !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && !this.state.isScrolling && _react2.default.createElement(_navigation_bar_bottom2.default, null),
+        !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && !this.state.isScrolling && _react2.default.createElement(_navigation_bar_bottom2.default, {
+          category: this.props.category
+        }),
         this.state.isHovering && _react2.default.createElement(_navigation_bar_subscribe2.default, {
           handleMouseHover: this.handleMouseHover,
           handleInput: this.handleInput
@@ -24761,6 +24721,8 @@ var StoriesReducer = function StoriesReducer() {
       return (0, _merge2.default)({}, oldState, { searchStories: action.searchRelevancy.articles });
     case _story_actions.RECEIVE_SEARCH_TERM:
       return (0, _merge2.default)({}, oldState, { searchTerm: action.searchTerm });
+    case _story_actions.RECEIVE_CATEGORY:
+      return (0, _merge2.default)({}, oldState, { category: action.category });
     default:
       return oldState;
   }
@@ -31339,9 +31301,9 @@ var _article_index_grid_four = __webpack_require__(243);
 
 var _article_index_grid_four2 = _interopRequireDefault(_article_index_grid_four);
 
-var _navigation_bar = __webpack_require__(20);
+var _navigation_bar_container = __webpack_require__(260);
 
-var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -31410,7 +31372,7 @@ var ArticleIndex = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar2.default, {
+          _react2.default.createElement(_navigation_bar_container2.default, {
             header: this.props.location.pathname === "/" ? "" : this.props.match.params.categoryName
           }),
           _react2.default.createElement(
@@ -32395,6 +32357,7 @@ var NavigationBarTop = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (NavigationBarTop.__proto__ || Object.getPrototypeOf(NavigationBarTop)).call(this, props));
 
     _this.getHeader = _this.getHeader.bind(_this);
+    _this.getClass = _this.getClass.bind(_this);
     return _this;
   }
 
@@ -32423,13 +32386,23 @@ var NavigationBarTop = function (_React$Component) {
       }
     }
   }, {
+    key: 'getClass',
+    value: function getClass() {
+      var categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
+      for (var i = 0; i < categories.length; i++) {
+        if (categories[i] === this.props.category) {
+          return 'navigation-bar-top-' + (i + 1) + ' navigation-bar-top-active';
+        }
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
       return _react2.default.createElement(
         'div',
-        { id: 'navigation-bar-top' },
+        { className: 'navigation-bar-top\n          ' + this.getClass() },
         _react2.default.createElement(
           'div',
           { className: 'navigation-bar-top-section horizontal' },
@@ -32503,6 +32476,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
+var _navigation_bar_bottom_item = __webpack_require__(261);
+
+var _navigation_bar_bottom_item2 = _interopRequireDefault(_navigation_bar_bottom_item);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32523,121 +32500,24 @@ var NavigationBarBottom = function (_React$Component) {
   _createClass(NavigationBarBottom, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
+      var items = categories.map(function (el, i) {
+        var classes = _this2.props.category === el ? { active: "navigation-bar-bottom-section-active",
+          activeRank: 'navigation-bar-bottom-section-active-' + (i + 1) } : null;
+        return _react2.default.createElement(_navigation_bar_bottom_item2.default, {
+          key: i,
+          rank: i + 1,
+          category: el,
+          classes: classes
+        });
+      });
+
       return _react2.default.createElement(
         'div',
         { className: 'navigation-bar-bottom' },
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-one' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: 'index.html#/category/business',
-                onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'BUSINESS'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-two' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: 'index.html#/category/culture',
-                onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'CULTURE'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-three' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: 'index.html#/category/gear',
-                onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'GEAR'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-four' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: 'index.html#/category/ideas',
-                onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'IDEAS'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-five' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: 'index.html#/category/science',
-                onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'SCIENCE'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-six' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: 'index.html#/category/security',
-                onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'SECURITY'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-bottom-section', id: 'navigation-bar-bottom-section-seven' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: 'index.html#/category/transportation',
-                onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'TRANSPORTATION'
-            )
-          )
-        )
+        items
       );
     }
   }]);
@@ -32882,9 +32762,9 @@ var _footer = __webpack_require__(18);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar = __webpack_require__(20);
+var _navigation_bar_container = __webpack_require__(260);
 
-var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -32957,7 +32837,7 @@ var Category = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar2.default, {
+          _react2.default.createElement(_navigation_bar_container2.default, {
             header: this.convertTitle()
           }),
           _react2.default.createElement(
@@ -33144,9 +33024,9 @@ var _footer = __webpack_require__(18);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar = __webpack_require__(20);
+var _navigation_bar_container = __webpack_require__(260);
 
-var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -33207,7 +33087,7 @@ var MostPopular = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar2.default, {
+          _react2.default.createElement(_navigation_bar_container2.default, {
             header: 'most popular'
           }),
           _react2.default.createElement(
@@ -33331,9 +33211,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _navigation_bar = __webpack_require__(20);
+var _navigation_bar_container = __webpack_require__(260);
 
-var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
 
 var _footer = __webpack_require__(18);
 
@@ -33443,7 +33323,7 @@ var StoryShow = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar2.default, {
+          _react2.default.createElement(_navigation_bar_container2.default, {
             header: this.props.location.pathname === "/" ? "" : this.state.story.title.length < 30 ? this.state.story.title : this.state.story.title.slice(0, 30) + '...'
           }),
           _react2.default.createElement(
@@ -33894,9 +33774,9 @@ var _footer = __webpack_require__(18);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation_bar = __webpack_require__(20);
+var _navigation_bar_container = __webpack_require__(260);
 
-var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+var _navigation_bar_container2 = _interopRequireDefault(_navigation_bar_container);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -33963,7 +33843,7 @@ var Search = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_navigation_bar2.default, {
+          _react2.default.createElement(_navigation_bar_container2.default, {
             header: 'Search: "' + this.searchTerm + '"'
           }),
           _react2.default.createElement(
@@ -34004,6 +33884,86 @@ var Search = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Search;
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(10);
+
+var _reactRouterDom = __webpack_require__(1);
+
+var _story_actions = __webpack_require__(9);
+
+var _navigation_bar = __webpack_require__(20);
+
+var _navigation_bar2 = _interopRequireDefault(_navigation_bar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  var category = state.entities.stories.category ? state.entities.stories.category : null;
+  return {
+    category: category
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    saveCategory: function saveCategory(category) {
+      return dispatch((0, _story_actions.saveCategory)(category));
+    }
+  };
+};
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_navigation_bar2.default));
+
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NavigationBarBottomItem = function NavigationBarBottomItem(props) {
+  var active = props.classes ? props.classes.active : null;
+  var activeRank = props.classes ? props.classes.activeRank : null;
+  return _react2.default.createElement(
+    'div',
+    { className: 'navigation-bar-bottom-section\n        navigation-bar-bottom-section-' + props.rank + '\n        ' + activeRank + '\n        ' + active },
+    _react2.default.createElement(
+      'h2',
+      null,
+      _react2.default.createElement(
+        'a',
+        { href: 'index.html#/category/' + props.category,
+          onClick: function onClick() {
+            return window.location.reload();
+          } },
+        props.category.toUpperCase()
+      )
+    )
+  );
+};
+
+exports.default = NavigationBarBottomItem;
 
 /***/ })
 /******/ ]);

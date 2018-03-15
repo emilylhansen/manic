@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import NavigationBarBottomItem from './navigation_bar_bottom_item.jsx';
 
 class NavigationBarBottom extends React.Component {
   constructor(props){
@@ -7,36 +8,24 @@ class NavigationBarBottom extends React.Component {
   }
 
   render() {
+    let categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
+    let items = categories.map((el, i) => {
+      let classes = this.props.category === el ?
+      {active: "navigation-bar-bottom-section-active",
+      activeRank: `navigation-bar-bottom-section-active-${i+1}`} : null;
+      return (
+        <NavigationBarBottomItem
+          key={i}
+          rank={i+1}
+          category={el}
+          classes={classes}
+          />
+      );
+    });
+
     return (
       <div className="navigation-bar-bottom">
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-one">
-          <h2><a href={`index.html#/category/business`}
-            onClick={() => window.location.reload()}>BUSINESS</a></h2>
-        </div>
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-two">
-          <h2><a href={`index.html#/category/culture`}
-            onClick={() => window.location.reload()}>CULTURE</a></h2>
-        </div>
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-three">
-          <h2><a href={`index.html#/category/gear`}
-            onClick={() => window.location.reload()}>GEAR</a></h2>
-        </div>
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-four">
-          <h2><a href={`index.html#/category/ideas`}
-            onClick={() => window.location.reload()}>IDEAS</a></h2>
-        </div>
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-five">
-          <h2><a href={`index.html#/category/science`}
-            onClick={() => window.location.reload()}>SCIENCE</a></h2>
-        </div>
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-six">
-          <h2><a href={`index.html#/category/security`}
-            onClick={() => window.location.reload()}>SECURITY</a></h2>
-        </div>
-        <div className="navigation-bar-bottom-section" id="navigation-bar-bottom-section-seven">
-          <h2><a href={`index.html#/category/transportation`}
-            onClick={() => window.location.reload()}>TRANSPORTATION</a></h2>
-        </div>
+        {items}
       </div>
     );
   }

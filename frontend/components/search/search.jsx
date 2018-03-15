@@ -6,7 +6,7 @@ import ArticleUnitNine from '../article_units/article_unit_nine.jsx';
 import ArticleUnitTwelve from '../article_units/article_unit_twelve.jsx';
 import Loading from '../loading/loading.jsx';
 import Footer from '../footer/footer.jsx';
-import NavigationBar from '../navigation_bar/navigation_bar.jsx';
+import NavigationBarContainer from '../navigation_bar/navigation_bar_container.jsx';
 
 class Search extends React.Component{
   constructor(props){
@@ -54,7 +54,7 @@ class Search extends React.Component{
     } else {
       return (
         <div>
-          <NavigationBar
+          <NavigationBarContainer
             header={`Search: "${this.searchTerm}"`}
             />
           <div className="category-background">

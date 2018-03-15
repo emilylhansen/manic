@@ -5,6 +5,7 @@ class NavigationBarTop extends React.Component {
   constructor(props){
     super(props);
     this.getHeader = this.getHeader.bind(this);
+    this.getClass = this.getClass.bind(this);
   }
 
   getHeader(){
@@ -26,9 +27,19 @@ class NavigationBarTop extends React.Component {
     }
   }
 
+  getClass() {
+    let categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
+    for(let i = 0; i < categories.length; i++) {
+      if (categories[i] === this.props.category) {
+        return `navigation-bar-top-${i+1} navigation-bar-top-active`;
+      }
+    }
+  }
+
   render(){
     return (
-      <div id="navigation-bar-top">
+      <div className={`navigation-bar-top
+          ${this.getClass()}`}>
         <div className="navigation-bar-top-section horizontal">
           <h2 onClick={() => this.props.handleClick("menuIsClicked")}>
             { this.props.menuIsClicked ?

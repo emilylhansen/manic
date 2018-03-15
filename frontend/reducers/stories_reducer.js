@@ -14,7 +14,8 @@ RECEIVE_SEARCH_STORIES,
 RECEIVE_SEARCH_POPULARITY,
 RECEIVE_SEARCH_NEWEST,
 RECEIVE_SEARCH_RELEVANCY,
-RECEIVE_SEARCH_TERM} from '../actions/story_actions';
+RECEIVE_SEARCH_TERM,
+RECEIVE_CATEGORY} from '../actions/story_actions';
 
 const defaultState = {
   topStories: {},
@@ -60,6 +61,8 @@ const StoriesReducer = (oldState=defaultState, action) => {
     return merge({}, oldState, {searchStories: action.searchRelevancy.articles});
     case RECEIVE_SEARCH_TERM:
     return merge({}, oldState, {searchTerm: action.searchTerm});
+    case RECEIVE_CATEGORY:
+    return merge({}, oldState, {category: action.category});
     default:
     return oldState;
   }

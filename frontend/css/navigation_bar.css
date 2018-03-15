@@ -9,9 +9,50 @@
   z-index: 1;
 }
 
-#navigation-bar-top {
+.navigation-bar-top {
   height: 60px;
   display: flex;
+}
+
+.navigation-bar-top-1 {
+  background-color: #00A85F;
+}
+
+.navigation-bar-top-2 {
+  background-color: #461F4B;
+}
+
+.navigation-bar-top-3 {
+  background-color: #96CCCE;
+}
+
+.navigation-bar-top-4 {
+  background-color: #0086A1;
+}
+
+.navigation-bar-top-5 {
+  background-color: #FFC00A;
+}
+
+.navigation-bar-top-6 {
+  background-color: #6A0000;
+}
+
+.navigation-bar-top-7 {
+  background-color: #F52143;
+}
+
+/* .navigation-bar-top-1 a {
+  color: white;
+} */
+
+.navigation-bar-top-active h3,
+.navigation-bar-top-active p,
+.navigation-bar-top-active a,
+.navigation-bar-top-active h2,
+.navigation-bar-top-active i:nth-child(1),
+.navigation-bar-top-active i:nth-child(2) {
+  color: white;
 }
 
 .fa-bars,
@@ -121,54 +162,96 @@
   color: #6C6C6C;
 }
 
-#navigation-bar-bottom-section-one:hover,
-#navigation-bar-bottom-section-one:hover a,
-#navigation-bar-menu-section-one:hover,
-#navigation-bar-menu-section-one:hover a  {
+.navigation-bar-bottom-section-1:hover,
+.navigation-bar-bottom-section-1:hover a,
+.navigation-bar-bottom-section-1:hover,
+.navigation-bar-bottom-section-1:hover a  {
   background-color: #00A85F;
   color: white;
 }
-#navigation-bar-bottom-section-two:hover,
-#navigation-bar-bottom-section-two:hover a,
-#navigation-bar-menu-section-two:hover,
-#navigation-bar-menu-section-two:hover a{
+
+.navigation-bar-bottom-section-active-1 {
+  background-color: #00A85F;
+}
+
+.navigation-bar-bottom-section-2:hover,
+.navigation-bar-bottom-section-2:hover a,
+.navigation-bar-bottom-section-2:hover,
+.navigation-bar-bottom-section-2:hover a  {
   background-color: #461F4B;
   color: white;
 }
-#navigation-bar-bottom-section-three:hover,
-#navigation-bar-bottom-section-three:hover a,
-#navigation-bar-menu-section-three:hover,
-#navigation-bar-menu-section-three:hover a {
+
+.navigation-bar-bottom-section-active-2 {
+  background-color: #461F4B;
+}
+
+.navigation-bar-bottom-section-3:hover,
+.navigation-bar-bottom-section-3:hover a,
+.navigation-bar-bottom-section-3:hover,
+.navigation-bar-bottom-section-3:hover a  {
   background-color: #96CCCE;
   color: white;
 }
-#navigation-bar-bottom-section-four:hover,
-#navigation-bar-bottom-section-four:hover a,
-#navigation-bar-menu-section-four:hover,
-#navigation-bar-menu-section-four:hover a  {
+
+.navigation-bar-bottom-section-active-3 {
+  background-color: #96CCCE;
+}
+
+.navigation-bar-bottom-section-4:hover,
+.navigation-bar-bottom-section-4:hover a,
+.navigation-bar-bottom-section-4:hover,
+.navigation-bar-bottom-section-4:hover a  {
   background-color: #0086A1;
   color: white;
 }
-#navigation-bar-bottom-section-five:hover,
-#navigation-bar-bottom-section-five:hover a,
-#navigation-bar-menu-section-five:hover,
-#navigation-bar-menu-section-five:hover a {
+
+.navigation-bar-bottom-section-active-4 {
+  background-color: #0086A1;
+}
+
+.navigation-bar-bottom-section-5:hover,
+.navigation-bar-bottom-section-5:hover a,
+.navigation-bar-bottom-section-5:hover,
+.navigation-bar-bottom-section-5:hover a  {
   background-color: #FFC00A;
   color: white;
 }
-#navigation-bar-bottom-section-six:hover,
-#navigation-bar-bottom-section-six:hover a,
-#navigation-bar-menu-section-six:hover,
-#navigation-bar-menu-section-six:hover a {
+
+.navigation-bar-bottom-section-active-5 {
+  background-color: #FFC00A;
+}
+
+.navigation-bar-bottom-section-6:hover,
+.navigation-bar-bottom-section-6:hover a,
+.navigation-bar-bottom-section-6:hover,
+.navigation-bar-bottom-section-6:hover a  {
   background-color: #6A0000;
   color: white;
 }
-#navigation-bar-bottom-section-seven:hover,
-#navigation-bar-bottom-section-seven:hover a,
-#navigation-bar-menu-section-seven:hover,
-#navigation-bar-menu-section-seven:hover a {
+
+.navigation-bar-bottom-section-active-6 {
+  background-color: #6A0000;
+}
+
+.navigation-bar-bottom-section-7:hover,
+.navigation-bar-bottom-section-7:hover a,
+.navigation-bar-bottom-section-7:hover,
+.navigation-bar-bottom-section-7:hover a  {
   background-color: #F52143;
   color: white;
+}
+
+.navigation-bar-bottom-section-active-7 {
+  background-color: #F52143;
+}
+
+.navigation-bar-bottom-section-active h2 a {
+  color: white;
+}
+
+.navigation-bar-bottom-section-active {
+  border-top: none;
 }
 
 .select-section {

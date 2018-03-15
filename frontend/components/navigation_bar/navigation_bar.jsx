@@ -10,8 +10,6 @@ import NavigationBarSubscribe from './navigation_bar_subscribe.jsx';
 class NavigationBar extends React.Component {
   constructor(props){
       super(props);
-      this.toggleNav = this.toggleNav.bind(this);
-      this.changeNav = this.changeNav.bind(this);
       this.handleMouseHover = this.handleMouseHover.bind(this);
       this.handleClick = this.handleClick.bind(this);
       this.handleInput = this.handleInput.bind(this);
@@ -23,20 +21,10 @@ class NavigationBar extends React.Component {
         menuIsClicked: false,
         isScrolling: false
       };
-      this.colors = {
-        green: "#00A85F",
-        purple: "#461F4B",
-        teal: "#96CCCE",
-        blue: "#0086A1",
-        orange: "#FFC00A",
-        brown: "#6A0000",
-        red: "#F52143",
-        gray: "#686868"
-      };
   }
 
   componentDidMount(){
-    this.toggleNav();
+    this.props.saveCategory(this.props.match.params.categoryName);
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -49,67 +37,6 @@ class NavigationBar extends React.Component {
       this.setState({isScrolling: true});
     } else {
       this.setState({isScrolling: false});
-    }
-  }
-
-  changeNav(section, color){
-    let navTop = document.getElementById("navigation-bar-top");
-    section.style.backgroundColor = color;
-    section.getElementsByTagName('a')[0].style.color = "white";
-    section.style.borderTop = "none";
-    navTop.style.backgroundColor = color;
-    navTop.getElementsByTagName('a')[0].style.color = "white";
-
-    (this.props.location.pathname === "/" ||
-    this.props.location.pathname.includes("business") ||
-    this.props.location.pathname.includes("culture") ||
-    this.props.location.pathname.includes("gear") ||
-    this.props.location.pathname.includes("ideas") ||
-    this.props.location.pathname.includes("science") ||
-    this.props.location.pathname.includes("security") ||
-    this.props.location.pathname.includes("transportation") ||
-    this.props.location.pathname.includes("most-popular") ||
-    this.props.location.pathname.includes("most-recent")) ?
-    navTop.getElementsByTagName('h3')[1].style.color = "white":
-    navTop.getElementsByTagName('p')[0].style.color = "white";
-
-    navTop.getElementsByTagName('h2')[1].style.color = "white";
-    navTop.getElementsByTagName('i')[0].style.color = "white";
-    navTop.getElementsByTagName('i')[1].style.color = "white";
-  }
-
-  toggleNav(){
-    switch (this.props.match.params.categoryName) {
-      case "business":
-      this.changeNav(document.getElementById("navigation-bar-bottom-section-one"),
-      this.colors.green);
-      break;
-      case "culture":
-      this.changeNav(document.getElementById("navigation-bar-bottom-section-two"),
-      this.colors.purple);
-      break;
-      case "gear":
-      this.changeNav(document.getElementById("navigation-bar-bottom-section-three"),
-      this.colors.teal);
-      break;
-      case "ideas":
-      this.changeNav(document.getElementById("navigation-bar-bottom-section-four"),
-      this.colors.blue);
-      break;
-      case "science":
-      this.changeNav(document.getElementById("navigation-bar-bottom-section-five"),
-      this.colors.orange);
-      break;
-      case "security":
-      this.changeNav(document.getElementById("navigation-bar-bottom-section-six"),
-      this.colors.brown);
-      break;
-      case "transportation":
-      this.changeNav(document.getElementById("navigation-bar-bottom-section-seven"),
-      this.colors.red);
-      break;
-      default:
-
     }
   }
 
@@ -142,13 +69,16 @@ class NavigationBar extends React.Component {
             handleMouseHover={this.handleMouseHover}
             searchIsClicked={this.state.searchIsClicked}
             header={this.props.header.toUpperCase()}
+            category={this.props.category}
             />
 
           { (!this.state.isHovering &&
             !this.state.searchIsClicked &&
             !this.state.menuIsClicked &&
             !this.state.isScrolling) &&
-            <NavigationBarBottom/>
+            <NavigationBarBottom
+              category={this.props.category}
+              />
           }
           {
             this.state.isHovering &&

@@ -15,6 +15,7 @@ export const RECEIVE_SEARCH_POPULARITY = 'RECEIVE_SEARCH_POPULARITY';
 export const RECEIVE_SEARCH_NEWEST = 'RECEIVE_SEARCH_NEWEST';
 export const RECEIVE_SEARCH_RELEVANCY = 'RECEIVE_SEARCH_RELEVANCY';
 export const RECEIVE_MOST_RECENT_STORIES = 'RECEIVE_MOST_RECENT_STORIES';
+export const RECEIVE_CATEGORY = 'RECEIVE_CATEGORY';
 
 export const receiveTopStories = topStories => ({
   type: RECEIVE_TOP_STORIES,
@@ -86,6 +87,11 @@ export const receiveSearchRelevancy = searchTerm => ({
   searchRelevancy
 });
 
+export const receiveCategory = category => ({
+  type: RECEIVE_CATEGORY,
+  category
+});
+
 export const fetchTopStories = () => dispatch => (
   StoryApiUtil.fetchTopStories().then(
     topStories => dispatch(receiveTopStories(topStories)))
@@ -153,4 +159,8 @@ export const searchRelevancy = words => dispatch => (
   StoryApiUtil.searchRelevancy(words).then(
     stories => dispatch(receiveSearchRelevancy(stories))
   )
+);
+
+export const saveCategory = category => dispatch => (
+  dispatch(receiveCategory(category))
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import NavigationBar from '../navigation_bar/navigation_bar.jsx';
+import NavigationBarContainer from '../navigation_bar/navigation_bar_container.jsx';
 import Footer from '../footer/footer.jsx';
 import Loading from '../loading/loading.jsx';
 import StoryShowArticle from './story_show_article.jsx';
@@ -72,7 +72,7 @@ class StoryShow extends React.Component {
       let dateTime = this.convertDateTime();
       return (
         <div>
-          <NavigationBar
+          <NavigationBarContainer
             header={this.props.location.pathname === "/" ? "" :
                     (this.state.story.title.length < 30 ?
                     this.state.story.title :
