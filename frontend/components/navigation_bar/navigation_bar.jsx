@@ -73,6 +73,7 @@ class NavigationBar extends React.Component {
             searchIsClicked={this.state.searchIsClicked}
             header={this.props.header.toUpperCase()}
             category={this.props.category}
+            categories={categories}
             />
 
           { (!this.state.isHovering &&

@@ -1231,8 +1231,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -1245,181 +1243,160 @@ var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Footer = function (_React$Component) {
-  _inherits(Footer, _React$Component);
-
-  function Footer(props) {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).call(this, props));
-  }
-
-  _createClass(Footer, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var Footer = function Footer(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'footer' },
+    props.pathname !== '/' && !props.pathname.includes("page") && !props.pathname.includes("most-popular") && !props.pathname.includes("story") && !props.pathname.includes("most-recent") && _react2.default.createElement(_article_unit_more2.default, {
+      header: 'more results',
+      link: '#' + props.pathname + '/page'
+    }),
+    _react2.default.createElement(
+      'div',
+      { className: 'footer-content' },
+      _react2.default.createElement(
         'div',
-        { className: 'footer' },
-        this.props.pathname !== '/' && !this.props.pathname.includes("page") && !this.props.pathname.includes("most-popular") && !this.props.pathname.includes("story") && !this.props.pathname.includes("most-recent") && _react2.default.createElement(_article_unit_more2.default, {
-          header: 'more results',
-          link: '#' + this.props.pathname + '/page'
-        }),
+        { className: 'footer-content-logo' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          _react2.default.createElement(
+            'a',
+            { href: '#/' },
+            'MANIC'
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'footer-content-media horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'footer-content' },
+          { className: 'footer-content-media-item' },
           _react2.default.createElement(
-            'div',
-            { className: 'footer-content-logo' },
+            'a',
+            { href: 'https://www.facebook.com/wired', target: '_blank' },
+            _react2.default.createElement('i', { className: 'fa fa-facebook', 'aria-hidden': 'true' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'footer-content-media-item' },
+          _react2.default.createElement(
+            'a',
+            { href: 'https://twitter.com/wired', target: '_blank' },
+            _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'footer-content-media-item' },
+          _react2.default.createElement(
+            'a',
+            { href: 'https://www.pinterest.com/wired/', target: '_blank' },
+            _react2.default.createElement('i', { className: 'fa fa-pinterest-p', 'aria-hidden': 'true' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'footer-content-media-item' },
+          _react2.default.createElement(
+            'a',
+            { href: 'https://www.youtube.com/wired', target: '_blank' },
+            _react2.default.createElement('i', { className: 'fa fa-youtube-play', 'aria-hidden': 'true' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'footer-content-media-item' },
+          _react2.default.createElement(
+            'a',
+            { href: 'https://www.instagram.com/wired/', target: '_blank' },
+            _react2.default.createElement('i', { className: 'fa fa-instagram', 'aria-hidden': 'true' })
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'footer-content-links ' },
+        _react2.default.createElement(
+          'ul',
+          { className: 'horizontal' },
+          _react2.default.createElement(
+            'li',
+            null,
             _react2.default.createElement(
-              'h3',
+              'h2',
               null,
               _react2.default.createElement(
                 'a',
-                { href: '#/' },
-                'MANIC'
+                null,
+                'login'
               )
             )
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'footer-content-media horizontal' },
+            'li',
+            null,
             _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement(
-                'a',
-                { href: 'https://www.facebook.com/wired', target: '_blank' },
-                _react2.default.createElement('i', { className: 'fa fa-facebook', 'aria-hidden': 'true' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement(
-                'a',
-                { href: 'https://twitter.com/wired', target: '_blank' },
-                _react2.default.createElement('i', { className: 'fa fa-twitter', 'aria-hidden': 'true' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement(
-                'a',
-                { href: 'https://www.pinterest.com/wired/', target: '_blank' },
-                _react2.default.createElement('i', { className: 'fa fa-pinterest-p', 'aria-hidden': 'true' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement(
-                'a',
-                { href: 'https://www.youtube.com/wired', target: '_blank' },
-                _react2.default.createElement('i', { className: 'fa fa-youtube-play', 'aria-hidden': 'true' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer-content-media-item' },
-              _react2.default.createElement(
-                'a',
-                { href: 'https://www.instagram.com/wired/', target: '_blank' },
-                _react2.default.createElement('i', { className: 'fa fa-instagram', 'aria-hidden': 'true' })
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'footer-content-links ' },
-            _react2.default.createElement(
-              'ul',
-              { className: 'horizontal' },
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'login'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'subscribe'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'advertise'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'site map'
-                  )
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'footer-content-policy' },
-            _react2.default.createElement(
-              'p',
+              'h2',
               null,
-              'CNMN Collection',
-              _react2.default.createElement('br', null),
-              'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.',
-              _react2.default.createElement('br', null),
-              _react2.default.createElement('br', null),
               _react2.default.createElement(
                 'a',
-                { href: 'https://newsapi.org/' },
-                'Powered by News API: an API where objects don\'t have unique ids :('
+                null,
+                'subscribe'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              'h2',
+              null,
+              _react2.default.createElement(
+                'a',
+                null,
+                'advertise'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              'h2',
+              null,
+              _react2.default.createElement(
+                'a',
+                null,
+                'site map'
               )
             )
           )
         )
-      );
-    }
-  }]);
-
-  return Footer;
-}(_react2.default.Component);
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'footer-content-policy' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'CNMN Collection',
+          _react2.default.createElement('br', null),
+          'Use of this site constitutes acceptance of our user agreement (effective 3/21/12) and privacy policy (effective 3/21/12). Affiliate link policy. Your California privacy rights. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\xE9 Nast.',
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'a',
+            { href: 'https://newsapi.org/' },
+            'Powered by News API: an API where objects don\'t have unique ids :('
+          )
+        )
+      )
+    )
+  );
+};
 
 exports.default = Footer;
 
@@ -1590,7 +1567,8 @@ var NavigationBar = function (_React$Component) {
           handleMouseHover: this.handleMouseHover,
           searchIsClicked: this.state.searchIsClicked,
           header: this.props.header.toUpperCase(),
-          category: this.props.category
+          category: this.props.category,
+          categories: categories
         }),
         !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && !this.state.isScrolling && _react2.default.createElement(_navigation_bar_bottom2.default, {
           category: this.props.category,
@@ -31595,8 +31573,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -31605,116 +31581,87 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var NavigationBarTop = function NavigationBarTop(props) {
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var NavigationBarTop = function (_React$Component) {
-  _inherits(NavigationBarTop, _React$Component);
-
-  function NavigationBarTop(props) {
-    _classCallCheck(this, NavigationBarTop);
-
-    var _this = _possibleConstructorReturn(this, (NavigationBarTop.__proto__ || Object.getPrototypeOf(NavigationBarTop)).call(this, props));
-
-    _this.getHeader = _this.getHeader.bind(_this);
-    _this.getClass = _this.getClass.bind(_this);
-    return _this;
-  }
-
-  _createClass(NavigationBarTop, [{
-    key: 'getHeader',
-    value: function getHeader() {
-      var pathname = this.props.pathname;
-      if (pathname === "/") {
-        return _react2.default.createElement(
-          'h3',
-          null,
-          'MANIC'
-        );
-      } else if (pathname.includes("business") || pathname.includes("culture") || pathname.includes("gear") || pathname.includes("ideas") || pathname.includes("science") || pathname.includes("security") || pathname.includes("transportation") || pathname.includes("most-popular") || pathname.includes("most-recent")) {
-        return _react2.default.createElement(
-          'h3',
-          null,
-          this.props.header
-        );
-      } else {
-        return _react2.default.createElement(
-          'p',
-          null,
-          this.props.header
-        );
-      }
-    }
-  }, {
-    key: 'getClass',
-    value: function getClass() {
-      var categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
-      for (var i = 0; i < categories.length; i++) {
-        if (categories[i] === this.props.category) {
-          return 'navigation-bar-top-' + (i + 1) + ' navigation-bar-top-active';
-        }
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
+  var getHeader = function getHeader() {
+    var pathname = props.pathname;
+    if (pathname === "/") {
       return _react2.default.createElement(
-        'div',
-        { className: 'navigation-bar-top\n          ' + this.getClass() },
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-top-section horizontal' },
-          _react2.default.createElement(
-            'h2',
-            { onClick: function onClick() {
-                return _this2.props.handleClick("menuIsClicked");
-              } },
-            this.props.menuIsClicked ? _react2.default.createElement('i', { className: 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
-          ),
-          _react2.default.createElement(
-            'h3',
-            null,
-            this.props.pathname !== "/" && _react2.default.createElement(
-              'a',
-              { href: 'index.html#', onClick: function onClick() {
-                  return window.location.reload();
-                } },
-              'MANIC'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-top-section' },
-          this.getHeader()
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-top-section horizontal' },
-          _react2.default.createElement(
-            'h2',
-            { onMouseEnter: this.props.handleMouseHover },
-            'SUBSCRIBE'
-          ),
-          _react2.default.createElement(
-            'h2',
-            { onClick: function onClick() {
-                return _this2.props.handleClick("searchIsClicked");
-              } },
-            this.props.searchIsClicked ? _react2.default.createElement('i', { className: 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
-          )
-        )
+        'h3',
+        null,
+        'MANIC'
+      );
+    } else if (pathname.includes("business") || pathname.includes("culture") || pathname.includes("gear") || pathname.includes("ideas") || pathname.includes("science") || pathname.includes("security") || pathname.includes("transportation") || pathname.includes("most-popular") || pathname.includes("most-recent")) {
+      return _react2.default.createElement(
+        'h3',
+        null,
+        props.header
+      );
+    } else {
+      return _react2.default.createElement(
+        'p',
+        null,
+        props.header
       );
     }
-  }]);
+  };
 
-  return NavigationBarTop;
-}(_react2.default.Component);
+  var getClass = function getClass() {
+    for (var i = 0; i < props.categories.length; i++) {
+      if (props.categories[i] === props.category) {
+        return 'navigation-bar-top-' + (i + 1) + ' navigation-bar-top-active';
+      }
+    }
+  };
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'navigation-bar-top\n        ' + getClass() },
+    _react2.default.createElement(
+      'div',
+      { className: 'navigation-bar-top-section horizontal' },
+      _react2.default.createElement(
+        'h2',
+        { onClick: function onClick() {
+            return props.handleClick("menuIsClicked");
+          } },
+        props.menuIsClicked ? _react2.default.createElement('i', { className: 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
+      ),
+      _react2.default.createElement(
+        'h3',
+        null,
+        props.pathname !== "/" && _react2.default.createElement(
+          'a',
+          { href: 'index.html#', onClick: function onClick() {
+              return window.location.reload();
+            } },
+          'MANIC'
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'navigation-bar-top-section' },
+      getHeader()
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'navigation-bar-top-section horizontal' },
+      _react2.default.createElement(
+        'h2',
+        { onMouseEnter: props.handleMouseHover },
+        'SUBSCRIBE'
+      ),
+      _react2.default.createElement(
+        'h2',
+        { onClick: function onClick() {
+            return props.handleClick("searchIsClicked");
+          } },
+        props.searchIsClicked ? _react2.default.createElement('i', { className: 'fa fa-times', 'aria-hidden': 'true' }) : _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
+      )
+    )
+  );
+};
 
 exports.default = (0, _reactRouterDom.withRouter)(NavigationBarTop);
 
@@ -32092,8 +32039,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -32102,98 +32047,74 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var ArticleUnitListItemThree = function ArticleUnitListItemThree(props) {
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+  var convertTime = function convertTime() {
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var date = props.story.publishedAt.split(/-|T|Z|:|\./);
+    var month = months[parseInt(date[1])];
+    var day = date[2];
+    var year = date[0];
+    return month + ' ' + day + ', ' + year;
+  };
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitListItemThree = function (_React$Component) {
-  _inherits(ArticleUnitListItemThree, _React$Component);
-
-  function ArticleUnitListItemThree(props) {
-    _classCallCheck(this, ArticleUnitListItemThree);
-
-    var _this = _possibleConstructorReturn(this, (ArticleUnitListItemThree.__proto__ || Object.getPrototypeOf(ArticleUnitListItemThree)).call(this, props));
-
-    _this.convertTime = _this.convertTime.bind(_this);
-    return _this;
-  }
-
-  _createClass(ArticleUnitListItemThree, [{
-    key: 'convertTime',
-    value: function convertTime() {
-      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      var date = this.props.story.publishedAt.split(/-|T|Z|:|\./);
-      var month = months[parseInt(date[1])];
-      var day = date[2];
-      var year = date[0];
-      return month + ' ' + day + ', ' + year;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'li',
-        { className: 'article-unit-list-item-three' },
+  return _react2.default.createElement(
+    'li',
+    { className: 'article-unit-list-item-three' },
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-list-item-three-bottom' },
+      _react2.default.createElement(
+        'div',
+        { className: 'horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-list-item-three-bottom' },
+          { className: 'article-unit-image article-unit-list-item-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-list-item-text' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
+            { className: 'article-unit-author' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              convertTime(),
+              props.story.author ? props.story.author.length > 35 ? '| ' + props.story.author.split("").slice(0, 35).join("") + '...' : '| ' + props.story.author : ""
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-list-item-text' },
+              'h6',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.convertTime() + ' ',
-                  this.props.story.author ? this.props.story.author.length > 35 ? '| ' + this.props.story.author.split("").slice(0, 35).join("") + '...' : '| ' + this.props.story.author : ""
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h6',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-list-item-title' },
-                _react2.default.createElement(
-                  'h1',
-                  null,
-                  this.props.story.title
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 50 ? props.story.title.split("").slice(0, 50).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-list-item-title' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              props.story.title
             )
           )
         )
-      );
-    }
-  }]);
-
-  return ArticleUnitListItemThree;
-}(_react2.default.Component);
+      )
+    )
+  );
+};
 
 exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitListItemThree);
 
