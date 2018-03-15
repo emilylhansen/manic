@@ -59,6 +59,9 @@ class NavigationBar extends React.Component {
   }
 
   render(){
+    let categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
+    let images = ["b.png", "c.png", "g.png", "i.png", "s.png", "s2.png", "t.png"];
+
     return (
         <div className="navigation-bar">
 
@@ -78,6 +81,7 @@ class NavigationBar extends React.Component {
             !this.state.isScrolling) &&
             <NavigationBarBottom
               category={this.props.category}
+              categories={categories}
               />
           }
           {
@@ -101,6 +105,7 @@ class NavigationBar extends React.Component {
               pathname={this.props.location.pathname}
               header={this.props.header}
               category={this.props.category}
+              categories={categories}
               />
           }
         </div>

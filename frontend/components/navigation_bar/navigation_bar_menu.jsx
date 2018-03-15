@@ -9,9 +9,7 @@ class NavigationBarMenu extends React.Component {
   }
 
   render(){
-    let categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
-    let images = ["b.png", "c.png", "g.png", "i.png", "s.png", "s2.png", "t.png"];
-    let items = categories.map((el, i) => {
+    let items = this.props.categories.map((el, i) => {
       let classes = this.props.category === el ?
       {active: "navigation-bar-menu-section-active",
       activeRank: `navigation-bar-menu-section-active-${i+1}`} : null;
@@ -21,7 +19,7 @@ class NavigationBarMenu extends React.Component {
           rank={i+1}
           category={el}
           classes={classes}
-          image={images[i]}
+          image={this.props.images[i]}
           />
       );
     });

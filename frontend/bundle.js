@@ -1646,6 +1646,9 @@ var NavigationBar = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
+      var images = ["b.png", "c.png", "g.png", "i.png", "s.png", "s2.png", "t.png"];
+
       return _react2.default.createElement(
         'div',
         { className: 'navigation-bar' },
@@ -1659,7 +1662,8 @@ var NavigationBar = function (_React$Component) {
           category: this.props.category
         }),
         !this.state.isHovering && !this.state.searchIsClicked && !this.state.menuIsClicked && !this.state.isScrolling && _react2.default.createElement(_navigation_bar_bottom2.default, {
-          category: this.props.category
+          category: this.props.category,
+          categories: categories
         }),
         this.state.isHovering && _react2.default.createElement(_navigation_bar_subscribe2.default, {
           handleMouseHover: this.handleMouseHover,
@@ -1673,7 +1677,8 @@ var NavigationBar = function (_React$Component) {
           colors: this.colors,
           pathname: this.props.location.pathname,
           header: this.props.header,
-          category: this.props.category
+          category: this.props.category,
+          categories: categories
         })
       );
     }
@@ -32013,9 +32018,7 @@ var NavigationBarMenu = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
-      var images = ["b.png", "c.png", "g.png", "i.png", "s.png", "s2.png", "t.png"];
-      var items = categories.map(function (el, i) {
+      var items = this.props.categories.map(function (el, i) {
         var classes = _this2.props.category === el ? { active: "navigation-bar-menu-section-active",
           activeRank: 'navigation-bar-menu-section-active-' + (i + 1) } : null;
         return _react2.default.createElement(_navigation_bar_menu_item2.default, {
@@ -32023,7 +32026,7 @@ var NavigationBarMenu = function (_React$Component) {
           rank: i + 1,
           category: el,
           classes: classes,
-          image: images[i]
+          image: _this2.props.images[i]
         });
       });
       return _react2.default.createElement(
@@ -32303,8 +32306,7 @@ var NavigationBarBottom = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
-      var items = categories.map(function (el, i) {
+      var items = this.props.categories.map(function (el, i) {
         var classes = _this2.props.category === el ? { active: "navigation-bar-bottom-section-active",
           activeRank: 'navigation-bar-bottom-section-active-' + (i + 1) } : null;
         return _react2.default.createElement(_navigation_bar_bottom_item2.default, {

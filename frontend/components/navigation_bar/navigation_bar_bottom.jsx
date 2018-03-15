@@ -8,8 +8,7 @@ class NavigationBarBottom extends React.Component {
   }
 
   render() {
-    let categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
-    let items = categories.map((el, i) => {
+    let items = this.props.categories.map((el, i) => {
       let classes = this.props.category === el ?
       {active: "navigation-bar-bottom-section-active",
       activeRank: `navigation-bar-bottom-section-active-${i+1}`} : null;
