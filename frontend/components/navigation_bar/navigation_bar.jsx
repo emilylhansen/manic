@@ -100,6 +100,7 @@ class NavigationBar extends React.Component {
               colors={this.colors}
               pathname={this.props.location.pathname}
               header={this.props.header}
+              category={this.props.category}
               />
           }
         </div>

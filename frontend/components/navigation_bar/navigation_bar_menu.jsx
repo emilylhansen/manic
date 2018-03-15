@@ -1,125 +1,34 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+import NavigationBarMenuItem from './navigation_bar_menu_item.jsx';
+
 class NavigationBarMenu extends React.Component {
   constructor(props){
       super(props);
-      this.changeNav = this.changeNav.bind(this);
-      this.toggleNav = this.toggleNav.bind(this);
-  }
-
-  componentDidMount() {
-    this.toggleNav();
-  }
-
-  changeNav(section, color){
-    section.style.backgroundColor = color;
-    section.getElementsByTagName('a')[0].style.color = "white";
-    section.style.borderTop = "none";
-  }
-
-  toggleNav(){
-    switch (this.props.match.params.categoryName) {
-      case "business":
-      this.changeNav(document.getElementById("navigation-bar-menu-section-one"),
-      this.props.colors.green);
-      break;
-      case "culture":
-      this.changeNav(document.getElementById("navigation-bar-menu-section-two"),
-      this.props.colors.purple);
-      break;
-      case "gear":
-      this.changeNav(document.getElementById("navigation-bar-menu-section-three"),
-      this.props.colors.teal);
-      break;
-      case "ideas":
-      this.changeNav(document.getElementById("navigation-bar-menu-section-four"),
-      this.props.colors.blue);
-      break;
-      case "science":
-      this.changeNav(document.getElementById("navigation-bar-menu-section-five"),
-      this.props.colors.orange);
-      break;
-      case "security":
-      this.changeNav(document.getElementById("navigation-bar-menu-section-six"),
-      this.props.colors.brown);
-      break;
-      case "transportation":
-      this.changeNav(document.getElementById("navigation-bar-menu-section-seven"),
-      this.props.colors.red);
-      break;
-      default:
-
-    }
   }
 
   render(){
+    let categories = ["business", "culture", "gear", "ideas", "science", "security", "transportation"];
+    let images = ["b.png", "c.png", "g.png", "i.png", "s.png", "s2.png", "t.png"];
+    let items = categories.map((el, i) => {
+      let classes = this.props.category === el ?
+      {active: "navigation-bar-menu-section-active",
+      activeRank: `navigation-bar-menu-section-active-${i+1}`} : null;
+      return (
+        <NavigationBarMenuItem
+          key={i}
+          rank={i+1}
+          category={el}
+          classes={classes}
+          image={images[i]}
+          />
+      );
+    });
     return (
       <div className="navigation-bar-menu">
         <div className="navigation-bar-menu-top horizontal">
-          <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-one">
-            <div className="navigation-bar-menu-section-content">
-              <div className="navigation-bar-menu-section-image">
-                <img src="frontend/images/b.png"></img>
-              </div>
-              <h2><a href={`index.html#/category/business`}
-                onClick={() => window.location.reload()}>BUSINESS</a></h2>
-            </div>
-          </div>
-          <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-two">
-            <div className="navigation-bar-menu-section-content">
-              <div className="navigation-bar-menu-section-image">
-                <img src="frontend/images/c.png"></img>
-              </div>
-              <h2><a href={`index.html#/category/culture`}
-                onClick={() => window.location.reload()}>CULTURE</a></h2>
-            </div>
-          </div>
-          <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-three">
-            <div className="navigation-bar-menu-section-content">
-              <div className="navigation-bar-menu-section-image">
-                <img src="frontend/images/g.png"></img>
-              </div>
-              <h2><a href={`index.html#/category/gear`}
-                onClick={() => window.location.reload()}>GEAR</a></h2>
-            </div>
-          </div>
-          <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-four">
-            <div className="navigation-bar-menu-section-content">
-              <div className="navigation-bar-menu-section-image">
-                <img src="frontend/images/i.png"></img>
-              </div>
-              <h2><a href={`index.html#/category/ideas`}
-                onClick={() => window.location.reload()}>IDEAS</a></h2>
-            </div>
-          </div>
-          <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-five">
-            <div className="navigation-bar-menu-section-content">
-              <div className="navigation-bar-menu-section-image">
-                <img src="frontend/images/s.png"></img>
-              </div>
-              <h2><a href={`index.html#/category/science`}
-                onClick={() => window.location.reload()}>SCIENCE</a></h2>
-            </div>
-          </div>
-          <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-six">
-            <div className="navigation-bar-menu-section-content">
-              <div className="navigation-bar-menu-section-image">
-                <img src="frontend/images/s2.png"></img>
-              </div>
-              <h2><a href={`index.html#/category/security`}
-                onClick={() => window.location.reload()}>SECURITY</a></h2>
-            </div>
-          </div>
-          <div className="navigation-bar-menu-section" id="navigation-bar-menu-section-seven">
-            <div className="navigation-bar-menu-section-content">
-              <div className="navigation-bar-menu-section-image">
-                <img src="frontend/images/t.png"></img>
-              </div>
-              <h2><a href={`index.html#/category/transportation`}
-                onClick={() => window.location.reload()}>TRANSPORTATION</a></h2>
-            </div>
-          </div>
+          {items}
         </div>
         <div className="navigation-bar-menu-bottom">
           <div className="navigation-bar-menu-bottom-list">

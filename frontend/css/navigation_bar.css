@@ -42,10 +42,6 @@
   background-color: #F52143;
 }
 
-/* .navigation-bar-top-1 a {
-  color: white;
-} */
-
 .navigation-bar-top-active h3,
 .navigation-bar-top-active p,
 .navigation-bar-top-active a,
@@ -302,6 +298,42 @@
 .navigation-bar-menu-top {
   height: 210px;
   border-bottom: 1px solid #CCCCCC;
+}
+
+.navigation-bar-menu-section-active-1 {
+  background-color: #00A85F;
+}
+
+.navigation-bar-menu-section-active-2 {
+  background-color: #461F4B;
+}
+
+.navigation-bar-menu-section-active-3 {
+  background-color: #96CCCE;
+}
+
+.navigation-bar-menu-section-active-4 {
+  background-color: #0086A1;
+}
+
+.navigation-bar-menu-section-active-5 {
+  background-color: #FFC00A;
+}
+
+.navigation-bar-menu-section-active-6 {
+  background-color: #6A0000;
+}
+
+.navigation-bar-menu-section-active-7 {
+  background-color: #F52143;
+}
+
+.navigation-bar-menu-section-active {
+  border-top: none;
+}
+
+.navigation-bar-menu-section-active h2 a{
+  color: white;
 }
 
 .navigation-bar-menu-bottom {
