@@ -106,6 +106,7 @@ class NavigationBar extends React.Component {
               header={this.props.header}
               category={this.props.category}
               categories={categories}
+              images={images}
               />
           }
         </div>

@@ -383,8 +383,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -393,54 +391,33 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitMore = function (_React$Component) {
-  _inherits(ArticleUnitMore, _React$Component);
-
-  function ArticleUnitMore(props) {
-    _classCallCheck(this, ArticleUnitMore);
-
-    return _possibleConstructorReturn(this, (ArticleUnitMore.__proto__ || Object.getPrototypeOf(ArticleUnitMore)).call(this, props));
-  }
-
-  _createClass(ArticleUnitMore, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitMore = function ArticleUnitMore(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-more' },
+    _react2.default.createElement(
+      'a',
+      { href: props.link,
+        onClick: function onClick() {
+          return window.location.reload();
+        } },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-more' },
+        { className: 'article-unit-more-context horizontal' },
         _react2.default.createElement(
-          'a',
-          { href: this.props.link,
-            onClick: function onClick() {
-              return window.location.reload();
-            } },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-more-context horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-more-button' },
-              _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'h2',
-              null,
-              this.props.header
-            )
-          )
+          'div',
+          { className: 'article-unit-more-button' },
+          _react2.default.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
+        ),
+        _react2.default.createElement(
+          'h2',
+          null,
+          props.header
         )
-      );
-    }
-  }]);
-
-  return ArticleUnitMore;
-}(_react2.default.Component);
+      )
+    )
+  );
+};
 
 exports.default = ArticleUnitMore;
 
@@ -1182,8 +1159,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -1200,69 +1175,48 @@ var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var ArticleUnitNine = function ArticleUnitNine(props) {
+  var items = props.stories.map(function (el, i) {
+    return _react2.default.createElement(_article_unit_list_item2.default, {
+      key: i,
+      story: el
+    });
+  });
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitNine = function (_React$Component) {
-  _inherits(ArticleUnitNine, _React$Component);
-
-  function ArticleUnitNine(props) {
-    _classCallCheck(this, ArticleUnitNine);
-
-    return _possibleConstructorReturn(this, (ArticleUnitNine.__proto__ || Object.getPrototypeOf(ArticleUnitNine)).call(this, props));
-  }
-
-  _createClass(ArticleUnitNine, [{
-    key: 'render',
-    value: function render() {
-      var items = this.props.stories.map(function (el, i) {
-        return _react2.default.createElement(_article_unit_list_item2.default, {
-          key: i,
-          story: el
-        });
-      });
-
-      return _react2.default.createElement(
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-nine article-unit' },
+    _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-middle' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-nine article-unit' },
-        _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+        { className: 'article-unit-middle-header' },
         _react2.default.createElement(
-          'div',
-          { className: 'article-unit-middle' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-middle-header' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              this.props.header
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'article-unit-list-bottom' },
-          _react2.default.createElement(
-            'ul',
-            null,
-            items
-          )
-        ),
-        _react2.default.createElement(_article_unit_more2.default, {
-          header: 'more ' + this.props.header,
-          link: this.props.link
-        })
-      );
-    }
-  }]);
+          'h3',
+          null,
+          props.header
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-list-bottom' },
+      _react2.default.createElement(
+        'ul',
+        null,
+        items
+      )
+    ),
+    _react2.default.createElement(_article_unit_more2.default, {
+      header: 'more ' + props.header,
+      link: props.link
+    })
+  );
+};
 
-  return ArticleUnitNine;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitNine);
+exports.default = ArticleUnitNine;
 
 // comment
 
@@ -1480,8 +1434,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -1490,42 +1442,21 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Loading = function (_React$Component) {
-  _inherits(Loading, _React$Component);
-
-  function Loading(props) {
-    _classCallCheck(this, Loading);
-
-    return _possibleConstructorReturn(this, (Loading.__proto__ || Object.getPrototypeOf(Loading)).call(this, props));
-  }
-
-  _createClass(Loading, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'loading' },
-        _react2.default.createElement(
-          'div',
-          { className: 'loading-logo' },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'M'
-          )
-        )
-      );
-    }
-  }]);
-
-  return Loading;
-}(_react2.default.Component);
+var Loading = function Loading(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'loading' },
+    _react2.default.createElement(
+      'div',
+      { className: 'loading-logo' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'M'
+      )
+    )
+  );
+};
 
 exports.default = Loading;
 
@@ -1678,7 +1609,8 @@ var NavigationBar = function (_React$Component) {
           pathname: this.props.location.pathname,
           header: this.props.header,
           category: this.props.category,
-          categories: categories
+          categories: categories,
+          images: images
         })
       );
     }
@@ -2110,8 +2042,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -2120,87 +2050,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitFive = function (_React$Component) {
-  _inherits(ArticleUnitFive, _React$Component);
-
-  function ArticleUnitFive(props) {
-    _classCallCheck(this, ArticleUnitFive);
-
-    return _possibleConstructorReturn(this, (ArticleUnitFive.__proto__ || Object.getPrototypeOf(ArticleUnitFive)).call(this, props));
-  }
-
-  _createClass(ArticleUnitFive, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitFive = function ArticleUnitFive(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-five article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-five article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        { className: 'article-unit-five-bottom-context' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-five-bottom-context' },
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
+              'h1',
               null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h1',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 70 ? this.props.story.title.split("").slice(0, 70).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 30 ? this.props.story.author.split("").slice(0, 30).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 70 ? props.story.title.split("").slice(0, 70).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 30 ? props.story.author.split("").slice(0, 30).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitFive;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitFive);
+exports.default = ArticleUnitFive;
 
 // comment
 
@@ -3031,8 +2940,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -3041,91 +2948,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitOne = function (_React$Component) {
-  _inherits(ArticleUnitOne, _React$Component);
-
-  function ArticleUnitOne(props) {
-    _classCallCheck(this, ArticleUnitOne);
-
-    return _possibleConstructorReturn(this, (ArticleUnitOne.__proto__ || Object.getPrototypeOf(ArticleUnitOne)).call(this, props));
-  }
-
-  _createClass(ArticleUnitOne, [{
-    key: 'render',
-    value: function render() {
-      // <h1><a href={`/#/story/${this.props.story.title.split(/[^A-Za-z]/).join("")}`}>
-      //   {this.props.story.title.length > 60 ?
-      //   `${this.props.story.title.split("").slice(0, 60).join("")}...` :
-      //   this.props.story.title}</a></h1>
-      return _react2.default.createElement(
+var ArticleUnitOne = function ArticleUnitOne(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-one article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-one article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        { className: 'article-unit-bottom-context' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'article-unit-bottom-context' },
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
+              'h1',
               null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h1',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 60 ? this.props.story.title.split("").slice(0, 60).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 60 ? props.story.title.split("").slice(0, 60).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 20 ? props.story.author.split("").slice(0, 20).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitOne;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitOne);
+exports.default = ArticleUnitOne;
 
 // comment
 
@@ -3140,8 +3022,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -3150,87 +3030,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitTwo = function (_React$Component) {
-  _inherits(ArticleUnitTwo, _React$Component);
-
-  function ArticleUnitTwo(props) {
-    _classCallCheck(this, ArticleUnitTwo);
-
-    return _possibleConstructorReturn(this, (ArticleUnitTwo.__proto__ || Object.getPrototypeOf(ArticleUnitTwo)).call(this, props));
-  }
-
-  _createClass(ArticleUnitTwo, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitTwo = function ArticleUnitTwo(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-two article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-two article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        null,
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
+              'h1',
               null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h1',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 50 ? props.story.title.split("").slice(0, 50).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 20 ? props.story.author.split("").slice(0, 20).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitTwo;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitTwo);
+exports.default = ArticleUnitTwo;
 
 // comment
 
@@ -3245,8 +3104,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -3255,87 +3112,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitThree = function (_React$Component) {
-  _inherits(ArticleUnitThree, _React$Component);
-
-  function ArticleUnitThree(props) {
-    _classCallCheck(this, ArticleUnitThree);
-
-    return _possibleConstructorReturn(this, (ArticleUnitThree.__proto__ || Object.getPrototypeOf(ArticleUnitThree)).call(this, props));
-  }
-
-  _createClass(ArticleUnitThree, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitThree = function ArticleUnitThree(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-three article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-three article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        { className: 'horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-text' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-text' },
+              'h6',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h6',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 45 ? this.props.story.title.split("").slice(0, 45).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 15 ? this.props.story.author.split("").slice(0, 15).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 45 ? props.story.title.split("").slice(0, 45).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 15 ? props.story.author.split("").slice(0, 15).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitThree;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitThree);
+exports.default = ArticleUnitThree;
 
 // comment
 
@@ -3350,8 +3186,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -3360,87 +3194,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitFour = function (_React$Component) {
-  _inherits(ArticleUnitFour, _React$Component);
-
-  function ArticleUnitFour(props) {
-    _classCallCheck(this, ArticleUnitFour);
-
-    return _possibleConstructorReturn(this, (ArticleUnitFour.__proto__ || Object.getPrototypeOf(ArticleUnitFour)).call(this, props));
-  }
-
-  _createClass(ArticleUnitFour, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitFour = function ArticleUnitFour(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-four article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-four article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        { className: 'horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-text' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-text' },
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
+            _react2.default.createElement(
+              'h6',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h6',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 45 ? this.props.story.title.split("").slice(0, 45).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 15 ? this.props.story.author.split("").slice(0, 15).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 45 ? props.story.title.split("").slice(0, 45).join("") + '...' : props.story.title
               )
-            ),
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 15 ? props.story.author.split("").slice(0, 15).join("") + '...' : props.story.author : ""
             )
           )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitFour;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitFour);
+exports.default = ArticleUnitFour;
 
 // comment
 
@@ -3455,8 +3268,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -3465,86 +3276,65 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitListItem = function (_React$Component) {
-  _inherits(ArticleUnitListItem, _React$Component);
-
-  function ArticleUnitListItem(props) {
-    _classCallCheck(this, ArticleUnitListItem);
-
-    return _possibleConstructorReturn(this, (ArticleUnitListItem.__proto__ || Object.getPrototypeOf(ArticleUnitListItem)).call(this, props));
-  }
-
-  _createClass(ArticleUnitListItem, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'li',
-        { className: 'article-unit-list-item' },
+var ArticleUnitListItem = function ArticleUnitListItem(props) {
+  return _react2.default.createElement(
+    'li',
+    { className: 'article-unit-list-item' },
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-list-item-bottom' },
+      _react2.default.createElement(
+        'div',
+        { className: 'horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-list-item-bottom' },
+          { className: 'article-unit-image article-unit-list-item-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-list-item-text' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
+            { className: 'article-unit-list-item-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title article-unit-list-item-title' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-list-item-text' },
+              'h1',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-list-item-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title article-unit-list-item-title' },
-                _react2.default.createElement(
-                  'h1',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 50 ? this.props.story.title.split("").slice(0, 50).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 50 ? props.story.title.split("").slice(0, 50).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 20 ? props.story.author.split("").slice(0, 20).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitListItem;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitListItem);
+exports.default = ArticleUnitListItem;
 
 // comment
 
@@ -3558,8 +3348,6 @@ exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitListItem);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -3577,123 +3365,100 @@ var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitTwelve = function (_React$Component) {
-  _inherits(ArticleUnitTwelve, _React$Component);
-
-  function ArticleUnitTwelve(props) {
-    _classCallCheck(this, ArticleUnitTwelve);
-
-    return _possibleConstructorReturn(this, (ArticleUnitTwelve.__proto__ || Object.getPrototypeOf(ArticleUnitTwelve)).call(this, props));
-  }
-
-  _createClass(ArticleUnitTwelve, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var items = this.props.stories.map(function (el, i) {
-        return _react2.default.createElement(_article_unit_list_item_three2.default, {
-          key: i,
-          story: el
-        });
-      });
-      return _react2.default.createElement(
+var ArticleUnitTwelve = function ArticleUnitTwelve(props) {
+  var items = props.stories.map(function (el, i) {
+    return _react2.default.createElement(_article_unit_list_item_three2.default, {
+      key: i,
+      story: el
+    });
+  });
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-twelve article-unit' },
+    _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-middle' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-twelve article-unit' },
-        _react2.default.createElement('div', { className: 'article-unit-list-top' }),
-        _react2.default.createElement(
+        { className: 'article-unit-middle-header horizontal' },
+        props.location.pathname.includes("search") && _react2.default.createElement(
           'div',
-          { className: 'article-unit-middle' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-middle-header horizontal' },
-            this.props.location.pathname.includes("search") && _react2.default.createElement(
-              'div',
-              { className: 'article-unit-middle-header-icon' },
-              _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-middle-header-text' },
-              _react2.default.createElement(
-                'h3',
-                null,
-                this.props.header
-              )
-            )
-          )
-        ),
-        this.props.location.pathname.includes("search") && _react2.default.createElement(
-          'div',
-          { className: 'article-unit-sort' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-sort-text horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-sort-text-results' },
-              _react2.default.createElement(
-                'h2',
-                null,
-                'results'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-sort-text-options horizontal' },
-              _react2.default.createElement(
-                'h2',
-                null,
-                'sort by:\xA0'
-              ),
-              _react2.default.createElement(
-                'h2',
-                { className: 'article-unit-sort-text-options-oldest',
-                  onClick: function onClick() {
-                    return _this2.props.handleClick("popular");
-                  } },
-                'popular\xA0'
-              ),
-              _react2.default.createElement(
-                'h2',
-                { className: 'article-unit-sort-text-options-newest',
-                  onClick: function onClick() {
-                    return _this2.props.handleClick("newest");
-                  } },
-                'newest\xA0'
-              ),
-              _react2.default.createElement(
-                'h2',
-                { className: 'article-unit-sort-text-options-relevance',
-                  onClick: function onClick() {
-                    return _this2.props.handleClick("relevance");
-                  } },
-                'relevance'
-              )
-            )
-          )
+          { className: 'article-unit-middle-header-icon' },
+          _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' })
         ),
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-list-bottom' },
+          { className: 'article-unit-middle-header-text' },
           _react2.default.createElement(
-            'ul',
+            'h3',
             null,
-            items
+            props.header
           )
         )
-      );
-    }
-  }]);
-
-  return ArticleUnitTwelve;
-}(_react2.default.Component);
+      )
+    ),
+    props.location.pathname.includes("search") && _react2.default.createElement(
+      'div',
+      { className: 'article-unit-sort' },
+      _react2.default.createElement(
+        'div',
+        { className: 'article-unit-sort-text horizontal' },
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-sort-text-results' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'results'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-sort-text-options horizontal' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'sort by:\xA0'
+          ),
+          _react2.default.createElement(
+            'h2',
+            { className: 'article-unit-sort-text-options-oldest',
+              onClick: function onClick() {
+                return props.handleClick("popular");
+              } },
+            'popular\xA0'
+          ),
+          _react2.default.createElement(
+            'h2',
+            { className: 'article-unit-sort-text-options-newest',
+              onClick: function onClick() {
+                return props.handleClick("newest");
+              } },
+            'newest\xA0'
+          ),
+          _react2.default.createElement(
+            'h2',
+            { className: 'article-unit-sort-text-options-relevance',
+              onClick: function onClick() {
+                return props.handleClick("relevance");
+              } },
+            'relevance'
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-list-bottom' },
+      _react2.default.createElement(
+        'ul',
+        null,
+        items
+      )
+    )
+  );
+};
 
 exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitTwelve);
 
@@ -5798,8 +5563,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -5808,87 +5571,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitSix = function (_React$Component) {
-  _inherits(ArticleUnitSix, _React$Component);
-
-  function ArticleUnitSix(props) {
-    _classCallCheck(this, ArticleUnitSix);
-
-    return _possibleConstructorReturn(this, (ArticleUnitSix.__proto__ || Object.getPrototypeOf(ArticleUnitSix)).call(this, props));
-  }
-
-  _createClass(ArticleUnitSix, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitSix = function ArticleUnitSix(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-six article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-six article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        { className: 'horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-text' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-text' },
+              'h4',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 120 ? this.props.story.title.split("").slice(0, 120).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 120 ? props.story.title.split("").slice(0, 120).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 20 ? props.story.author.split("").slice(0, 20).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitSix;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSix);
+exports.default = ArticleUnitSix;
 
 // comment
 
@@ -5903,8 +5645,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -5913,87 +5653,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitSeven = function (_React$Component) {
-  _inherits(ArticleUnitSeven, _React$Component);
-
-  function ArticleUnitSeven(props) {
-    _classCallCheck(this, ArticleUnitSeven);
-
-    return _possibleConstructorReturn(this, (ArticleUnitSeven.__proto__ || Object.getPrototypeOf(ArticleUnitSeven)).call(this, props));
-  }
-
-  _createClass(ArticleUnitSeven, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitSeven = function ArticleUnitSeven(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-seven article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-seven article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        { className: 'horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-text' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-text' },
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
+            _react2.default.createElement(
+              'h4',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 100 ? this.props.story.title.split("").slice(0, 100).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 100 ? props.story.title.split("").slice(0, 100).join("") + '...' : props.story.title
               )
-            ),
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 20 ? props.story.author.split("").slice(0, 20).join("") + '...' : props.story.author : ""
             )
           )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitSeven;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSeven);
+exports.default = ArticleUnitSeven;
 
 // comment
 
@@ -6008,8 +5727,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -6018,87 +5735,66 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitEight = function (_React$Component) {
-  _inherits(ArticleUnitEight, _React$Component);
-
-  function ArticleUnitEight(props) {
-    _classCallCheck(this, ArticleUnitEight);
-
-    return _possibleConstructorReturn(this, (ArticleUnitEight.__proto__ || Object.getPrototypeOf(ArticleUnitEight)).call(this, props));
-  }
-
-  _createClass(ArticleUnitEight, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleUnitEight = function ArticleUnitEight(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-eight article-unit jump' },
+    _react2.default.createElement('div', { className: 'article-unit-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-eight article-unit jump' },
-        _react2.default.createElement('div', { className: 'article-unit-top' }),
+        { className: 'horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-text' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
+            { className: 'article-unit-type' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
+              'h2',
+              null,
+              props.story.source.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-text' },
+              'h4',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-type' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.source.name
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 100 ? this.props.story.title.split("").slice(0, 100).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 100 ? props.story.title.split("").slice(0, 100).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 20 ? props.story.author.split("").slice(0, 20).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitEight;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitEight);
+exports.default = ArticleUnitEight;
 
 // comment
 
@@ -6112,8 +5808,6 @@ exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitEight);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -6135,79 +5829,56 @@ var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var ArticleUnitEleven = function ArticleUnitEleven(props) {
+  var items = props.stories.slice(1).map(function (el, i) {
+    return _react2.default.createElement(_article_unit_list_item2.default, {
+      key: i,
+      story: props.stories[i + 1]
+    });
+  });
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitEleven = function (_React$Component) {
-  _inherits(ArticleUnitEleven, _React$Component);
-
-  function ArticleUnitEleven(props) {
-    _classCallCheck(this, ArticleUnitEleven);
-
-    return _possibleConstructorReturn(this, (ArticleUnitEleven.__proto__ || Object.getPrototypeOf(ArticleUnitEleven)).call(this, props));
-  }
-
-  _createClass(ArticleUnitEleven, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var items = this.props.stories.slice(1).map(function (el, i) {
-        return _react2.default.createElement(_article_unit_list_item2.default, {
-          key: i,
-          story: _this2.props.stories[i + 1]
-        });
-      });
-
-      return _react2.default.createElement(
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-eleven article-unit' },
+    _react2.default.createElement('div', { className: 'article-unit-eleven-top article-unit-list-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-eleven-middle article-unit-middle' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-eleven article-unit' },
-        _react2.default.createElement('div', { className: 'article-unit-eleven-top article-unit-list-top' }),
+        { className: 'article-unit-eleven-middle-header article-unit-middle-header horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-eleven-middle article-unit-middle' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-eleven-middle-header article-unit-middle-header horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-eleven-middle-header-icon' },
-              _react2.default.createElement('img', { src: this.props.icon })
-            ),
-            _react2.default.createElement(
-              'h3',
-              null,
-              this.props.header
-            )
-          )
+          { className: 'article-unit-eleven-middle-header-icon' },
+          _react2.default.createElement('img', { src: props.icon })
         ),
         _react2.default.createElement(
-          'div',
-          { className: 'article-unit-eleven-bottom article-unit-list-bottom' },
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement(_article_unit_list_item_two2.default, {
-              story: this.props.stories[0]
-            }),
-            items
-          )
-        ),
-        _react2.default.createElement(_article_unit_more2.default, {
-          header: 'more ' + this.props.header,
-          link: '#/category/' + this.props.header.toLowerCase()
-        })
-      );
-    }
-  }]);
+          'h3',
+          null,
+          props.header
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-eleven-bottom article-unit-list-bottom' },
+      _react2.default.createElement(
+        'ul',
+        null,
+        _react2.default.createElement(_article_unit_list_item_two2.default, {
+          story: props.stories[0]
+        }),
+        items
+      )
+    ),
+    _react2.default.createElement(_article_unit_more2.default, {
+      header: 'more ' + props.header,
+      link: '#/category/' + props.header.toLowerCase()
+    })
+  );
+};
 
-  return ArticleUnitEleven;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitEleven);
+exports.default = ArticleUnitEleven;
 
 // comment
 
@@ -6326,8 +5997,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -6340,71 +6009,50 @@ var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitSubscribeItem = function (_React$Component) {
-  _inherits(ArticleUnitSubscribeItem, _React$Component);
-
-  function ArticleUnitSubscribeItem(props) {
-    _classCallCheck(this, ArticleUnitSubscribeItem);
-
-    return _possibleConstructorReturn(this, (ArticleUnitSubscribeItem.__proto__ || Object.getPrototypeOf(ArticleUnitSubscribeItem)).call(this, props));
-  }
-
-  _createClass(ArticleUnitSubscribeItem, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'li',
-        { className: 'article-unit-subscribe-item' },
+var ArticleUnitSubscribeItem = function ArticleUnitSubscribeItem(props) {
+  return _react2.default.createElement(
+    'li',
+    { className: 'article-unit-subscribe-item' },
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
+        'div',
+        { className: 'article-unit-subscribe-item-top' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          props.header.toUpperCase()
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'article-unit-subscribe-item-bottom horizontal' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-list-item-title' },
           _react2.default.createElement(
-            'div',
-            { className: 'article-unit-subscribe-item-top' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              this.props.header.toUpperCase()
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-subscribe-item-bottom horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-list-item-title' },
-              _react2.default.createElement(
-                'h1',
-                null,
-                this.props.text
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image' },
-              _react2.default.createElement('img', { src: 'frontend/images/one.png' })
-            )
-          ),
-          _react2.default.createElement('div', { className: 'article-unit-subscribe-item-more' })
+            'h1',
+            null,
+            props.text
+          )
         ),
-        _react2.default.createElement(_article_unit_more2.default, {
-          header: this.props.action,
-          link: this.props.link
-        })
-      );
-    }
-  }]);
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-image' },
+          _react2.default.createElement('img', { src: 'frontend/images/one.png' })
+        )
+      ),
+      _react2.default.createElement('div', { className: 'article-unit-subscribe-item-more' })
+    ),
+    _react2.default.createElement(_article_unit_more2.default, {
+      header: props.action,
+      link: props.link
+    })
+  );
+};
 
-  return ArticleUnitSubscribeItem;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSubscribeItem);
+exports.default = ArticleUnitSubscribeItem;
 
 // comment
 
@@ -6419,8 +6067,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -6433,73 +6079,52 @@ var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitSubscribeItemTwo = function (_React$Component) {
-  _inherits(ArticleUnitSubscribeItemTwo, _React$Component);
-
-  function ArticleUnitSubscribeItemTwo(props) {
-    _classCallCheck(this, ArticleUnitSubscribeItemTwo);
-
-    return _possibleConstructorReturn(this, (ArticleUnitSubscribeItemTwo.__proto__ || Object.getPrototypeOf(ArticleUnitSubscribeItemTwo)).call(this, props));
-  }
-
-  _createClass(ArticleUnitSubscribeItemTwo, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'li',
-        { className: 'article-unit-subscribe-item-two' },
+var ArticleUnitSubscribeItemTwo = function ArticleUnitSubscribeItemTwo(props) {
+  return _react2.default.createElement(
+    'li',
+    { className: 'article-unit-subscribe-item-two' },
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-bottom' },
+      _react2.default.createElement(
+        'div',
+        { className: 'article-unit-subscribe-item-top' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          props.header.toUpperCase()
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'article-unit-subscribe-item-bottom' },
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-bottom' },
+          { className: 'article-unit-list-item-title' },
           _react2.default.createElement(
-            'div',
-            { className: 'article-unit-subscribe-item-top' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              this.props.header.toUpperCase()
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-subscribe-item-bottom' },
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-list-item-title' },
-              _react2.default.createElement(
-                'h1',
-                null,
-                this.props.text
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-input' },
-              _react2.default.createElement('input', { type: 'email', name: 'email',
-                value: this.props.email,
-                onChange: this.props.handleInput('email'),
-                placeholder: 'Enter your email' })
-            )
-          ),
-          _react2.default.createElement('div', { className: 'article-unit-subscribe-item-more' })
+            'h1',
+            null,
+            props.text
+          )
         ),
-        _react2.default.createElement(_article_unit_more2.default, {
-          header: this.props.action
-        })
-      );
-    }
-  }]);
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-input' },
+          _react2.default.createElement('input', { type: 'email', name: 'email',
+            value: props.email,
+            onChange: props.handleInput('email'),
+            placeholder: 'Enter your email' })
+        )
+      ),
+      _react2.default.createElement('div', { className: 'article-unit-subscribe-item-more' })
+    ),
+    _react2.default.createElement(_article_unit_more2.default, {
+      header: props.action
+    })
+  );
+};
 
-  return ArticleUnitSubscribeItemTwo;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSubscribeItemTwo);
+exports.default = ArticleUnitSubscribeItemTwo;
 
 // comment
 
@@ -6513,8 +6138,6 @@ exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitSubscribeItemTwo);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -6548,37 +6171,55 @@ var _article_unit_ten2 = _interopRequireDefault(_article_unit_ten);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleIndexGridThree = function (_React$Component) {
-  _inherits(ArticleIndexGridThree, _React$Component);
-
-  function ArticleIndexGridThree(props) {
-    _classCallCheck(this, ArticleIndexGridThree);
-
-    return _possibleConstructorReturn(this, (ArticleIndexGridThree.__proto__ || Object.getPrototypeOf(ArticleIndexGridThree)).call(this, props));
-  }
-
-  _createClass(ArticleIndexGridThree, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleIndexGridThree = function ArticleIndexGridThree(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'horizontal margin-bottom' },
+    _react2.default.createElement(
+      'div',
+      { className: 'margin-right' },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_article_unit_ten2.default, {
+          stories: [props.listStories[0], props.listStories[1], props.listStories[2], props.listStories[3], props.listStories[4]],
+          header: props.headers[0],
+          link: props.links[0]
+        })
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: '' },
+      _react2.default.createElement(
         'div',
         { className: 'horizontal margin-bottom' },
         _react2.default.createElement(
           'div',
           { className: 'margin-right' },
+          _react2.default.createElement(_article_unit_two2.default, {
+            story: props.stories[0]
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_article_unit_one2.default, {
+            story: props.stories[1]
+          })
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'horizontal' },
+        _react2.default.createElement(
+          'div',
+          { className: '' },
           _react2.default.createElement(
             'div',
-            null,
-            _react2.default.createElement(_article_unit_ten2.default, {
-              stories: [this.props.listStories[0], this.props.listStories[1], this.props.listStories[2], this.props.listStories[3], this.props.listStories[4]],
-              header: this.props.headers[0],
-              link: this.props.links[0]
+            { className: 'margin-right' },
+            _react2.default.createElement(_article_unit_five2.default, {
+              story: props.stories[2]
             })
           )
         ),
@@ -6587,62 +6228,23 @@ var ArticleIndexGridThree = function (_React$Component) {
           { className: '' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal margin-bottom' },
-            _react2.default.createElement(
-              'div',
-              { className: 'margin-right' },
-              _react2.default.createElement(_article_unit_two2.default, {
-                story: this.props.stories[0]
-              })
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(_article_unit_one2.default, {
-                story: this.props.stories[1]
-              })
-            )
+            { className: 'margin-bottom' },
+            _react2.default.createElement(_article_unit_three2.default, {
+              story: props.stories[3]
+            })
           ),
           _react2.default.createElement(
             'div',
-            { className: 'horizontal' },
-            _react2.default.createElement(
-              'div',
-              { className: '' },
-              _react2.default.createElement(
-                'div',
-                { className: 'margin-right' },
-                _react2.default.createElement(_article_unit_five2.default, {
-                  story: this.props.stories[2]
-                })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: '' },
-              _react2.default.createElement(
-                'div',
-                { className: 'margin-bottom' },
-                _react2.default.createElement(_article_unit_three2.default, {
-                  story: this.props.stories[3]
-                })
-              ),
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_article_unit_four2.default, {
-                  story: this.props.stories[4]
-                })
-              )
-            )
+            null,
+            _react2.default.createElement(_article_unit_four2.default, {
+              story: props.stories[4]
+            })
           )
         )
-      );
-    }
-  }]);
-
-  return ArticleIndexGridThree;
-}(_react2.default.Component);
+      )
+    )
+  );
+};
 
 exports.default = ArticleIndexGridThree;
 
@@ -31447,8 +31049,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -31457,77 +31057,56 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitListItemTwo = function (_React$Component) {
-  _inherits(ArticleUnitListItemTwo, _React$Component);
-
-  function ArticleUnitListItemTwo(props) {
-    _classCallCheck(this, ArticleUnitListItemTwo);
-
-    return _possibleConstructorReturn(this, (ArticleUnitListItemTwo.__proto__ || Object.getPrototypeOf(ArticleUnitListItemTwo)).call(this, props));
-  }
-
-  _createClass(ArticleUnitListItemTwo, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'li',
-        { className: 'article-unit-list-item-two' },
+var ArticleUnitListItemTwo = function ArticleUnitListItemTwo(props) {
+  return _react2.default.createElement(
+    'li',
+    { className: 'article-unit-list-item-two' },
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-list-item-two-bottom' },
+      _react2.default.createElement(
+        'div',
+        null,
         _react2.default.createElement(
           'div',
-          { className: 'article-unit-list-item-two-bottom' },
+          { className: 'article-unit-image article-unit-list-item-image' },
+          _react2.default.createElement('img', { src: props.story.urlToImage ? props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'article-unit-list-item-text' },
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'article-unit-title' },
             _react2.default.createElement(
-              'div',
-              { className: 'article-unit-image article-unit-list-item-image' },
-              _react2.default.createElement('img', { src: this.props.story.urlToImage ? this.props.story.urlToImage : "frontend/images/Image-not-available.jpg" })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article-unit-list-item-text' },
+              'h6',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'article-unit-title' },
-                _react2.default.createElement(
-                  'h6',
-                  null,
-                  _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: {
-                        pathname: '/story/' + this.props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
-                        state: { story: this.props.story } }
-                    },
-                    this.props.story.title.length > 30 ? this.props.story.title.split("").slice(0, 30).join("") + '...' : this.props.story.title
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'article-unit-author' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  this.props.story.author ? this.props.story.author.length > 20 ? this.props.story.author.split("").slice(0, 20).join("") + '...' : this.props.story.author : ""
-                )
+                _reactRouterDom.Link,
+                { to: {
+                    pathname: '/story/' + props.story.title.toLowerCase().split(/[^A-Za-z]/).join(""),
+                    state: { story: props.story } }
+                },
+                props.story.title.length > 30 ? props.story.title.split("").slice(0, 30).join("") + '...' : props.story.title
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'article-unit-author' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              props.story.author ? props.story.author.length > 20 ? props.story.author.split("").slice(0, 20).join("") + '...' : props.story.author : ""
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return ArticleUnitListItemTwo;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitListItemTwo);
+exports.default = ArticleUnitListItemTwo;
 
 // comment
 
@@ -31541,8 +31120,6 @@ exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitListItemTwo);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -31580,25 +31157,32 @@ var _article_unit_nine2 = _interopRequireDefault(_article_unit_nine);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleIndexGridOne = function (_React$Component) {
-  _inherits(ArticleIndexGridOne, _React$Component);
-
-  function ArticleIndexGridOne(props) {
-    _classCallCheck(this, ArticleIndexGridOne);
-
-    return _possibleConstructorReturn(this, (ArticleIndexGridOne.__proto__ || Object.getPrototypeOf(ArticleIndexGridOne)).call(this, props));
-  }
-
-  _createClass(ArticleIndexGridOne, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleIndexGridOne = function ArticleIndexGridOne(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'horizontal margin-bottom' },
+    _react2.default.createElement(
+      'div',
+      { className: 'margin-right' },
+      _react2.default.createElement(
+        'div',
+        { className: 'horizontal margin-bottom' },
+        _react2.default.createElement(
+          'div',
+          { className: 'margin-right' },
+          _react2.default.createElement(_article_unit_one2.default, {
+            story: props.stories[0]
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_article_unit_two2.default, {
+            story: props.stories[1]
+          })
+        )
+      ),
+      _react2.default.createElement(
         'div',
         { className: 'horizontal margin-bottom' },
         _react2.default.createElement(
@@ -31606,65 +31190,17 @@ var ArticleIndexGridOne = function (_React$Component) {
           { className: 'margin-right' },
           _react2.default.createElement(
             'div',
-            { className: 'horizontal margin-bottom' },
-            _react2.default.createElement(
-              'div',
-              { className: 'margin-right' },
-              _react2.default.createElement(_article_unit_one2.default, {
-                story: this.props.stories[0]
-              })
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(_article_unit_two2.default, {
-                story: this.props.stories[1]
-              })
-            )
+            { className: 'margin-bottom' },
+            _react2.default.createElement(_article_unit_three2.default, {
+              story: props.stories[2]
+            })
           ),
           _react2.default.createElement(
             'div',
-            { className: 'horizontal margin-bottom' },
-            _react2.default.createElement(
-              'div',
-              { className: 'margin-right' },
-              _react2.default.createElement(
-                'div',
-                { className: 'margin-bottom' },
-                _react2.default.createElement(_article_unit_three2.default, {
-                  story: this.props.stories[2]
-                })
-              ),
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_article_unit_four2.default, {
-                  story: this.props.stories[3]
-                })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: '' },
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_article_unit_five2.default, {
-                  story: this.props.stories[4]
-                })
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: '' },
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(_article_unit_six2.default, {
-                story: this.props.stories[5]
-              })
-            )
+            null,
+            _react2.default.createElement(_article_unit_four2.default, {
+              story: props.stories[3]
+            })
           )
         ),
         _react2.default.createElement(
@@ -31672,34 +31208,54 @@ var ArticleIndexGridOne = function (_React$Component) {
           { className: '' },
           _react2.default.createElement(
             'div',
-            { className: 'margin-bottom' },
-            _react2.default.createElement(_article_unit_nine2.default, {
-              stories: [this.props.listStories[0], this.props.listStories[1], this.props.listStories[2]],
-              header: this.props.headers[0],
-              link: this.props.links[0]
-            })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'margin-bottom' },
-            _react2.default.createElement(_article_unit_five2.default, {
-              story: this.props.stories[6]
-            })
-          ),
-          _react2.default.createElement(
-            'div',
             null,
-            _react2.default.createElement(_article_unit_four2.default, {
-              story: this.props.stories[7]
+            _react2.default.createElement(_article_unit_five2.default, {
+              story: props.stories[4]
             })
           )
         )
-      );
-    }
-  }]);
-
-  return ArticleIndexGridOne;
-}(_react2.default.Component);
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: '' },
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_article_unit_six2.default, {
+            story: props.stories[5]
+          })
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: '' },
+      _react2.default.createElement(
+        'div',
+        { className: 'margin-bottom' },
+        _react2.default.createElement(_article_unit_nine2.default, {
+          stories: [props.listStories[0], props.listStories[1], props.listStories[2]],
+          header: props.headers[0],
+          link: props.links[0]
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'margin-bottom' },
+        _react2.default.createElement(_article_unit_five2.default, {
+          story: props.stories[6]
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_article_unit_four2.default, {
+          story: props.stories[7]
+        })
+      )
+    )
+  );
+};
 
 exports.default = ArticleIndexGridOne;
 
@@ -31713,8 +31269,6 @@ exports.default = ArticleIndexGridOne;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -31736,58 +31290,37 @@ var _article_unit_eight2 = _interopRequireDefault(_article_unit_eight);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleIndexGridTwo = function (_React$Component) {
-  _inherits(ArticleIndexGridTwo, _React$Component);
-
-  function ArticleIndexGridTwo(props) {
-    _classCallCheck(this, ArticleIndexGridTwo);
-
-    return _possibleConstructorReturn(this, (ArticleIndexGridTwo.__proto__ || Object.getPrototypeOf(ArticleIndexGridTwo)).call(this, props));
-  }
-
-  _createClass(ArticleIndexGridTwo, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleIndexGridTwo = function ArticleIndexGridTwo(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'margin-bottom' },
+    _react2.default.createElement(
+      'div',
+      { className: 'horizontal margin-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'margin-bottom' },
-        _react2.default.createElement(
-          'div',
-          { className: 'horizontal margin-bottom' },
-          _react2.default.createElement(
-            'div',
-            { className: 'margin-right' },
-            _react2.default.createElement(_article_unit_seven2.default, {
-              story: this.props.stories[0]
-            })
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(_article_unit_five2.default, {
-              story: this.props.stories[1]
-            })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_article_unit_eight2.default, {
-            story: this.props.stories[2]
-          })
-        )
-      );
-    }
-  }]);
-
-  return ArticleIndexGridTwo;
-}(_react2.default.Component);
+        { className: 'margin-right' },
+        _react2.default.createElement(_article_unit_seven2.default, {
+          story: props.stories[0]
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_article_unit_five2.default, {
+          story: props.stories[1]
+        })
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_article_unit_eight2.default, {
+        story: props.stories[2]
+      })
+    )
+  );
+};
 
 exports.default = ArticleIndexGridTwo;
 
@@ -31801,8 +31334,6 @@ exports.default = ArticleIndexGridTwo;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -31820,70 +31351,47 @@ var _article_unit_more2 = _interopRequireDefault(_article_unit_more);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleUnitTen = function (_React$Component) {
-  _inherits(ArticleUnitTen, _React$Component);
-
-  function ArticleUnitTen(props) {
-    _classCallCheck(this, ArticleUnitTen);
-
-    return _possibleConstructorReturn(this, (ArticleUnitTen.__proto__ || Object.getPrototypeOf(ArticleUnitTen)).call(this, props));
-  }
-
-  _createClass(ArticleUnitTen, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var items = this.props.stories.map(function (el, i) {
-        return _react2.default.createElement(_article_unit_list_item2.default, {
-          key: i,
-          story: _this2.props.stories[i]
-        });
-      });
-      return _react2.default.createElement(
+var ArticleUnitTen = function ArticleUnitTen(props) {
+  var items = props.stories.map(function (el, i) {
+    return _react2.default.createElement(_article_unit_list_item2.default, {
+      key: i,
+      story: props.stories[i]
+    });
+  });
+  return _react2.default.createElement(
+    'div',
+    { className: 'article-unit-ten article-unit' },
+    _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-middle' },
+      _react2.default.createElement(
         'div',
-        { className: 'article-unit-ten article-unit' },
-        _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+        { className: 'article-unit-middle-header' },
         _react2.default.createElement(
-          'div',
-          { className: 'article-unit-middle' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-middle-header' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              this.props.header
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'article-unit-ten-bottom article-unit-list-bottom' },
-          _react2.default.createElement(
-            'ul',
-            null,
-            items
-          )
-        ),
-        _react2.default.createElement(_article_unit_more2.default, {
-          header: this.props.header,
-          link: this.props.link
-        })
-      );
-    }
-  }]);
+          'h3',
+          null,
+          props.header
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-ten-bottom article-unit-list-bottom' },
+      _react2.default.createElement(
+        'ul',
+        null,
+        items
+      )
+    ),
+    _react2.default.createElement(_article_unit_more2.default, {
+      header: props.header,
+      link: props.link
+    })
+  );
+};
 
-  return ArticleUnitTen;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(ArticleUnitTen);
+exports.default = ArticleUnitTen;
 
 // comment
 
@@ -31898,8 +31406,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -31912,64 +31418,43 @@ var _article_unit_eleven2 = _interopRequireDefault(_article_unit_eleven);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ArticleIndexGridFour = function (_React$Component) {
-  _inherits(ArticleIndexGridFour, _React$Component);
-
-  function ArticleIndexGridFour(props) {
-    _classCallCheck(this, ArticleIndexGridFour);
-
-    return _possibleConstructorReturn(this, (ArticleIndexGridFour.__proto__ || Object.getPrototypeOf(ArticleIndexGridFour)).call(this, props));
-  }
-
-  _createClass(ArticleIndexGridFour, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var ArticleIndexGridFour = function ArticleIndexGridFour(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'margin-bottom inline-block' },
+    _react2.default.createElement(
+      'div',
+      { className: 'horizontal' },
+      _react2.default.createElement(
         'div',
-        { className: 'margin-bottom inline-block' },
-        _react2.default.createElement(
-          'div',
-          { className: 'horizontal' },
-          _react2.default.createElement(
-            'div',
-            { className: 'margin-right' },
-            _react2.default.createElement(_article_unit_eleven2.default, {
-              stories: [this.props.listStories[0], this.props.listStories[1], this.props.listStories[2]],
-              header: this.props.headers[0],
-              icon: this.props.icons[0]
-            })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'margin-right' },
-            _react2.default.createElement(_article_unit_eleven2.default, {
-              stories: [this.props.listStories[3], this.props.listStories[4], this.props.listStories[5]],
-              header: this.props.headers[1],
-              icon: this.props.icons[1]
-            })
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(_article_unit_eleven2.default, {
-              stories: [this.props.listStories[6], this.props.listStories[7], this.props.listStories[8]],
-              header: this.props.headers[2],
-              icon: this.props.icons[2]
-            })
-          )
-        )
-      );
-    }
-  }]);
-
-  return ArticleIndexGridFour;
-}(_react2.default.Component);
+        { className: 'margin-right' },
+        _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [props.listStories[0], props.listStories[1], props.listStories[2]],
+          header: props.headers[0],
+          icon: props.icons[0]
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'margin-right' },
+        _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [props.listStories[3], props.listStories[4], props.listStories[5]],
+          header: props.headers[1],
+          icon: props.icons[1]
+        })
+      ),
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_article_unit_eleven2.default, {
+          stories: [props.listStories[6], props.listStories[7], props.listStories[8]],
+          header: props.headers[2],
+          icon: props.icons[2]
+        })
+      )
+    )
+  );
+};
 
 exports.default = ArticleIndexGridFour;
 
@@ -31984,13 +31469,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(1);
 
 var _navigation_bar_menu_item = __webpack_require__(262);
 
@@ -31998,130 +31479,108 @@ var _navigation_bar_menu_item2 = _interopRequireDefault(_navigation_bar_menu_ite
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var NavigationBarMenu = function NavigationBarMenu(props) {
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var NavigationBarMenu = function (_React$Component) {
-  _inherits(NavigationBarMenu, _React$Component);
-
-  function NavigationBarMenu(props) {
-    _classCallCheck(this, NavigationBarMenu);
-
-    return _possibleConstructorReturn(this, (NavigationBarMenu.__proto__ || Object.getPrototypeOf(NavigationBarMenu)).call(this, props));
-  }
-
-  _createClass(NavigationBarMenu, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var items = this.props.categories.map(function (el, i) {
-        var classes = _this2.props.category === el ? { active: "navigation-bar-menu-section-active",
-          activeRank: 'navigation-bar-menu-section-active-' + (i + 1) } : null;
-        return _react2.default.createElement(_navigation_bar_menu_item2.default, {
-          key: i,
-          rank: i + 1,
-          category: el,
-          classes: classes,
-          image: _this2.props.images[i]
-        });
-      });
-      return _react2.default.createElement(
+  var items = props.categories.map(function (el, i) {
+    var classes = props.category === el ? { active: "navigation-bar-menu-section-active",
+      activeRank: 'navigation-bar-menu-section-active-' + (i + 1) } : null;
+    return _react2.default.createElement(_navigation_bar_menu_item2.default, {
+      key: i,
+      rank: i + 1,
+      category: el,
+      classes: classes,
+      image: props.images[i]
+    });
+  });
+  return _react2.default.createElement(
+    'div',
+    { className: 'navigation-bar-menu' },
+    _react2.default.createElement(
+      'div',
+      { className: 'navigation-bar-menu-top horizontal' },
+      items
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'navigation-bar-menu-bottom' },
+      _react2.default.createElement(
         'div',
-        { className: 'navigation-bar-menu' },
+        { className: 'navigation-bar-menu-bottom-list' },
         _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-menu-top horizontal' },
-          items
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-menu-bottom' },
+          'ul',
+          { className: 'horizontal' },
           _react2.default.createElement(
-            'div',
-            { className: 'navigation-bar-menu-bottom-list' },
+            'li',
+            null,
             _react2.default.createElement(
-              'ul',
-              { className: 'horizontal' },
+              'h2',
+              null,
               _react2.default.createElement(
-                'li',
+                'a',
                 null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'photo'
-                  )
-                )
-              ),
+                'photo'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              'h2',
+              null,
               _react2.default.createElement(
-                'li',
+                'a',
                 null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'video'
-                  )
-                )
-              ),
+                'video'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              'h2',
+              null,
               _react2.default.createElement(
-                'li',
+                'a',
                 null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'backchannel'
-                  )
-                )
-              ),
+                'backchannel'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              'h2',
+              null,
               _react2.default.createElement(
-                'li',
+                'a',
                 null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'magazine'
-                  )
-                )
-              ),
+                'magazine'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              'h2',
+              null,
               _react2.default.createElement(
-                'li',
+                'a',
                 null,
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'manic insider'
-                  )
-                )
+                'manic insider'
               )
             )
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return NavigationBarMenu;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(NavigationBarMenu);
+exports.default = NavigationBarMenu;
 
 // comment
 
@@ -32272,13 +31731,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(1);
 
 var _navigation_bar_bottom_item = __webpack_require__(261);
 
@@ -32286,49 +31741,26 @@ var _navigation_bar_bottom_item2 = _interopRequireDefault(_navigation_bar_bottom
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var NavigationBarBottom = function NavigationBarBottom(props) {
+  var items = props.categories.map(function (el, i) {
+    var classes = props.category === el ? { active: "navigation-bar-bottom-section-active",
+      activeRank: 'navigation-bar-bottom-section-active-' + (i + 1) } : null;
+    return _react2.default.createElement(_navigation_bar_bottom_item2.default, {
+      key: i,
+      rank: i + 1,
+      category: el,
+      classes: classes
+    });
+  });
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+  return _react2.default.createElement(
+    'div',
+    { className: 'navigation-bar-bottom' },
+    items
+  );
+};
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var NavigationBarBottom = function (_React$Component) {
-  _inherits(NavigationBarBottom, _React$Component);
-
-  function NavigationBarBottom(props) {
-    _classCallCheck(this, NavigationBarBottom);
-
-    return _possibleConstructorReturn(this, (NavigationBarBottom.__proto__ || Object.getPrototypeOf(NavigationBarBottom)).call(this, props));
-  }
-
-  _createClass(NavigationBarBottom, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var items = this.props.categories.map(function (el, i) {
-        var classes = _this2.props.category === el ? { active: "navigation-bar-bottom-section-active",
-          activeRank: 'navigation-bar-bottom-section-active-' + (i + 1) } : null;
-        return _react2.default.createElement(_navigation_bar_bottom_item2.default, {
-          key: i,
-          rank: i + 1,
-          category: el,
-          classes: classes
-        });
-      });
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'navigation-bar-bottom' },
-        items
-      );
-    }
-  }]);
-
-  return NavigationBarBottom;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(NavigationBarBottom);
+exports.default = NavigationBarBottom;
 
 /***/ }),
 /* 247 */
@@ -32451,13 +31883,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(1);
 
 var _article_unit_subscribe_item = __webpack_require__(97);
 
@@ -32469,60 +31897,39 @@ var _article_unit_subscribe_item_two2 = _interopRequireDefault(_article_unit_sub
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var NavigationSubscribe = function NavigationSubscribe(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'navigation-bar-subscribe',
+      onMouseLeave: undefined.props.handleMouseHover },
+    _react2.default.createElement(
+      'div',
+      { className: 'navigation-bar-subscribe-items' },
+      _react2.default.createElement(
+        'ul',
+        { className: 'horizontal' },
+        _react2.default.createElement(_article_unit_subscribe_item2.default, {
+          header: 'Get The Magazine',
+          text: 'Special Holiday Gift Offer \u2013 Buy one, get one FREE.',
+          action: 'subscribe'
+        }),
+        _react2.default.createElement(_article_unit_subscribe_item_two2.default, {
+          header: 'Get Our Newsletter',
+          text: 'WIRED\u2019s biggest stories delivered to your inbox.',
+          action: 'submit',
+          handleInput: undefined.props.handleInput
+        }),
+        _react2.default.createElement(_article_unit_subscribe_item2.default, {
+          header: 'We\'re On Pinterest',
+          text: 'See what\'s inspiring us.',
+          action: 'follow'
+        })
+      )
+    )
+  );
+};
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var NavigationSubscribe = function (_React$Component) {
-  _inherits(NavigationSubscribe, _React$Component);
-
-  function NavigationSubscribe(props) {
-    _classCallCheck(this, NavigationSubscribe);
-
-    return _possibleConstructorReturn(this, (NavigationSubscribe.__proto__ || Object.getPrototypeOf(NavigationSubscribe)).call(this, props));
-  }
-
-  _createClass(NavigationSubscribe, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'navigation-bar-subscribe',
-          onMouseLeave: this.props.handleMouseHover },
-        _react2.default.createElement(
-          'div',
-          { className: 'navigation-bar-subscribe-items' },
-          _react2.default.createElement(
-            'ul',
-            { className: 'horizontal' },
-            _react2.default.createElement(_article_unit_subscribe_item2.default, {
-              header: 'Get The Magazine',
-              text: 'Special Holiday Gift Offer \u2013 Buy one, get one FREE.',
-              action: 'subscribe'
-            }),
-            _react2.default.createElement(_article_unit_subscribe_item_two2.default, {
-              header: 'Get Our Newsletter',
-              text: 'WIRED\u2019s biggest stories delivered to your inbox.',
-              action: 'submit',
-              handleInput: this.props.handleInput
-            }),
-            _react2.default.createElement(_article_unit_subscribe_item2.default, {
-              header: 'We\'re On Pinterest',
-              text: 'See what\'s inspiring us.',
-              action: 'follow'
-            })
-          )
-        )
-      );
-    }
-  }]);
-
-  return NavigationSubscribe;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(NavigationSubscribe);
+exports.default = NavigationSubscribe;
 
 // comment
 
@@ -33204,8 +32611,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -33214,129 +32619,108 @@ var _reactRouterDom = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var StoryShowArticle = function (_React$Component) {
-  _inherits(StoryShowArticle, _React$Component);
-
-  function StoryShowArticle(props) {
-    _classCallCheck(this, StoryShowArticle);
-
-    return _possibleConstructorReturn(this, (StoryShowArticle.__proto__ || Object.getPrototypeOf(StoryShowArticle)).call(this, props));
-  }
-
-  _createClass(StoryShowArticle, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'story-show-article' },
+var StoryShowArticle = function StoryShowArticle(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'story-show-article' },
+    _react2.default.createElement(
+      'div',
+      { className: 'story-show-article-author horizontal' },
+      _react2.default.createElement(
+        'h2',
+        null,
         _react2.default.createElement(
-          'div',
-          { className: 'story-show-article-author horizontal' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'u',
-              null,
-              this.props.story.author
-            )
-          ),
-          '\xA0',
-          _react2.default.createElement(
-            'h2',
-            null,
-            this.props.story.source.name
-          ),
-          '\xA0',
-          _react2.default.createElement(
-            'h2',
-            null,
-            this.props.dateTime.date
-          ),
-          '\xA0',
-          _react2.default.createElement(
-            'h2',
-            null,
-            this.props.dateTime.time
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'story-show-article-title' },
-          _react2.default.createElement(
-            'h3',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: this.props.story.url },
-              this.props.story.title
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'story-show-article-description' },
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.story.description
-          )
-        ),
-        this.props.story.urlToImage && _react2.default.createElement(
-          'div',
-          { className: 'story-show-article-img' },
-          _react2.default.createElement('img', { src: this.props.story.urlToImage })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'story-show-article-text' },
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'span',
-                null,
-                'Alohamora wand elf'
-              ),
-              ' parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \xBE dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Toad-like smile Flourish and Blotts he knew I\u2019d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs\u2019 years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages \u2018zis is a chance many would die for!'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
-            )
-          )
+          'u',
+          null,
+          props.story.author
         )
-      );
-    }
-  }]);
-
-  return StoryShowArticle;
-}(_react2.default.Component);
+      ),
+      '\xA0',
+      _react2.default.createElement(
+        'h2',
+        null,
+        props.story.source.name
+      ),
+      '\xA0',
+      _react2.default.createElement(
+        'h2',
+        null,
+        props.dateTime.date
+      ),
+      '\xA0',
+      _react2.default.createElement(
+        'h2',
+        null,
+        props.dateTime.time
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'story-show-article-title' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        _react2.default.createElement(
+          'a',
+          { href: props.story.url },
+          props.story.title
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'story-show-article-description' },
+      _react2.default.createElement(
+        'p',
+        null,
+        props.story.description
+      )
+    ),
+    props.story.urlToImage && _react2.default.createElement(
+      'div',
+      { className: 'story-show-article-img' },
+      _react2.default.createElement('img', { src: props.story.urlToImage })
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'story-show-article-text' },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'span',
+            null,
+            'Alohamora wand elf'
+          ),
+          ' parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \xBE dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Toad-like smile Flourish and Blotts he knew I\u2019d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs\u2019 years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages \u2018zis is a chance many would die for!'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+        )
+      )
+    )
+  );
+};
 
 exports.default = (0, _reactRouterDom.withRouter)(StoryShowArticle);
 
@@ -33353,8 +32737,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -33367,68 +32749,47 @@ var _story_show_share_item2 = _interopRequireDefault(_story_show_share_item);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var StoryShowShare = function StoryShowShare(props) {
+  var media = ["share", "tweet", "comment", "email"];
+  var images = ["frontend/images/facebook.png", "frontend/images/twitter.png", "frontend/images/comment.png", "frontend/images/email.png"];
+  var items = media.map(function (el, i) {
+    return _react2.default.createElement(_story_show_share_item2.default, {
+      key: i,
+      header: el,
+      image: images[i]
+    });
+  });
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var StoryShowShare = function (_React$Component) {
-  _inherits(StoryShowShare, _React$Component);
-
-  function StoryShowShare(props) {
-    _classCallCheck(this, StoryShowShare);
-
-    return _possibleConstructorReturn(this, (StoryShowShare.__proto__ || Object.getPrototypeOf(StoryShowShare)).call(this, props));
-  }
-
-  _createClass(StoryShowShare, [{
-    key: 'render',
-    value: function render() {
-      var media = ["share", "tweet", "comment", "email"];
-      var images = ["frontend/images/facebook.png", "frontend/images/twitter.png", "frontend/images/comment.png", "frontend/images/email.png"];
-      var items = media.map(function (el, i) {
-        return _react2.default.createElement(_story_show_share_item2.default, {
-          key: i,
-          header: el,
-          image: images[i]
-        });
-      });
-
-      return _react2.default.createElement(
+  return _react2.default.createElement(
+    'div',
+    { className: 'story-show-share' },
+    _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-middle' },
+      _react2.default.createElement(
         'div',
-        { className: 'story-show-share' },
-        _react2.default.createElement('div', { className: 'article-unit-list-top' }),
+        { className: 'article-unit-middle-header' },
         _react2.default.createElement(
-          'div',
-          { className: 'article-unit-middle' },
-          _react2.default.createElement(
-            'div',
-            { className: 'article-unit-middle-header' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              'share'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'article-unit-list-bottom' },
-          _react2.default.createElement(
-            'ul',
-            null,
-            items
-          )
+          'h3',
+          null,
+          'share'
         )
-      );
-    }
-  }]);
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'article-unit-list-bottom' },
+      _react2.default.createElement(
+        'ul',
+        null,
+        items
+      )
+    )
+  );
+};
 
-  return StoryShowShare;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)(StoryShowShare);
+exports.default = StoryShowShare;
 
 // comment
 
@@ -33476,7 +32837,7 @@ var StoryShowShareItem = function StoryShowShareItem(props) {
   );
 };
 
-exports.default = (0, _reactRouterDom.withRouter)(StoryShowShareItem);
+exports.default = StoryShowShareItem;
 
 /***/ }),
 /* 258 */

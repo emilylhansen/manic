@@ -16,4 +16,4 @@ const StoryShowShareItem= (props) => {
   );
 };
 
-export default withRouter(StoryShowShareItem);
+export default StoryShowShareItem;

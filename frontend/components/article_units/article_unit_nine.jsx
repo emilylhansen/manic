@@ -4,42 +4,36 @@ import { Link, withRouter } from 'react-router-dom';
 import ArticleUnitListItem from './article_unit_list_item.jsx';
 import ArticleUnitMore from './article_unit_more.jsx';
 
-class ArticleUnitNine extends React.Component {
-  constructor(props){
-      super(props);
-  }
+const ArticleUnitNine = props => {
+  let items = props.stories.map((el, i) => (
+    <ArticleUnitListItem
+      key={i}
+      story={el}
+      />
+  ));
 
-  render(){
-    let items = this.props.stories.map((el, i) => (
-      <ArticleUnitListItem
-        key={i}
-        story={el}
-        />
-    ));
-
-    return (
-      <div className="article-unit-nine article-unit">
-        <div className="article-unit-list-top"></div>
-        <div className="article-unit-middle">
-          <div className="article-unit-middle-header">
-            <h3>{this.props.header}</h3>
-          </div>
+  return (
+    <div className="article-unit-nine article-unit">
+      <div className="article-unit-list-top"></div>
+      <div className="article-unit-middle">
+        <div className="article-unit-middle-header">
+          <h3>{props.header}</h3>
         </div>
-        <div className="article-unit-list-bottom">
-          <ul>
-            {items}
-          </ul>
-        </div>
-        <ArticleUnitMore
-          header={`more ${this.props.header}`}
-          link={this.props.link}
-          />
       </div>
-    );
-  }
-}
+      <div className="article-unit-list-bottom">
+        <ul>
+          {items}
+        </ul>
+      </div>
+      <ArticleUnitMore
+        header={`more ${props.header}`}
+        link={props.link}
+        />
+    </div>
+  );
+};
 
-export default withRouter(ArticleUnitNine);
+export default ArticleUnitNine;
 
 
 
