@@ -21,6 +21,7 @@ import ArticleIndexGridThree from './article_index_grid_three.jsx';
 import ArticleIndexGridFour from './article_index_grid_four.jsx';
 import NavigationBarContainer from '../navigation_bar/navigation_bar_container.jsx';
 
+
 class ArticleIndex extends React.Component{
   constructor(props){
     super(props);
